@@ -29,6 +29,10 @@ A few userscripts you can install to manager extensions like [Violentmonkey](htt
 - No auto page for now (my last attempt ended up with infinite loop...)
 - `Export as CSV` button is placed next to `Export` button VNDB provides, which means you cannot use this script without login, but you can manually edit the query code to achieve that 
 
+## Notice
+
+Do NOT clone submodule as it's private and protected with private key.
+
 ## License
 
 Licensed under CC0 1.0 Universal (Public Domain), unless otherwise noted in the script *per se*.

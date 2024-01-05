@@ -1,0 +1,3 @@
+[submodule "cromite"]
+	path = cromite
+	url = git@git.sr.ht:~vinfall/UserScripts
