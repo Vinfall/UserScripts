@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Tiangal Old Driver
-// @namespace   Violentmonkey Scripts
+// @namespace   https://github.com/Vinfall/UserScripts
 // @match       https://www.tiangal.com/*
 // @grant       none
 // @version     1.0

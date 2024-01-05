@@ -2,7 +2,7 @@
 // @name         Sensitive-GameBanana
 // @description  Automatically click the "Proceed" button if it exists on the page
 // @author       Vinfall
-// @namespace    https://github.com/Vinfall
+// @namespace    https://github.com/Vinfall/UserScripts
 // @license      WTFPL
 // @match        https://gamebanana.com/*
 // @grant        none
