@@ -4,11 +4,10 @@ A few userscripts you can install to manager extensions like [Violentmonkey](htt
 
 ## List
 
-
 | Name | Function |
 | ---- | ---- |
-| `Sensitive-GameBanana.user.js` | Skip GameBanana NSFW warning redirect when not logged in |
-| `vndb-list-export.user.js` | Export VNDB user list to CSV |
+| [`Sensitive-GameBanana.user.js`](https://github.com/Vinfall/UserScripts/raw/main/Sensitive-GameBanana.user.js) | Skip GameBanana NSFW warning redirect when not logged in |
+| [`vndb-list-export.user.js`](https://github.com/Vinfall/UserScripts/raw/main/vndb-list-export.user.js) | Export VNDB user list to CSV |
 
 ### VNDB User List Exporter
 
