@@ -2,8 +2,9 @@
 // @name        Tiangal Old Driver
 // @namespace   https://github.com/Vinfall/UserScripts
 // @match       https://www.tiangal.com/*
+// @exclude     https://www.tiangal.com/sign.html*
 // @grant       none
-// @version     1.1
+// @version     1.1.1
 // @author      Vinfall
 // @description 天遊二次元默认开启老司机模式
 // ==/UserScript==
