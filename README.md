@@ -1,6 +1,7 @@
 ## Intro
 
 A few userscripts you can install to manager extensions like [Violentmonkey](https://violentmonkey.github.io).
+Unlisted scripts have no intro and serve for myself only (you can still do whatever you want granted they're in Public Domain).
 
 ## List
 
@@ -8,6 +9,7 @@ A few userscripts you can install to manager extensions like [Violentmonkey](htt
 | ---- | ---- |
 | [`Sensitive-GameBanana.user.js`](https://github.com/Vinfall/UserScripts/raw/main/Sensitive-GameBanana.user.js) | Skip GameBanana NSFW warning redirect when not logged in |
 | [`vndb-list-export.user.js`](https://github.com/Vinfall/UserScripts/raw/main/vndb-list-export.user.js) | Export VNDB user list to CSV |
+| [`indienova-game-hide.user.js`](https://github.com/Vinfall/UserScripts/raw/main/indienova-game-hide.user.js) | indienova 每周游戏隐藏包含特定关键字的游戏 |
 
 ### VNDB User List Exporter
 
