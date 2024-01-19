@@ -4,7 +4,7 @@
 // @match       https://indienova.com/indie-game-news/guide-*
 // @match       https://indienova.com/indie-game-news/itch-new-games-*
 // @grant       none
-// @version     2.0.0
+// @version     2.0.1
 // @author      Vinfall
 // @description indienova「本周 Steam 值得关注的游戏」和「itch 一周游戏汇」隐藏包含特定关键字的游戏
 // ==/UserScript==
