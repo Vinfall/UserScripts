@@ -30,6 +30,10 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 - No auto page for now (my last attempt ended up with infinite loop...)
 - `Export as CSV` button is placed next to `Export` button VNDB provides, which means you cannot use this script without login, but you can manually edit the query code to achieve that 
 
+## Todo
+
+- [ ] Add a clickable button in `indienova-game-hide` instead of violently hiding elements
+
 ## Notice
 
 Do NOT clone submodule as it's private and protected with private key.

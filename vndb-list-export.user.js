@@ -3,7 +3,7 @@
 // @namespace   https://github.com/Vinfall/UserScripts
 // @match       https://vndb.org/u*
 // @grant       none
-// @version     2.1.0
+// @version     2.2.0
 // @author      Vinfall
 // @license     WTFPL
 // @description Export VNDB user list to CSV
@@ -28,6 +28,8 @@
         return Array.from(row.querySelectorAll('td')).map((td, index) => {
             // 删除特定字符
             var cellData = td.textContent.trim().replace(/ 👁|▾/g, '');
+            // 用半角空格替换全角空格
+            var cellData = td.textContent.trim().replace(/　/g, ' ');
             // 删除第一列数据
             if (index === 0) {
                 cellData = cellData.replace(/^\d+\/\d+/, '');
