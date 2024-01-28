@@ -6,7 +6,8 @@
 // @grant       none
 // @version     1.1.1
 // @author      Vinfall
-// @description 天遊二次元默认开启老司机模式
+// @description Enable adult mode for Tiangal
+// @description:zh-cn 天遊二次元默认开启老司机模式
 // ==/UserScript==
 (function () {
     'use strict';

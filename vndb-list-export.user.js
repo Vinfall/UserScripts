@@ -7,6 +7,7 @@
 // @author      Vinfall
 // @license     WTFPL
 // @description Export VNDB user list to CSV
+// @description:zh-cn 导出 VNDB 用户列表至 CSV
 // ==/UserScript==
 
 (function () {
