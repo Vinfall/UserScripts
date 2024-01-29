@@ -4,7 +4,7 @@
 // @match       https://indienova.com/indie-game-news/guide*
 // @match       https://indienova.com/indie-game-news/itch-new-games-*
 // @grant       none
-// @version     2.0.3
+// @version     2.0.5
 // @author      Vinfall
 // @description indienova「本周 Steam 值得关注的游戏」和「itch 一周游戏汇」隐藏包含特定关键字的游戏
 // ==/UserScript==
@@ -15,7 +15,7 @@
     // 定义关键词字典
     var keywords = [
         "多人在线", "在线合作", "恐怖", "僵尸", "黑暗奇幻", "自走棋", "玩家对战", "调酒", "SCP", "种植",
-        "农场模拟", "乙女", "全动态影像"
+        "农场模拟", "乙女", "全动态影像", "城市营造"
     ];
 
     // 等待页面完全加载后再运行脚本
