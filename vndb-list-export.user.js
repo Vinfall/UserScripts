@@ -3,7 +3,7 @@
 // @namespace   https://github.com/Vinfall/UserScripts
 // @match       https://vndb.org/u*
 // @grant       none
-// @version     2.2.0
+// @version     2.3.0
 // @author      Vinfall
 // @license     WTFPL
 // @description Export VNDB user list to CSV
@@ -13,58 +13,58 @@
 (function () {
     'use strict';
 
-    // 获取用户列表的table元素
+    // Get table element in user list
     var userListTable = document.querySelector('.ulist.browse > table');
 
-    // 获取表头字段
+    // Get table header
     var headers = Array.from(userListTable.querySelectorAll('thead tr')).map(row => {
         return Array.from(row.querySelectorAll('td')).map(td => {
-            // 删除特定字符
+            // Delete unwanted operator strings
             return td.textContent.trim().replace(/▴▾|Opt/g, '');
         });
     });
 
-    // 获取用户数据
+    // Get user list
     var userData = Array.from(userListTable.querySelectorAll('tbody tr')).map(row => {
         return Array.from(row.querySelectorAll('td')).map((td, index) => {
-            // 删除特定字符
+            // Delete unwanted string
             var cellData = td.textContent.trim().replace(/ 👁|▾/g, '');
-            // 用半角空格替换全角空格
+            // Replace full-width space with normal one
             var cellData = td.textContent.trim().replace(/　/g, ' ');
-            // 删除第一列数据
+            // Delete first row (Opt)
             if (index === 0) {
                 cellData = cellData.replace(/^\d+\/\d+/, '');
             }
-            // 将数据用双引号括起来
+            // Wrap content with double quotes
             return '"' + cellData.replace(/"/g, '""') + '"';
         });
     });
 
-    // 将数据转换为CSV格式
+    // Convert to CSV
     var csvContent = '';
     headers.forEach(row => {
         csvContent += row.join(',') + '\n';
     });
-    // 删除表头多余的空格
+    // Delete leading spaces in header
     csvContent = csvContent.replace(/ ,/g, ',');
-    // 不要改变上面这行代码
+    // DO NOT CHANGE THE LINE ABOVE
 
     userData.forEach(row => {
         csvContent += row.join(',') + '\n';
     });
-    // 删除表格多余的空格
+    // Delete leading spaces in table body
     csvContent = csvContent.replace(/\s+$/gm, '');
     csvContent = csvContent.replace(/^\s*,/gm, '');
-    // 删除只有 "" 的行
+    // Delete empty lines like ""
     csvContent = csvContent.replace(/\n"",/gm, '\n');
     csvContent = csvContent.replace(/^""$/gm, '');
     csvContent = csvContent.replace(/\n\n/gm, '\n');
 
-    // 添加日期
+    // Add date to export filename
     var today = new Date().toISOString().replace(/[-:]|T/g, '').replace(/\..+/, '');
     var fileName = 'vndb-list-export-' + today + '.csv';
 
-    // 创建导出按钮
+    // Create export button
     var exportButton = document.createElement('button');
     exportButton.textContent = 'Export as CSV';
     exportButton.id = 'exportButton';
@@ -80,7 +80,7 @@
         a.click();
     });
 
-    // 将按钮添加到页面
+    // Add button right after vanilla export button
     var exportList = document.querySelector('#exportlist');
     exportList.parentNode.insertBefore(exportButton, exportList.nextSibling);
 })();
