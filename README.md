@@ -32,7 +32,9 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 
 ## Todo
 
-- [ ] Add a clickable button in `indienova-game-hide` instead of violently hiding elements
+`indienova-game-hide`:
+- [ ] Add a clickable button to avoid violently hiding elements
+- [ ] Support demo listing in `/news-of-overseas-indie-games-and-industry` (`p` element instead of `H4`, [example](https://indienova.com/indie-game-news/news-of-overseas-indie-games-and-industry-vol-15/#iah-2))
 
 ## Notice
 
