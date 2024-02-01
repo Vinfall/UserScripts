@@ -3,7 +3,7 @@
 // @namespace   https://github.com/Vinfall/UserScripts
 // @match       https://vndb.org/u*
 // @grant       none
-// @version     2.3.0
+// @version     2.4.0
 // @author      Vinfall
 // @license     WTFPL
 // @description Export VNDB user list to CSV
@@ -30,7 +30,7 @@
             // Delete unwanted string
             var cellData = td.textContent.trim().replace(/ 👁|▾/g, '');
             // Replace full-width space with normal one
-            var cellData = td.textContent.trim().replace(/　/g, ' ');
+            cellData = cellData.replace(/　/g, ' ');
             // Delete first row (Opt)
             if (index === 0) {
                 cellData = cellData.replace(/^\d+\/\d+/, '');
