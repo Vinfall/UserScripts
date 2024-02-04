@@ -1,13 +1,14 @@
 // ==UserScript==
-// @name        VNDB User List Exporter
+// @name        VNDB List Export
 // @namespace   https://github.com/Vinfall/UserScripts
 // @match       https://vndb.org/u*/ulist*
+// @match       https://vndb.org/u*/lengthvotes
 // @grant       none
-// @version     3.0.0
+// @version     4.0.0
 // @author      Vinfall
 // @license     WTFPL
-// @description Export VNDB user list to CSV
-// @description:zh-cn 导出 VNDB 用户列表至 CSV
+// @description Export VNDB user VN & length vote list to CSV
+// @description:zh-cn 导出 VNDB 用户游戏列表或时长列表至 CSV
 // ==/UserScript==
 
 // Input: table selector
@@ -93,7 +94,19 @@ function addButton(csvContent, selector, fileNamePrefix) {
 
 (function () {
     'use strict';
-
-    var csvContent = getTable('.ulist.browse > table');
-    addButton(csvContent, '#exportlist', 'vndb-list-export-');
+    var url = window.location.href;
+    // User list
+    if (url.includes('ulist')) {
+        var csvContent = getTable('.ulist.browse > table');
+        addButton(csvContent, '#exportlist', 'vndb-list-export-');
+    }
+    // Length votes list
+    else if (url.includes('lengthvotes')) {
+        var csvContent = getTable('.lengthlist.browse > table');
+        addButton(csvContent, '.browsetabs', 'vndb-lengthvotes-export-');
+    }
+    // Error handling, actually redundant as long as VNDB does not change those URLs
+    else {
+        console.log(url + 'is not a valid domain or currently unsupported.');
+    }
 })();

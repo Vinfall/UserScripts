@@ -8,15 +8,15 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 | Name | Function |
 | ---- | ---- |
 | [`Sensitive-GameBanana.user.js`](https://github.com/Vinfall/UserScripts/raw/main/Sensitive-GameBanana.user.js) | Skip GameBanana NSFW warning redirect when not logged in |
-| [`vndb-list-export.user.js`](https://github.com/Vinfall/UserScripts/raw/main/vndb-list-export.user.js) | Export VNDB user list to CSV |
+| [`vndb-list-export.user.js`](https://github.com/Vinfall/UserScripts/raw/main/vndb-list-export.user.js) | Export VNDB user VN/length vote list to CSV |
 | [`indienova-game-hide.user.js`](https://github.com/Vinfall/UserScripts/raw/main/indienova-game-hide.user.js) | indienova 每周游戏隐藏包含特定关键字的游戏 |
 | [`a9vg-redirect-skip.user.js`](https://github.com/Vinfall/UserScripts/raw/main/a9vg-redirect-skip.user.js) | A9VG 跳过外链跳转确认 |
 
-### VNDB User List Exporter
+### VNDB List Export
 
-#### How to Use
+#### How to Export User List
 
-1. Log in and open user list, e.g. `https://vndb.org/u114514/ulist`
+1. Log in and open user list, e.g. `https://vndb.org/u114514/ulist` (replace the number)
 2. Select `Multi-select` in the upper right corner & choose labels wisely
 3. Click the number above the table and change it to max (200 as of writing), then click 👁️ icon on the right and choose visible columns
 4. Click `Export as CSV`
@@ -24,12 +24,22 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 6. Combine those CSV manually
 7. (For Excel usage) change file encoding to UTF-8 BOM, or dumb Excel won't recognize CJK characters
 
+#### How to Export Length Votes List
+
+1. Open user lengths vote list, e.g. `https://vndb.org/u114514/lengthvotes` (replace the number)
+2. Click `Export as CSV` in the upper right corner
+3. Change page, and repeat 2
+4. Combine those CSV manually
+5. (For Excel usage) change file encoding to UTF-8 BOM, or dumb Excel won't recognize CJK characters
+
 #### Bugs & Todo
 
 - [x] VN/Developer with comma in their name would trigger a data offset
-- You would return to first page after exporting the CSV, this is unintended and considered a bug
-- No auto page for now (my last attempt ended up with infinite loop...)
-- `Export as CSV` button is placed next to `Export` button VNDB provides, which means you cannot use this script without login, but you can manually edit the query code to achieve that 
+- [x] Support length votes export
+- [ ] Unable to export if the user has only one page of length votes
+- [ ] Would return to first page after exporting the CSV, this is unintended and considered a bug
+- [ ] Auto page (my last attempt ended up with infinite loop...)
+- [ ] `Export as CSV` button is placed next to `Export` button VNDB provides, which means you cannot use this script without login, but you can manually edit the query code to achieve that
 
 ## Todo
 
