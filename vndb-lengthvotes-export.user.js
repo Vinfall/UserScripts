@@ -3,18 +3,18 @@
 // @namespace   https://github.com/Vinfall/UserScripts
 // @match       https://vndb.org/u*/lengthvotes
 // @grant       none
-// @version     1.3.1
+// @version     2.0.0
 // @author      Vinfall
 // @license     WTFPL
 // @description Export VNDB user length votes list to CSV
 // @description:zh-cn 导出 VNDB 用户游戏时长列表至 CSV
 // ==/UserScript==
 
-(function () {
-    'use strict';
-
+// Input: table selector
+// Output: table data in CSV format
+function getTable(selector) {
     // Get table element in user length votes list
-    var userListTable = document.querySelector('.lengthlist.browse > table');
+    var userListTable = document.querySelector(selector);
 
     // Get table header
     var headers = Array.from(userListTable.querySelectorAll('thead tr')).map(row => {
@@ -54,9 +54,14 @@
     csvContent = csvContent.replace(/^""$/gm, '');
     csvContent = csvContent.replace(/\n\n/gm, '\n');
 
+    return csvContent;
+}
+
+function addButton(csvContent, selector, fileNamePrefix) {
     // Add date to export filename
+    // Sample ISO date: 20240204120335
     var today = new Date().toISOString().replace(/[-:]|T/g, '').replace(/\..+/, '');
-    var fileName = 'vndb-lengthvotes-export-' + today + '.csv';
+    var fileName = fileNamePrefix + today + '.csv';
 
     // Create export button
     var exportButton = document.createElement('button');
@@ -75,6 +80,13 @@
     });
 
     // Add button at the very right of browse tab
-    var browseTab = document.querySelector('.browsetabs');
+    var browseTab = document.querySelector(selector);
     browseTab.parentNode.insertBefore(exportButton, browseTab.nextSibling);
+}
+
+(function () {
+    'use strict';
+
+    var csvContent = getTable('.lengthlist.browse > table');
+    addButton(csvContent, '.browsetabs', 'vndb-lengthvotes-export-');
 })();
