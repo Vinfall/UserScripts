@@ -3,18 +3,18 @@
 // @namespace   https://github.com/Vinfall/UserScripts
 // @match       https://vndb.org/u*/ulist*
 // @grant       none
-// @version     2.4.1
+// @version     3.0.0
 // @author      Vinfall
 // @license     WTFPL
 // @description Export VNDB user list to CSV
 // @description:zh-cn 导出 VNDB 用户列表至 CSV
 // ==/UserScript==
 
-(function () {
-    'use strict';
-
-    // Get table element in user list
-    var userListTable = document.querySelector('.ulist.browse > table');
+// Input: table selector
+// Output: table data in CSV format
+function getTable(selector) {
+    // Get table element in user length votes list
+    var userListTable = document.querySelector(selector);
 
     // Get table header
     var headers = Array.from(userListTable.querySelectorAll('thead tr')).map(row => {
@@ -24,15 +24,16 @@
         });
     });
 
-    // Get user list
+    // Get list
     var userData = Array.from(userListTable.querySelectorAll('tbody tr')).map(row => {
         return Array.from(row.querySelectorAll('td')).map((td, index) => {
             // Delete unwanted string
             var cellData = td.textContent.trim().replace(/ 👁|▾/g, '');
             // Replace full-width space with normal one
             cellData = cellData.replace(/　/g, ' ');
-            // Delete first row (Opt)
-            if (index === 0) {
+
+            // Delete first row only if it's ulist table
+            if (selector.includes('.ulist') && index === 0) {
                 cellData = cellData.replace(/^\d+\/\d+/, '');
             }
             // Wrap content with double quotes
@@ -60,9 +61,14 @@
     csvContent = csvContent.replace(/^""$/gm, '');
     csvContent = csvContent.replace(/\n\n/gm, '\n');
 
+    return csvContent;
+}
+
+function addButton(csvContent, selector, fileNamePrefix) {
     // Add date to export filename
+    // Sample ISO date: 20240204120335
     var today = new Date().toISOString().replace(/[-:]|T/g, '').replace(/\..+/, '');
-    var fileName = 'vndb-list-export-' + today + '.csv';
+    var fileName = fileNamePrefix + today + '.csv';
 
     // Create export button
     var exportButton = document.createElement('button');
@@ -80,7 +86,14 @@
         a.click();
     });
 
-    // Add button right after vanilla export button
-    var exportList = document.querySelector('#exportlist');
-    exportList.parentNode.insertBefore(exportButton, exportList.nextSibling);
+    // Add button at the very right of browse tab
+    var browseTab = document.querySelector(selector);
+    browseTab.parentNode.insertBefore(exportButton, browseTab.nextSibling);
+}
+
+(function () {
+    'use strict';
+
+    var csvContent = getTable('.ulist.browse > table');
+    addButton(csvContent, '#exportlist', 'vndb-list-export-');
 })();
