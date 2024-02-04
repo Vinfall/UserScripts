@@ -4,7 +4,7 @@
 // @match       https://vndb.org/u*/ulist*
 // @match       https://vndb.org/u*/lengthvotes
 // @grant       none
-// @version     4.2.0
+// @version     4.2.1
 // @author      Vinfall
 // @license     WTFPL
 // @description Export VNDB user VN & length vote list to CSV
@@ -14,7 +14,7 @@
 // Input: table selector
 // Output: table data in CSV format
 function getTable(selector) {
-    // Get table element in user length votes list
+    // Get table element in user list
     var userListTable = document.querySelector(selector);
 
     // Get table header
@@ -37,6 +37,7 @@ function getTable(selector) {
             if (selector.includes('.ulist') && index === 0) {
                 cellData = cellData.replace(/^\d+\/\d+/, '');
             }
+
             // Wrap content with double quotes
             return '"' + cellData.replace(/"/g, '""') + '"';
         });
@@ -65,7 +66,7 @@ function getTable(selector) {
     return csvContent;
 }
 
-function addButton(csvContent, selector, fileNamePrefix) {
+function addExportButton(csvContent, selector, fileNamePrefix) {
     // Add date to export filename
     // Sample ISO date: 20240204120335
     var today = new Date().toISOString().replace(/[-:]|T/g, '').replace(/\..+/, '');
@@ -87,7 +88,7 @@ function addButton(csvContent, selector, fileNamePrefix) {
         a.click();
     });
 
-    // Add button at the very right of browse tab
+    // Add button after the selector
     var browseTab = document.querySelector(selector);
     browseTab.parentNode.insertBefore(exportButton, browseTab.nextSibling);
 }
@@ -100,14 +101,14 @@ function addButton(csvContent, selector, fileNamePrefix) {
         var csvContent = getTable('.ulist.browse > table');
         // Fallback to labelfilters if vanilla VNDB export button is unavailable (i.e. not login)
         var buttonSelector = document.querySelector('#exportlist') ? '#exportlist' : '.submit';
-        addButton(csvContent, buttonSelector, 'vndb-list-export-');
+        addExportButton(csvContent, buttonSelector, 'vndb-list-export-');
     }
     // Length votes list
     else if (url.includes('lengthvotes')) {
         var csvContent = getTable('.lengthlist.browse > table');
-        // Dirty fallback if the user has so limited length votes...
+        // Dirty fallback button if the user has so limited length votes...
         var buttonSelector = document.querySelector('.browsetabs') ? '.browsetabs' : 'article > h1';
-        addButton(csvContent, buttonSelector, 'vndb-lengthvotes-export-');
+        addExportButton(csvContent, buttonSelector, 'vndb-lengthvotes-export-');
     }
     // Error handling, actually redundant as long as VNDB does not change those URLs
     else {
