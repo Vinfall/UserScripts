@@ -4,7 +4,7 @@
 // @match       https://vndb.org/u*/ulist*
 // @match       https://vndb.org/u*/lengthvotes
 // @grant       none
-// @version     4.1.0
+// @version     4.2.0
 // @author      Vinfall
 // @license     WTFPL
 // @description Export VNDB user VN & length vote list to CSV
@@ -105,7 +105,9 @@ function addButton(csvContent, selector, fileNamePrefix) {
     // Length votes list
     else if (url.includes('lengthvotes')) {
         var csvContent = getTable('.lengthlist.browse > table');
-        addButton(csvContent, '.browsetabs', 'vndb-lengthvotes-export-');
+        // Dirty fallback if the user has so limited length votes...
+        var buttonSelector = document.querySelector('.browsetabs') ? '.browsetabs' : 'article > h1';
+        addButton(csvContent, buttonSelector, 'vndb-lengthvotes-export-');
     }
     // Error handling, actually redundant as long as VNDB does not change those URLs
     else {

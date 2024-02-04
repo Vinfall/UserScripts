@@ -16,7 +16,7 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 
 #### How to Export User List
 
-1. Log in and open user list, e.g. `https://vndb.org/u114514/ulist` (replace the number)
+1. Open user list, e.g. `https://vndb.org/u114514/ulist` (replace the number)
 2. Select `Multi-select` in the upper right corner & choose labels wisely
 3. Click the number above the table and change it to max (200 as of writing), then click 👁️ icon on the right and choose visible columns
 4. Click `Export as CSV`
@@ -27,7 +27,7 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 #### How to Export Length Votes List
 
 1. Open user lengths vote list, e.g. `https://vndb.org/u114514/lengthvotes` (replace the number)
-2. Click `Export as CSV` in the upper right corner
+2. Click `Export as CSV` right under `Length votes` heading (or in the upper right corner, if logged in)
 3. Change page, and repeat 2
 4. Combine those CSV manually
 5. (For Excel usage) change file encoding to UTF-8 BOM, or dumb Excel won't recognize CJK characters
@@ -37,7 +37,7 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 - [x] VN/Developer with comma in their name would trigger a data offset
 - [x] Support length votes export
 - [x] Support list export without login
-- [ ] Unable to export length votes if the user has only one page
+- [x] Unable to export length votes if the user has only one page
 - [ ] Would return to first page after exporting the CSV, this is unintended and considered a bug
 - [ ] Auto page (my last attempt ended up with infinite loop...)
 
@@ -54,4 +54,3 @@ Do NOT clone submodule as it's private and protected with private key.
 ## License
 
 Licensed under CC0 1.0 Universal (Public Domain), unless otherwise noted in the script *per se*.
-
