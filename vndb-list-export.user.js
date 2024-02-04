@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name        VNDB User List Exporter
 // @namespace   https://github.com/Vinfall/UserScripts
-// @match       https://vndb.org/u*
+// @match       https://vndb.org/u*/ulist*
 // @grant       none
-// @version     2.4.0
+// @version     2.4.1
 // @author      Vinfall
 // @license     WTFPL
 // @description Export VNDB user list to CSV
