@@ -36,10 +36,10 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 
 - [x] VN/Developer with comma in their name would trigger a data offset
 - [x] Support length votes export
-- [ ] Unable to export if the user has only one page of length votes
+- [x] Support list export without login
+- [ ] Unable to export length votes if the user has only one page
 - [ ] Would return to first page after exporting the CSV, this is unintended and considered a bug
 - [ ] Auto page (my last attempt ended up with infinite loop...)
-- [ ] `Export as CSV` button is placed next to `Export` button VNDB provides, which means you cannot use this script without login, but you can manually edit the query code to achieve that
 
 ## Todo
 

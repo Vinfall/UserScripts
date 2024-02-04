@@ -4,7 +4,7 @@
 // @match       https://vndb.org/u*/ulist*
 // @match       https://vndb.org/u*/lengthvotes
 // @grant       none
-// @version     4.0.0
+// @version     4.1.0
 // @author      Vinfall
 // @license     WTFPL
 // @description Export VNDB user VN & length vote list to CSV
@@ -98,7 +98,9 @@ function addButton(csvContent, selector, fileNamePrefix) {
     // User list
     if (url.includes('ulist')) {
         var csvContent = getTable('.ulist.browse > table');
-        addButton(csvContent, '#exportlist', 'vndb-list-export-');
+        // Fallback to labelfilters if vanilla VNDB export button is unavailable (i.e. not login)
+        var buttonSelector = document.querySelector('#exportlist') ? '#exportlist' : '.submit';
+        addButton(csvContent, buttonSelector, 'vndb-list-export-');
     }
     // Length votes list
     else if (url.includes('lengthvotes')) {
