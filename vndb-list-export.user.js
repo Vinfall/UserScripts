@@ -4,7 +4,7 @@
 // @match       https://vndb.org/u*/ulist*
 // @match       https://vndb.org/u*/lengthvotes
 // @grant       none
-// @version     4.2.1
+// @version     4.3.0
 // @author      Vinfall
 // @license     WTFPL
 // @description Export VNDB user VN & length vote list to CSV
@@ -78,7 +78,9 @@ function addExportButton(csvContent, selector, fileNamePrefix) {
     exportButton.id = 'exportButton';
     exportButton.style.marginLeft = '2px';
     exportButton.addEventListener('click', function () {
-        var blob = new Blob([csvContent], {
+        // Prefer cachedTable in localStorage over csvContent
+        var exportContent = localStorage.getItem('cachedTable') || csvContent;
+        var blob = new Blob([exportContent], {
             type: 'text/csv'
         });
         var url = URL.createObjectURL(blob);
@@ -91,6 +93,48 @@ function addExportButton(csvContent, selector, fileNamePrefix) {
     // Add button after the selector
     var browseTab = document.querySelector(selector);
     browseTab.parentNode.insertBefore(exportButton, browseTab.nextSibling);
+}
+
+function saveTableToCache(csvContent) {
+    var cachedTable = localStorage.getItem('cachedTable');
+    if (cachedTable) {
+        csvContent = cachedTable + '\n' + csvContent;
+    }
+    localStorage.setItem('cachedTable', csvContent);
+
+    // Saved flag
+    if (!window.pageSaved) {
+        var cachedTable = localStorage.getItem('cachedTable');
+        if (cachedTable) {
+            // Ensure new line
+            csvContent = cachedTable + '\n' + csvContent;
+        }
+        localStorage.setItem('cachedTable', csvContent);
+        // Change flag
+        window.pageSaved = true;
+    }
+}
+
+function addSaveButton(csvContent, selector) {
+    var saveButton = document.createElement('button');
+    saveButton.textContent = 'Save to Cache';
+    saveButton.id = 'cacheButton';
+    saveButton.style.marginLeft = '2px';
+    saveButton.addEventListener('click', function () {
+        // Save to local storage
+        saveTableToCache(csvContent);
+        // Show a notification
+        var saveMessage = document.createElement('span');
+        saveMessage.textContent = 'Saved to cache';
+        // saveMessage.style.marginLeft = '5px';
+        saveButton.parentNode.insertBefore(saveMessage, saveButton.nextSibling);
+        setTimeout(function () {
+            saveMessage.remove();
+        }, 3000);
+    });
+
+    var browseTab = document.querySelector(selector);
+    browseTab.parentNode.insertBefore(saveButton, browseTab.nextSibling);
 }
 
 (function () {
@@ -108,7 +152,9 @@ function addExportButton(csvContent, selector, fileNamePrefix) {
         var csvContent = getTable('.lengthlist.browse > table');
         // Dirty fallback button if the user has so limited length votes...
         var buttonSelector = document.querySelector('.browsetabs') ? '.browsetabs' : 'article > h1';
+        // Order matters
         addExportButton(csvContent, buttonSelector, 'vndb-lengthvotes-export-');
+        addSaveButton(csvContent, buttonSelector);
     }
     // Error handling, actually redundant as long as VNDB does not change those URLs
     else {
