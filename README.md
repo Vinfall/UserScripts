@@ -39,7 +39,7 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 - [x] Support list export without login
 - [x] Unable to export length votes if the user has only one page
 - [ ] Would return to first page after exporting the CSV, this is unintended and considered a bug
-- [ ] Auto page (my last attempt ended up with infinite loop...)
+- [ ] Auto pager (or add an additional `Save page data` button & export at once in the end?)
 
 ## Todo
 
