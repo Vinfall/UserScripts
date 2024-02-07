@@ -5,7 +5,7 @@
 // @match       https://indienova.com/indie-game-news/itch-new-games-*
 // @grant       GM_getValue
 // @grant       GM_setValue
-// @version     3.0.0
+// @version     4.0.0
 // @author      Vinfall
 // @description indienova「本周 Steam 值得关注的游戏」和「itch 一周游戏汇」隐藏包含特定关键字的游戏
 // ==/UserScript==
@@ -13,6 +13,7 @@
 (function () {
     'use strict';
 
+    // 初始化常量
     const defaultKeywords = [
         "多人在线", "恐怖", "僵尸", "黑暗奇幻", "自走棋", "玩家对战", "调酒", "SCP", "种植", "农场模拟",
         "乙女", "全动态影像", "城市营造"
@@ -20,18 +21,15 @@
     ];
     const overrideDefault = true;
 
-    // 获取当前变量
-    var values = GM_getValue('values', {});
-    // 检测是否存在keywords和overrideDefault
-    if (values.keywords === undefined && values.overrideDefault === undefined) {
+    // 检测变量是否存在
+    if (GM_getValue('keywords') === undefined && GM_getValue('ovverideDefault') === undefined) {
         // 不存在则设置默认值
-        values.keywords = defaultKeywords;
-        values.overrideDefault = overrideDefault;
-        GM_setValue('values', values);
+        GM_setValue('keywords', defaultKeywords);
+        GM_setValue('overrideDefault', overrideDefault);
     }
     // 读取变量
-    const customKeywords = values.keywords !== undefined ? values.keywords : defaultKeywords;
-    const override = values.overrideDefault !== undefined ? values.overrideDefault : true;
+    const customKeywords = GM_getValue('keywords') !== undefined ? GM_getValue('keywords') : defaultKeywords;
+    const override = GM_getValue('ovverideDefault') !== undefined ? GM_getValue('ovverideDefault') : true;
 
     // 如果overrideDefault为false并且keywords变量存在，则合并keywords列表和默认列表并去重
     var keywords = override ? customKeywords : Array.from(new Set(defaultKeywords.concat(customKeywords)));
