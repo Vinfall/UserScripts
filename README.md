@@ -24,6 +24,8 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 6. Combine those CSV manually
 7. (For Excel usage) change file encoding to UTF-8 BOM, or dumb Excel won't recognize CJK characters
 
+It's NOT recommended to do *delta update* if you want stats like `Rating` & `Length` as they are dynamic (expected to increase over time).
+
 #### How to Export Length Votes List
 
 1. Open user lengths vote list, e.g. `https://vndb.org/u114514/lengthvotes` (replace the number)
@@ -31,6 +33,8 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 3. Change page, and repeat 2
 4. Combine those CSV manually
 5. (For Excel usage) change file encoding to UTF-8 BOM, or dumb Excel won't recognize CJK characters
+
+It's possible to do *delta update* as length votes are generally static and should not change unless you do that explicitly.
 
 #### Bugs & Todo
 
