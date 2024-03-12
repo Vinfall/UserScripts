@@ -5,7 +5,7 @@
 // @match       https://indienova.com/indie-game-news/itch-new-games-*
 // @grant       GM_getValue
 // @grant       GM_setValue
-// @version     4.0.4
+// @version     5.0.0
 // @author      Vinfall
 // @description indienova「本周 Steam 值得关注的游戏」和「itch 一周游戏汇」隐藏包含特定关键字的游戏
 // ==/UserScript==
@@ -17,7 +17,7 @@
     const defaultKeywords = [
         "多人在线", "恐怖", "僵尸", "黑暗奇幻", "自走棋", "玩家对战", "调酒", "SCP", "种植", "农场模拟",
         "乙女", "全动态影像", "城市营造", "社交聚会", "洛夫克拉夫特式", "打字", "自动化", "团队导向", "摔角"
-        // "在线合作", // Grace for Granblue Fantasy: Relink
+        // "在线合作",
     ];
     const overrideDefault = true;
 
@@ -43,6 +43,12 @@
     // 获取所有h4元素
     var sections = gameList.querySelectorAll('h4');
 
+    // 定义一个函数来切换显示状态
+    function toggleDisplay(element) {
+        var display = element.style.display;
+        element.style.display = display === 'none' ? 'block' : 'none';
+    }
+
     // 遍历游戏列表的各个部分
     for (var i = 0; i < sections.length; i++) {
         var section = sections[i];
@@ -58,10 +64,30 @@
 
         // 如果文本包含特定关键词，则隐藏当前部分及下一个h4之间的内容
         if (shouldHide) {
+            // 创建按钮
+            var button = document.createElement('button');
+            button.innerHTML = '显示/隐藏';
+            button.style.display = 'block';
+
+            // 创建一个数组来存储将要隐藏的内容
+            var contentToHide = [];
+
+            // 隐藏当前部分及下一个h4之间的内容
             while (nextElement && nextElement.tagName !== 'H4') {
+                contentToHide.push(nextElement);
                 nextElement.style.display = 'none';
                 nextElement = nextElement.nextElementSibling;
             }
+
+            // 使用立即执行函数(IIFE)为每个按钮创建一个独立的作用域
+            (function (contentToHide) {
+                button.addEventListener('click', function () {
+                    contentToHide.forEach(toggleDisplay);
+                });
+            })(contentToHide.slice()); // 使用 slice() 来复制数组，确保每个按钮都有自己的数组副本
+
+            // 插入按钮到页面中
+            section.parentNode.insertBefore(button, section.nextSibling);
         }
     }
     // });

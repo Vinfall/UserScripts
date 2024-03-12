@@ -56,7 +56,7 @@ It's possible to do *delta update* as length votes are generally static and shou
 
 #### 代办
 
-- [ ] 为隐藏游戏添加一个临时显示按钮
+- [x] 为隐藏游戏添加一个临时显示按钮
 - [ ] 支持 `/news-of-overseas-indie-games-and-industry` 页面的 demo 列表 (`p` element instead of `H4`, [example](https://indienova.com/indie-game-news/news-of-overseas-indie-games-and-industry-vol-15/#iah-2))
 
 ## Notice
