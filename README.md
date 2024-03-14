@@ -12,7 +12,7 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 | [`reddit-over18.user.js`](https://github.com/Vinfall/UserScripts/raw/main/reddit-over18.user.js) | Skip Reddit over 18 warning |
 | [`indienova-game-hide.user.js`](https://github.com/Vinfall/UserScripts/raw/main/indienova-game-hide.user.js) | indienova 每周游戏隐藏包含特定关键字的游戏 |
 | [`a9vg-redirect-skip.user.js`](https://github.com/Vinfall/UserScripts/raw/main/a9vg-redirect-skip.user.js) | A9VG 跳过外链跳转确认 |
-| [`steam-cloudsave.user.js`](https://github.com/Vinfall/UserScripts/raw/main/steam-cloudsave.user.js) | Steam Cloud Save button for game store page, based on [Steam Cloudsave](https://greasyfork.org/zh-CN/scripts/489218-steam-cloudsave/) |
+| [`steam-game-feature-kai.user.js`](https://github.com/Vinfall/UserScripts/raw/main/steam-game-feature-kai.user.js) | Alternative game feature outlinks on Steam store webpage, inspired by and originated from [Steam Cloudsave](https://greasyfork.org/zh-CN/scripts/489218-steam-cloudsave/) |
 
 ### VNDB List Export
 
