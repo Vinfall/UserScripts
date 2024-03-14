@@ -19,15 +19,26 @@
         var appId = match[1];
         console.log(appId);
 
+        var conditions = [{
+                srcIncludes: 'ico_cloud',
+                text: 'Cloudsave',
+                href: 'https://store.steampowered.com/account/remotestorageapp?appid=' + appId + '&index=0'
+            },
+            {
+                srcIncludes: 'ico_cards',
+                text: 'Steam Card Exchange',
+                href: 'https://www.steamcardexchange.net/index.php?gamepage-appid-' + appId + '/'
+            }
+        ];
+
         var elements = document.querySelectorAll('a.game_area_details_specs_ctn');
         elements.forEach(function (element) {
-            if (element.querySelector('.icon img.category_icon').src.includes('ico_cloud')) {
-                element.href = 'https://store.steampowered.com/account/remotestorageapp?appid=' + appId + '&index=0';
-                element.querySelector('.label').innerText = "Cloudsave";
-            } else if (element.querySelector('.icon img.category_icon').src.includes('ico_cards')) {
-                element.href = 'https://www.steamcardexchange.net/index.php?gamepage-appid-' + appId + '/';
-                element.querySelector('.label').innerText = "Steam Card Exchange";
-            }
+            conditions.forEach(function (condition) {
+                if (element.querySelector('.icon img.category_icon').src.includes(condition.srcIncludes)) {
+                    element.href = condition.href;
+                    element.querySelector('.label').innerText = condition.text;
+                }
+            });
         });
     }
 })();
