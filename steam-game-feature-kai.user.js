@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Steam Game Feature Kai
 // @namespace    https://github.com/Vinfall/UserScripts
-// @version      2.4.1
+// @version      2.6.0
 // @author       WK, Vinfall
 // @match        https://store.steampowered.com/app/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=steamcommunity.com
@@ -23,6 +23,11 @@
         var conditions = [
             // Outlink replacement
             {
+                srcIncludes: 'ico_achievements',
+                text: 'AStats',
+                href: 'https://astats.astats.nl/astats/Steam_Game_Info.php?AppID=' + appId
+            },
+            {
                 srcIncludes: 'ico_cloud',
                 text: 'Cloudsave',
                 href: 'https://store.steampowered.com/account/remotestorageapp?appid=' + appId + '&index=0'
@@ -31,6 +36,11 @@
                 srcIncludes: 'ico_cards',
                 text: 'Steam Card Exchange',
                 href: 'https://www.steamcardexchange.net/index.php?gamepage-appid-' + appId + '/'
+            },
+            {
+                srcIncludes: 'ico_workshop',
+                text: 'Workshop',
+                href: 'https://steamcommunity.com/workshop/browse/?appid=' + appId + '&browsesort=toprated&section=readytouseitems'
             },
             // Warning on unexpected feature
             {
