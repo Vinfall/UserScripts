@@ -59,6 +59,14 @@ It's possible to do *delta update* as length votes are generally static and shou
 - [x] 为隐藏游戏添加一个临时显示按钮
 - [ ] 支持 `/news-of-overseas-indie-games-and-industry` 页面的 demo 列表 (`p` element instead of `H4`, [example](https://indienova.com/indie-game-news/news-of-overseas-indie-games-and-industry-vol-15/#iah-2))
 
+### Steam Game Feature Kai
+
+The game features card on Steam store page comes with outlinks to the respective game feature (obviously), which is a bit useless as SteamDB has MUCH better functionality on this.
+
+This script would replace the default list of features with a few goodies that are really useful.
+
+It also serves as a minimal replacement for Augmented Steam for me since it does not require an extra extension and can be used in mobile browsers with userscript support like [cromite](https://github.com/uazo/cromite).
+
 ## Notice
 
 Do NOT clone submodule as it's private and protected with private key.
