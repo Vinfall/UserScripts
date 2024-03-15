@@ -1,22 +1,19 @@
 // ==UserScript==
 // @name         Steam Game Feature Kai
 // @namespace    https://github.com/Vinfall/UserScripts
-// @version      2.6.0
-// @author       WK, Vinfall
+// @version      3.0.0
+// @author       Vinfall
 // @match        https://store.steampowered.com/app/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=steamcommunity.com
 // @grant        none
-// @license      MIT
+// @license      CC0 1.0 Universal (Public Domain)
 // @description  Alternative game feature outlinks on Steam store webpage
 // @description:zh-cn Steam 商店页面游戏特性外链替换
 // ==/UserScript==
 
 (function () {
-    var url = location.href;
-    var match = url.match(/app\/(\d+)\//);
-
-    if (match) {
-        var appId = match[1];
+    const appId = /app\/(\d+)\//.exec(location.href)?.pop();
+    if (appId) {
         console.log(appId);
 
         const warningColor = 'red';
@@ -71,5 +68,7 @@
                 }
             });
         });
+    } else {
+        console.error('Unsupported URL');
     }
 })();

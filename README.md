@@ -12,7 +12,7 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 | [`reddit-over18.user.js`](https://github.com/Vinfall/UserScripts/raw/main/reddit-over18.user.js) | Skip Reddit over 18 warning |
 | [`indienova-game-hide.user.js`](https://github.com/Vinfall/UserScripts/raw/main/indienova-game-hide.user.js) | indienova 每周游戏隐藏包含特定关键字的游戏 |
 | [`a9vg-redirect-skip.user.js`](https://github.com/Vinfall/UserScripts/raw/main/a9vg-redirect-skip.user.js) | A9VG 跳过外链跳转确认 |
-| [`steam-game-feature-kai.user.js`](https://github.com/Vinfall/UserScripts/raw/main/steam-game-feature-kai.user.js) | Alternative game feature outlinks on Steam store webpage, inspired by and originated from [Steam Cloudsave](https://greasyfork.org/zh-CN/scripts/489218-steam-cloudsave/) |
+| [`steam-game-feature-kai.user.js`](https://github.com/Vinfall/UserScripts/raw/main/steam-game-feature-kai.user.js) | Alternative game feature outlinks on Steam store webpage |
 
 ### VNDB List Export
 
@@ -66,6 +66,8 @@ The game features card on Steam store page comes with outlinks to the respective
 This script would replace the default list of features with a few goodies that are really useful.
 
 It also serves as a minimal replacement for Augmented Steam for me since it does not require an extra extension and can be used in mobile browsers with userscript support like [cromite](https://github.com/uazo/cromite).
+
+While inspired by and originated from [Steam Cloudsave](https://greasyfork.org/zh-CN/scripts/489218-steam-cloudsave/), the script is considered to be a full rewrite so it should be safe to change the license from MIT to CC0 (Public Domain).
 
 ## Notice
 
