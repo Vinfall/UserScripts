@@ -1,10 +1,9 @@
 // ==UserScript==
 // @name         Steam Game Feature Kai
 // @namespace    https://github.com/Vinfall/UserScripts
-// @version      3.0.0
+// @version      3.0.1
 // @author       Vinfall
 // @match        https://store.steampowered.com/app/*
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=steamcommunity.com
 // @grant        none
 // @license      CC0 1.0 Universal (Public Domain)
 // @description  Alternative game feature outlinks on Steam store webpage
