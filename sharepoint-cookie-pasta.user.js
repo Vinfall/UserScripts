@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Sharepoint Cookie Pasta
 // @namespace    https://github.com/Vinfall/UserScripts
-// @version      2.6.0
+// @version      2.6.2
 // @author       Vinfall
 // @match        https://*.sharepoint.com/*
 // @license      Mozilla Public License
@@ -15,6 +15,7 @@
 
     // Function to add the Copy Cookie button
     function addCopyCookieButton(cookieValue) {
+        // Download button
         var targetElement = document.querySelector('.primarySet-102.ms-CommandBar-primaryCommand.ms-OverflowSet > .item-103.ms-OverflowSet-item');
         if (targetElement) {
             // Create the button element
@@ -29,7 +30,7 @@
                     button.textContent = '🍪 Copy Cookie';
                 }, 2000);
             });
-            targetElement.parentNode.insertBefore(button, targetElement);
+            targetElement.parentNode.insertBefore(button, targetElement.nextSibling);
         }
     }
 
