@@ -13,6 +13,7 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 | [`indienova-game-hide.user.js`](https://github.com/Vinfall/UserScripts/raw/main/indienova-game-hide.user.js) | indienova 每周游戏隐藏包含特定关键字的游戏 |
 | [`a9vg-redirect-skip.user.js`](https://github.com/Vinfall/UserScripts/raw/main/a9vg-redirect-skip.user.js) | A9VG 跳过外链跳转确认 |
 | [`steam-game-feature-kai.user.js`](https://github.com/Vinfall/UserScripts/raw/main/steam-game-feature-kai.user.js) | Alternative game feature outlinks on Steam store webpage |
+| [`sharepoint-cookie-pasta.user.js`](https://github.com/Vinfall/UserScripts/raw/main/sharepoint-cookie-pasta.user.js) | Copy OneDrive Sharepoint cookie for aria2 usage |
 
 ### VNDB List Export
 
@@ -68,6 +69,12 @@ This script would replace the default list of features with a few goodies that a
 It also serves as a minimal replacement for Augmented Steam for me since it does not require an extra extension and can be used in mobile browsers with userscript support like [cromite](https://github.com/uazo/cromite).
 
 While inspired by and originated from [Steam Cloudsave](https://greasyfork.org/zh-CN/scripts/489218-steam-cloudsave/), the script is considered to be a full rewrite so it should be safe to change the license from MIT to CC0 (Public Domain).
+
+### Sharepoint Cookie Pasta
+
+OneDrive Sharepoint can be hard to deal with at times and multiple tools that can get direct link & cookies from Sharepoint do not work nowadays, this is created to ease the pain *a little* by having a `Copy cookie` button so that I don't have to open DevTools over and over again.
+
+In case the button does not show up, the cookie is also printed to console log. You can easily filter out the message by searching `user.js`.
 
 ## Notice
 
