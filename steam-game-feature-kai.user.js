@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Steam Game Feature Kai
 // @namespace    https://github.com/Vinfall/UserScripts
-// @version      3.0.1
+// @version      3.0.2
 // @author       Vinfall
 // @match        https://store.steampowered.com/app/*
 // @grant        none
@@ -40,8 +40,8 @@
             },
             // Warning on unexpected feature
             {
-                // 'ico_cart' is IAP
-                srcIncludes: ['ico_coop', 'ico_multiPlayer', 'ico_cart', 'ico_vac'],
+                // 'ico_cart' == IAP, 'ico_info` == profile features limited
+                srcIncludes: ['ico_coop', 'ico_multiPlayer', 'ico_cart', 'ico_vac', 'ico_info', 'ico_learning_about_game'],
                 color: warningColor
             }
         ];
