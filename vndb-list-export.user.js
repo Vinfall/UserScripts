@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name        VNDB List Export
 // @namespace   https://github.com/Vinfall/UserScripts
+// @match       https://vndb.org/u*
 // @match       https://vndb.org/u*/ulist*
 // @match       https://vndb.org/u*/lengthvotes
 // @grant       none
-// @version     4.3.0
+// @version     4.4.2
 // @author      Vinfall
 // @license     WTFPL
 // @description Export VNDB user VN & length vote list to CSV
@@ -94,8 +95,25 @@ function addExportButton(table, selector, fileNamePrefix) {
     browseTab.parentNode.insertBefore(exportButton, browseTab.nextSibling);
 }
 
+function addLengthVotes() {
+    // CSS selector does not work so use almighty XPath
+    var xpath = "//header//nav//menu//li[contains(., 'list')]";
+    var listLi = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+
+    // Modify based on cloned list element
+    var lengthVotesLi = listLi.cloneNode(true);
+    var lengthVotesA = lengthVotesLi.querySelector('a');
+    lengthVotesA.textContent = 'lengthvotes';
+    // Remove focus
+    lengthVotesLi.classList.remove("tabselected");
+    lengthVotesA.href = lengthVotesA.href.replace(/ulist.*$/g, 'lengthvotes');
+    listLi.parentNode.insertBefore(lengthVotesLi, listLi.nextSibling);
+}
+
 (function () {
     'use strict';
+    // Add lengthvotes button
+    addLengthVotes();
     var url = window.location.href;
     // User list
     if (url.includes('ulist')) {
