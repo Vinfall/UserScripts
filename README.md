@@ -25,9 +25,9 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 4. Click `Export as CSV`
 5. Change page, and repeat 4
 6. Combine those CSV manually
-7. (For Excel usage) change file encoding to UTF-8 BOM, or dumb Excel won't recognize CJK characters
+7. (For Excel usage) change file encoding to `UTF-8 BOM`, or dumb Excel won't recognize CJK characters
 
-It's NOT recommended to do *delta update* if you want stats like `Rating` & `Length` as they are dynamic (expected to increase over time).
+It's NOT recommended to do *delta update* if you want stats like `Rating` & `Length` as they are dynamic (expected to change over time).
 
 #### How to Export Length Votes List
 
@@ -35,16 +35,17 @@ It's NOT recommended to do *delta update* if you want stats like `Rating` & `Len
 2. Click `Export as CSV` right under `Length votes` heading (or in the upper right corner, if logged in)
 3. Change page, and repeat 2
 4. Combine those CSV manually
-5. (For Excel usage) change file encoding to UTF-8 BOM, or dumb Excel won't recognize CJK characters
+5. (For Excel usage) change file encoding to `UTF-8 BOM`, or dumb Excel won't recognize CJK characters
 
 It's possible to do *delta update* as length votes are generally static and should not change unless you do that explicitly.
 
 #### Bugs & Todo
 
-- [x] VN/Developer with comma in their name would trigger a data offset
+- [x] Adjust data offset for VN/Developer name with comma
 - [x] Support length votes export
 - [x] Support list export without login
-- [x] Unable to export length votes if the user has only one page
+- [x] Solve length votes export breakage if the user has only one page
+- [x] Add length votes button
 - [ ] Would return to first page after exporting the CSV, this is unintended and considered a bug
 - [ ] Auto pager (or add an additional `Save page data` button & export at once in the end?)
 
