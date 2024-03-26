@@ -14,6 +14,8 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 | [`a9vg-redirect-skip.user.js`](https://github.com/Vinfall/UserScripts/raw/main/a9vg-redirect-skip.user.js) | A9VG 跳过外链跳转确认 |
 | [`steam-game-feature-kai.user.js`](https://github.com/Vinfall/UserScripts/raw/main/steam-game-feature-kai.user.js) | Alternative game feature outlinks on Steam store webpage |
 | [`sharepoint-cookie-pasta.user.js`](https://github.com/Vinfall/UserScripts/raw/main/sharepoint-cookie-pasta.user.js) | Copy OneDrive Sharepoint cookie for aria2 usage |
+| [`censored-dlsite.user.js`](https://github.com/Vinfall/UserScripts/raw/main/censored-dlsite.user.js) | Censored DLsite genre list |
+| [`uncensored-dlsite.user.js`](https://github.com/Vinfall/UserScripts/raw/main/uncensored-dlsite.user.js) | Uncensored DLsite genre list |
 
 ### VNDB List Export
 
@@ -78,6 +80,14 @@ While inspired by and originated from [Steam Cloudsave](https://greasyfork.org/z
 OneDrive Sharepoint can be hard to deal with at times and multiple tools that can get direct link & cookies from Sharepoint do not work nowadays, this is created to ease the pain *a little* by having a `Copy cookie` button so that I don't have to open DevTools over and over again.
 
 In case the button does not show up, the cookie is also printed to console log. You can easily filter out the message by searching `user.js`.
+
+#### Todo
+
+- [ ] Catch document type response gracefully & only output if the cookie begins with `FedAuth`
+
+### Censored/Uncensored DLsite
+
+A silly script for fun regarding DLsite forced to censor its genre list according to [a questionable X post](https://twitter.com/mttb2ccp_pt2/status/1772466120290693434). You can censor it yourself if you want, and vice versa XD.
 
 ## Notice
 
