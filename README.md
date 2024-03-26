@@ -27,7 +27,8 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 6. Combine those CSV manually
 7. (For Excel usage) change file encoding to `UTF-8 BOM`, or dumb Excel won't recognize CJK characters
 
-It's NOT recommended to do *delta update* if you want stats like `Rating` & `Length` as they are dynamic (expected to change over time).
+> [!NOTE]
+> It's NOT recommended to do *delta update* if you want stats like `Rating` & `Length` as they are dynamic (expected to change over time).
 
 #### How to Export Length Votes List
 
@@ -37,7 +38,8 @@ It's NOT recommended to do *delta update* if you want stats like `Rating` & `Len
 4. Combine those CSV manually
 5. (For Excel usage) change file encoding to `UTF-8 BOM`, or dumb Excel won't recognize CJK characters
 
-It's possible to do *delta update* as length votes are generally static and should not change unless you do that explicitly.
+> [!TIP]
+> It's possible to do *delta update* as length votes are generally static and should not change unless you do that explicitly.
 
 #### Bugs & Todo
 
@@ -81,6 +83,6 @@ In case the button does not show up, the cookie is also printed to console log. 
 
 Do NOT clone submodule as it's private and protected with private key.
 
-## License
+## [License](./LICENSE)
 
 Licensed under CC0 1.0 Universal (Public Domain), unless otherwise noted in the script *per se*.
