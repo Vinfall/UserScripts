@@ -92,7 +92,10 @@ A silly script for fun regarding DLsite forced to censor its genre list accordin
 
 ### GitHub Release Highlight
 
-This is the sanitized public version and would NOT be updated regularly. Given that it's released in public domain, feel free to do whatever you want :)
+> [!WARNING]
+> This is the sanitized public version and would NOT be updated regularly.
+
+Given that it's released in public domain, feel free to do whatever you want :)
 
 ## Notice
 
