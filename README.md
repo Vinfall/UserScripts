@@ -16,6 +16,7 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 | [`sharepoint-cookie-pasta.user.js`](https://github.com/Vinfall/UserScripts/raw/main/sharepoint-cookie-pasta.user.js) | Copy OneDrive Sharepoint cookie for aria2 usage |
 | [`censored-dlsite.user.js`](https://github.com/Vinfall/UserScripts/raw/main/censored-dlsite.user.js) | Censored DLsite genre list |
 | [`uncensored-dlsite.user.js`](https://github.com/Vinfall/UserScripts/raw/main/uncensored-dlsite.user.js) | Uncensored DLsite genre list |
+| [`github-release-highlight.user.js`](https://github.com/Vinfall/UserScripts/raw/main/github-release-highlight.user.js) | Highlight GitHub release assets containing keywords |
 
 ### VNDB List Export
 
@@ -88,6 +89,10 @@ In case the button does not show up, the cookie is also printed to console log. 
 ### Censored/Uncensored DLsite
 
 A silly script for fun regarding DLsite forced to censor its genre list according to [a questionable X post](https://twitter.com/mttb2ccp_pt2/status/1772466120290693434). You can censor it yourself if you want, and vice versa XD.
+
+### GitHub Release Highlight
+
+This is the sanitized public version and would NOT be updated regularly. Given that it's released in public domain, feel free to do whatever you want :)
 
 ## Notice
 
