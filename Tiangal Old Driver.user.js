@@ -4,9 +4,9 @@
 // @match       https://www.tiangal.com/*
 // @exclude     https://www.tiangal.com/sign.html*
 // @grant       none
-// @version     1.3.0
+// @version     1.4.7
 // @author      Vinfall
-// @description Enable adult mode for Tiangal
+// @description Show NSFW works on Tiangal
 // @description:zh-cn 天遊二次元默认开启老司机模式
 // ==/UserScript==
 (function () {
@@ -24,10 +24,19 @@
         hiddenElement.style.display = 'block';
     }
 
-    const elements = ['.steamcontent, #commentform, .slick, .git_reader.widget, .nsl-container-login-layout-below.nsl-container-block.nsl-container'];
+    const elementsToHide = [
+        // Landing page
+        '.slick', '.git_reader.widget',
+        // Game details
+        '.steamcontent', '#commentform',
+        // Login page
+        '.nsl-container-buttons', '.nsl-container-login-layout-below.nsl-container-block.nsl-container'
+    ];
 
-    var elementsToHide = document.querySelectorAll(elements);
-    elementsToHide.forEach(function (element) {
-        element.style.display = 'none';
+    elementsToHide.forEach(element => {
+        const elementToHide = document.querySelector(element);
+        if (elementToHide) {
+            elementToHide.style.display = 'none';
+        }
     });
 })();
