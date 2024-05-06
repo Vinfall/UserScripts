@@ -17,6 +17,7 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 | [`censored-dlsite.user.js`](https://github.com/Vinfall/UserScripts/raw/main/censored-dlsite.user.js) | Censored DLsite genre list |
 | [`uncensored-dlsite.user.js`](https://github.com/Vinfall/UserScripts/raw/main/uncensored-dlsite.user.js) | Uncensored DLsite genre list |
 | [`github-release-highlight.user.js`](https://github.com/Vinfall/UserScripts/raw/main/github-release-highlight.user.js) | Highlight GitHub release assets containing keywords |
+| [`jd2bean.user.js`](https://github.com/Vinfall/UserScripts/raw/main/jd2bean.user.js) | 根据京东订单生成 Beancount 账单 |
 
 ### VNDB List Export
 
@@ -96,6 +97,13 @@ A silly script for fun regarding DLsite forced to censor its genre list accordin
 > This is the sanitized public version and would NOT be updated regularly.
 
 Given that it's released in public domain, feel free to do whatever you want :)
+
+### JD to Beancount
+
+> [!WARNING]
+> 这是归档的公开版本，**不会**得到更新。
+
+使用前请查看脚本的 Disclaimer 并修改对应 Beancount 账户。
 
 ## Notice
 
