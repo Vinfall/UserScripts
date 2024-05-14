@@ -108,6 +108,7 @@ Given that it's released in public domain, feel free to do whatever you want :)
 ## Notice
 
 Do NOT clone submodule as it's private and protected with private key.
+~~You don't even have a chance now that it's a git alias and hosted locally though.~~
 
 ## [License](./LICENSE)
 
