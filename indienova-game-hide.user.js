@@ -3,9 +3,10 @@
 // @namespace   https://github.com/Vinfall/UserScripts
 // @match       https://indienova.com/indie-game-news/guide*
 // @match       https://indienova.com/indie-game-news/itch-new-games-*
+// @match       https://indienova.com/indie-game-news/wholesome-direct-*
 // @grant       GM_getValue
 // @grant       GM_setValue
-// @version     5.0.8
+// @version     5.0.9
 // @author      Vinfall
 // @description indienova「本周 Steam 值得关注的游戏」和「itch 一周游戏汇」隐藏包含特定关键字的游戏
 // ==/UserScript==
