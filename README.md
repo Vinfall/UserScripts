@@ -1,3 +1,5 @@
+# UserScripts
+
 ## Intro
 
 A few userscripts you can install to manager extensions like [Violentmonkey](https://violentmonkey.github.io).
@@ -9,11 +11,10 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 | ---- | ---- |
 | [`Sensitive-GameBanana.user.js`](https://github.com/Vinfall/UserScripts/raw/main/Sensitive-GameBanana.user.js) | Skip GameBanana NSFW warning redirect when not logged in |
 | [`vndb-list-export.user.js`](https://github.com/Vinfall/UserScripts/raw/main/vndb-list-export.user.js) | Export VNDB user VN/length vote list to CSV |
-| [`reddit-over18.user.js`](https://github.com/Vinfall/UserScripts/raw/main/reddit-over18.user.js) | Skip Reddit over 18 warning |
 | [`indienova-game-hide.user.js`](https://github.com/Vinfall/UserScripts/raw/main/indienova-game-hide.user.js) | indienova 每周游戏隐藏包含特定关键字的游戏 |
 | [`a9vg-redirect-skip.user.js`](https://github.com/Vinfall/UserScripts/raw/main/a9vg-redirect-skip.user.js) | A9VG 跳过外链跳转确认 |
 | [`steam-game-feature-kai.user.js`](https://github.com/Vinfall/UserScripts/raw/main/steam-game-feature-kai.user.js) | Alternative game feature outlinks on Steam store webpage |
-| [`sharepoint-cookie-pasta.user.js`](https://github.com/Vinfall/UserScripts/raw/main/sharepoint-cookie-pasta.user.js) | Copy OneDrive Sharepoint cookie for aria2 usage |
+| [`sharepoint-cookie-pasta.user.js`](https://github.com/Vinfall/UserScripts/raw/main/sharepoint-cookie-pasta.user.js) | Copy OneDrive SharePoint cookie for aria2 usage |
 | [`censored-dlsite.user.js`](https://github.com/Vinfall/UserScripts/raw/main/censored-dlsite.user.js) | Censored DLsite genre list |
 | [`uncensored-dlsite.user.js`](https://github.com/Vinfall/UserScripts/raw/main/uncensored-dlsite.user.js) | Uncensored DLsite genre list |
 | [`github-release-highlight.user.js`](https://github.com/Vinfall/UserScripts/raw/main/github-release-highlight.user.js) | Highlight GitHub release assets containing keywords |
@@ -27,7 +28,7 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 2. Select `Multi-select` in the upper right corner & choose labels wisely
 3. Click the number above the table and change it to max (200 as of writing), then click 👁️ icon on the right and choose visible columns
 4. Click `Export as CSV`
-5. Change page, and repeat 4
+5. Change page, and repeat step 4
 6. Combine those CSV manually
 7. (For Excel usage) change file encoding to `UTF-8 BOM`, or dumb Excel won't recognize CJK characters
 
