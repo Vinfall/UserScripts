@@ -29,7 +29,7 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 3. Click the number above the table and change it to max (200 as of writing), then click 👁️ icon on the right and choose visible columns
 4. Click `Export as CSV`
 5. Change page, and repeat step 4
-6. Combine those CSV manually
+6. Combine those CSV manually, or use [vndb-merge.py](https://gist.vinfall.com/Vinfall/716e312743f74d958d51ee29783fcdc9)
 7. (For Excel usage) change file encoding to `UTF-8 BOM`, or dumb Excel won't recognize CJK characters
 
 > [!NOTE]
@@ -40,7 +40,7 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 1. Open user lengths vote list, e.g. `https://vndb.org/u114514/lengthvotes` (replace the number)
 2. Click `Export as CSV` right under `Length votes` heading (or in the upper right corner, if logged in)
 3. Change page, and repeat 2
-4. Combine those CSV manually
+4. Combine those CSV manually, or use [vndb-merge.py](https://gist.vinfall.com/Vinfall/716e312743f74d958d51ee29783fcdc9)
 5. (For Excel usage) change file encoding to `UTF-8 BOM`, or dumb Excel won't recognize CJK characters
 
 > [!TIP]
@@ -53,6 +53,7 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 - [x] Support list export without login
 - [x] Solve length votes export breakage if the user has only one page
 - [x] Add length votes button
+- [x] Add merge script
 - [ ] Would return to first page after exporting the CSV, this is unintended and considered a bug
 - [ ] Auto pager (or add an additional `Save page data` button & export at once in the end?)
 
