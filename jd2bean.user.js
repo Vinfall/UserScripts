@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         JD to Beancount
-// @namespace    https://github.com/Vinfall/UserScript
+// @namespace    https://github.com/Vinfall/UserScripts
 // @author       zsx, Ein Verne, Vinfall
 // @version      1.1.2
 // @match        https://order.jd.com/*
