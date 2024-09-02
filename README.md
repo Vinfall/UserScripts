@@ -9,16 +9,15 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 
 | Name | Function |
 | ---- | ---- |
-| [`Sensitive-GameBanana.user.js`](https://github.com/Vinfall/UserScripts/raw/main/Sensitive-GameBanana.user.js) | Skip GameBanana NSFW warning redirect when not logged in |
 | [`vndb-list-export.user.js`](https://github.com/Vinfall/UserScripts/raw/main/vndb-list-export.user.js) | Export VNDB user VN/length vote list to CSV |
 | [`indienova-game-hide.user.js`](https://github.com/Vinfall/UserScripts/raw/main/indienova-game-hide.user.js) | indienova 每周游戏隐藏包含特定关键字的游戏 |
 | [`a9vg-redirect-skip.user.js`](https://github.com/Vinfall/UserScripts/raw/main/a9vg-redirect-skip.user.js) | A9VG 跳过外链跳转确认 |
 | [`steam-game-feature-kai.user.js`](https://github.com/Vinfall/UserScripts/raw/main/steam-game-feature-kai.user.js) | Alternative game feature outlinks on Steam store webpage |
-| [`sharepoint-cookie-pasta.user.js`](https://github.com/Vinfall/UserScripts/raw/main/sharepoint-cookie-pasta.user.js) | Copy OneDrive SharePoint cookie for aria2 usage |
 | [`censored-dlsite.user.js`](https://github.com/Vinfall/UserScripts/raw/main/censored-dlsite.user.js) | Censored DLsite genre list |
 | [`uncensored-dlsite.user.js`](https://github.com/Vinfall/UserScripts/raw/main/uncensored-dlsite.user.js) | Uncensored DLsite genre list |
 | [`github-release-highlight.user.js`](https://github.com/Vinfall/UserScripts/raw/main/github-release-highlight.user.js) | Highlight GitHub release assets containing keywords |
 | [`jd2bean.user.js`](https://github.com/Vinfall/UserScripts/raw/main/jd2bean.user.js) | 根据京东订单生成 Beancount 账单 |
+| [`skip-redirect-inplace.user.js`](https://github.com/Vinfall/UserScripts/raw/main/skip-redirect-inplace.user.js) | Skip stupid URL redirect before you ever click on it |
 
 ### VNDB List Export
 
@@ -79,16 +78,6 @@ It also serves as a minimal replacement for Augmented Steam for me since it does
 
 While inspired by and originated from [Steam Cloudsave](https://greasyfork.org/zh-CN/scripts/489218-steam-cloudsave/), the script is considered to be a full rewrite so it should be safe to change the license from MIT to CC0 (Public Domain).
 
-### Sharepoint Cookie Pasta
-
-OneDrive Sharepoint can be hard to deal with at times and multiple tools that can get direct link & cookies from Sharepoint do not work nowadays, this is created to ease the pain *a little* by having a `Copy cookie` button so that I don't have to open DevTools over and over again.
-
-In case the button does not show up, the cookie is also printed to console log. You can easily filter out the message by searching `user.js`.
-
-#### Todo
-
-- [ ] Catch document type response gracefully & only output if the cookie begins with `FedAuth`
-
 ### Censored/Uncensored DLsite
 
 A silly script for fun regarding DLsite forced to censor its genre list according to [a questionable X post](https://twitter.com/mttb2ccp_pt2/status/1772466120290693434). You can censor it yourself if you want, and vice versa XD.
@@ -106,6 +95,21 @@ Given that it's released in public domain, feel free to do whatever you want :)
 > 这是归档的公开版本，**不会**得到更新。
 
 使用前请查看脚本的 Disclaimer 并修改对应 Beancount 账户。
+
+### Skip Redirect Inplace
+
+> [!NOTE]
+> This is not recommended for usage as it slows down every matched website even if you don't click on any outgoing links.
+
+Just a complimant to other existing UserScripts (which would skip link redirect on demand) you can get anywhere.
+
+### No-Intro
+
+Sharepoint Cookie Pasta:
+- OneDrive Sharepoint can be hard to deal with at times and multiple tools that can get direct link & cookies from Sharepoint do not work nowadays, this is created to ease the pain *a little* by having a `Copy cookie` button so that I don't have to open DevTools over and over again.
+- In case the button does not show up, the cookie is also printed to console log. You can easily filter out the message by searching `user.js`.
+- Todo
+  - [ ] Catch document type response gracefully & only output if the cookie begins with `FedAuth`
 
 ## Notice
 
