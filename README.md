@@ -74,7 +74,7 @@ The game features card on Steam store page comes with outlinks to the respective
 
 This script would replace the default list of features with a few goodies that are really useful.
 
-It also serves as a minimal replacement for Augmented Steam for me since it does not require an extra extension and can be used in mobile browsers with userscript support like [cromite](https://github.com/uazo/cromite).
+It also serves as a minimal replacement for Augmented Steam for me since it does not require an extra extension and can be used in mobile browsers with UserScript support like [cromite](https://github.com/uazo/cromite).
 
 While inspired by and originated from [Steam Cloudsave](https://greasyfork.org/zh-CN/scripts/489218-steam-cloudsave/), the script is considered to be a full rewrite so it should be safe to change the license from MIT to CC0 (Public Domain).
 
@@ -101,12 +101,18 @@ Given that it's released in public domain, feel free to do whatever you want :)
 > [!NOTE]
 > This is not recommended for usage as it slows down every matched website even if you don't click on any outgoing links.
 
-Just a complimant to other existing UserScripts (which would skip link redirect on demand) you can get anywhere.
+Just a compliment to other existing UserScripts (which would skip link redirect on demand) you can get anywhere.
+
+#### TODO
+
+- [ ] Simplify rules, `selector` & `regex` are mostly identical
+- [ ] Figure out if `observer` is always needed (or why `// @run-at       document-end` does not work much as intended)
+- [ ] Exit once `replaceLinks()` match a rule (probably unwanted)
 
 ### No-Intro
 
-Sharepoint Cookie Pasta:
-- OneDrive Sharepoint can be hard to deal with at times and multiple tools that can get direct link & cookies from Sharepoint do not work nowadays, this is created to ease the pain *a little* by having a `Copy cookie` button so that I don't have to open DevTools over and over again.
+SharePoint Cookie Pasta:
+- OneDrive SharePoint can be hard to deal with at times and multiple tools that can get direct link & cookies from SharePoint do not work nowadays, this is created to ease the pain *a little* by having a `Copy cookie` button so that I don't have to open DevTools over and over again.
 - In case the button does not show up, the cookie is also printed to console log. You can easily filter out the message by searching `user.js`.
 - Todo
   - [ ] Catch document type response gracefully & only output if the cookie begins with `FedAuth`
