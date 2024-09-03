@@ -107,7 +107,6 @@ Just a compliment to other existing UserScripts (which would skip link redirect 
 
 - [ ] Simplify rules, `selector` & `regex` are mostly identical
 - [ ] Figure out if `observer` is always needed (or why `// @run-at       document-end` does not work much as intended)
-- [ ] Exit once `replaceLinks()` match a rule (probably unwanted)
 
 ### No-Intro
 
