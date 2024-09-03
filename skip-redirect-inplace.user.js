@@ -1,11 +1,12 @@
 // ==UserScript==
 // @name         Skip Redirect Inplace
 // @namespace    https://github.com/Vinfall/UserScripts
-// @version      0.5.0
+// @version      0.5.1
 // @author       Vinfall
 // @match        https://m.weibo.cn/detail/*
 // @match        https://m.weibo.cn/status/*
 // @match        https://sspai.com/*
+// @match        https://www.cnblogs.com/*
 // @run-at       document-end
 // @grant        none
 // @description  Skip stupid URL redirect before you ever click on it
@@ -48,6 +49,11 @@
             selector: 'a[href*="https://weibo.cn/sinaurl?u="]',
             regex: /https:\/\/weibo.cn\/sinaurl\?u=([^&]+)/,
             observer: true
+        },
+        {
+            selector: 'a[href*="https://hellogithub.com/periodical/statistics/click?target="]',
+            regex: /https:\/\/hellogithub.com\/periodical\/statistics\/click\?target=([^&]+)/,
+            observer: false
         }
     ];
 
