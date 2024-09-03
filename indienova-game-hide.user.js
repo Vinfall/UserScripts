@@ -6,7 +6,7 @@
 // @match       https://indienova.com/indie-game-news/wholesome-direct-*
 // @grant       GM_getValue
 // @grant       GM_setValue
-// @version     5.1.3
+// @version     5.1.5
 // @author      Vinfall
 // @description indienova「本周 Steam 值得关注的游戏」和「itch 一周游戏汇」隐藏包含特定关键字的游戏
 // ==/UserScript==
@@ -16,10 +16,10 @@
 
     // 初始化常量
     const defaultKeywords = [
-        "多人在线", "恐怖", "僵尸", "黑暗奇幻", "自走棋", "玩家对战", "调酒", "SCP", "种植", "农场模拟",
+        "多人在线", "恐怖", "惊悚", "僵尸", "黑暗奇幻", "自走棋", "调酒", "SCP", "种植", "农场模拟",
         "乙女", "全动态影像", "城市营造", "社交聚会", "洛夫克拉夫特式", "打字", "自动化", "团队导向", "摔角",
         "中世纪", "刷宝", "类魂系列", "农场管理", "步行模拟", "基地建设", "AI 生成内容", "开放世界生存",
-        "迷幻", "大逃杀", "4X"
+        "迷幻", "大逃杀", "4X", "玩家对战"
         // "在线合作", "类银河战士恶魔城"
     ];
     const overrideDefault = true;
