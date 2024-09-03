@@ -1,12 +1,13 @@
 // ==UserScript==
 // @name         Skip Redirect Inplace
 // @namespace    https://github.com/Vinfall/UserScripts
-// @version      0.5.1
+// @version      0.6.0
 // @author       Vinfall
 // @match        https://m.weibo.cn/detail/*
 // @match        https://m.weibo.cn/status/*
 // @match        https://sspai.com/*
 // @match        https://www.cnblogs.com/*
+// @match        https://www.gcores.com/*
 // @run-at       document-end
 // @grant        none
 // @description  Skip stupid URL redirect before you ever click on it
@@ -39,8 +40,9 @@
         });
     }
 
-    // Define the rules as an array of objects
-    const rules = [{
+    const rules = [
+        // Define the rules as an array of objects
+        {
             selector: 'a[href*="https://sspai.com/link?target="]',
             regex: /https:\/\/sspai.com\/link\?target=([^&]+)/,
             observer: true
@@ -53,6 +55,11 @@
         {
             selector: 'a[href*="https://hellogithub.com/periodical/statistics/click?target="]',
             regex: /https:\/\/hellogithub.com\/periodical\/statistics\/click\?target=([^&]+)/,
+            observer: false
+        },
+        {
+            selector: 'a[href*="https://www.gcores.com/link?target="]',
+            regex: /https:\/\/www\.gcores\.com\/link\?target=([^&]+)/,
             observer: false
         }
     ];
