@@ -11,7 +11,6 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 | ---- | ---- |
 | [`vndb-list-export.user.js`](https://github.com/Vinfall/UserScripts/raw/main/vndb-list-export.user.js) | Export VNDB user VN/length vote list to CSV |
 | [`indienova-game-hide.user.js`](https://github.com/Vinfall/UserScripts/raw/main/indienova-game-hide.user.js) | indienova 每周游戏隐藏包含特定关键字的游戏 |
-| [`a9vg-redirect-skip.user.js`](https://github.com/Vinfall/UserScripts/raw/main/a9vg-redirect-skip.user.js) | A9VG 跳过外链跳转确认 |
 | [`steam-game-feature-kai.user.js`](https://github.com/Vinfall/UserScripts/raw/main/steam-game-feature-kai.user.js) | Alternative game feature outlinks on Steam store webpage |
 | [`censored-dlsite.user.js`](https://github.com/Vinfall/UserScripts/raw/main/censored-dlsite.user.js) | Censored DLsite genre list |
 | [`uncensored-dlsite.user.js`](https://github.com/Vinfall/UserScripts/raw/main/uncensored-dlsite.user.js) | Uncensored DLsite genre list |
