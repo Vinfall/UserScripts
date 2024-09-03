@@ -1,8 +1,12 @@
 // ==UserScript==
 // @name         Skip Redirect Inplace
 // @namespace    https://github.com/Vinfall/UserScripts
-// @version      0.6.0
+// @version      0.7.0
 // @author       Vinfall
+// @match        https://acg.gamer.com.tw/*
+// @match        https://forum.gamer.com.tw/*
+// @match        https://gnn.gamer.com.tw/*
+// @match        https://m.gamer.com.tw/forum/*
 // @match        https://m.weibo.cn/detail/*
 // @match        https://m.weibo.cn/status/*
 // @match        https://sspai.com/*
@@ -60,6 +64,11 @@
         {
             selector: 'a[href*="https://www.gcores.com/link?target="]',
             regex: /https:\/\/www\.gcores\.com\/link\?target=([^&]+)/,
+            observer: false
+        },
+        {
+            selector: 'a[href*="https://ref.gamer.com.tw/redir.php?url="]',
+            regex: /https:\/\/ref\.gamer\.com\.tw\/redir\.php\?url=([^&]+)/,
             observer: false
         }
     ];
