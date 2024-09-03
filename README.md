@@ -105,6 +105,7 @@ Just a compliment to other existing UserScripts (which would skip link redirect 
 
 #### TODO
 
+- [ ] Fix GamerTW ACG, [ref](https://acg.gamer.com.tw/acgDetail.php?s=9394)
 - [ ] Simplify rules, `selector` & `regex` are mostly identical
 - [ ] Figure out if `observer` is always needed (or why `// @run-at       document-end` does not work much as intended)
 
