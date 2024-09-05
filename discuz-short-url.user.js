@@ -2,7 +2,7 @@
 // @name               Discuz Short URL
 // @name:zh-cn         Discuz 短链 URL
 // @namespace          https://github.com/Vinfall/UserScripts
-// @version            0.10.3
+// @version            1.0.0
 // @author             Vinfall
 // @match              *://*/?mod=forumdisplay*
 // @match              *://*/?mod=viewthread*
@@ -12,7 +12,6 @@
 // @exclude-match      *://*/?*goto*
 // @exclude-match      *://*/?mod=redirect*
 // @exclude-match      *://*/forum.php?*goto*
-// @exclude-match      *://*/forum.php?*pid*
 // @exclude-match      *://*/forum.php?mod=redirect*
 // @grant              none
 // @run-at             document-start
@@ -77,12 +76,18 @@
     const urlObj = new URL(currentUrl);
     const params = new URLSearchParams(urlObj.search);
 
-    // 检查 extra 参数，如包含 #pid 字符串则不转换
-    // e.g. forum.php?mod=viewthread&tid=123456&page=3&extra=#pid19912345
+    // 检测 pid 参数
+    // 检查 URL 末尾, e.g. forum.php?mod=viewthread&tid=123456&page=3#pid19912345
+    let pid = '';
+    const pidMatchInHash = currentUrl.match(/#pid(\d+)/);
+    if (pidMatchInHash) {
+        pid = pidMatchInHash[0]; // e.g. #pid19912345
+    }
+    // 检查 extra 参数, e.g. forum.php?mod=viewthread&tid=123456&page=3&extra=#pid19912345
     const extra = params.get('extra') || '';
-    if (extra.includes('#pid')) {
-        console.log('URL contains pid, conversion skipped.');
-        return;
+    const pidMatchInExtra = extra.match(/#pid(\d+)/);
+    if (!pid && pidMatchInExtra) {
+        pid = pidMatchInExtra[0]; // e.g. extra=#pid19912345
     }
 
     // 检查 tid 参数是否存在
@@ -111,8 +116,15 @@
         //     newUrl = `${protocol}//${domain}/thread-${tid}-${page}-1.html`;
         // }
 
+        // 如果有 pid 参数，加到 newUrl 之后
+        if (newUrl && pid) {
+            newUrl += pid;
+        }
+
         if (newUrl) {
             window.location.replace(newUrl);
         }
+
+
     }
 })();
