@@ -9,12 +9,13 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 
 | Name | Function |
 | ---- | ---- |
-| [`vndb-list-export.user.js`](https://github.com/Vinfall/UserScripts/raw/main/vndb-list-export.user.js) | Export VNDB user VN/length vote list to CSV |
-| [`indienova-game-hide.user.js`](https://github.com/Vinfall/UserScripts/raw/main/indienova-game-hide.user.js) | indienova 每周游戏隐藏包含特定关键字的游戏 |
-| [`steam-game-feature-kai.user.js`](https://github.com/Vinfall/UserScripts/raw/main/steam-game-feature-kai.user.js) | Alternative game feature outlinks on Steam store webpage |
+| [`discuz-short-url.user.js`](https://github.com/Vinfall/UserScripts/raw/main/discus-short-url.user.js) | Show short URL on Discuz forums |
 | [`github-release-highlight.user.js`](https://github.com/Vinfall/UserScripts/raw/main/github-release-highlight.user.js) | Highlight GitHub release assets containing keywords |
+| [`indienova-game-hide.user.js`](https://github.com/Vinfall/UserScripts/raw/main/indienova-game-hide.user.js) | indienova 每周游戏隐藏包含特定关键字的游戏 |
 | [`jd2bean.user.js`](https://github.com/Vinfall/UserScripts/raw/main/jd2bean.user.js) | 根据京东订单生成 Beancount 账单 |
 | [`skip-redirect-inplace.user.js`](https://github.com/Vinfall/UserScripts/raw/main/skip-redirect-inplace.user.js) | Skip stupid URL redirect before you ever click on it |
+| [`steam-game-feature-kai.user.js`](https://github.com/Vinfall/UserScripts/raw/main/steam-game-feature-kai.user.js) | Alternative game feature outlinks on Steam store webpage |
+| [`vndb-list-export.user.js`](https://github.com/Vinfall/UserScripts/raw/main/vndb-list-export.user.js) | Export VNDB user VN/length vote list to CSV |
 
 ### VNDB List Export
 
