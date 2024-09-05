@@ -102,6 +102,15 @@ Just a compliment to other existing UserScripts (which would skip link redirect 
 - [ ] Simplify rules, `selector` & `regex` are mostly identical
 - [ ] Figure out if `observer` is always needed (or why `// @run-at       document-end` does not work much as intended)
 
+### Discuz Short URL
+
+> [!WARNING]
+> This is the sanitized public version and would NOT be updated regularly.
+
+- Only tested on a few Discuz forums
+- Only work in limited URLs/mods
+- NOT recommended to use
+
 ### No-Intro
 
 SharePoint Cookie Pasta:
