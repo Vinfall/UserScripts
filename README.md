@@ -16,6 +16,7 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 | [`skip-redirect-inplace.user.js`](https://github.com/Vinfall/UserScripts/raw/main/skip-redirect-inplace.user.js) | Skip stupid URL redirect before you ever click on it |
 | [`steam-game-feature-kai.user.js`](https://github.com/Vinfall/UserScripts/raw/main/steam-game-feature-kai.user.js) | Alternative game feature outlinks on Steam store webpage |
 | [`vndb-list-export.user.js`](https://github.com/Vinfall/UserScripts/raw/main/vndb-list-export.user.js) | Export VNDB user VN/length vote list to CSV |
+| [`weibo-mobile-redirect`](https://github.com/Vinfall/UserScripts/raw/main/weibo-mobile-redirect.user.js) | 新浪微博自动跳转移动版，支持微博、文章、视频 |
 
 ### VNDB List Export
 
@@ -111,6 +112,18 @@ Just a compliment to other existing UserScripts (which would skip link redirect 
 - Only tested on a few Discuz forums
 - Only work in limited URLs/mods
 - NOT recommended to use
+
+### Weibo Mobile Redirect
+
+自动跳转微博、文章~~和视频~~为移动端页面。
+
+> [!NOTE] Why?
+> Why not?
+> 移动端页面没有 PC 端网页*那么多*的干扰元素，加载速度也要快 60%，何乐而不为。
+
+开启 JavaScript 的情况下访问 `weibo.com` 会先跳转到 `passport.weibo.com` 再跳转回来，脚本会无限循环。
+测试下来唯一能让脚本正常工作的办法是在 uBO 禁用 `weibo.com` 的 JavaScript，从而禁止微博自带的链接跳转……
+但这样会破坏视频播放的功能，建议需要播放时临时启用 JS，或者使用 [gallery-dl](https://github.com/mikf/gallery-dl)。
 
 ### No-Intro
 
