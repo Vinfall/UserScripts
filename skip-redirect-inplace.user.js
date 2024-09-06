@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Skip Redirect Inplace
 // @namespace    https://github.com/Vinfall/UserScripts
-// @version      0.7.0
+// @version      0.7.1
 // @author       Vinfall
 // @match        https://acg.gamer.com.tw/*
 // @match        https://forum.gamer.com.tw/*
@@ -9,6 +9,7 @@
 // @match        https://m.gamer.com.tw/forum/*
 // @match        https://m.weibo.cn/detail/*
 // @match        https://m.weibo.cn/status/*
+// @match        https://m.weibo.cn/u/*
 // @match        https://sspai.com/*
 // @match        https://www.cnblogs.com/*
 // @match        https://www.gcores.com/*
