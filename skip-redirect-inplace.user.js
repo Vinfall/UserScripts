@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Skip Redirect Inplace
 // @namespace    https://github.com/Vinfall/UserScripts
-// @version      0.7.1
+// @version      0.7.2
 // @author       Vinfall
 // @match        https://acg.gamer.com.tw/*
 // @match        https://forum.gamer.com.tw/*
@@ -68,7 +68,7 @@
             observer: false
         },
         {
-            selector: 'a[href*="https://ref.gamer.com.tw/redir.php?url="]',
+            selector: 'a[href*="//ref.gamer.com.tw/redir.php?url="]',
             regex: /https:\/\/ref\.gamer\.com\.tw\/redir\.php\?url=([^&]+)/,
             observer: false
         }
