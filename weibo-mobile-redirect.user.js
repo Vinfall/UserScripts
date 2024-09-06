@@ -2,19 +2,20 @@
 // @name              Weibo Mobile Redirect
 // @name:zh-cn        新浪微博移动版跳转
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           1.1.0
+// @version           1.2.1
 // @author            Vinfall
 // @match             https://video.weibo.com/show?fid=*
 // @match             https://weibo.com/*/*
 // @match             https://weibo.com/ttarticle/p/show?id=*
+// @match             https://weibo.com/u/*
 // @match             https://www.weibo.com/detail/*
 // @exclude-match     https://card.weibo.com/article/*
 // @exclude-match     https://m.weibo.cn/detail/*
 // @exclude-match     https://m.weibo.cn/status/*
+// @exclude-match     https://m.weibo.cn/u/*
 // @exclude-match     https://passport.weibo.com/*
 // @exclude-match     https://weibo.com/signup/*
 // @exclude-match     https://weibo.com/tv/show/*
-// @exclude-match     https://weibo.com/u/*
 // @grant             none
 // @run-at            document-start
 // @license           CC0 1.0 Universal (Public Domain)
@@ -41,6 +42,15 @@
     // }
 
     const cases = [
+        // weibo.com/u/*
+        {
+            pattern: /^https:\/\/weibo\.com\/u\/(\d+)/,
+            handle: (match) => {
+                const userId = match[1];
+                const userMobileUrl = `https://m.weibo.cn/u/${userId}`;
+                window.location.replace(userMobileUrl);
+            },
+        },
         // weibo.com/ttarticle/p/show?id=*
         {
             pattern: /^https:\/\/weibo\.com\/ttarticle\/p\/show\?id=(\d+)/,
@@ -67,7 +77,7 @@
             handle: (match) => {
                 const fid = match[1];
                 const videoUrl = `https://weibo.com/tv/show/${fid}`;
-                window.location.replace(statusMobileUrl);
+                window.location.replace(videoUrl);
             },
         },
         // weibo.com/detail/*
