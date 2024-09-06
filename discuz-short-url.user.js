@@ -2,14 +2,18 @@
 // @name               Discuz Short URL
 // @name:zh-cn         Discuz 短链 URL
 // @namespace          https://github.com/Vinfall/UserScripts
-// @version            1.0.1
+// @version            1.2.0
 // @author             Vinfall
 // @match              *://*/?mod=forumdisplay*
 // @match              *://*/?mod=viewthread*
 // @match              *://*/forum.php?mod=forumdisplay*
 // @match              *://*/forum.php?mod=viewthread*
+// @match              *://*/home.php?mod=space&uid=*
+// @match              *://*/space-uid-*.html
+// @match              *://*/suid-*
 // @exclude-match      *://*/?*goto*
 // @exclude-match      *://*/?mod=redirect*
+// @exclude-match      *://*/*username=*
 // @exclude-match      *://*/forum.php?*goto*
 // @exclude-match      *://*/forum.php?mod=redirect*
 // @grant              none
@@ -70,10 +74,35 @@
     ];
 
     const currentUrl = window.location.href;
-
-    // 解析 URL
     const urlObj = new URL(currentUrl);
+    const protocol = urlObj.protocol;
+    const domain = urlObj.hostname;
+
+    // suid-*
+    const suidMatch = currentUrl.match(/suid-(\d+)/);
+    if (suidMatch && suidMatch[1]) {
+        let newUrl = `${protocol}//${domain}?${suidMatch[1]}`;
+        window.location.replace(newUrl);
+        return;
+    }
+    // space-uid-*
+    const spaceUidMatch = currentUrl.match(/space-uid-(\d+)\.html/);
+    if (spaceUidMatch && spaceUidMatch[1]) {
+        let newUrl = `${protocol}//${domain}?${spaceUidMatch[1]}`;
+        window.location.replace(newUrl);
+        return;
+    }
+
+    // 解析 URL param
     const params = new URLSearchParams(urlObj.search);
+
+    // 缩短 space uid, e.g. ?12345
+    if (params.get('uid')) {
+        const uid = params.get('uid');
+        let newUrl = `${protocol}//${domain}?${uid}`;
+        window.location.replace(newUrl);
+        return;
+    }
 
     // 检测 pid 参数
     // 检查 URL 末尾, e.g. forum.php?mod=viewthread&tid=123456&page=3#pid19912345
@@ -123,7 +152,5 @@
         if (newUrl) {
             window.location.replace(newUrl);
         }
-
-
     }
 })();
