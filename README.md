@@ -117,7 +117,8 @@ Just a compliment to other existing UserScripts (which would skip link redirect 
 
 自动跳转微博、文章~~和视频~~为移动端页面。
 
-> [!NOTE] Why?
+> [!NOTE]
+> ~~Why?~~
 > Why not?
 > 移动端页面没有 PC 端网页*那么多*的干扰元素，加载速度也要快 60%，何乐而不为。
 
