@@ -2,10 +2,13 @@
 // @name              Over-18
 // @name:zh-cn        已满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.3.2
+// @version           0.5.0
 // @author            Vinfall
-// @match             https://www.patreon.com/*
+// @match             https://*.itch.io/*
 // @match             https://*.reddit.com/over18?dest=*
+// @match             https://store.nintendo.com.hk/*
+// @match             https://www.patreon.com/*
+// @exclude-match     https://store.nintendo.com.hk/checkout/*
 // @exclude-match     https://www.patreon.com/create
 // @exclude-match     https://www.patreon.com/login
 // @grant             none
@@ -22,7 +25,9 @@
     // Define rules
     const config = {
         'www.patreon.com': 'button[data-tag="age-confirmation-button"]',
-        'reddit.com': 'button.c-btn-primary.c-btn:nth-of-type(2)'
+        'reddit.com': 'button.c-btn-primary.c-btn:nth-of-type(2)',
+        'nintendo.com.hk': 'button#eco-product-confirmation-hide.action-primary',
+        'itch.io': '.buttons > .button'
     };
 
     function getSelectorForCurrentSite() {
