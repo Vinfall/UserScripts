@@ -2,9 +2,10 @@
 // @name              Over-18
 // @name:zh-cn        已满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.2.0
+// @version           0.3.2
 // @author            Vinfall
 // @match             https://www.patreon.com/*
+// @match             https://*.reddit.com/over18?dest=*
 // @exclude-match     https://www.patreon.com/create
 // @exclude-match     https://www.patreon.com/login
 // @grant             none
@@ -18,9 +19,31 @@
 (function () {
     'use strict';
 
+    // Define rules
+    const config = {
+        'www.patreon.com': 'button[data-tag="age-confirmation-button"]',
+        'reddit.com': 'button.c-btn-primary.c-btn:nth-of-type(2)'
+    };
+
+    function getSelectorForCurrentSite() {
+        const hostname = window.location.hostname;
+        for (const key in config) {
+            if (hostname.includes(key)) {
+                return config[key];
+            }
+        }
+        return null;
+    }
+
     function autoConfirmAge() {
+        const selector = getSelectorForCurrentSite();
+        if (!selector) {
+            console.warn("No matching rule found.");
+            return;
+        }
+
         // Search for age verify button
-        var ageVerifyButton = document.querySelector('button[data-tag="age-confirmation-button"]');
+        const ageVerifyButton = document.querySelector(selector);
         if (ageVerifyButton) {
             ageVerifyButton.click();
         } else {
