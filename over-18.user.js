@@ -2,7 +2,7 @@
 // @name              Over-18
 // @name:zh-cn        已满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.7.1
+// @version           0.8.2
 // @author            Vinfall
 // @match             https://*.itch.io/*
 // @match             https://*.reddit.com/over18?dest=*
@@ -11,6 +11,7 @@
 // @match             https://jastusa.com/zh_Hant/games/*/*
 // @match             https://store.nintendo.com.hk/*
 // @match             https://www.animategames.jp/home/age?redirect=*
+// @match             https://www.digiket.com/work/show/_data/ID=*
 // @match             https://www.getchu.com/php/attestation.html?aurl=*
 // @match             https://www.patreon.com/*
 // @exclude-match     https://store.nintendo.com.hk/checkout/*
@@ -30,6 +31,7 @@
     // Define rules
     const config = {
         'animategames.jp': '.btn-blr18.btn',
+        'digiket.com': '.btn-lg.btn-info.btn',
         // 'gog.com': '.age-gate__button.button--big.button',
         'itch.io': '.buttons > .button',
         'jastusa.com': '.content-gate__footer > button.is-primary.button',
@@ -49,6 +51,14 @@
     }
 
     function autoConfirmAge() {
+        const hostname = window.location.hostname;
+        const sessionKey = `ageConfirmed-${hostname}`;
+
+        // Check if we've run on this site in this session
+        if (sessionStorage.getItem(sessionKey)) {
+            return;
+        }
+
         const selector = getSelectorForCurrentSite();
         if (!selector) {
             console.warn("No matching rule found.");
@@ -59,6 +69,8 @@
         const ageVerifyButton = document.querySelector(selector);
         if (ageVerifyButton) {
             ageVerifyButton.click();
+            // Store a click flag in sessionStorage
+            sessionStorage.setItem(sessionKey, 'true');
         } else {
             // If not found, try again later
             setTimeout(autoConfirmAge, 800);
