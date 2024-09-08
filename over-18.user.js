@@ -2,10 +2,12 @@
 // @name              Over-18
 // @name:zh-cn        已满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.8.2
+// @version           0.9.5
 // @author            Vinfall
 // @match             https://*.itch.io/*
 // @match             https://*.reddit.com/over18?dest=*
+// @match             https://gamejolt.com/games/*/*
+// @match             https://gamejolt.com/games/*/*/followers
 // @match             https://jastusa.com/games/*/*
 // @match             https://jastusa.com/zh_Hans/games/*/*
 // @match             https://jastusa.com/zh_Hant/games/*/*
@@ -32,6 +34,8 @@
     const config = {
         'animategames.jp': '.btn-blr18.btn',
         'digiket.com': '.btn-lg.btn-info.btn',
+        'gamejolt.com': '.link-muted > span', // this mutes until I exit
+        // 'gamejolt.com': '.-block.-outline.-primary.button', // this only works for once
         // 'gog.com': '.age-gate__button.button--big.button',
         'itch.io': '.buttons > .button',
         'jastusa.com': '.content-gate__footer > button.is-primary.button',
