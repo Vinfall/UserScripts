@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Skip Redirect Inplace
 // @namespace    https://github.com/Vinfall/UserScripts
-// @version      0.7.2
+// @version      0.8.0
 // @author       Vinfall
 // @match        https://acg.gamer.com.tw/*
 // @match        https://forum.gamer.com.tw/*
@@ -15,6 +15,7 @@
 // @match        https://www.gcores.com/*
 // @run-at       document-end
 // @grant        none
+// @icon         data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⏭️</text></svg>
 // @description  Skip stupid URL redirect before you ever click on it
 // @description:zh-cn 文内替换外链跳转 URL
 // ==/UserScript==

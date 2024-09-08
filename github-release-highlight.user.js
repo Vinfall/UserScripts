@@ -1,11 +1,12 @@
 // ==UserScript==
 // @name         GitHub Release Highlight
 // @namespace    https://github.com/Vinfall/UserScripts
-// @version      2.1.2
+// @version      2.2.0
 // @author       Vinfall
 // @match        https://github.com/*/*/releases/tag/*
 // @grant        none
 // @license      CC0 1.0 Universal (Public Domain)
+// @icon         data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💡</text></svg>
 // @description  Highlight GitHub release assets containing keywords
 // ==/UserScript==
 
