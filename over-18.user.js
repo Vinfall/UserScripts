@@ -53,11 +53,11 @@
             ageVerifyButton.click();
         } else {
             // If not found, try again later
-            setTimeout(autoConfirmAge, 1000);
+            setTimeout(autoConfirmAge, 800);
         }
     }
 
     window.addEventListener('load', function () {
-        setTimeout(autoConfirmAge, 1000);
+        setTimeout(autoConfirmAge, 800);
     });
 })();
