@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           1.0.0
+// @version           1.1.0
 // @author            Vinfall
 // @match             https://*.itch.io/*
 // @match             https://*.reddit.com/over18?dest=*
@@ -30,9 +30,8 @@
 // @description:zh-cn 因为我刚满 18 岁~
 // ==/UserScript==
 
-(function () {
-    'use strict';
-
+// Buttons
+function verifyButton() {
     // Define rules
     const config = {
         'animategames.jp': '.btn-blr18.btn',
@@ -90,4 +89,9 @@
     window.addEventListener('load', function () {
         setTimeout(autoConfirmAge, 800);
     });
+}
+
+(function () {
+    'use strict';
+    verifyButton();
 })();
