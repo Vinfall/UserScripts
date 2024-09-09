@@ -135,10 +135,6 @@ SharePoint Cookie Pasta:
 - Todo
   - [ ] Catch document type response gracefully & only output if the cookie begins with `FedAuth`
 
-Censored/Uncensored DLsite:
-- A silly script for fun regarding DLsite forced to censor its genre list according to [a questionable X post](https://twitter.com/mttb2ccp_pt2/status/1772466120290693434).
-- You can censor it yourself if you want, and vice versa XD.
-
 ## Notice
 
 Do NOT clone submodule as it's private and protected with private key.
