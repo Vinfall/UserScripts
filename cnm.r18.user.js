@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           1.5.0
+// @version           1.6.0
 // @author            Vinfall
 // @match             https://*.itch.io/*
 // @match             https://*.reddit.com/over18?dest=*
@@ -18,11 +18,9 @@
 // @match             https://www.animategames.jp/home/age?redirect=*
 // @match             https://www.digiket.com/work/show/_data/ID=*
 // @match             https://www.getchu.com/php/attestation.html?aurl=*
-// @match             https://www.getchu.com/soft.phtml?id=*
 // @match             https://www.melonbooks.co.jp/detail/detail.php?product_id=*
 // @match             https://www.patreon.com/*
 // @exclude-match     https://store.nintendo.com.hk/checkout/*
-// @exclude-match     https://www.getchu.com/soft.phtml?*gc=gc
 // @exclude-match     https://www.melonbooks.co.jp/detail/detail.php?*adult_view=1
 // @exclude-match     https://www.patreon.com/create
 // @exclude-match     https://www.patreon.com/login
@@ -44,6 +42,7 @@ function verifyButton() {
         'gamebanana.com': '.ShowNsfwContentButton',
         'gamejolt.com': '.link-muted > span', // this mutes until I exit
         // 'gamejolt.com': '.-block.-outline.-primary.button', // this only works for once
+        'getchu.com': '[href^="https://www.getchu.com/soft.phtml"]',
         // 'gog.com': '.age-gate__button.button--big.button', // not working
         'itch.io': '.buttons > .button',
         'jastusa.com': '.content-gate__footer > button.is-primary.button',
@@ -101,7 +100,8 @@ function verifyParam() {
     // Define rules
     const siteParams = {
         'melonbooks.co.jp': 'adult_view=1',
-        // 'getchu.com': 'gc=gc', // not working, use url redirect instead
+        // Getchu not working even w/ url redirect, use verifyButton instead
+        // 'getchu.com': 'gc=gc',
     };
 
     const currentHost = window.location.host;
