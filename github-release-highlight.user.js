@@ -6,6 +6,7 @@
 // @match        https://github.com/*/*/releases/tag/*
 // @grant        none
 // @license      CC0 1.0 Universal (Public Domain)
+// @run-at       document-end
 // @icon         data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💡</text></svg>
 // @description  Highlight GitHub release assets containing keywords
 // ==/UserScript==
