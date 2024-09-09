@@ -9,14 +9,15 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 
 | Name | Function |
 | ---- | ---- |
+| [`cnm.r18.user.js`](https://github.com/Vinfall/UserScripts/raw/main/cnm.r18.user.js) | Skip age verification on numerous sites |
 | [`discuz-short-url.user.js`](https://github.com/Vinfall/UserScripts/raw/main/discus-short-url.user.js) | Show short URL on Discuz forums |
 | [`github-release-highlight.user.js`](https://github.com/Vinfall/UserScripts/raw/main/github-release-highlight.user.js) | Highlight GitHub release assets containing keywords |
-| [`indienova-game-hide.user.js`](https://github.com/Vinfall/UserScripts/raw/main/indienova-game-hide.user.js) | indienova 每周游戏隐藏包含特定关键字的游戏 |
+| [`indienova-game-hide.user.js`](https://github.com/Vinfall/UserScripts/raw/main/indienova-game-hide.user.js) | indienova 每周游戏隐藏包含特定游戏类型 |
 | [`jd2bean.user.js`](https://github.com/Vinfall/UserScripts/raw/main/jd2bean.user.js) | 根据京东订单生成 Beancount 账单 |
 | [`show-orig-pic.user.js`](https://github.com/Vinfall/UserScripts/raw/main/show-orig-pic.user.js) | Open image in original resolution |
-| [`skip-redirect-inplace.user.js`](https://github.com/Vinfall/UserScripts/raw/main/skip-redirect-inplace.user.js) | Skip stupid URL redirect before you ever click on it |
-| [`steam-game-feature-kai.user.js`](https://github.com/Vinfall/UserScripts/raw/main/steam-game-feature-kai.user.js) | Alternative game feature outlinks on Steam store webpage |
-| [`vndb-list-export.user.js`](https://github.com/Vinfall/UserScripts/raw/main/vndb-list-export.user.js) | Export VNDB user VN/length vote list to CSV |
+| [`skip-redirect-inplace.user.js`](https://github.com/Vinfall/UserScripts/raw/main/skip-redirect-inplace.user.js) | Skip stupid URL redirect in href |
+| [`steam-game-feature-kai.user.js`](https://github.com/Vinfall/UserScripts/raw/main/steam-game-feature-kai.user.js) | Alternative game feature outlinks on Steam |
+| [`vndb-list-export.user.js`](https://github.com/Vinfall/UserScripts/raw/main/vndb-list-export.user.js) | Export VNDB user VN/length vote to CSV |
 | [`weibo-mobile-redirect`](https://github.com/Vinfall/UserScripts/raw/main/weibo-mobile-redirect.user.js) | 新浪微博自动跳转移动版，支持微博、文章、视频 |
 
 ### VNDB List Export
@@ -126,6 +127,15 @@ Just a compliment to other existing UserScripts (which would skip link redirect 
 开启 JavaScript 的情况下访问 `weibo.com` 会先跳转到 `passport.weibo.com` 再跳转回来，脚本会无限循环。
 测试下来唯一能让脚本正常工作的办法是在 uBO 禁用 `weibo.com` 的 JavaScript，从而禁止微博自带的链接跳转……
 但这样会破坏视频播放的功能，建议需要播放时临时启用 JS，或者使用 [gallery-dl](https://github.com/mikf/gallery-dl)。
+
+### CNM.R18
+
+Tested to work on all [VNDB extlinks](https://vndb.org/d3#4) except Steam/Epic Games/GOG (and some good guy who do not require age verification).
+
+Ideally this *can* work on most sites that requires a NSFW parameter or press a button, but I only add websites I'm aware of.
+
+> [!TIP]
+> This also does not have much effect if you seldom/never clean your browser data (which you should NOT do, but that's none of my business), mostly cookies in this case, since you usually only need to verify once and use the website while that cookie lasts.
 
 ### No-Intro
 
