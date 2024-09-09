@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name              Over-18
-// @name:zh-cn        已满 18 岁
+// @name              CNM.R18
+// @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.12.1
+// @version           1.0.0
 // @author            Vinfall
 // @match             https://*.itch.io/*
 // @match             https://*.reddit.com/over18?dest=*
