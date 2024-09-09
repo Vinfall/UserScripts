@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           1.1.0
+// @version           1.3.3
 // @author            Vinfall
 // @match             https://*.itch.io/*
 // @match             https://*.reddit.com/over18?dest=*
@@ -18,8 +18,10 @@
 // @match             https://www.animategames.jp/home/age?redirect=*
 // @match             https://www.digiket.com/work/show/_data/ID=*
 // @match             https://www.getchu.com/php/attestation.html?aurl=*
+// @match             https://www.melonbooks.co.jp/detail/detail.php?product_id=*
 // @match             https://www.patreon.com/*
 // @exclude-match     https://store.nintendo.com.hk/checkout/*
+// @exclude-match     https://www.melonbooks.co.jp/detail/detail.php?*adult_view=1
 // @exclude-match     https://www.patreon.com/create
 // @exclude-match     https://www.patreon.com/login
 // @grant             none
@@ -40,7 +42,7 @@ function verifyButton() {
         'gamebanana.com': '.ShowNsfwContentButton',
         'gamejolt.com': '.link-muted > span', // this mutes until I exit
         // 'gamejolt.com': '.-block.-outline.-primary.button', // this only works for once
-        // 'gog.com': '.age-gate__button.button--big.button',
+        // 'gog.com': '.age-gate__button.button--big.button', // not working
         'itch.io': '.buttons > .button',
         'jastusa.com': '.content-gate__footer > button.is-primary.button',
         'nintendo.com.hk': 'button#eco-product-confirmation-hide.action-primary',
@@ -80,6 +82,7 @@ function verifyButton() {
             ageVerifyButton.click();
             // Store a click flag in sessionStorage
             sessionStorage.setItem(sessionKey, 'true');
+            return;
         } else {
             // If not found, try again later
             setTimeout(autoConfirmAge, 800);
@@ -91,7 +94,42 @@ function verifyButton() {
     });
 }
 
+// NSFW params
+function verifyParam() {
+    // Define rules
+    const siteParams = {
+        'melonbooks.co.jp': 'adult_view=1',
+        // 'example.com': 'param=value',
+        // 'anotherwebsite.com': 'another_param=another_value',
+    };
+
+    const currentHost = window.location.host;
+    let currentUrl = window.location.href;
+
+    // Check existing params
+    for (const [site, paramToAdd] of Object.entries(siteParams)) {
+        if (currentHost.endsWith(site)) {
+            // Check if the param already exists
+            if (!currentUrl.includes(paramToAdd)) {
+                let newUrl;
+                if (currentUrl.includes('?')) {
+                    // host.tld?param=1
+                    newUrl = currentUrl + '&' + paramToAdd;
+                } else {
+                    // host.tld (aka. no param)
+                    newUrl = currentUrl + '?' + paramToAdd;
+                }
+
+                window.location.href = newUrl;
+                return;
+            }
+        }
+    }
+}
+
 (function () {
     'use strict';
+
+    verifyParam();
     verifyButton();
 })();
