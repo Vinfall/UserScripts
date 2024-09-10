@@ -2,10 +2,10 @@
 // @name              Show Original Picture
 // @name:zh-cn        自动跳转原图
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.3.2
+// @version           0.3.3
 // @author            Vinfall
-// @match             https://i*.hdslb.com/bfs/*/*.avif
-// @match             https://i*.hdslb.com/bfs/*/*.webp
+// @match             https://*.hdslb.com/bfs/*/*.avif
+// @match             https://*.hdslb.com/bfs/*/*.webp
 // @match             https://image.gcores.com/*?x-oss-process=*
 // @grant             none
 // @run-at            document-start
