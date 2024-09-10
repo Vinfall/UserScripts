@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.0.0
+// @version           2.1.4
 // @author            Vinfall
 // @match             https://*.itch.io/*
 // @match             https://*.reddit.com/over18?dest=*
@@ -17,6 +17,7 @@
 // @match             https://store.nintendo.com.hk/*
 // @match             https://www.animategames.jp/home/age?redirect=*
 // @match             https://www.digiket.com/work/show/_data/ID=*
+// @match             https://www.dlsite.com/*/work/=/product_id/*
 // @match             https://www.getchu.com/php/attestation.html?aurl=*
 // @match             https://www.melonbooks.co.jp/detail/detail.php?product_id=*
 // @match             https://www.patreon.com/*
@@ -39,6 +40,7 @@ function verifyButton() {
         'animategames.jp': '.btn-blr18.btn',
         'booth.pm': '.js-approve-adult > .adult-check-nav',
         'digiket.com': '.btn-lg.btn-info.btn',
+        'dlsite.com': 'dynamicSelector', // special case
         'gamebanana.com': '.ShowNsfwContentButton',
         'gamejolt.com': '.link-muted > span', // this mutes until I exit
         // 'gamejolt.com': '.-block.-outline.-primary.button', // this only works for once
@@ -56,6 +58,11 @@ function verifyButton() {
         const hostname = window.location.hostname;
         for (const key in config) {
             if (hostname.includes(key)) {
+                // Special handling for DLsite
+                if (key === 'dlsite.com') {
+                    const pathname = window.location.pathname;
+                    return `[href="${pathname}"]`;
+                }
                 return config[key];
             }
         }
