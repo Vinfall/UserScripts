@@ -130,7 +130,7 @@ Just a compliment to other existing UserScripts (which would skip link redirect 
 
 ### CNM.R18
 
-Tested to work on all [VNDB extlinks](https://vndb.org/d3#4) except Steam/Epic Games/GOG (and some good guy who do not require age verification).
+Tested to work on all [VNDB extlinks](https://vndb.org/d3#4) except sites require filling DoB like Steam, Epic Games, GOG & eShop US (and some good guy who do not require age verification).
 
 Ideally this *can* work on most sites that requires a NSFW parameter or press a button, but I only add websites I'm aware of.
 
