@@ -36,6 +36,7 @@
 // Buttons
 function verifyButton() {
     // Define rules
+    // prettier-ignore
     const config = {
         'animategames.jp': '.btn-blr18.btn',
         'booth.pm': '.js-approve-adult > .adult-check-nav',
@@ -80,7 +81,7 @@ function verifyButton() {
 
         const selector = getSelectorForCurrentSite();
         if (!selector) {
-            console.warn("No matching rule found.");
+            console.warn('No matching rule found.');
             return;
         }
 

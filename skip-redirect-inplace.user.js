@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Skip Redirect Inplace
 // @namespace    https://github.com/Vinfall/UserScripts
-// @version      0.8.0
+// @version      0.8.1
 // @author       Vinfall
 // @match        https://acg.gamer.com.tw/*
 // @match        https://forum.gamer.com.tw/*
@@ -25,12 +25,12 @@
 
     // Function to decode and replace links based on rules
     function replaceLinks(rules = []) {
-        rules.forEach(rule => {
+        rules.forEach((rule) => {
             // Retrieve all <a> elements based on the selector rule
             const links = document.querySelectorAll(rule.selector);
 
             // Process each link
-            links.forEach(link => {
+            links.forEach((link) => {
                 // Get the current href value
                 const currentHref = link.href;
 
@@ -51,42 +51,42 @@
         {
             selector: 'a[href*="https://sspai.com/link?target="]',
             regex: /https:\/\/sspai.com\/link\?target=([^&]+)/,
-            observer: true
+            observer: true,
         },
         {
             selector: 'a[href*="https://weibo.cn/sinaurl?u="]',
             regex: /https:\/\/weibo.cn\/sinaurl\?u=([^&]+)/,
-            observer: true
+            observer: true,
         },
         {
             selector: 'a[href*="https://hellogithub.com/periodical/statistics/click?target="]',
             regex: /https:\/\/hellogithub.com\/periodical\/statistics\/click\?target=([^&]+)/,
-            observer: false
+            observer: false,
         },
         {
             selector: 'a[href*="https://www.gcores.com/link?target="]',
             regex: /https:\/\/www\.gcores\.com\/link\?target=([^&]+)/,
-            observer: false
+            observer: false,
         },
         {
             selector: 'a[href*="//ref.gamer.com.tw/redir.php?url="]',
             regex: /https:\/\/ref\.gamer\.com\.tw\/redir\.php\?url=([^&]+)/,
-            observer: false
-        }
+            observer: false,
+        },
     ];
 
     // Run the function initially with the defined rules
     replaceLinks(rules);
 
     // Optionally, set up a mutation observer to handle dynamically added links based on the observer flag
-    rules.forEach(rule => {
+    rules.forEach((rule) => {
         if (rule.observer) {
             const observer = new MutationObserver(() => {
                 replaceLinks([rule]); // Pass the individual rule to only re-run for this rule
             });
             observer.observe(document.body, {
                 childList: true,
-                subtree: true
+                subtree: true,
             });
         }
     });
