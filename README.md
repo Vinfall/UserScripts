@@ -137,6 +137,8 @@ Ideally this *can* work on most sites that requires a NSFW parameter or press a 
 > [!TIP]
 > This also does not have much effect if you seldom/never clean your browser data (which you should NOT do, but that's none of my business), mostly cookies in this case, since you usually only need to verify once and use the website while that cookie lasts.
 
+Alternatively, you can just write a userscript to place/extend confirmed cookies on those websites, if somehow this script breaks in the future.
+
 ### No-Intro
 
 SharePoint Cookie Pasta:
