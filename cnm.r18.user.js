@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.1.4
+// @version           2.2.0
 // @author            Vinfall
 // @match             https://*.itch.io/*
 // @match             https://*.reddit.com/over18?dest=*
@@ -14,6 +14,7 @@
 // @match             https://jastusa.com/games/*/*
 // @match             https://jastusa.com/zh_Hans/games/*/*
 // @match             https://jastusa.com/zh_Hant/games/*/*
+// @match             https://steamcommunity.com/app/*
 // @match             https://store.nintendo.com.hk/*
 // @match             https://www.animategames.jp/home/age?redirect=*
 // @match             https://www.digiket.com/work/show/_data/ID=*
@@ -52,6 +53,7 @@ function verifyButton() {
         'nintendo.com.hk': 'button#eco-product-confirmation-hide.action-primary',
         'patreon.com': 'button[data-tag="age-confirmation-button"]',
         'reddit.com': 'button.c-btn-primary.c-btn:nth-of-type(2)',
+        'steamcommunity.com': 'button.btn_medium.btn_blue_steamui > span',
         'toranoana.jp': '#js-en-confirm-adult > .c-modal_content_body > .text-center.c-modal_content_inner > .mt-4.ui-confirm-adult-btn-wrapper > .ui-confirm-adult-btn-primary.c-btn-black.c-btn.js-ui-modal-close.js-btn-primary',
     };
 
