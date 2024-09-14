@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.6.0
+// @version           2.6.2
 // @author            Vinfall
 // @match             https://*.itch.io/*
 // @match             https://*.reddit.com/over18?dest=*
@@ -46,7 +46,8 @@ function verifyButton() {
     // prettier-ignore
     const config = {
         'animategames.jp': '.btn-blr18.btn',
-        'appendingpulse.jp': '#in',
+        // 'appendingpulse.jp': '#in', // old releases
+        'appendingpulse.jp': '#fbi-warning > .modal-dialog > .modal-content > .modal-footer > .btn-primary.btn', // new releases
         'booth.pm': '.js-approve-adult > .adult-check-nav',
         'digiket.com': '.btn-lg.btn-info.btn',
         'dlsite.com': 'dynamicSelector', // special case
@@ -102,6 +103,10 @@ function verifyButton() {
         const ageVerifyButton = document.querySelector(selector);
         if (ageVerifyButton) {
             ageVerifyButton.click();
+            // Skip flag on HF
+            if (hostname.includes('appendingpulse.jp')) {
+                return;
+            }
             // Store a click flag in sessionStorage
             sessionStorage.setItem(sessionKey, 'true');
             return;
