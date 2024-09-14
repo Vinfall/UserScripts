@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.4.0
+// @version           2.5.1
 // @author            Vinfall
 // @match             https://*.itch.io/*
 // @match             https://*.reddit.com/over18?dest=*
@@ -14,6 +14,7 @@
 // @match             https://jastusa.com/games/*/*
 // @match             https://jastusa.com/zh_Hans/games/*/*
 // @match             https://jastusa.com/zh_Hant/games/*/*
+// @match             https://patch.moe/
 // @match             https://steamcommunity.com/app/*
 // @match             https://store.hikarifield.co.jp/downloads/*
 // @match             https://store.nintendo.com.hk/*
@@ -25,6 +26,7 @@
 // @match             https://www.melonbooks.co.jp/detail/detail.php?product_id=*
 // @match             https://www.patreon.com/*
 // @match             https://www.ptt.cc/ask/over18?from=*
+// @exclude-match     https://download.patch.moe/*
 // @exclude-match     https://store.nintendo.com.hk/checkout/*
 // @exclude-match     https://www.melonbooks.co.jp/detail/detail.php?*adult_view=1
 // @exclude-match     https://www.patreon.com/create
@@ -55,6 +57,7 @@ function verifyButton() {
         'jastusa.com': '.content-gate__footer > button.is-primary.button',
         'johren.games': '.link_enter.mainbtn-primary-lv1',
         'nintendo.com.hk': 'button#eco-product-confirmation-hide.action-primary',
+        'patch.moe': 'a.css-button-rounded--red:nth-of-type(1)',
         'patreon.com': 'button[data-tag="age-confirmation-button"]',
         // 'ptt.cc': 'button.btm-big[name="yes"][value="yes"]', // not working
         'reddit.com': 'button.c-btn-primary.c-btn:nth-of-type(2)',
