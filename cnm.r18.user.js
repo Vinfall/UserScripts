@@ -2,10 +2,11 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.5.1
+// @version           2.6.0
 // @author            Vinfall
 // @match             https://*.itch.io/*
 // @match             https://*.reddit.com/over18?dest=*
+// @match             https://appendingpulse.jp/dl/*
 // @match             https://booth.pm/*/items/*
 // @match             https://ec.toranoana.jp/tora_r/ec/item/*
 // @match             https://gamebanana.com/mods/*
@@ -45,6 +46,7 @@ function verifyButton() {
     // prettier-ignore
     const config = {
         'animategames.jp': '.btn-blr18.btn',
+        'appendingpulse.jp': '#in',
         'booth.pm': '.js-approve-adult > .adult-check-nav',
         'digiket.com': '.btn-lg.btn-info.btn',
         'dlsite.com': 'dynamicSelector', // special case
