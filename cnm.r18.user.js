@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.2.0
+// @version           2.2.3
 // @author            Vinfall
 // @match             https://*.itch.io/*
 // @match             https://*.reddit.com/over18?dest=*
@@ -22,6 +22,7 @@
 // @match             https://www.getchu.com/php/attestation.html?aurl=*
 // @match             https://www.melonbooks.co.jp/detail/detail.php?product_id=*
 // @match             https://www.patreon.com/*
+// @match             https://www.ptt.cc/ask/over18?from=*
 // @exclude-match     https://store.nintendo.com.hk/checkout/*
 // @exclude-match     https://www.melonbooks.co.jp/detail/detail.php?*adult_view=1
 // @exclude-match     https://www.patreon.com/create
@@ -52,6 +53,7 @@ function verifyButton() {
         'jastusa.com': '.content-gate__footer > button.is-primary.button',
         'nintendo.com.hk': 'button#eco-product-confirmation-hide.action-primary',
         'patreon.com': 'button[data-tag="age-confirmation-button"]',
+        // 'ptt.cc': 'button.btm-big[name="yes"][value="yes"]', // not working
         'reddit.com': 'button.c-btn-primary.c-btn:nth-of-type(2)',
         'steamcommunity.com': 'button.btn_medium.btn_blue_steamui > span',
         'toranoana.jp': '#js-en-confirm-adult > .c-modal_content_body > .text-center.c-modal_content_inner > .mt-4.ui-confirm-adult-btn-wrapper > .ui-confirm-adult-btn-primary.c-btn-black.c-btn.js-ui-modal-close.js-btn-primary',
