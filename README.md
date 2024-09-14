@@ -130,14 +130,18 @@ Just a compliment to other existing UserScripts (which would skip link redirect 
 
 ### CNM.R18
 
+Confirm age automatically on various sites (mostly doujin/game related) as I'm *Certainly Not Minor* aka. CNM.R18.
+
 Tested to work on all [VNDB extlinks](https://vndb.org/d3#4) except sites require filling DoB like Steam, Epic Games, GOG & eShop US (and some good guy who do not require age verification).
+
+DMM is not added as it requires login anyway even if you pass the age verification.
 
 Ideally this *can* work on most sites that requires a NSFW parameter or press a button, but I only add websites I'm aware of.
 
 > [!TIP]
 > This also does not have much effect if you seldom/never clean your browser data (which you should NOT do, but that's none of my business), mostly cookies in this case, since you usually only need to verify once and use the website while that cookie lasts.
 
-Alternatively, you can just write a userscript to place/extend confirmed cookies on those websites, if somehow this script breaks in the future.
+Alternatively, you can just write a userscript to place/extend confirmed cookies on those websites, if somehow this script breaks in the future. This way is much easier in most cases, but I did not take it on purpose as I don't give a fxxk about cookies and they end up getting deleted once I close the browser, rendering such userscript pointless.
 
 ### No-Intro
 
