@@ -1,22 +1,24 @@
 // ==UserScript==
-// @name         Skip Redirect Inplace
-// @namespace    https://github.com/Vinfall/UserScripts
-// @version      0.8.1
-// @author       Vinfall
-// @match        https://acg.gamer.com.tw/*
-// @match        https://forum.gamer.com.tw/*
-// @match        https://gnn.gamer.com.tw/*
-// @match        https://m.gamer.com.tw/forum/*
-// @match        https://m.weibo.cn/detail/*
-// @match        https://m.weibo.cn/status/*
-// @match        https://m.weibo.cn/u/*
-// @match        https://sspai.com/*
-// @match        https://www.cnblogs.com/*
-// @match        https://www.gcores.com/*
-// @run-at       document-end
-// @grant        none
-// @icon         data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⏭️</text></svg>
-// @description  Skip stupid URL redirect before you ever click on it
+// @name          Skip Redirect Inplace
+// @namespace     https://github.com/Vinfall/UserScripts
+// @version       0.9.1
+// @author        Vinfall
+// @match         https://acg.gamer.com.tw/*
+// @match         https://forum.gamer.com.tw/*
+// @match         https://gnn.gamer.com.tw/*
+// @match         https://m.gamer.com.tw/forum/*
+// @match         https://m.weibo.cn/detail/*
+// @match         https://m.weibo.cn/status/*
+// @match         https://m.weibo.cn/u/*
+// @match         https://sspai.com/*
+// @match         https://www.cnblogs.com/*
+// @match         https://www.gcores.com/*
+// @match         https://www.tiangal.com/*
+// @exclude-match https://www.tiangal.com/wp-login.php*
+// @run-at        document-end
+// @grant         none
+// @icon          data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⏭️</text></svg>
+// @description   Skip stupid URL redirect before you ever click on it
 // @description:zh-cn 文内替换外链跳转 URL
 // ==/UserScript==
 
@@ -71,6 +73,11 @@
         {
             selector: 'a[href*="//ref.gamer.com.tw/redir.php?url="]',
             regex: /https:\/\/ref\.gamer\.com\.tw\/redir\.php\?url=([^&]+)/,
+            observer: false,
+        },
+        {
+            selector: 'a[href^="https://www.tiangal.com/go.html"]',
+            regex: /https:\/\/www.tiangal.com\/go.html\?url=([^&]+)/,
             observer: false,
         },
     ];
