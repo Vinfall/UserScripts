@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Skip Redirect Inplace
 // @namespace     https://github.com/Vinfall/UserScripts
-// @version       0.9.1
+// @version       1.0.0
 // @author        Vinfall
 // @match         https://acg.gamer.com.tw/*
 // @match         https://forum.gamer.com.tw/*
@@ -25,76 +25,77 @@
 (function () {
     'use strict';
 
-    // Function to decode and replace links based on rules
-    function replaceLinks(rules = []) {
-        rules.forEach((rule) => {
-            // Retrieve all <a> elements based on the selector rule
-            const links = document.querySelectorAll(rule.selector);
+    const attributeShape = [
+        { name: 'selector', type: 'string' },
+        { name: 'regex', type: 'regexp' },
+        { name: 'observer', type: 'boolean' },
+    ];
 
-            // Process each link
-            links.forEach((link) => {
-                // Get the current href value
-                const currentHref = link.href;
+    // prettier-ignore
+    const simplifiedRules = [
+        ['a[href*="https://sspai.com/link?target="]', /https:\/\/sspai.com\/link\?target=([^&]+)/, true],
+        ['a[href*="https://weibo.cn/sinaurl?u="]', /https:\/\/weibo.cn\/sinaurl\?u=([^&]+)/, true],
+        ['a[href*="https://hellogithub.com/periodical/statistics/click?target="]', /https:\/\/hellogithub.com\/periodical\/statistics\/click\?target=([^&]+)/, false],
+        ['a[href*="https://www.gcores.com/link?target="]', /https:\/\/www\.gcores\.com\/link\?target=([^&]+)/, false],
+        ['a[href*="//ref.gamer.com.tw/redir.php?url="]', /https:\/\/ref\.gamer\.com\.tw\/redir\.php\?url=([^&]+)/, false],
+        ['a[href^="https://www.tiangal.com/go.html"]', /https:\/\/www.tiangal.com\/go.html\?url=([^&]+)/, false],
+    ];
 
-                // Extract the real URL using the provided regex
-                const urlMatch = currentHref.match(rule.regex);
-                if (urlMatch && urlMatch[1]) {
-                    // Decode the URL component
-                    const realUrl = decodeURIComponent(urlMatch[1]);
-                    // Replace the href attribute with the real URL
-                    link.href = realUrl;
+    function convertToStructuredRules(simplifiedRules, attributeShape) {
+        return simplifiedRules.map((rule) => {
+            let structuredRule = {};
+            attributeShape.forEach((attr, index) => {
+                if (typeof rule[index] !== attr.type && !(attr.type === 'regexp' && rule[index] instanceof RegExp)) {
+                    throw new Error(`Expected ${attr.type} at position ${index}, but got ${typeof rule[index]}`);
                 }
+                structuredRule[attr.name] = rule[index];
             });
+            return structuredRule;
         });
     }
 
-    const rules = [
-        // Define the rules as an array of objects
-        {
-            selector: 'a[href*="https://sspai.com/link?target="]',
-            regex: /https:\/\/sspai.com\/link\?target=([^&]+)/,
-            observer: true,
-        },
-        {
-            selector: 'a[href*="https://weibo.cn/sinaurl?u="]',
-            regex: /https:\/\/weibo.cn\/sinaurl\?u=([^&]+)/,
-            observer: true,
-        },
-        {
-            selector: 'a[href*="https://hellogithub.com/periodical/statistics/click?target="]',
-            regex: /https:\/\/hellogithub.com\/periodical\/statistics\/click\?target=([^&]+)/,
-            observer: false,
-        },
-        {
-            selector: 'a[href*="https://www.gcores.com/link?target="]',
-            regex: /https:\/\/www\.gcores\.com\/link\?target=([^&]+)/,
-            observer: false,
-        },
-        {
-            selector: 'a[href*="//ref.gamer.com.tw/redir.php?url="]',
-            regex: /https:\/\/ref\.gamer\.com\.tw\/redir\.php\?url=([^&]+)/,
-            observer: false,
-        },
-        {
-            selector: 'a[href^="https://www.tiangal.com/go.html"]',
-            regex: /https:\/\/www.tiangal.com\/go.html\?url=([^&]+)/,
-            observer: false,
-        },
-    ];
+    const rules = convertToStructuredRules(simplifiedRules, attributeShape);
 
-    // Run the function initially with the defined rules
-    replaceLinks(rules);
+    function decodeAndReplaceLink(link, regex) {
+        const currentHref = link.href;
 
-    // Optionally, set up a mutation observer to handle dynamically added links based on the observer flag
-    rules.forEach((rule) => {
-        if (rule.observer) {
-            const observer = new MutationObserver(() => {
-                replaceLinks([rule]); // Pass the individual rule to only re-run for this rule
-            });
-            observer.observe(document.body, {
-                childList: true,
-                subtree: true,
-            });
+        // Extract real URL as per regex
+        const urlMatch = currentHref.match(regex);
+        if (urlMatch && urlMatch[1]) {
+            // URL decode
+            const realUrl = decodeURIComponent(urlMatch[1]);
+            // Replace href attr
+            link.href = realUrl;
         }
-    });
+    }
+
+    function processLinks(rules) {
+        rules.forEach((rule) => {
+            // Retrieve all elements as per selector rule
+            const links = document.querySelectorAll(rule.selector);
+            // Process each link
+            links.forEach((link) => decodeAndReplaceLink(link, rule.regex));
+        });
+    }
+
+    function setupMutationObserver(rules) {
+        rules.forEach((rule) => {
+            if (rule.observer) {
+                const observer = new MutationObserver(() => {
+                    // Pass the individual rule to only re-run for this rule
+                    processLinks([rule]);
+                });
+                observer.observe(document.body, {
+                    childList: true,
+                    subtree: true,
+                });
+            }
+        });
+    }
+
+    // Initial run
+    processLinks(rules);
+
+    // Optionally, set up mutation observer to fix dynamic link
+    setupMutationObserver(rules);
 })();
