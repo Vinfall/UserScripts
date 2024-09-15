@@ -2,10 +2,11 @@
 // @name              Show Original Picture
 // @name:zh-cn        自动跳转原图
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.7.0
+// @version           0.7.1
 // @author            Vinfall
 // @match             https://*.hdslb.com/bfs/*/*.avif
 // @match             https://*.hdslb.com/bfs/*/*.webp
+// @match             https://*.xdaimages.com/wordpress/wp-content/uploads/*/*.*?q=*
 // @match             https://*/wp-content/uploads/*/*/*.*?w=*&h=*
 // @match             https://image.gcores.com/*?x-oss-process=*
 // @match             https://img.chuapp.com//wp-content/Picture/*/*?imageView*
