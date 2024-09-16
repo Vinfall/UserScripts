@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Skip Redirect Inplace
 // @namespace     https://github.com/Vinfall/UserScripts
-// @version       1.0.0
+// @version       1.0.1
 // @author        Vinfall
 // @match         https://acg.gamer.com.tw/*
 // @match         https://forum.gamer.com.tw/*
@@ -14,6 +14,9 @@
 // @match         https://www.cnblogs.com/*
 // @match         https://www.gcores.com/*
 // @match         https://www.tiangal.com/*
+// @exclude-match https://www.tiangal.com/question*
+// @exclude-match https://www.tiangal.com/sign*
+// @exclude-match https://www.tiangal.com/tougao*
 // @exclude-match https://www.tiangal.com/wp-login.php*
 // @run-at        document-end
 // @grant         none
