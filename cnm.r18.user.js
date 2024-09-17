@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.6.3
+// @version           2.7.0
 // @author            Vinfall
 // @match             https://*.itch.io/*
 // @match             https://*.reddit.com/over18?dest=*
@@ -27,6 +27,7 @@
 // @match             https://www.melonbooks.co.jp/detail/detail.php?product_id=*
 // @match             https://www.patreon.com/*
 // @match             https://www.ptt.cc/ask/over18?from=*
+// @match             https://www.will-order.com/age.php?rurl=*
 // @exclude-match     https://download.patch.moe/*
 // @exclude-match     https://store.nintendo.com.hk/checkout/*
 // @exclude-match     https://www.melonbooks.co.jp/detail/detail.php?*adult_view=1
@@ -68,6 +69,7 @@ function verifyButton() {
         'steamcommunity.com': 'button.btn_medium.btn_blue_steamui > span',
         'store.hikarifield.co.jp': '.mt-3.btn-info.btn',
         'toranoana.jp': '#js-en-confirm-adult > .c-modal_content_body > .text-center.c-modal_content_inner > .mt-4.ui-confirm-adult-btn-wrapper > .ui-confirm-adult-btn-primary.c-btn-black.c-btn.js-ui-modal-close.js-btn-primary',
+        'will-order.com': '[src="/images/age/yes_male.gif"]'
     };
 
     function getSelectorForCurrentSite() {
