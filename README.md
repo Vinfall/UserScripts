@@ -130,7 +130,7 @@ Just a compliment to other existing UserScripts (which would skip link redirect 
 
 ### CNM.R18
 
-Confirm age automatically on various sites (mostly doujin/game related) as I'm *Certainly Not Minor* aka. CNM.R18.
+Confirm age automatically on various sites (mostly doujin/game related, but with most Otome stuff excluded) as I'm *Certainly Not Minor* aka. CNM.R18.
 
 Tested to work on all [VNDB extlinks](https://vndb.org/d3#4) except sites require filling DoB like Steam, Epic Games, GOG & eShop US (and some good guy who do not require age verification).
 
