@@ -2,7 +2,7 @@
 // @name              Show Original Picture
 // @name:zh-cn        自动跳转原图
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.7.1
+// @version           0.8.5
 // @author            Vinfall
 // @match             https://*.hdslb.com/bfs/*/*.avif
 // @match             https://*.hdslb.com/bfs/*/*.webp
@@ -12,12 +12,14 @@
 // @match             https://img.chuapp.com//wp-content/Picture/*/*?imageView*
 // @match             https://img.chuapp.com/wp-content/Picture/*/*?imageView*
 // @match             https://www.gravatar.com/avatar/*?s=*
+// @match             https://cdnfile.sspai.com/*/*/*/*.*?imageView2/2/*/interlace/*
+// @exclude-match     https://cdnfile.sspai.com/*/*/*/*.*?imageView2/2/format/webp
 // @grant             none
 // @run-at            document-start
 // @license           CC0 1.0 Universal (Public Domain)
 // @icon              data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔍</text></svg>
-// @description       Auto redirect to original picture, only BiliBili/GCores is supported currently
-// @description:zh-cn 打开图片时自动跳转原图，仅支持 BiliBili、机核
+// @description       Auto redirect to original picture, only a few sites are supported currently
+// @description:zh-cn 打开图片时自动跳转原图，支持 BiliBili、WordPress、XDA、机核、触乐、少数派文章等
 // ==/UserScript==
 
 (function () {
@@ -30,6 +32,8 @@
     const urlReplacements = {
         // e.g. https://i0.hdslb.com/bfs/archive/bfa1134b7d3ab7fcbc363fd7f91be783fa64696c.jpg@320w_200h_1c_!web-space-index-myseries.avif
         'hdslb.com': (url) => url.replace(/(\.(jpg|jpeg|png|webp)).*?\.(avif|webp)$/, '$1'),
+        'cdnfile.sspai.com': (url) =>
+            url.replace(/(\.(png|jpg))\?imageView2\/\d+\/[^ ]*/, '$1?imageView2/2/format/webp'),
         // TODO: merge these
         'gravatar.com': (url) => url.split('?')[0],
         'image.gcores.com': (url) => url.split('?')[0],
