@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.7.0
+// @version           2.8.1
 // @author            Vinfall
 // @match             https://*.itch.io/*
 // @match             https://*.reddit.com/over18?dest=*
@@ -22,6 +22,7 @@
 // @match             https://www.animategames.jp/home/age?redirect=*
 // @match             https://www.digiket.com/work/show/_data/ID=*
 // @match             https://www.dlsite.com/*/work/=/product_id/*
+// @match             https://www.dmm.co.jp/*/age_check/=/?rurl=*
 // @match             https://www.getchu.com/php/attestation.html?aurl=*
 // @match             https://www.johren.games/?backUrl=*
 // @match             https://www.melonbooks.co.jp/detail/detail.php?product_id=*
@@ -53,6 +54,7 @@ function verifyButton() {
         'booth.pm': '.js-approve-adult > .adult-check-nav',
         'digiket.com': '.btn-lg.btn-info.btn',
         'dlsite.com': 'dynamicSelector', // special case
+        'dmm.co.jp': '.css-w5doa7.fill.large.turtle-Button.turtle-component > [href]',
         'gamebanana.com': '.ShowNsfwContentButton',
         'gamejolt.com': '.link-muted > span', // this mutes until I exit
         // 'gamejolt.com': '.-block.-outline.-primary.button', // this only works for once
