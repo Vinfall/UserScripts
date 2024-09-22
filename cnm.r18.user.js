@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.8.1
+// @version           2.9.2
 // @author            Vinfall
 // @match             https://*.itch.io/*
 // @match             https://*.reddit.com/over18?dest=*
@@ -22,6 +22,8 @@
 // @match             https://www.animategames.jp/home/age?redirect=*
 // @match             https://www.digiket.com/work/show/_data/ID=*
 // @match             https://www.dlsite.com/*/work/=/product_id/*
+// @match             https://www.dlsite.com/*-touch/
+// @match             https://www.dlsite.com/*-touch/*
 // @match             https://www.dmm.co.jp/*/age_check/=/?rurl=*
 // @match             https://www.getchu.com/php/attestation.html?aurl=*
 // @match             https://www.johren.games/?backUrl=*
@@ -74,14 +76,28 @@ function verifyButton() {
         'will-order.com': '[src="/images/age/yes_male.gif"]'
     };
 
+    // These sites require verification every time
+    const noFlagSites = [
+        'appendingpulse.jp',
+        'touch', // DLsite mobile
+    ];
+
     function getSelectorForCurrentSite() {
         const hostname = window.location.hostname;
+        const href = window.location.href;
         for (const key in config) {
             if (hostname.includes(key)) {
                 // Special handling for DLsite
                 if (key === 'dlsite.com') {
-                    const pathname = window.location.pathname;
-                    return `[href="${pathname}"]`;
+                    // Mobile
+                    if (href.includes('touch')) {
+                        return 'div.c-modal__button:nth-of-type(1)';
+                    }
+                    // PC
+                    else {
+                        const pathname = window.location.pathname;
+                        return `[href="${pathname}"]`;
+                    }
                 }
                 return config[key];
             }
@@ -91,6 +107,7 @@ function verifyButton() {
 
     function autoConfirmAge() {
         const hostname = window.location.hostname;
+        const href = window.location.href;
         const sessionKey = `ageConfirmed-${hostname}`;
 
         // Check if we've run on this site in this session
@@ -108,8 +125,8 @@ function verifyButton() {
         const ageVerifyButton = document.querySelector(selector);
         if (ageVerifyButton) {
             ageVerifyButton.click();
-            // Skip flag on HF
-            if (hostname.includes('appendingpulse.jp')) {
+            // Skip flag on noFlagSites
+            if (noFlagSites.some((uri) => href.includes(uri))) {
                 return;
             }
             // Store a click flag in sessionStorage
