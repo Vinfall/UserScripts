@@ -134,8 +134,6 @@ Confirm age automatically on various sites (mostly doujin/game related, but with
 
 Tested to work on all [VNDB extlinks](https://vndb.org/d3#4) except sites require filling DoB like Steam, Epic Games, GOG & eShop US (and some good guy who do not require age verification).
 
-DMM is not added as it requires login anyway even if you pass the age verification.
-
 Ideally this *can* work on most sites that requires a NSFW parameter or press a button, but I only add websites I'm aware of.
 
 > [!TIP]
