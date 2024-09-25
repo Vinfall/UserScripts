@@ -2,7 +2,7 @@
 // @name              Show Original Picture
 // @name:zh-cn        自动跳转原图
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.9.0
+// @version           0.10.1
 // @author            Vinfall
 // @match             https://*.hdslb.com/bfs/*/*.avif
 // @match             https://*.hdslb.com/bfs/*/*.webp
@@ -30,18 +30,19 @@
     let newUrl = currentUrl;
 
     // Define rules
+    const urlNihil = ['gravatar.com', 'image.gcores.com', 'img.chuapp.com', 'ipfs.crossbell.io', 'wp-content/uploads'];
+
     const urlReplacements = {
         // e.g. https://i0.hdslb.com/bfs/archive/bfa1134b7d3ab7fcbc363fd7f91be783fa64696c.jpg@320w_200h_1c_!web-space-index-myseries.avif
         'hdslb.com': (url) => url.replace(/(\.(jpg|jpeg|png|webp)).*?\.(avif|webp)$/, '$1'),
         'cdnfile.sspai.com': (url) =>
             url.replace(/(\.(png|jpg))\?imageView2\/\d+\/[^ ]*/, '$1?imageView2/2/format/webp'),
-        // TODO: merge these
-        'gravatar.com': (url) => url.split('?')[0],
-        'image.gcores.com': (url) => url.split('?')[0],
-        'img.chuapp.com': (url) => url.split('?')[0],
-        'ipfs.crossbell.io': (url) => url.split('?')[0],
-        'wp-content/uploads': (url) => url.split('?')[0],
     };
+
+    // Add default rule for urlNihil
+    urlNihil.forEach((uri) => {
+        urlReplacements[uri] = (url) => url.split('?')[0];
+    });
 
     // Match pattern
     const processUrl = (url) => {
