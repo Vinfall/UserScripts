@@ -2,17 +2,18 @@
 // @name              Show Original Picture
 // @name:zh-cn        自动跳转原图
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.8.5
+// @version           0.9.0
 // @author            Vinfall
 // @match             https://*.hdslb.com/bfs/*/*.avif
 // @match             https://*.hdslb.com/bfs/*/*.webp
 // @match             https://*.xdaimages.com/wordpress/wp-content/uploads/*/*.*?q=*
 // @match             https://*/wp-content/uploads/*/*/*.*?w=*&h=*
+// @match             https://cdnfile.sspai.com/*/*/*/*.*?imageView2/2/*/interlace/*
 // @match             https://image.gcores.com/*?x-oss-process=*
 // @match             https://img.chuapp.com//wp-content/Picture/*/*?imageView*
 // @match             https://img.chuapp.com/wp-content/Picture/*/*?imageView*
+// @match             https://ipfs.crossbell.io/ipfs/*?*
 // @match             https://www.gravatar.com/avatar/*?s=*
-// @match             https://cdnfile.sspai.com/*/*/*/*.*?imageView2/2/*/interlace/*
 // @exclude-match     https://cdnfile.sspai.com/*/*/*/*.*?imageView2/2/format/webp
 // @grant             none
 // @run-at            document-start
@@ -38,6 +39,7 @@
         'gravatar.com': (url) => url.split('?')[0],
         'image.gcores.com': (url) => url.split('?')[0],
         'img.chuapp.com': (url) => url.split('?')[0],
+        'ipfs.crossbell.io': (url) => url.split('?')[0],
         'wp-content/uploads': (url) => url.split('?')[0],
     };
 
