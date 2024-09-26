@@ -2,7 +2,7 @@
 // @name               Discuz Short URL
 // @name:zh-cn         Discuz 短链 URL
 // @namespace          https://github.com/Vinfall/UserScripts
-// @version            1.2.0
+// @version            1.2.1
 // @author             Vinfall
 // @match              *://*/?mod=forumdisplay*
 // @match              *://*/?mod=viewthread*
@@ -77,6 +77,7 @@
     const urlObj = new URL(currentUrl);
     const protocol = urlObj.protocol;
     const domain = urlObj.hostname;
+    // const domain = urlObj.host; // with port, e.g. iamdumb.admin:666
 
     // suid-*
     const suidMatch = currentUrl.match(/suid-(\d+)/);
