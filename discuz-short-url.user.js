@@ -35,7 +35,6 @@
 // - Enumerate & Test all mod methods
 // - Support page info in extra param
 
-
 (function () {
     'use strict';
 
@@ -63,14 +62,15 @@
     // }
 
     // 定义字典
-    const domainStyles = [{
+    const domainStyles = [
+        {
             style: (protocol, domain, tid, page) => `${protocol}//${domain}/t${tid}-${page}-1`,
-            domains: ['keylol.com']
+            domains: ['keylol.com'],
         },
         {
             style: (protocol, domain, tid, page) => `${protocol}//${domain}/thread-${tid}-${page}-1.html`,
-            domains: ['bbs.a9vg.com', 'bbs.3dmgame.com', 'game.ali213.net']
-        }
+            domains: ['bbs.a9vg.com', 'bbs.3dmgame.com', 'game.ali213.net'],
+        },
     ];
 
     const currentUrl = window.location.href;
@@ -132,7 +132,7 @@
         // 根据域名匹配字典中的 URL 样式
         let matched = false;
         for (const entry of domainStyles) {
-            if (entry.domains.some(d => domain.includes(d))) {
+            if (entry.domains.some((d) => domain.includes(d))) {
                 newUrl = entry.style(protocol, domain, tid, page);
                 matched = true;
                 break;
