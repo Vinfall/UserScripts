@@ -2,7 +2,7 @@
 // @name               Discuz Short URL
 // @name:zh-cn         Discuz 短链 URL
 // @namespace          https://github.com/Vinfall/UserScripts
-// @version            1.2.1
+// @version            1.2.2
 // @author             Vinfall
 // @match              *://*/?mod=forumdisplay*
 // @match              *://*/?mod=viewthread*
@@ -14,6 +14,7 @@
 // @exclude-match      *://*/?*goto*
 // @exclude-match      *://*/?mod=redirect*
 // @exclude-match      *://*/*username=*
+// @exclude-match      *://*/admin.php?*
 // @exclude-match      *://*/forum.php?*goto*
 // @exclude-match      *://*/forum.php?mod=redirect*
 // @grant              none
