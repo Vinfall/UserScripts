@@ -42,17 +42,6 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 > It's suggested to export data via [VNDB query](https://query.vndb.org/about) instead.
 > You can find the queries on [my vndb repo](https://github.com/Vinfall/vndb/tree/main/sql).
 
-#### Bugs & Todo
-
-- [x] Adjust data offset for VN/Developer name with comma
-- [x] Support length votes export
-- [x] Support list export without login
-- [x] Solve length votes export breakage if the user has only one page
-- [x] Add length votes button
-- [x] Add merge script
-- [ ] Would return to first page after exporting the CSV, this is unintended and considered a bug
-- [ ] Auto pager (or add an additional `Save page data` button & export at once in the end?)
-
 ### Indienova Game Hide
 
 #### 使用说明
@@ -142,8 +131,7 @@ Alternatively, you can just write a userscript to place/extend confirmed cookies
 SharePoint Cookie Pasta:
 - OneDrive SharePoint can be hard to deal with at times and multiple tools that can get direct link & cookies from SharePoint do not work nowadays, this is created to ease the pain *a little* by having a `Copy cookie` button so that I don't have to open DevTools over and over again.
 - In case the button does not show up, the cookie is also printed to console log. You can easily filter out the message by searching `user.js`.
-- Todo
-  - [ ] Catch document type response gracefully & only output if the cookie begins with `FedAuth`
+- TODO: Catch document type response gracefully & only output if the cookie begins with `FedAuth`
 
 VNDB List Export:
 - User VN List
