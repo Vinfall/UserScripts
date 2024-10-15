@@ -22,7 +22,7 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 
 ### VNDB List Export
 
-#### How to Export User List
+#### Export User VN List
 
 1. Open user list, e.g. `https://vndb.org/u114514/ulist` (replace the number)
 2. Select `Multi-select` in the upper right corner & choose labels wisely
@@ -35,16 +35,12 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 > [!NOTE]
 > It's NOT recommended to do *delta update* if you want stats like `Rating` & `Length` as they are dynamic (expected to change over time).
 
-#### How to Export Length Votes List
+#### Export User Length Votes
 
-1. Open user lengths vote list, e.g. `https://vndb.org/u114514/lengthvotes` (replace the number)
-2. Click `Export as CSV` right under `Length votes` heading (or in the upper right corner, if logged in)
-3. Change page, and repeat 2
-4. Combine those CSV manually, or use [vndb-merge.py](https://gist.vinfall.com/Vinfall/716e312743f74d958d51ee29783fcdc9)
-5. (For Excel usage) change file encoding to `UTF-8 BOM`, or dumb Excel won't recognize CJK characters
-
-> [!TIP]
-> It's possible to do *delta update* as length votes are generally static and should not change unless you do that explicitly.
+> [!WARNING]
+> DEPRECATED!
+> It's suggested to export data via [VNDB query](https://query.vndb.org/about) instead.
+> You can find the queries on [my vndb repo](https://github.com/Vinfall/vndb/tree/main/sql).
 
 #### Bugs & Todo
 
@@ -148,6 +144,15 @@ SharePoint Cookie Pasta:
 - In case the button does not show up, the cookie is also printed to console log. You can easily filter out the message by searching `user.js`.
 - Todo
   - [ ] Catch document type response gracefully & only output if the cookie begins with `FedAuth`
+
+VNDB List Export:
+- User VN List
+- User Length Votes
+  1. Open user lengths vote list, e.g. `https://vndb.org/u114514/lengthvotes` (replace the UID)
+  2. Click `Export as CSV` right under `Length votes` heading (or in the upper right corner, if logged in)
+  3. Change page, and repeat 2
+  4. Combine those CSV manually, or use [vndb-merge.py](https://gist.vinfall.com/Vinfall/716e312743f74d958d51ee29783fcdc9)
+  5. (For Excel usage) change file encoding to `UTF-8 BOM`, or dumb Excel won't recognize CJK characters
 
 ## Notice
 
