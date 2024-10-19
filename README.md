@@ -53,6 +53,7 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 
 - [x] 为隐藏游戏添加一个临时显示按钮
 - [ ] 支持 `/news-of-overseas-indie-games-and-industry` 页面的 demo 列表 (`p` element instead of `H4`, [example](https://indienova.com/indie-game-news/news-of-overseas-indie-games-and-industry-vol-15/#iah-2))
+- [ ] 支持 `/indie-game-news/steam-next-fest-*` 页面的 demo 列表
 
 ### Steam Game Feature Kai
 
