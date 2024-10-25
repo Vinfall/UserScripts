@@ -1,14 +1,14 @@
 // ==UserScript==
-// @name         Steam Game Feature Kai
+// @name         Steam Advanced Outlink
 // @namespace    https://github.com/Vinfall/UserScripts
-// @version      3.1.0
+// @version      3.2.0
 // @author       Vinfall
 // @match        https://store.steampowered.com/app/*
 // @icon         https://store.steampowered.com/favicon.ico
 // @grant        none
 // @license      CC0 1.0 Universal (Public Domain)
-// @description  Alternative game feature outlinks on Steam store webpage
-// @description:zh-cn Steam 商店页面游戏特性外链替换
+// @description  Better outlinks on Steam store
+// @description:zh-cn Steam 商店页面外链优化
 // ==/UserScript==
 
 (function () {
@@ -82,6 +82,12 @@
                 }
             });
         });
+
+        // Redirect useless community outlink to guide
+        var communityLink = document.querySelector(`a[href="https://steamcommunity.com/app/${appId}"]`);
+        if (communityLink) {
+            communityLink.href = `https://steamcommunity.com/app/${appId}/guides`;
+        }
     } else {
         console.error('Unsupported URL');
     }

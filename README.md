@@ -17,7 +17,7 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 | [`jd2bean.user.js`](https://github.com/Vinfall/UserScripts/raw/main/jd2bean.user.js) | 根据京东订单生成 Beancount 账单 |
 | [`show-orig-pic.user.js`](https://github.com/Vinfall/UserScripts/raw/main/show-orig-pic.user.js) | Open image in original resolution |
 | [`skip-redirect-inplace.user.js`](https://github.com/Vinfall/UserScripts/raw/main/skip-redirect-inplace.user.js) | Skip stupid URL redirect in href |
-| [`steam-game-feature-kai.user.js`](https://github.com/Vinfall/UserScripts/raw/main/steam-game-feature-kai.user.js) | Alternative game feature outlinks on Steam |
+| [`steam-advanced-outlink.user.js`](https://github.com/Vinfall/UserScripts/raw/main/steam-advanced-outlink.user.js) | aka. SAO, better outlinks on Steam store |
 | [`vndb-list-export.user.js`](https://github.com/Vinfall/UserScripts/raw/main/vndb-list-export.user.js) | Export VNDB user VN/length vote to CSV |
 | [`weibo-mobile-redirect`](https://github.com/Vinfall/UserScripts/raw/main/weibo-mobile-redirect.user.js) | 新浪微博自动跳转移动版，支持微博、文章、视频 |
 
