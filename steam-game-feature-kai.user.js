@@ -1,9 +1,10 @@
 // ==UserScript==
 // @name         Steam Game Feature Kai
 // @namespace    https://github.com/Vinfall/UserScripts
-// @version      3.0.2
+// @version      3.1.0
 // @author       Vinfall
 // @match        https://store.steampowered.com/app/*
+// @icon         https://store.steampowered.com/favicon.ico
 // @grant        none
 // @license      CC0 1.0 Universal (Public Domain)
 // @description  Alternative game feature outlinks on Steam store webpage
@@ -21,29 +22,39 @@
             {
                 srcIncludes: 'ico_achievements',
                 text: 'AStats',
-                href: 'https://astats.astats.nl/astats/Steam_Game_Info.php?AppID=' + appId
+                href: 'https://astats.astats.nl/astats/Steam_Game_Info.php?AppID=' + appId,
             },
             {
                 srcIncludes: 'ico_cloud',
                 text: 'Cloudsave',
-                href: 'https://store.steampowered.com/account/remotestorageapp?appid=' + appId + '&index=0'
+                href: 'https://store.steampowered.com/account/remotestorageapp?appid=' + appId + '&index=0',
             },
             {
                 srcIncludes: 'ico_cards',
                 text: 'Steam Card Exchange',
-                href: 'https://www.steamcardexchange.net/index.php?gamepage-appid-' + appId + '/'
+                href: 'https://www.steamcardexchange.net/index.php?gamepage-appid-' + appId + '/',
             },
             {
                 srcIncludes: 'ico_workshop',
                 text: 'Workshop',
-                href: 'https://steamcommunity.com/workshop/browse/?appid=' + appId + '&browsesort=toprated&section=readytouseitems'
+                href:
+                    'https://steamcommunity.com/workshop/browse/?appid=' +
+                    appId +
+                    '&browsesort=toprated&section=readytouseitems',
             },
             // Warning on unexpected feature
             {
                 // 'ico_cart' == IAP, 'ico_info` == profile features limited
-                srcIncludes: ['ico_coop', 'ico_multiPlayer', 'ico_cart', 'ico_vac', 'ico_info', 'ico_learning_about_game'],
-                color: warningColor
-            }
+                srcIncludes: [
+                    'ico_coop',
+                    'ico_multiPlayer',
+                    'ico_cart',
+                    'ico_vac',
+                    'ico_info',
+                    'ico_learning_about_game',
+                ],
+                color: warningColor,
+            },
         ];
 
         // TODO: expand to div.page_content > .game_meta_data.rightcol for better matching
@@ -51,7 +62,11 @@
         elements.forEach(function (element) {
             conditions.forEach(function (condition) {
                 if (Array.isArray(condition.srcIncludes)) {
-                    if (condition.srcIncludes.some(src => element.querySelector('.icon img.category_icon').src.includes(src))) {
+                    if (
+                        condition.srcIncludes.some((src) =>
+                            element.querySelector('.icon img.category_icon').src.includes(src),
+                        )
+                    ) {
                         // Set color on unwanted feature
                         if (condition.color) {
                             element.querySelector('.label').style.color = condition.color;
