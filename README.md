@@ -130,11 +130,6 @@ Alternatively, you can just write a userscript to place/extend confirmed cookies
 
 ### No-Intro
 
-SharePoint Cookie Pasta:
-- OneDrive SharePoint can be hard to deal with at times and multiple tools that can get direct link & cookies from SharePoint do not work nowadays, this is created to ease the pain *a little* by having a `Copy cookie` button so that I don't have to open DevTools over and over again.
-- In case the button does not show up, the cookie is also printed to console log. You can easily filter out the message by searching `user.js`.
-- TODO: Catch document type response gracefully & only output if the cookie begins with `FedAuth`
-
 VNDB List Export:
 - User VN List
 - User Length Votes
