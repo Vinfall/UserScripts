@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name              GitHub Boldless Title
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           1.0.0
+// @version           1.0.1
 // @author            Vinfall
 // @match             https://github.com/*
 // @exclude-match     https://github.com/signin
 // @grant             none
-// @run-at            document-start
+// @run-at            document-end
 // @license           CC0 1.0 Universal (Public Domain)
 // @icon
 // @description       Remove strong style in GitHub repo title
@@ -34,10 +34,12 @@
         });
     }
 
-    // Run immediately on page load
-    replaceStrongWithAnchor();
+    // Run after the window has fully loaded
+    window.onload = () => {
+        replaceStrongWithAnchor();
 
-    // Optionally, observe changes in the page (e.g., for dynamic content)
-    const observer = new MutationObserver(replaceStrongWithAnchor);
-    observer.observe(document.body, { childList: true, subtree: true });
+        // Observe changes in the page (e.g., for dynamic content)
+        const observer = new MutationObserver(replaceStrongWithAnchor);
+        observer.observe(document.body, { childList: true, subtree: true });
+    };
 })();
