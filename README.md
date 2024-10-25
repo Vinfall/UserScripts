@@ -11,6 +11,7 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 | ---- | ---- |
 | [`cnm.r18.user.js`](https://github.com/Vinfall/UserScripts/raw/main/cnm.r18.user.js) | Skip age verification on numerous sites |
 | [`discuz-short-url.user.js`](https://github.com/Vinfall/UserScripts/raw/main/discuz-short-url.user.js) | Show short URL on Discuz forums |
+| [`github-boldless-title.user.js`](https://github.com/Vinfall/UserScripts/raw/main/github-boldless-title.user.js) | Remove strong style in GitHub repo title |
 | [`github-release-highlight.user.js`](https://github.com/Vinfall/UserScripts/raw/main/github-release-highlight.user.js) | Highlight GitHub release assets containing keywords |
 | [`indienova-game-hide.user.js`](https://github.com/Vinfall/UserScripts/raw/main/indienova-game-hide.user.js) | indienova 每周游戏隐藏包含特定游戏类型 |
 | [`jd2bean.user.js`](https://github.com/Vinfall/UserScripts/raw/main/jd2bean.user.js) | 根据京东订单生成 Beancount 账单 |
