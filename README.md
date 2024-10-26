@@ -94,21 +94,6 @@ While directly inspired by and originated from [Steam Cloudsave](https://greasyf
 
 ### VNDB List Export
 
-#### Export User VN List
-
-1. Open user list, e.g. `https://vndb.org/u114514/ulist` (replace the number)
-2. Select `Multi-select` in the upper right corner & choose labels wisely
-3. Click the number above the table and change it to max (200 as of writing), then click 👁️ icon on the right and choose visible columns
-4. Click `Export as CSV`
-5. Change page, and repeat step 4
-6. Combine those CSV manually, or use [vndb-merge.py](https://gist.vinfall.com/Vinfall/716e312743f74d958d51ee29783fcdc9)
-7. (For Excel usage) change file encoding to `UTF-8 BOM`, or dumb Excel won't recognize CJK characters
-
-> [!NOTE]
-> It's NOT recommended to do *delta update* if you want stats like `Rating` & `Length` as they are dynamic (expected to change over time).
-
-#### Export User Length Votes
-
 > [!WARNING]
 > DEPRECATED!
 > It's suggested to export data via [VNDB query](https://query.vndb.org/about) instead.
@@ -131,6 +116,13 @@ While directly inspired by and originated from [Steam Cloudsave](https://greasyf
 
 VNDB List Export:
 - User VN List
+  1. Open user list, e.g. `https://vndb.org/u114514/ulist` (replace the UID)
+  2. Select `Multi-select` in the upper right corner & choose labels wisely
+  3. Click the number above the table and change it to max (200 as of writing), then click 👁️ icon on the right and choose visible columns
+  4. Click `Export as CSV`
+  5. Change page, and repeat step 4
+  6. Combine those CSV manually, or use [vndb-merge.py](https://gist.vinfall.com/Vinfall/716e312743f74d958d51ee29783fcdc9)
+  7. (For Excel usage) change file encoding to `UTF-8 BOM`, or dumb Excel won't recognize CJK characters
 - User Length Votes
   1. Open user lengths vote list, e.g. `https://vndb.org/u114514/lengthvotes` (replace the UID)
   2. Click `Export as CSV` right under `Length votes` heading (or in the upper right corner, if logged in)
