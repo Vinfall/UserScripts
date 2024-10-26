@@ -7,19 +7,19 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 
 ## List
 
-| Name | Function |
-| ---- | ---- |
-| [CNM.R18](#cnmr18), [install](https://github.com/Vinfall/UserScripts/raw/main/cnm.r18.user.js) | Skip age verification on numerous sites |
-| [Discuz-Short-URL](#discuz-short-url), [install](https://github.com/Vinfall/UserScripts/raw/main/discuz-short-url.user.js) | Show short URL on Discuz forums |
-| GitHub-Boldless-Title, [install](https://github.com/Vinfall/UserScripts/raw/main/github-boldless-title.user.js) | Remove strong style in GitHub repo title |
-| [GitHub Release Highlight](#github-release-highlight), [install](https://github.com/Vinfall/UserScripts/raw/main/github-release-highlight.user.js) | Highlight GitHub release assets containing keywords |
-| [Indienova Game Hide](#indienova-game-hide), [install](https://github.com/Vinfall/UserScripts/raw/main/indienova-game-hide.user.js) | indienova 每周游戏隐藏包含特定游戏类型 |
-| [JD2Bean](#jd-to-beancount), [install](https://github.com/Vinfall/UserScripts/raw/main/jd2bean.user.js) | 根据京东订单生成 Beancount 账单 |
-| Show-Orig-Pic, [install](https://github.com/Vinfall/UserScripts/raw/main/show-orig-pic.user.js) | Open image in original resolution |
-| [Skip Redirect Inplace](#skip-redirect-inplace), [install](https://github.com/Vinfall/UserScripts/raw/main/skip-redirect-inplace.user.js) | Skip stupid URL redirect in href |
-| [SAO](#steam-advanced-outlink), [install](https://github.com/Vinfall/UserScripts/raw/main/steam-advanced-outlink.user.js) | Better outlinks on Steam store |
-| [VNDB List Export](#vndb-list-export), [install](https://github.com/Vinfall/UserScripts/raw/main/vndb-list-export.user.js) | Export VNDB user VN/length vote to CSV |
-| [Weibo Mobile Redirect](#weibo-mobile-redirect), [install](https://github.com/Vinfall/UserScripts/raw/main/weibo-mobile-redirect.user.js) | 新浪微博自动跳转移动版，支持微博、文章、视频 |
+| Name | Function | Install |
+| ---- | -------- | :-----: |
+| [CNM.R18](#cnmr18) | Skip age verification on numerous sites | [install](https://github.com/Vinfall/UserScripts/raw/main/cnm.r18.user.js) |
+| [Discuz-Short-URL](#discuz-short-url) | Show short URL on Discuz forums | [install](https://github.com/Vinfall/UserScripts/raw/main/discuz-short-url.user.js) |
+| GitHub-Boldless-Title | Remove strong style in GitHub repo title | [install](https://github.com/Vinfall/UserScripts/raw/main/github-boldless-title.user.js) |
+| [GitHub Release Highlight](#github-release-highlight) | Highlight GitHub release assets containing keywords | [install](https://github.com/Vinfall/UserScripts/raw/main/github-release-highlight.user.js) |
+| [Indienova Game Hide](#indienova-game-hide) | indienova 每周游戏隐藏包含特定游戏类型 | [安装](https://github.com/Vinfall/UserScripts/raw/main/indienova-game-hide.user.js) |
+| [JD2Bean](#jd-to-beancount) | 根据京东订单生成 Beancount 账单 | [安装](https://github.com/Vinfall/UserScripts/raw/main/jd2bean.user.js) |
+| Show-Orig-Pic | Open image in original resolution | [install](https://github.com/Vinfall/UserScripts/raw/main/show-orig-pic.user.js) |
+| [Skip Redirect Inplace](#skip-redirect-inplace) | Skip stupid URL redirect in href | [install](https://github.com/Vinfall/UserScripts/raw/main/skip-redirect-inplace.user.js) |
+| [SAO](#steam-advanced-outlink) | Better outlinks on Steam store | [install](https://github.com/Vinfall/UserScripts/raw/main/steam-advanced-outlink.user.js) |
+| [VNDB List Export](#vndb-list-export) | Export VNDB user VN/length vote to CSV | [install](https://github.com/Vinfall/UserScripts/raw/main/vndb-list-export.user.js) |
+| [Weibo Mobile Redirect](#weibo-mobile-redirect) | 新浪微博自动跳转移动版，支持微博、文章、视频 | [安装](https://github.com/Vinfall/UserScripts/raw/main/weibo-mobile-redirect.user.js) |
 
 ## Docs
 
