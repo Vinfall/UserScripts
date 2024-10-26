@@ -17,7 +17,7 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 | [`jd2bean.user.js`](https://github.com/Vinfall/UserScripts/raw/main/jd2bean.user.js) | 根据京东订单生成 Beancount 账单 |
 | [`show-orig-pic.user.js`](https://github.com/Vinfall/UserScripts/raw/main/show-orig-pic.user.js) | Open image in original resolution |
 | [`skip-redirect-inplace.user.js`](https://github.com/Vinfall/UserScripts/raw/main/skip-redirect-inplace.user.js) | Skip stupid URL redirect in href |
-| [`steam-advanced-outlink.user.js`](https://github.com/Vinfall/UserScripts/raw/main/steam-advanced-outlink.user.js) | aka. SAO, better outlinks on Steam store |
+| [`steam-advanced-outlink.user.js`](https://github.com/Vinfall/UserScripts/raw/main/steam-advanced-outlink.user.js) | Better outlinks on Steam store |
 | [`vndb-list-export.user.js`](https://github.com/Vinfall/UserScripts/raw/main/vndb-list-export.user.js) | Export VNDB user VN/length vote to CSV |
 | [`weibo-mobile-redirect`](https://github.com/Vinfall/UserScripts/raw/main/weibo-mobile-redirect.user.js) | 新浪微博自动跳转移动版，支持微博、文章、视频 |
 
@@ -56,15 +56,15 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 - [ ] 支持 `/news-of-overseas-indie-games-and-industry` 页面的 demo 列表 (`p` element instead of `H4`, [example](https://indienova.com/indie-game-news/news-of-overseas-indie-games-and-industry-vol-15/#iah-2))
 - [ ] 支持 `/indie-game-news/steam-next-fest-*` 页面的 demo 列表
 
-### Steam Game Feature Kai
+### Steam Advanced Outlink
 
-The game features card on Steam store page comes with outlinks to the respective game feature (obviously), which is a bit useless as SteamDB has MUCH better functionality on this.
+The game features card on Steam store page comes with outlinks to the respective game feature (obviously), which is useless as SteamDB has MUCH better functionality on this.
 
-This script would replace the default list of features with a few goodies that are really useful.
+Steam Advanced Outlink, aka. SAO, would replace the default list of outlinks with a few goodies that are really useful.
 
-It also serves as a minimal replacement for Augmented Steam for me since it does not require an extra extension and can be used in mobile browsers with UserScript support like [cromite](https://github.com/uazo/cromite).
+It also serves as a minimal implementation of Augmented Steam for me since it can be used in mobile browsers with UserScript support like [cromite](https://github.com/uazo/cromite).
 
-While inspired by and originated from [Steam Cloudsave](https://greasyfork.org/zh-CN/scripts/489218-steam-cloudsave/), the script is considered to be a full rewrite so it should be safe to change the license from MIT to CC0 (Public Domain).
+While directly inspired by and originated from [Steam Cloudsave](https://greasyfork.org/zh-CN/scripts/489218-steam-cloudsave/), the script is a full rewrite so I change the license from MIT to CC0 (Public Domain).
 
 ### GitHub Release Highlight
 
@@ -146,4 +146,4 @@ Do NOT clone submodule as it's private and protected with private key.
 
 ## [License](./LICENSE)
 
-Licensed under CC0 1.0 Universal (Public Domain), unless otherwise noted in the script *per se*.
+Licensed under CC0 1.0 Universal or Public Domain, whichever is more permissive, unless otherwise noted in the script.
