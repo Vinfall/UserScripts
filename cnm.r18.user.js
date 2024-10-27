@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.9.2
+// @version           2.10.1
 // @author            Vinfall
 // @match             https://*.itch.io/*
 // @match             https://*.reddit.com/over18?dest=*
@@ -19,11 +19,12 @@
 // @match             https://steamcommunity.com/app/*
 // @match             https://store.hikarifield.co.jp/downloads/*
 // @match             https://store.nintendo.com.hk/*
+// @match             https://www.animate-onlineshop.jp/*
 // @match             https://www.animategames.jp/home/age?redirect=*
 // @match             https://www.digiket.com/work/show/_data/ID=*
-// @match             https://www.dlsite.com/*/work/=/product_id/*
 // @match             https://www.dlsite.com/*-touch/
 // @match             https://www.dlsite.com/*-touch/*
+// @match             https://www.dlsite.com/*/work/=/product_id/*
 // @match             https://www.dmm.co.jp/*/age_check/=/?rurl=*
 // @match             https://www.getchu.com/php/attestation.html?aurl=*
 // @match             https://www.johren.games/?backUrl=*
@@ -49,6 +50,7 @@ function verifyButton() {
     // Define rules
     // prettier-ignore
     const config = {
+        'animate-onlineshop.jp': 'dynamicSelector', // special case
         'animategames.jp': '.btn-blr18.btn',
         'appendingpulse.jp': '#in', // old releases
         // new releases
@@ -98,6 +100,10 @@ function verifyButton() {
                         const pathname = window.location.pathname;
                         return `[href="${pathname}"]`;
                     }
+                }
+                if (key === 'animate-onlineshop.jp') {
+                    const pathname = window.location.pathname;
+                    return `[href^="${pathname}"]`;
                 }
                 return config[key];
             }
