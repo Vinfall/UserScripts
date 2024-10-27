@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.10.1
+// @version           2.10.2
 // @author            Vinfall
 // @match             https://*.itch.io/*
 // @match             https://*.reddit.com/over18?dest=*
@@ -19,7 +19,8 @@
 // @match             https://steamcommunity.com/app/*
 // @match             https://store.hikarifield.co.jp/downloads/*
 // @match             https://store.nintendo.com.hk/*
-// @match             https://www.animate-onlineshop.jp/*
+// @match             https://www.animate-onlineshop.jp/pd/*
+// @match             https://www.animate-onlineshop.jp/pn/*
 // @match             https://www.animategames.jp/home/age?redirect=*
 // @match             https://www.digiket.com/work/show/_data/ID=*
 // @match             https://www.dlsite.com/*-touch/
@@ -34,6 +35,7 @@
 // @match             https://www.will-order.com/age.php?rurl=*
 // @exclude-match     https://download.patch.moe/*
 // @exclude-match     https://store.nintendo.com.hk/checkout/*
+// @exclude-match     https://www.animate-onlineshop.jp/mypage/*
 // @exclude-match     https://www.melonbooks.co.jp/detail/detail.php?*adult_view=1
 // @exclude-match     https://www.patreon.com/create
 // @exclude-match     https://www.patreon.com/login
