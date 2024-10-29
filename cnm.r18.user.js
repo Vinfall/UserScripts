@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.10.2
+// @version           2.11.0
 // @author            Vinfall
 // @match             https://*.itch.io/*
 // @match             https://*.reddit.com/over18?dest=*
@@ -15,6 +15,9 @@
 // @match             https://jastusa.com/games/*/*
 // @match             https://jastusa.com/zh_Hans/games/*/*
 // @match             https://jastusa.com/zh_Hant/games/*/*
+// @match             https://moepedia.net/
+// @match             https://moepedia.net/*
+// @match             https://moepedia.net/game/*
 // @match             https://patch.moe/
 // @match             https://steamcommunity.com/app/*
 // @match             https://store.hikarifield.co.jp/downloads/*
@@ -69,6 +72,7 @@ function verifyButton() {
         'itch.io': '.buttons > .button',
         'jastusa.com': '.content-gate__footer > button.is-primary.button',
         'johren.games': '.link_enter.mainbtn-primary-lv1',
+        'moepedia.net': '.age-button_yes',
         'nintendo.com.hk': 'button#eco-product-confirmation-hide.action-primary',
         'patch.moe': 'a.css-button-rounded--red:nth-of-type(1)',
         'patreon.com': 'button[data-tag="age-confirmation-button"]',
