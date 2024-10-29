@@ -2,10 +2,12 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.11.0
+// @version           2.12.3
 // @author            Vinfall
 // @match             https://*.itch.io/*
 // @match             https://*.reddit.com/over18?dest=*
+// @match             https://a.sofmap.com/adult_confirm.aspx?url=*
+// @match             https://a.sofmap.com/product_detail.aspx?sku=*
 // @match             https://appendingpulse.jp/dl/*
 // @match             https://booth.pm/*/items/*
 // @match             https://ec.toranoana.jp/tora_r/ec/item/*
@@ -55,6 +57,7 @@ function verifyButton() {
     // Define rules
     // prettier-ignore
     const config = {
+        'a.sofmap.com': '.blue.button',
         'animate-onlineshop.jp': 'dynamicSelector', // special case
         'animategames.jp': '.btn-blr18.btn',
         'appendingpulse.jp': '#in', // old releases
@@ -159,6 +162,7 @@ function verifyButton() {
 function verifyParam() {
     // Define rules
     const siteParams = {
+        'a.softmap.com': 'aac=on',
         'melonbooks.co.jp': 'adult_view=1',
         // Getchu not working even w/ url redirect, use verifyButton instead
         // 'getchu.com': 'gc=gc',
