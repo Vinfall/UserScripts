@@ -2,10 +2,11 @@
 // @name              Show Original Picture
 // @name:zh-cn        自动跳转原图
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.10.1
+// @version           0.11.0
 // @author            Vinfall
 // @match             https://*.hdslb.com/bfs/*/*.avif
 // @match             https://*.hdslb.com/bfs/*/*.webp
+// @match             https://*.moimg.net/*?x-oss-process=*
 // @match             https://*.xdaimages.com/wordpress/wp-content/uploads/*/*.*?q=*
 // @match             https://*/wp-content/uploads/*/*/*.*?w=*&h=*
 // @match             https://cdnfile.sspai.com/*/*/*/*.*?imageView2/2/*/interlace/*
@@ -30,7 +31,14 @@
     let newUrl = currentUrl;
 
     // Define rules
-    const urlNihil = ['gravatar.com', 'image.gcores.com', 'img.chuapp.com', 'ipfs.crossbell.io', 'wp-content/uploads'];
+    const urlNihil = [
+        'gravatar.com',
+        'image.gcores.com',
+        'img.chuapp.com',
+        'ipfs.crossbell.io',
+        'moimg.net',
+        'wp-content/uploads',
+    ];
 
     const urlReplacements = {
         // e.g. https://i0.hdslb.com/bfs/archive/bfa1134b7d3ab7fcbc363fd7f91be783fa64696c.jpg@320w_200h_1c_!web-space-index-myseries.avif
