@@ -2,7 +2,7 @@
 // @name              Weibo Mobile Redirect
 // @name:zh-cn        新浪微博移动版跳转
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           1.2.1
+// @version           1.3.0
 // @author            Vinfall
 // @match             https://video.weibo.com/show?fid=*
 // @match             https://weibo.com/*/*
@@ -60,6 +60,16 @@
                 window.location.replace(articleMobileUrl);
             },
         },
+        // weibo.com/1234567890/1234567890123456
+        // used to be weibo.com/detail/*
+        {
+            pattern: /^https:\/\/weibo\.com\/\d{10}\/(\d{16})/,
+            handle: (match) => {
+                const detailId = match[1];
+                const detailMobileUrl = `https://m.weibo.cn/detail/${detailId}`;
+                window.location.replace(detailMobileUrl);
+            },
+        },
         // weibo.com/1234567890/abcdEFG89
         {
             pattern: /^https:\/\/weibo\.com\/\d{10}\/(\w{9})/,
@@ -80,8 +90,6 @@
                 window.location.replace(videoUrl);
             },
         },
-        // weibo.com/detail/*
-        // no longer exists nowadays
     ];
 
     for (const caseItem of cases) {
