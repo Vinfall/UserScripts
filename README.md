@@ -52,6 +52,8 @@ Alternatively, you can just write a userscript to place/extend confirmed cookies
 
 Given that it's released in public domain, feel free to do whatever you want :)
 
+Note: this does NOT work in *all releases* page, you need to head to *a specific release tag* for the highlight to work.
+
 ### Indienova Game Hide
 
 #### 使用说明
