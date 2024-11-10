@@ -18,7 +18,6 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 | Show Original Picture | Open image in original resolution | [install](https://github.com/Vinfall/UserScripts/raw/main/show-orig-pic.user.js) |
 | [Skip Redirect Inplace](#skip-redirect-inplace) | Skip stupid URL redirect in href | [install](https://github.com/Vinfall/UserScripts/raw/main/skip-redirect-inplace.user.js) |
 | [SAO](#steam-advanced-outlink) | Better outlinks on Steam store | [install](https://github.com/Vinfall/UserScripts/raw/main/steam-advanced-outlink.user.js) |
-| [VNDB List Export](#vndb-list-export) | Export VNDB user VN/length vote to CSV | [install](https://github.com/Vinfall/UserScripts/raw/main/vndb-list-export.user.js) |
 | [Weibo Mobile Redirect](#weibo-mobile-redirect) | 新浪微博自动跳转移动版，支持微博、文章、视频 | [安装](https://github.com/Vinfall/UserScripts/raw/main/weibo-mobile-redirect.user.js) |
 
 ## Docs

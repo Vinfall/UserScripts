@@ -5,7 +5,7 @@
 // @match       https://vndb.org/u*/ulist*
 // @match       https://vndb.org/u*/lengthvotes
 // @grant       none
-// @version     4.4.2
+// @version     4.4.3
 // @author      Vinfall
 // @license     WTFPL
 // @description Export VNDB user VN & length vote list to CSV
@@ -19,15 +19,16 @@ function getTable(selector) {
     var userListTable = document.querySelector(selector);
 
     // Get table header
-    var headers = Array.from(userListTable.querySelectorAll('thead tr')).map(row => {
-        return Array.from(row.querySelectorAll('td')).map(td => { // this is weird, should be 'th' for real
+    var headers = Array.from(userListTable.querySelectorAll('thead tr')).map((row) => {
+        return Array.from(row.querySelectorAll('td')).map((td) => {
+            // this is weird, should be 'th' for real
             // Delete unwanted operator strings
             return td.textContent.trim().replace(/▴▾|Opt/g, '');
         });
     });
 
     // Get list
-    var userData = Array.from(userListTable.querySelectorAll('tbody tr')).map(row => {
+    var userData = Array.from(userListTable.querySelectorAll('tbody tr')).map((row) => {
         return Array.from(row.querySelectorAll('td')).map((td, index) => {
             // Delete unwanted string
             var cellData = td.textContent.trim().replace(/ 👁|▾/g, '');
@@ -46,14 +47,14 @@ function getTable(selector) {
 
     // Convert to CSV
     var csvContent = '';
-    headers.forEach(row => {
+    headers.forEach((row) => {
         csvContent += row.join(',') + '\n';
     });
     // Delete leading spaces in header
     csvContent = csvContent.replace(/ ,/g, ',');
     // DO NOT CHANGE THE LINE ABOVE
 
-    userData.forEach(row => {
+    userData.forEach((row) => {
         csvContent += row.join(',') + '\n';
     });
     // Delete leading spaces in table body
@@ -70,7 +71,10 @@ function getTable(selector) {
 function addExportButton(table, selector, fileNamePrefix) {
     // Add date to export filename
     // Sample ISO date: 20240204120335
-    var today = new Date().toISOString().replace(/[-:]|T/g, '').replace(/\..+/, '');
+    var today = new Date()
+        .toISOString()
+        .replace(/[-:]|T/g, '')
+        .replace(/\..+/, '');
     var fileName = fileNamePrefix + today + '.csv';
 
     // Create export button
@@ -81,7 +85,7 @@ function addExportButton(table, selector, fileNamePrefix) {
     exportButton.addEventListener('click', function () {
         var csvContent = getTable(table);
         var blob = new Blob([csvContent], {
-            type: 'text/csv'
+            type: 'text/csv',
         });
         var url = URL.createObjectURL(blob);
         var a = document.createElement('a');
@@ -105,7 +109,7 @@ function addLengthVotes() {
     var lengthVotesA = lengthVotesLi.querySelector('a');
     lengthVotesA.textContent = 'lengthvotes';
     // Remove focus
-    lengthVotesLi.classList.remove("tabselected");
+    lengthVotesLi.classList.remove('tabselected');
     lengthVotesA.href = lengthVotesA.href.replace(/ulist.*$/g, 'lengthvotes');
     listLi.parentNode.insertBefore(lengthVotesLi, listLi.nextSibling);
 }
