@@ -2,7 +2,7 @@
 // @name              Redump Download Highlight
 // @name:zh-cn        Redump 下载高亮
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.5.5
+// @version           0.5.6
 // @author            Vinfall
 // @match             http://redump.org/downloads/
 // @grant             none
@@ -36,7 +36,7 @@
         'Microsoft Xbox',
         'Microsoft Xbox 360',
         'NEC PC Engine CD & TurboGrafx CD',
-        'NEC PC-88 series',
+        // 'NEC PC-88 series',
         'NEC PC-98 series',
         'NEC PC-FX & PC-FXGA',
         'Neo Geo CD',
