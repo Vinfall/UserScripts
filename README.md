@@ -16,6 +16,7 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 | [Indienova Game Hide](#indienova-game-hide) | indienova 每周游戏隐藏特定游戏类型 | [安装](https://github.com/Vinfall/UserScripts/raw/main/indienova-game-hide.user.js) |
 | [JD2Bean](#jd-to-beancount) | 根据京东订单生成 Beancount 账单 | [安装](https://github.com/Vinfall/UserScripts/raw/main/jd2bean.user.js) |
 | Show Original Picture | Open image in original resolution | [install](https://github.com/Vinfall/UserScripts/raw/main/show-orig-pic.user.js) |
+| [Redump Highlight](#redump-highlight) | Highlight platforms in redump download page | [install](https://github.com/Vinfall/UserScripts/raw/main/redump-highlight.user.js) |
 | [Skip Redirect Inplace](#skip-redirect-inplace) | Skip stupid URL redirect in href | [install](https://github.com/Vinfall/UserScripts/raw/main/skip-redirect-inplace.user.js) |
 | [SAO](#steam-advanced-outlink) | Better outlinks on Steam store | [install](https://github.com/Vinfall/UserScripts/raw/main/steam-advanced-outlink.user.js) |
 | [Weibo Mobile Redirect](#weibo-mobile-redirect) | 新浪微博自动跳转移动版，支持微博、文章、视频 | [安装](https://github.com/Vinfall/UserScripts/raw/main/weibo-mobile-redirect.user.js) |
@@ -71,6 +72,14 @@ Note: this does NOT work in *all releases* page, you need to head to *a specific
 > 这是归档的公开版本，**不会**得到更新。
 
 使用前请查看脚本的 Disclaimer 并修改对应 Beancount 账户。
+
+### Redump Highlight
+
+Highlight platforms in redump so you know which to download.
+Also add visible borderlines to the sheet.
+Works best in dark mode.
+
+You can also create a wget list containing URLs instead.
 
 ### Skip Redirect Inplace
 
