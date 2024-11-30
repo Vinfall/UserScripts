@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.12.4
+// @version           2.13.1
 // @author            Vinfall
 // @match             https://*.itch.io/*
 // @match             https://*.reddit.com/over18?dest=*
@@ -35,6 +35,8 @@
 // @match             https://www.getchu.com/php/attestation.html?aurl=*
 // @match             https://www.johren.games/?backUrl=*
 // @match             https://www.melonbooks.co.jp/detail/detail.php?product_id=*
+// @match             https://www.nijiyome.jp/
+// @match             https://www.nijiyome.jp/*
 // @match             https://www.patreon.com/*
 // @match             https://www.ptt.cc/ask/over18?from=*
 // @match             https://www.will-order.com/age.php?rurl=*
@@ -76,6 +78,7 @@ function verifyButton() {
         'jastusa.com': '.content-gate__footer > button.is-primary.button',
         'johren.games': '.link_enter.mainbtn-primary-lv1',
         'moepedia.net': '.age-button_yes',
+        'nijiyome.jp': '.btn-approval.type_01',
         'nintendo.com.hk': 'button#eco-product-confirmation-hide.action-primary',
         'patch.moe': 'a.css-button-rounded--red:nth-of-type(1)',
         'patreon.com': 'button[data-tag="age-verification-button-yes"]',
