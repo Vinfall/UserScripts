@@ -49,8 +49,15 @@ Alternatively, you can just write a userscript to place/extend confirmed cookies
 
 > [!WARNING]
 > This is the sanitized public version and would NOT be updated regularly.
+>
+> Given that it's released in public domain, feel free to do whatever you want :)
 
-Given that it's released in public domain, feel free to do whatever you want :)
+Ever accidentally download a wrong release asset not suited for your platform?
+Can you pick the correct [vscodium](https://github.com/VSCodium/vscodium/releases/latest) package among those enormous 154(!) assets within 10 seconds?
+
+If not, then GitHub Release Highlight comes into your rescue!
+
+Simply define a new rule and refresh the page, now the asset would be highlighted.
 
 Note: this does NOT work in *all releases* page, you need to head to *a specific release tag* for the highlight to work.
 
