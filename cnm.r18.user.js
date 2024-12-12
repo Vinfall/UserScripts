@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.13.1
+// @version           2.14.0
 // @author            Vinfall
 // @match             https://*.itch.io/*
 // @match             https://*.reddit.com/over18?dest=*
@@ -14,6 +14,7 @@
 // @match             https://gamebanana.com/mods/*
 // @match             https://gamejolt.com/games/*/*
 // @match             https://gamejolt.com/games/*/*/followers
+// @match             https://www.hobicolle.com/
 // @match             https://jastusa.com/games/*/*
 // @match             https://jastusa.com/zh_Hans/games/*/*
 // @match             https://jastusa.com/zh_Hant/games/*/*
@@ -74,6 +75,7 @@ function verifyButton() {
         // 'gamejolt.com': '.-block.-outline.-primary.button', // this only works for once
         'getchu.com': '[href^="https://www.getchu.com/soft.phtml"]',
         // 'gog.com': '.age-gate__button.button--big.button', // not working
+        'hobicolle.com': '.close_modal',
         'itch.io': '.buttons > .button',
         'jastusa.com': '.content-gate__footer > button.is-primary.button',
         'johren.games': '.link_enter.mainbtn-primary-lv1',
