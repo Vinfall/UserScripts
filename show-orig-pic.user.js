@@ -2,10 +2,11 @@
 // @name              Show Original Picture
 // @name:zh-cn        自动跳转原图
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.12.7
+// @version           0.13.2
 // @author            Vinfall
 // @match             https://*.hdslb.com/bfs/*/*.avif
 // @match             https://*.hdslb.com/bfs/*/*.webp
+// @match             https://img.alicdn.com/imgextra/*/*/*_.webp
 // @match             https://*.moimg.net/*?x-oss-process=*
 // @match             https://*.xdaimages.com/wordpress/wp-content/uploads/*/*.*?q=*
 // @match             https://*/wp-content/uploads/*/*/*.*?w=*&h=*
@@ -47,6 +48,7 @@
         'cdnfile.sspai.com': (url) =>
             url.replace(/(\.(png|jpg))\?imageView2\/\d+\/[^ ]*/, '$1?imageView2/2/format/webp'),
         'comment-img.smzdm.com': (url) => url.replace(/(_b\d+)?\.jpg(\.jpg)?$/, '.jpg'),
+        'img.alicdn.com': (url) => url.replace(/_\.webp$/, ''),
     };
 
     // Add default rule for urlNihil
