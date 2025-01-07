@@ -127,7 +127,6 @@ While directly inspired by and originated from [Steam Cloudsave](https://greasyf
 
 开启 JavaScript 的情况下访问 `weibo.com` 会先跳转到 `passport.weibo.com` 再跳转回来，脚本会无限循环。
 测试下来唯一能让脚本正常工作的办法是在 uBO 禁用 `weibo.com` 的 JavaScript，从而禁止微博自带的链接跳转……
-但这样会破坏视频播放的功能，建议需要播放时临时启用 JS，或者使用 [gallery-dl](https://github.com/mikf/gallery-dl)。
 
 ### No-Intro
 
