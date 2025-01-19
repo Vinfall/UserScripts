@@ -15,7 +15,6 @@
 // @match             https://gamebanana.com/mods/*
 // @match             https://gamejolt.com/games/*/*
 // @match             https://gamejolt.com/games/*/*/followers
-// @match             https://www.hobicolle.com/
 // @match             https://jastusa.com/games/*/*
 // @match             https://jastusa.com/zh_Hans/games/*/*
 // @match             https://jastusa.com/zh_Hant/games/*/*
@@ -27,11 +26,14 @@
 // @match             https://steamcommunity.com/app/*
 // @match             https://store.hikarifield.co.jp/downloads/*
 // @match             https://store.nintendo.com.hk/*
+// @match             https://www.amiami.jp/top/detail/detail?gcode=*
+// @match             https://www.amiami.jp/top/detail/detail?scode=*
 // @match             https://www.animate-onlineshop.jp/pd/*
 // @match             https://www.animate-onlineshop.jp/pn/*
 // @match             https://www.animategames.jp/home/age?redirect=*
 // @match             https://www.digiket.com/work/show/_data/ID=*
 // @match             https://www.dlsite.com/*-touch/
+// @match             https://www.hobicolle.com/
 // @match             https://www.dlsite.com/*-touch/*
 // @match             https://www.dlsite.com/*/work/=/product_id/*
 // @match             https://www.dmm.co.jp/*/age_check/=/?rurl=*
@@ -63,6 +65,7 @@ function verifyButton() {
     // prettier-ignore
     const config = {
         'a.sofmap.com': '.blue.button',
+        // 'amiami.jp': 'input:nth-of-type(5)', // '.btn_go > form', not working
         'animate-onlineshop.jp': 'dynamicSelector', // special case
         'animategames.jp': '.btn-blr18.btn',
         'appendingpulse.jp': '#in', // old releases
