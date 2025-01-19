@@ -2,13 +2,14 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.14.0
+// @version           2.16.1
 // @author            Vinfall
 // @match             https://*.itch.io/*
 // @match             https://*.reddit.com/over18?dest=*
 // @match             https://a.sofmap.com/adult_confirm.aspx?url=*
 // @match             https://a.sofmap.com/product_detail.aspx?sku=*
 // @match             https://appendingpulse.jp/dl/*
+// @match             https://bookmate-net.com/ec/*
 // @match             https://booth.pm/*/items/*
 // @match             https://ec.toranoana.jp/tora_r/ec/item/*
 // @match             https://gamebanana.com/mods/*
@@ -22,6 +23,7 @@
 // @match             https://moepedia.net/*
 // @match             https://moepedia.net/game/*
 // @match             https://patch.moe/
+// @match             https://pcshop-mk.shop-pro.jp/?pid=*
 // @match             https://steamcommunity.com/app/*
 // @match             https://store.hikarifield.co.jp/downloads/*
 // @match             https://store.nintendo.com.hk/*
@@ -66,6 +68,7 @@ function verifyButton() {
         'appendingpulse.jp': '#in', // old releases
         // new releases
         // '.btn-danger.btn', '#fbi-warning > .modal-dialog > .modal-content > .modal-footer > .btn-primary.btn',
+        'bookmate-net.com': '.btn-block.btn-lg.btn-success.btn',
         'booth.pm': '.js-approve-adult > .adult-check-nav',
         'digiket.com': '.btn-lg.btn-info.btn',
         'dlsite.com': 'dynamicSelector', // special case
@@ -84,6 +87,7 @@ function verifyButton() {
         'nintendo.com.hk': 'button#eco-product-confirmation-hide.action-primary',
         'patch.moe': 'a.css-button-rounded--red:nth-of-type(1)',
         'patreon.com': 'button[data-tag="age-verification-button-yes"]',
+        'pcshop-mk.shop-pro.jp': '#validation_select_yes > [href]',
         // 'ptt.cc': 'button.btm-big[name="yes"][value="yes"]', // not working
         'reddit.com': 'button.c-btn-primary.c-btn:nth-of-type(2)',
         'steamcommunity.com': 'button.btn_medium.btn_blue_steamui > span',
