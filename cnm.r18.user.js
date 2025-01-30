@@ -89,7 +89,7 @@ function verifyButton() {
         'nijiyome.jp': '.btn-approval.type_01',
         'nintendo.com.hk': 'button#eco-product-confirmation-hide.action-primary',
         'patch.moe': 'a.css-button-rounded--red:nth-of-type(1)',
-        'patreon.com': 'button[data-tag="age-verification-button-yes"]',
+        'patreon.com': 'button[data-tag="age-verification-button-yes"]', // FIXME: not working on mobile
         'pcshop-mk.shop-pro.jp': '#validation_select_yes > [href]',
         // 'ptt.cc': 'button.btm-big[name="yes"][value="yes"]', // not working
         'reddit.com': 'button.c-btn-primary.c-btn:nth-of-type(2)',
