@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.16.1
+// @version           2.17.0
 // @author            Vinfall
 // @match             https://*.itch.io/*
 // @match             https://*.reddit.com/over18?dest=*
@@ -23,6 +23,7 @@
 // @match             https://moepedia.net/game/*
 // @match             https://patch.moe/
 // @match             https://pcshop-mk.shop-pro.jp/?pid=*
+// @match             https://refuge.tokyo/*.html
 // @match             https://steamcommunity.com/app/*
 // @match             https://store.hikarifield.co.jp/downloads/*
 // @match             https://store.nintendo.com.hk/*
@@ -93,6 +94,7 @@ function verifyButton() {
         'pcshop-mk.shop-pro.jp': '#validation_select_yes > [href]',
         // 'ptt.cc': 'button.btm-big[name="yes"][value="yes"]', // not working
         'reddit.com': 'button.c-btn-primary.c-btn:nth-of-type(2)',
+        'refuge.tokyo': '#but_accept',
         'steamcommunity.com': 'button.btn_medium.btn_blue_steamui > span',
         'store.hikarifield.co.jp': '.mt-3.btn-info.btn',
         'toranoana.jp': '#js-en-confirm-adult > .c-modal_content_body > .text-center.c-modal_content_inner > .mt-4.ui-confirm-adult-btn-wrapper > .ui-confirm-adult-btn-primary.c-btn-black.c-btn.js-ui-modal-close.js-btn-primary',
