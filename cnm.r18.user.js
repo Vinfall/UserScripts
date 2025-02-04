@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.17.0
+// @version           2.18.5
 // @author            Vinfall
 // @match             https://*.itch.io/*
 // @match             https://*.reddit.com/over18?dest=*
@@ -15,6 +15,9 @@
 // @match             https://gamebanana.com/mods/*
 // @match             https://gamejolt.com/games/*/*
 // @match             https://gamejolt.com/games/*/*/followers
+// @match             https://huggingface.co/*/*
+// @match             https://huggingface.co/*/*/discussions
+// @match             https://huggingface.co/*/*/tree/*
 // @match             https://jastusa.com/games/*/*
 // @match             https://jastusa.com/zh_Hans/games/*/*
 // @match             https://jastusa.com/zh_Hant/games/*/*
@@ -47,6 +50,15 @@
 // @match             https://www.ptt.cc/ask/over18?from=*
 // @match             https://www.will-order.com/age.php?rurl=*
 // @exclude-match     https://download.patch.moe/*
+// @exclude-match     https://huggingface.co/blog/*
+// @exclude-match     https://huggingface.co/collections/*
+// @exclude-match     https://huggingface.co/datasets/*
+// @exclude-match     https://huggingface.co/docs/*
+// @exclude-match     https://huggingface.co/learn/*
+// @exclude-match     https://huggingface.co/papers/*
+// @exclude-match     https://huggingface.co/posts/*
+// @exclude-match     https://huggingface.co/spaces/*
+// @exclude-match     https://huggingface.co/tasks/*
 // @exclude-match     https://store.nintendo.com.hk/checkout/*
 // @exclude-match     https://www.animate-onlineshop.jp/mypage/*
 // @exclude-match     https://www.melonbooks.co.jp/detail/detail.php?*adult_view=1
@@ -83,6 +95,7 @@ function verifyButton() {
         'getchu.com': '[href^="https://www.getchu.com/soft.phtml"]',
         // 'gog.com': '.age-gate__button.button--big.button', // not working
         'hobicolle.com': '.close_modal',
+        'huggingface.co': '[href^="?not-for-all-audiences=true"]', // '.self-start.!mt-6.btn'
         'itch.io': '.buttons > .button',
         'jastusa.com': '.content-gate__footer > button.is-primary.button',
         'johren.games': '.link_enter.mainbtn-primary-lv1',
@@ -105,6 +118,7 @@ function verifyButton() {
     const noFlagSites = [
         'appendingpulse.jp',
         'touch', // DLsite mobile
+        'huggingface.co',
     ];
 
     function getSelectorForCurrentSite() {
