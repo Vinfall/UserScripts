@@ -87,11 +87,17 @@
 
         const releaseDate = document.querySelector('.release_date');
         const vndbIdRow = document.querySelector('.dev_row vndb_id');
+        // TODO: fix selector on cromite
+        // const releaseDateMobileLabels = document.querySelectorAll('.grid_label.grid_date');
+        // const releaseDateMobileContent =
+        //     releaseDateMobileLabels.length > 0 ? releaseDateMobileLabels[0].nextElementSibling : null;
 
         if (vndbIdRow) {
             vndbIdRow.parentNode.insertBefore(cngalIdRow, vndbIdRow);
         } else if (releaseDate) {
             releaseDate.parentNode.insertBefore(cngalIdRow, releaseDate.nextSibling);
+            // } else if (releaseDateMobileContent) {
+            //     releaseDateMobileContent.parentNode.insertBefore(cngalIdRow, releaseDateMobileContent.nextSibling);
         } else {
             const firstDevRow = document.querySelector('.glance_ctn_responsive_left .dev_row');
             if (firstDevRow) {
