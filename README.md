@@ -9,6 +9,7 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 
 | Name | Function | Install |
 | ---- | -------- | :-----: |
+| [CnGal2Steam](#cngal-on-steam) | 在 Steam 商店页面显示 CnGal 链接 | [安装](https://github.com/Vinfall/UserScripts/raw/main/cngal2steam.user.js) |
 | [CNM.R18](#cnmr18) | Skip age verification on numerous sites | [install](https://github.com/Vinfall/UserScripts/raw/main/cnm.r18.user.js) |
 | [Discuz-Short-URL](#discuz-short-url) | Show short URL on Discuz forums | [install](https://github.com/Vinfall/UserScripts/raw/main/discuz-short-url.user.js) |
 | GitHub Boldless Title | Remove strong style in GitHub repo title | [install](https://github.com/Vinfall/UserScripts/raw/main/github-boldless-title.user.js) |
@@ -22,6 +23,15 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 | [Weibo Mobile Redirect](#weibo-mobile-redirect) | 新浪微博自动跳转移动版，支持微博、文章、视频 | [安装](https://github.com/Vinfall/UserScripts/raw/main/weibo-mobile-redirect.user.js) |
 
 ## Docs
+
+### CnGal on Steam
+
+灵感来自 [VNDB Steam Enhancer](https://greasyfork.org/en/scripts/456166-vndb-steam-enhancer)，其实 [/api/storeinfo/GetAllGameStoreInfo](https://api.cngal.org/swagger/index.html) API 包含更多信息，但部分信息和 VNDB 重合，而且有了 CnGal 外链多点一下就能看到，不需要再单独搜索，也很方便。
+
+由于无法保证运行顺序，如果同时安装两个脚本，CnGal/VNDB 的显示位置可能互换。
+因为本脚本默认会缓存数据 5 分钟以减少请求，一般而言 CnGal 链接会在 VNDB 下方。
+
+~~当然如果一定要 CnGal 显示在 VNDB 上方，也可以修改 VNDB-Steam-Enhancer，检测 `'.dev_row.cngal_id'` 并插入上方即可。~~
 
 ### CNM.R18
 
