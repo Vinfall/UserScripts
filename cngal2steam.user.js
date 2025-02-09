@@ -58,7 +58,9 @@
             headers: {
                 accept: 'application/json',
             },
-            // TODO: exclude games w/o Steam platform (is there any?)
+            // platformType only has "Steam", and API response only contains entries with a platform
+            // jq -r '.[].id' GetAllGameStoreInfo.json | wc -l
+            // jq -r '.[].platformType' GetAllGameStoreInfo.json | wc -l
             onload: function (response) {
                 const result = JSON.parse(response.responseText);
                 const cacheData = {
