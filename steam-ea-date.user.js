@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Steam EA Date
 // @namespace    https://github.com/Vinfall/UserScripts
-// @version      0.2.1
+// @version      0.2.2
 // @author       Vinfall
 // @match        https://store.steampowered.com/app/*
 // @icon         https://store.steampowered.com/favicon.ico
@@ -37,6 +37,8 @@
         const EA_TEXTS = [
             { text: 'Early Access Release Date:', label: 'EA Release:' },
             { text: '抢先体验发行日期:', label: '抢先体验:' },
+            { text: '搶先體驗發行日期:', label: '搶先體驗:' },
+            { text: '早期アクセスリリース日:', label: '早期発売:' },
         ];
         const eaDateElement = Array.from(document.querySelectorAll('.details_block b')).find((el) =>
             EA_TEXTS.some((item) => el.textContent.includes(item.text)),
