@@ -20,6 +20,7 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 | [Redump Highlight](#redump-highlight) | Highlight platforms in redump download page | [install](https://github.com/Vinfall/UserScripts/raw/main/redump-highlight.user.js) |
 | [Skip Redirect Inplace](#skip-redirect-inplace) | Skip stupid URL redirect in href | [install](https://github.com/Vinfall/UserScripts/raw/main/skip-redirect-inplace.user.js) |
 | [SAO](#steam-advanced-outlink) | Better outlinks on Steam store | [install](https://github.com/Vinfall/UserScripts/raw/main/steam-advanced-outlink.user.js) |
+| [Steam EA Date](#steam-ea-date) | Show Early Access date on Steam card | [install](https://github.com/Vinfall/UserScripts/raw/main/steam-ea-date.user.js) |
 | [Weibo Mobile Redirect](#weibo-mobile-redirect) | 新浪微博自动跳转移动版，支持微博、文章、视频 | [安装](https://github.com/Vinfall/UserScripts/raw/main/weibo-mobile-redirect.user.js) |
 
 ## Docs
@@ -118,6 +119,13 @@ Steam Advanced Outlink, aka. SAO, would replace the default list of outlinks wit
 It also serves as a minimal implementation of Augmented Steam for me since it can be used in mobile browsers with UserScript support like [cromite](https://github.com/uazo/cromite).
 
 While directly inspired by and originated from [Steam Cloudsave](https://greasyfork.org/zh-CN/scripts/489218-steam-cloudsave/), the script is a full rewrite so I change the license from MIT to CC0 (Public Domain).
+
+### Steam EA Date
+
+Early Access (EA) games on Steam have two release dates. Once it's out of EA status, Steam would only show the later release date in the game card and you have to scroll down to see its initial EA date. This script does that for you.
+
+> [!NOTE]
+> As EA release date string has no practical selector to choose, it's hardcoded in the script and only works for en, ja, zh-Hans/zh-Hant for now. You can, however, easily add new localized string and have it shown in your language.
 
 ### VNDB List Export
 
