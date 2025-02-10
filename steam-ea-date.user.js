@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Steam EA Date
 // @namespace    https://github.com/Vinfall/UserScripts
-// @version      0.1.7
+// @version      0.2.1
 // @author       Vinfall
 // @match        https://store.steampowered.com/app/*
 // @icon         https://store.steampowered.com/favicon.ico
@@ -34,12 +34,18 @@
     }
 
     function addRow() {
+        const EA_TEXTS = [
+            { text: 'Early Access Release Date:', label: 'EA Release:' },
+            { text: '抢先体验发行日期:', label: '抢先体验:' },
+        ];
         const eaDateElement = Array.from(document.querySelectorAll('.details_block b')).find((el) =>
-            el.textContent.includes('Early Access Release Date:'),
+            EA_TEXTS.some((item) => el.textContent.includes(item.text)),
         );
-        const eaDate = eaDateElement ? eaDateElement.nextSibling.textContent.trim() : 'N/A';
+        if (!eaDateElement) return; // exit if it's not an ea release
 
-        const eaDateRow = makeRow('ea_date', 'EA Release:', eaDate);
+        const matchedText = EA_TEXTS.find((item) => eaDateElement.textContent.includes(item.text));
+        const eaDate = eaDateElement.nextSibling.textContent.trim();
+        const eaDateRow = makeRow('ea_date', matchedText.label, eaDate);
 
         const releaseDate = document.querySelector('.release_date');
 
