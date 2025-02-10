@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Steam EA Date
 // @namespace    https://github.com/Vinfall/UserScripts
-// @version      0.1.4
+// @version      0.1.7
 // @author       Vinfall
 // @match        https://store.steampowered.com/app/*
 // @icon         https://store.steampowered.com/favicon.ico
@@ -15,47 +15,36 @@
 (function () {
     'use strict';
 
-    function makeRow(rowClass, subtitle, linkText, linkUrl) {
+    function makeRow(_rowClass, subtitle, text) {
         const row = document.createElement('div');
-        row.className = 'dev_row ' + rowClass;
+        row.className = 'release_date';
 
         const subtitleEl = document.createElement('div');
         subtitleEl.className = 'subtitle column';
         subtitleEl.textContent = subtitle;
 
-        let linkEl;
-        if (linkUrl) {
-            linkEl = document.createElement('a');
-            linkEl.className = 'date';
-            linkEl.textContent = linkText;
-            linkEl.href = linkUrl;
-        } else {
-            linkEl = document.createElement('div');
-            linkEl.className = 'date';
-            linkEl.textContent = linkText;
-        }
+        const dateEl = document.createElement('div');
+        dateEl.className = 'date';
+        dateEl.textContent = text;
 
         row.appendChild(subtitleEl);
-        row.appendChild(linkEl);
+        row.appendChild(dateEl);
 
         return row;
     }
 
     function addRow() {
-        // get ea release date
         const eaDateElement = Array.from(document.querySelectorAll('.details_block b')).find((el) =>
             el.textContent.includes('Early Access Release Date:'),
         );
         const eaDate = eaDateElement ? eaDateElement.nextSibling.textContent.trim() : 'N/A';
 
-        const eaDateRow = makeRow('ea_date', 'EA Release', eaDate);
+        const eaDateRow = makeRow('ea_date', 'EA Release:', eaDate);
 
         const releaseDate = document.querySelector('.release_date');
 
         if (releaseDate) {
-            releaseDate.parentNode.insertBefore(eaDateRow, releaseDate);
-            // } else if (releaseDateMobileContent) {
-            //     releaseDateMobileContent.parentNode.insertBefore(eaDateRow, releaseDateMobileContent);
+            releaseDate.parentNode.insertBefore(eaDateRow, releaseDate.nextSibling);
         } else {
             const firstDevRow = document.querySelector('.glance_ctn_responsive_left .dev_row');
             if (firstDevRow) {
