@@ -2,8 +2,12 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.18.5
+// @version           2.19.2
 // @author            Vinfall
+// @match             https://*.fanbox.cc/
+// @match             https://*.fanbox.cc/plans
+// @match             https://*.fanbox.cc/plans/*
+// @match             https://*.fanbox.cc/posts/*
 // @match             https://*.itch.io/*
 // @match             https://*.reddit.com/over18?dest=*
 // @match             https://a.sofmap.com/adult_confirm.aspx?url=*
@@ -37,11 +41,11 @@
 // @match             https://www.animategames.jp/home/age?redirect=*
 // @match             https://www.digiket.com/work/show/_data/ID=*
 // @match             https://www.dlsite.com/*-touch/
-// @match             https://www.hobicolle.com/
 // @match             https://www.dlsite.com/*-touch/*
 // @match             https://www.dlsite.com/*/work/=/product_id/*
 // @match             https://www.dmm.co.jp/*/age_check/=/?rurl=*
 // @match             https://www.getchu.com/php/attestation.html?aurl=*
+// @match             https://www.hobicolle.com/
 // @match             https://www.johren.games/?backUrl=*
 // @match             https://www.melonbooks.co.jp/detail/detail.php?product_id=*
 // @match             https://www.nijiyome.jp/
@@ -61,6 +65,7 @@
 // @exclude-match     https://huggingface.co/tasks/*
 // @exclude-match     https://store.nintendo.com.hk/checkout/*
 // @exclude-match     https://www.animate-onlineshop.jp/mypage/*
+// @exclude-match     https://www.fanbox.cc/auth/*
 // @exclude-match     https://www.melonbooks.co.jp/detail/detail.php?*adult_view=1
 // @exclude-match     https://www.patreon.com/create
 // @exclude-match     https://www.patreon.com/login
@@ -89,6 +94,7 @@ function verifyButton() {
         'digiket.com': '.btn-lg.btn-info.btn',
         'dlsite.com': 'dynamicSelector', // special case
         'dmm.co.jp': '.css-w5doa7.fill.large.turtle-Button.turtle-component > [href]',
+        'fanbox.cc': '.dhrsDw.iorEfw.CommonButton__CommonButtonOuter-sc-1s35wwu-0.ButtonBase-sc-1pize7g-0',
         'gamebanana.com': '.ShowNsfwContentButton',
         'gamejolt.com': '.link-muted > span', // this mutes until I exit
         // 'gamejolt.com': '.-block.-outline.-primary.button', // this only works for once
