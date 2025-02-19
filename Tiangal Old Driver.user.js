@@ -1,11 +1,9 @@
 // ==UserScript==
 // @name        Tiangal Old Driver
-// @namespace   https://github.com/Vinfall/UserScripts
 // @match       https://www.tiangal.com/*
 // @exclude     https://www.tiangal.com/sign.html*
 // @grant       none
-// @version     1.4.7
-// @author      Vinfall
+// @version     1.4.8
 // @description Show NSFW works on Tiangal
 // @description:zh-cn 天遊二次元默认开启老司机模式
 // ==/UserScript==
@@ -26,14 +24,17 @@
 
     const elementsToHide = [
         // Landing page
-        '.slick', '.git_reader.widget',
+        '.slick',
+        '.git_reader.widget',
         // Game details
-        '.steamcontent', '#commentform',
+        '.steamcontent',
+        '#commentform',
         // Login page
-        '.nsl-container-buttons', '.nsl-container-login-layout-below.nsl-container-block.nsl-container'
+        '.nsl-container-buttons',
+        '.nsl-container-login-layout-below.nsl-container-block.nsl-container',
     ];
 
-    elementsToHide.forEach(element => {
+    elementsToHide.forEach((element) => {
         const elementToHide = document.querySelector(element);
         if (elementToHide) {
             elementToHide.style.display = 'none';
