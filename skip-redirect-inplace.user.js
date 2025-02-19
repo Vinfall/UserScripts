@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Skip Redirect Inplace
 // @namespace     https://github.com/Vinfall/UserScripts
-// @version       1.0.1
+// @version       1.1.1
 // @author        Vinfall
 // @match         https://acg.gamer.com.tw/*
 // @match         https://forum.gamer.com.tw/*
@@ -14,10 +14,15 @@
 // @match         https://www.cnblogs.com/*
 // @match         https://www.gcores.com/*
 // @match         https://www.tiangal.com/*
+// @match         https://www.touchgal.io/*
 // @exclude-match https://www.tiangal.com/question*
 // @exclude-match https://www.tiangal.com/sign*
 // @exclude-match https://www.tiangal.com/tougao*
 // @exclude-match https://www.tiangal.com/wp-login.php*
+// @exclude-match https://www.touchgal.io/auth*
+// @exclude-match https://www.touchgal.io/doc*
+// @exclude-match https://www.touchgal.io/login
+// @exclude-match https://www.touchgal.io/register
 // @run-at        document-end
 // @grant         none
 // @icon          data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⏭️</text></svg>
@@ -42,6 +47,7 @@
         ['a[href*="https://www.gcores.com/link?target="]', /https:\/\/www\.gcores\.com\/link\?target=([^&]+)/, false],
         ['a[href*="//ref.gamer.com.tw/redir.php?url="]', /https:\/\/ref\.gamer\.com\.tw\/redir\.php\?url=([^&]+)/, false],
         ['a[href^="https://www.tiangal.com/go.html"]', /https:\/\/www.tiangal.com\/go.html\?url=([^&]+)/, false],
+        ['a[href*="/redirect?url="]', /\/redirect\?url=([^&]+)/, true],
     ];
 
     function convertToStructuredRules(simplifiedRules, attributeShape) {
