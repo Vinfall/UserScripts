@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Steam EA Date
 // @namespace    https://github.com/Vinfall/UserScripts
-// @version      0.2.2
+// @version      0.2.3
 // @author       Vinfall
 // @match        https://store.steampowered.com/app/*
 // @icon         https://store.steampowered.com/favicon.ico
@@ -12,9 +12,7 @@
 // @run-at       document-end
 // ==/UserScript==
 
-(function () {
-    'use strict';
-
+(() => {
     function makeRow(_rowClass, subtitle, text) {
         const row = document.createElement('div');
         row.className = 'release_date';

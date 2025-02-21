@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.19.2
+// @version           2.19.3
 // @author            Vinfall
 // @match             https://*.fanbox.cc/
 // @match             https://*.fanbox.cc/plans
@@ -80,7 +80,7 @@
 // Buttons
 function verifyButton() {
     // Define rules
-    // prettier-ignore
+    // biome-ignore format: do not touch my list
     const config = {
         'a.sofmap.com': '.blue.button',
         // 'amiami.jp': 'input:nth-of-type(5)', // '.btn_go > form', not working
@@ -187,7 +187,7 @@ function verifyButton() {
         }
     }
 
-    window.addEventListener('load', function () {
+    window.addEventListener('load', () => {
         setTimeout(autoConfirmAge, 800);
     });
 }
@@ -203,7 +203,7 @@ function verifyParam() {
     };
 
     const currentHost = window.location.host;
-    let currentUrl = window.location.href;
+    const currentUrl = window.location.href;
 
     // Check existing params
     for (const [site, paramToAdd] of Object.entries(siteParams)) {
@@ -219,10 +219,10 @@ function verifyParam() {
                 let newUrl;
                 if (currentUrl.includes('?')) {
                     // host.tld?param=1
-                    newUrl = currentUrl + '&' + paramToAdd;
+                    newUrl = `${currentUrl}&${paramToAdd}`;
                 } else {
                     // host.tld (aka. no param)
-                    newUrl = currentUrl + '?' + paramToAdd;
+                    newUrl = `${currentUrl}?${paramToAdd}`;
                 }
 
                 window.location.href = newUrl;
@@ -233,9 +233,7 @@ function verifyParam() {
     }
 }
 
-(function () {
-    'use strict';
-
+(() => {
     verifyParam();
     verifyButton();
 })();

@@ -2,7 +2,7 @@
 // @name               Discuz Short URL
 // @name:zh-cn         Discuz 短链 URL
 // @namespace          https://github.com/Vinfall/UserScripts
-// @version            1.2.2
+// @version            1.2.3
 // @author             Vinfall
 // @match              *://*/?mod=forumdisplay*
 // @match              *://*/?mod=viewthread*
@@ -36,9 +36,7 @@
 // - Enumerate & Test all mod methods
 // - Support page info in extra param
 
-(function () {
-    'use strict';
-
+(() => {
     // 检测 Discuz 版本
     // const detectDiscuzVersion = () => {
     //     const metas = document.getElementsByTagName('meta');
@@ -82,15 +80,15 @@
 
     // suid-*
     const suidMatch = currentUrl.match(/suid-(\d+)/);
-    if (suidMatch && suidMatch[1]) {
-        let newUrl = `${protocol}//${domain}?${suidMatch[1]}`;
+    if (suidMatch?.[1]) {
+        const newUrl = `${protocol}//${domain}?${suidMatch[1]}`;
         window.location.replace(newUrl);
         return;
     }
     // space-uid-*
     const spaceUidMatch = currentUrl.match(/space-uid-(\d+)\.html/);
-    if (spaceUidMatch && spaceUidMatch[1]) {
-        let newUrl = `${protocol}//${domain}?${spaceUidMatch[1]}`;
+    if (spaceUidMatch?.[1]) {
+        const newUrl = `${protocol}//${domain}?${spaceUidMatch[1]}`;
         window.location.replace(newUrl);
         return;
     }
@@ -101,7 +99,7 @@
     // 缩短 space uid, e.g. ?12345
     if (params.get('uid')) {
         const uid = params.get('uid');
-        let newUrl = `${protocol}//${domain}?${uid}`;
+        const newUrl = `${protocol}//${domain}?${uid}`;
         window.location.replace(newUrl);
         return;
     }

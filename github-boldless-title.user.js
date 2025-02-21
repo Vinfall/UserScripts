@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name              GitHub Boldless Title
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           1.0.2
+// @version           1.0.3
 // @author            Vinfall
 // @match             https://github.com/*
 // @exclude-match     https://github.com/login
@@ -15,14 +15,15 @@
 // @description:zh-cn GitHub 仓库名取消加粗
 // ==/UserScript==
 
-// Mostly used to avoid unwanted bold marker in Obsidian...
+/*
+    Mostly used to avoid unwanted bold marker in Obsidian...
+    TODO: GitHub Gists
+*/
 
-(function () {
-    'use strict';
-
+(() => {
     function replaceStrongWithAnchor() {
         const strongElements = document.querySelectorAll('strong.mr-2.flex-self-stretch');
-        strongElements.forEach((strong) => {
+        for (const strong of strongElements) {
             const anchor = strong.querySelector('a'); // Select the <a> tag inside <strong>
             if (anchor) {
                 // Create a new <a> element
@@ -33,7 +34,7 @@
                 // Replace the <strong> element with the new <a> element in the DOM
                 strong.parentNode.replaceChild(newAnchor, strong);
             }
-        });
+        }
     }
 
     // Run after the window has fully loaded

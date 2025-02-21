@@ -2,7 +2,7 @@
 // @name              Redump Download Highlight
 // @name:zh-cn        Redump 下载高亮
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.5.6
+// @version           0.5.7
 // @author            Vinfall
 // @match             http://redump.org/downloads/
 // @grant             none
@@ -13,9 +13,7 @@
 // @description:zh-cn Redump 下载界面特定平台高亮
 // ==/UserScript==
 
-(function () {
-    'use strict';
-
+(() => {
     // set border line
     const style = document.createElement('style');
     style.innerHTML = `
@@ -54,7 +52,7 @@
     ];
 
     const rows = document.querySelectorAll('tr');
-    rows.forEach((row) => {
+    for (const row of rows) {
         const firstTd = row.querySelector('td');
         if (firstTd) {
             const tdText = firstTd.textContent.trim();
@@ -65,5 +63,5 @@
                 // firstTd.style.backgroundColor = '#7ce49a'
             }
         }
-    });
+    }
 })();

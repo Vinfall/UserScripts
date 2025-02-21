@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Steam Advanced Outlink
 // @namespace    https://github.com/Vinfall/UserScripts
-// @version      3.2.0
+// @version      3.2.1
 // @author       Vinfall
 // @match        https://store.steampowered.com/app/*
 // @icon         https://store.steampowered.com/favicon.ico
@@ -11,36 +11,33 @@
 // @description:zh-cn Steam 商店页面外链优化
 // ==/UserScript==
 
-(function () {
+(() => {
     const appId = /app\/(\d+)\//.exec(location.href)?.pop();
     if (appId) {
         console.log(appId);
 
         const warningColor = 'red';
-        var conditions = [
+        const conditions = [
             // Outlink replacement
             {
                 srcIncludes: 'ico_achievements',
                 text: 'AStats',
-                href: 'https://astats.astats.nl/astats/Steam_Game_Info.php?AppID=' + appId,
+                href: `https://astats.astats.nl/astats/Steam_Game_Info.php?AppID=${appId}`,
             },
             {
                 srcIncludes: 'ico_cloud',
                 text: 'Cloudsave',
-                href: 'https://store.steampowered.com/account/remotestorageapp?appid=' + appId + '&index=0',
+                href: `https://store.steampowered.com/account/remotestorageapp?appid=${appId}&index=0`,
             },
             {
                 srcIncludes: 'ico_cards',
                 text: 'Steam Card Exchange',
-                href: 'https://www.steamcardexchange.net/index.php?gamepage-appid-' + appId + '/',
+                href: `https://www.steamcardexchange.net/index.php?gamepage-appid-${appId}/`,
             },
             {
                 srcIncludes: 'ico_workshop',
                 text: 'Workshop',
-                href:
-                    'https://steamcommunity.com/workshop/browse/?appid=' +
-                    appId +
-                    '&browsesort=toprated&section=readytouseitems',
+                href: `https://steamcommunity.com/workshop/browse/?appid=${appId}&browsesort=toprated&section=readytouseitems`,
             },
             // Warning on unexpected feature
             {
@@ -58,9 +55,9 @@
         ];
 
         // TODO: expand to div.page_content > .game_meta_data.rightcol for better matching
-        var elements = document.querySelectorAll('a.game_area_details_specs_ctn');
-        elements.forEach(function (element) {
-            conditions.forEach(function (condition) {
+        const elements = document.querySelectorAll('a.game_area_details_specs_ctn');
+        for (const element of elements) {
+            for (const condition of conditions) {
                 if (Array.isArray(condition.srcIncludes)) {
                     if (
                         condition.srcIncludes.some((src) =>
@@ -80,11 +77,11 @@
                         element.querySelector('.label').innerText = condition.text;
                     }
                 }
-            });
-        });
+            }
+        }
 
         // Redirect useless community outlink to guide
-        var communityLink = document.querySelector(`a[href="https://steamcommunity.com/app/${appId}"]`);
+        const communityLink = document.querySelector(`a[href="https://steamcommunity.com/app/${appId}"]`);
         if (communityLink) {
             communityLink.href = `https://steamcommunity.com/app/${appId}/guides`;
         }

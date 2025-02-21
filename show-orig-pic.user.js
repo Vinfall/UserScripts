@@ -2,7 +2,7 @@
 // @name              Show Original Picture
 // @name:zh-cn        自动跳转原图
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.14.2
+// @version           0.14.3
 // @author            Vinfall
 // @match             https://*.hdslb.com/bfs/*/*.avif
 // @match             https://*.hdslb.com/bfs/*/*.webp
@@ -27,9 +27,7 @@
 // @description:zh-cn 打开图片时自动跳转原图，支持 BiliBili、WordPress、XDA、机核、触乐、少数派文章等
 // ==/UserScript==
 
-(function () {
-    'use strict';
-
+(() => {
     const currentUrl = window.location.href;
     let newUrl = currentUrl;
 
@@ -54,9 +52,9 @@
     };
 
     // Add default rule for urlNihil
-    urlNihil.forEach((uri) => {
+    for (const uri of urlNihil) {
         urlReplacements[uri] = (url) => url.split('?')[0];
-    });
+    }
 
     // Match pattern
     const processUrl = (url) => {

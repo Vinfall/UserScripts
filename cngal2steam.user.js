@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CnGal on Steam
 // @namespace    https://github.com/Vinfall/UserScripts
-// @version      0.3.3
+// @version      0.3.4
 // @author       Vinfall
 // @match        https://store.steampowered.com/app/*
 // @icon         https://www.cngal.org/favicon.ico
@@ -18,16 +18,14 @@
     API: /api/storeinfo/GetAllGameStoreInfo
 */
 
-(function () {
-    'use strict';
-
+(() => {
     const appId = /app\/(\d+)\//.exec(location.href)?.pop();
     const cacheTime = 3000; // in seconds, 5 minutes by default
     const cacheKey = 'cngal_steam';
 
     function makeRow(rowClass, subtitle, linkText, linkUrl) {
         const row = document.createElement('div');
-        row.className = 'dev_row ' + rowClass;
+        row.className = `dev_row ${rowClass}`;
 
         const subtitleEl = document.createElement('div');
         subtitleEl.className = 'subtitle column';
@@ -61,7 +59,7 @@
             // platformType only has "Steam", and API response only contains entries with a platform
             // jq -r '.[].id' GetAllGameStoreInfo.json | wc -l
             // jq -r '.[].platformType' GetAllGameStoreInfo.json | wc -l
-            onload: function (response) {
+            onload: (response) => {
                 const result = JSON.parse(response.responseText);
                 const cacheData = {
                     data: result,
@@ -70,14 +68,14 @@
                 localStorage.setItem(cacheKey, JSON.stringify(cacheData));
                 processData(result);
             },
-            onerror: function (error) {
+            onerror: (error) => {
                 console.error('Error fetching data from CnGal API:', error);
             },
         });
     }
 
     function processData(data) {
-        const item = data.find((game) => game.platformType === 'Steam' && game.link == appId);
+        const item = data.find((game) => game.platformType === 'Steam' && game.link === appId);
         if (!item) {
             console.log('Game not listed on CnGal.');
             return;

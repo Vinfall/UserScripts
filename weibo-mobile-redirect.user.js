@@ -2,7 +2,7 @@
 // @name              Weibo Mobile Redirect
 // @name:zh-cn        新浪微博移动版跳转
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           1.3.0
+// @version           1.3.1
 // @author            Vinfall
 // @match             https://video.weibo.com/show?fid=*
 // @match             https://weibo.com/*/*
@@ -24,9 +24,7 @@
 // @description:zh-cn 新浪微博自动跳转移动版，支持微博、文章、视频
 // ==/UserScript==
 
-(function () {
-    'use strict';
-
+(() => {
     const currentUrl = window.location.href;
 
     // Defend in depth

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Skip Redirect Inplace
 // @namespace     https://github.com/Vinfall/UserScripts
-// @version       1.1.1
+// @version       1.1.2
 // @author        Vinfall
 // @match         https://acg.gamer.com.tw/*
 // @match         https://forum.gamer.com.tw/*
@@ -30,16 +30,14 @@
 // @description:zh-cn 文内替换外链跳转 URL
 // ==/UserScript==
 
-(function () {
-    'use strict';
-
+(() => {
     const attributeShape = [
         { name: 'selector', type: 'string' },
         { name: 'regex', type: 'regexp' },
         { name: 'observer', type: 'boolean' },
     ];
 
-    // prettier-ignore
+    // biome-ignore format: do not touch my list
     const simplifiedRules = [
         ['a[href*="https://sspai.com/link?target="]', /https:\/\/sspai.com\/link\?target=([^&]+)/, true],
         ['a[href*="https://weibo.cn/sinaurl?u="]', /https:\/\/weibo.cn\/sinaurl\?u=([^&]+)/, true],
@@ -52,7 +50,7 @@
 
     function convertToStructuredRules(simplifiedRules, attributeShape) {
         return simplifiedRules.map((rule) => {
-            let structuredRule = {};
+            const structuredRule = {};
             attributeShape.forEach((attr, index) => {
                 if (typeof rule[index] !== attr.type && !(attr.type === 'regexp' && rule[index] instanceof RegExp)) {
                     throw new Error(`Expected ${attr.type} at position ${index}, but got ${typeof rule[index]}`);
@@ -70,7 +68,7 @@
 
         // Extract real URL as per regex
         const urlMatch = currentHref.match(regex);
-        if (urlMatch && urlMatch[1]) {
+        if (urlMatch?.[1]) {
             // URL decode
             const realUrl = decodeURIComponent(urlMatch[1]);
             // Replace href attr
@@ -79,16 +77,18 @@
     }
 
     function processLinks(rules) {
-        rules.forEach((rule) => {
+        for (const rule of rules) {
             // Retrieve all elements as per selector rule
             const links = document.querySelectorAll(rule.selector);
             // Process each link
-            links.forEach((link) => decodeAndReplaceLink(link, rule.regex));
-        });
+            for (const link of links) {
+                decodeAndReplaceLink(link, rule.regex);
+            }
+        }
     }
 
     function setupMutationObserver(rules) {
-        rules.forEach((rule) => {
+        for (const rule of rules) {
             if (rule.observer) {
                 const observer = new MutationObserver(() => {
                     // Pass the individual rule to only re-run for this rule
@@ -99,7 +99,7 @@
                     subtree: true,
                 });
             }
-        });
+        }
     }
 
     // Initial run
