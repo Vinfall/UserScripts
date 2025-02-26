@@ -2,7 +2,7 @@
 // @name              Show Original Picture
 // @name:zh-cn        自动跳转原图
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.14.3
+// @version           0.14.4
 // @author            Vinfall
 // @match             https://*.hdslb.com/bfs/*/*.avif
 // @match             https://*.hdslb.com/bfs/*/*.webp
@@ -17,6 +17,7 @@
 // @match             https://img.chuapp.com//wp-content/Picture/*/*?imageView*
 // @match             https://img.chuapp.com/wp-content/Picture/*/*?imageView*
 // @match             https://ipfs.crossbell.io/ipfs/*?*
+// @match             https://platform.theverge.com/wp-content/uploads/sites/*/*?quality=*
 // @match             https://www.gravatar.com/avatar/*?s=*
 // @exclude-match     https://cdnfile.sspai.com/*/*/*/*.*?imageView2/2/format/webp
 // @grant             none
