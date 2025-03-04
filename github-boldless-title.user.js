@@ -1,28 +1,26 @@
 // ==UserScript==
 // @name              GitHub Boldless Title
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           1.0.3
+// @version           1.2.0
 // @author            Vinfall
 // @match             https://github.com/*
+// @match             https://gist.github.com/*
 // @exclude-match     https://github.com/login
 // @exclude-match     https://github.com/sessions/*
 // @exclude-match     https://github.com/signin
+// @exclude-match     https://gist.github.com/auth/*
+// @exclude-match     https://gist.github.com/join*
+// @exclude-match     https://gist.github.com/login
 // @grant             none
 // @run-at            document-end
 // @license           CC0 1.0 Universal (Public Domain)
-// @icon
-// @description       Remove strong style in GitHub repo title
+// @description       Remove strong style in GitHub repo/gist title
 // @description:zh-cn GitHub 仓库名取消加粗
 // ==/UserScript==
 
-/*
-    Mostly used to avoid unwanted bold marker in Obsidian...
-    TODO: GitHub Gists
-*/
-
 (() => {
-    function replaceStrongWithAnchor() {
-        const strongElements = document.querySelectorAll('strong.mr-2.flex-self-stretch');
+    function replaceStrongWithAnchor(selector) {
+        const strongElements = document.querySelectorAll(selector);
         for (const strong of strongElements) {
             const anchor = strong.querySelector('a'); // Select the <a> tag inside <strong>
             if (anchor) {
@@ -39,7 +37,9 @@
 
     // Run after the window has fully loaded
     window.onload = () => {
-        replaceStrongWithAnchor();
+        const isGist = window.location.href.includes('gist');
+        const selector = isGist ? 'strong[itemprop="name"].css-truncate-target.mr-1' : 'strong.mr-2.flex-self-stretch';
+        replaceStrongWithAnchor(selector);
 
         // Observe changes in the page (e.g., for dynamic content)
         const observer = new MutationObserver(replaceStrongWithAnchor);

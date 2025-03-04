@@ -12,7 +12,7 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 | [CnGal2Steam](#cngal-on-steam) | 在 Steam 商店页面显示 CnGal 链接 | [安装](https://github.com/Vinfall/UserScripts/raw/main/cngal2steam.user.js) |
 | [CNM.R18](#cnmr18) | Skip age verification on numerous sites | [install](https://github.com/Vinfall/UserScripts/raw/main/cnm.r18.user.js) |
 | [Discuz-Short-URL](#discuz-short-url) | Show short URL on Discuz forums | [install](https://github.com/Vinfall/UserScripts/raw/main/discuz-short-url.user.js) |
-| GitHub Boldless Title | Remove strong style in GitHub repo title | [install](https://github.com/Vinfall/UserScripts/raw/main/github-boldless-title.user.js) |
+| GitHub Boldless Title | Remove strong style in GitHub repo/gist title | [install](https://github.com/Vinfall/UserScripts/raw/main/github-boldless-title.user.js) |
 | [GitHub Release Highlight](#github-release-highlight) | Highlight GitHub release assets containing keywords | [install](https://github.com/Vinfall/UserScripts/raw/main/github-release-highlight.user.js) |
 | [Indienova Game Hide](#indienova-game-hide) | indienova 每周游戏隐藏特定游戏类型 | [安装](https://github.com/Vinfall/UserScripts/raw/main/indienova-game-hide.user.js) |
 | [JD2Bean](#jd-to-beancount) | 根据京东订单生成 Beancount 账单 | [安装](https://github.com/Vinfall/UserScripts/raw/main/jd2bean.user.js) |
