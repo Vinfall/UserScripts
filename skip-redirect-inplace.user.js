@@ -52,6 +52,7 @@
         return simplifiedRules.map((rule) => {
             const structuredRule = {};
             attributeShape.forEach((attr, index) => {
+                // biome-ignore lint/suspicious/useValidTypeof: idk
                 if (typeof rule[index] !== attr.type && !(attr.type === 'regexp' && rule[index] instanceof RegExp)) {
                     throw new Error(`Expected ${attr.type} at position ${index}, but got ${typeof rule[index]}`);
                 }
