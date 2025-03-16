@@ -7,7 +7,9 @@
     },
     "files": {
         "ignoreUnknown": true,
-        "ignore": []
+        "ignore": [
+            "cromite"
+        ]
     },
     "formatter": {
         "enabled": true,
