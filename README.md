@@ -9,20 +9,20 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 
 | Name | Function | Install |
 | ---- | -------- | :-----: |
-| [CnGal2Steam](#cngal-on-steam) | 在 Steam 商店页面显示 CnGal 链接 | [安装](https://github.com/Vinfall/UserScripts/raw/main/cngal2steam.user.js) |
-| [CNM.R18](#cnmr18) | Skip age verification on numerous sites | [install](https://github.com/Vinfall/UserScripts/raw/main/cnm.r18.user.js) |
-| [Discuz-Short-URL](#discuz-short-url) | Show short URL on Discuz forums | [install](https://github.com/Vinfall/UserScripts/raw/main/discuz-short-url.user.js) |
-| GitHub Boldless Title | Remove strong style in GitHub repo/gist title | [install](https://github.com/Vinfall/UserScripts/raw/main/github-boldless-title.user.js) |
-| [GitHub Release Highlight](#github-release-highlight) | Highlight GitHub release assets containing keywords | [install](https://github.com/Vinfall/UserScripts/raw/main/github-release-highlight.user.js) |
-| [Indienova Game Hide](#indienova-game-hide) | indienova 每周游戏隐藏特定游戏类型 | [安装](https://github.com/Vinfall/UserScripts/raw/main/indienova-game-hide.user.js) |
-| [JD2Bean](#jd-to-beancount) | 根据京东订单生成 Beancount 账单 | [安装](https://github.com/Vinfall/UserScripts/raw/main/jd2bean.user.js) |
-| Show Original Picture | Open image in original resolution | [install](https://github.com/Vinfall/UserScripts/raw/main/show-orig-pic.user.js) |
-| [Redump Highlight](#redump-highlight) | Highlight platforms in redump download page | [install](https://github.com/Vinfall/UserScripts/raw/main/redump-highlight.user.js) |
-| [Skip Redirect Inplace](#skip-redirect-inplace) | Skip stupid URL redirect in href | [install](https://github.com/Vinfall/UserScripts/raw/main/skip-redirect-inplace.user.js) |
-| [SAO](#steam-advanced-outlink) | Better outlinks on Steam store | [install](https://github.com/Vinfall/UserScripts/raw/main/steam-advanced-outlink.user.js) |
-| [Steam EA Date](#steam-ea-date) | Show Early Access date on Steam card | [install](https://github.com/Vinfall/UserScripts/raw/main/steam-ea-date.user.js) |
-| [VNDB List Export](#vndb-list-export) | Export VNDB user VN/length vote to CSV | [Install](https://github.com/Vinfall/UserScripts/raw/main/vndb-list-export.user.js) |
-| [Weibo Mobile Redirect](#weibo-mobile-redirect) | 新浪微博自动跳转移动版，支持微博、文章、视频 | [安装](https://github.com/Vinfall/UserScripts/raw/main/weibo-mobile-redirect.user.js) |
+| [CnGal2Steam](#cngal-on-steam) | 在 Steam 商店页面显示 CnGal 链接 | [安装][install-1] |
+| [CNM.R18](#cnmr18) | Skip age verification on numerous sites | [install][install-2] |
+| [Discuz-Short-URL](#discuz-short-url) | Show short URL on Discuz forums | [install][install-3] |
+| GitHub Boldless Title | Remove strong style in GitHub repo/gist title | [install][install-4] |
+| [GitHub Release Highlight](#github-release-highlight) | Highlight GitHub release assets containing keywords | [install][install-5] |
+| [Indienova Game Hide](#indienova-game-hide) | indienova 每周游戏隐藏特定游戏类型 | [安装][install-6] |
+| [JD2Bean](#jd-to-beancount) | 根据京东订单生成 Beancount 账单 | [安装][install-7] |
+| Show Original Picture | Open image in original resolution | [install][install-8] |
+| [Redump Highlight](#redump-highlight) | Highlight platforms in redump download page | [install][install-9] |
+| [Skip Redirect Inplace](#skip-redirect-inplace) | Skip stupid URL redirect in href | [install][install-10] |
+| [SAO](#steam-advanced-outlink) | Better outlinks on Steam store | [install][install-11] |
+| [Steam EA Date](#steam-ea-date) | Show Early Access date on Steam card | [install][install-12] |
+| [VNDB List Export](#vndb-list-export) | Export VNDB user VN/length vote to CSV | [Install][install-13] |
+| [Weibo Mobile Redirect](#weibo-mobile-redirect) | 新浪微博自动跳转移动版，支持微博、文章、视频 | [安装][install-14] |
 
 ## Docs
 
@@ -169,3 +169,18 @@ Do NOT clone submodule as it's private and protected with private key.
 ## [License](./LICENSE)
 
 Licensed under CC0 1.0 Universal or Public Domain, whichever is more permissive, unless otherwise noted in the script.
+
+[install-1]: https://github.com/Vinfall/UserScripts/raw/main/cngal2steam.user.js
+[install-2]: https://github.com/Vinfall/UserScripts/raw/main/cnm.r18.user.js
+[install-3]: https://github.com/Vinfall/UserScripts/raw/main/discuz-short-url.user.js
+[install-4]: https://github.com/Vinfall/UserScripts/raw/main/github-boldless-title.user.js
+[install-5]: https://github.com/Vinfall/UserScripts/raw/main/github-release-highlight.user.js
+[install-6]: https://github.com/Vinfall/UserScripts/raw/main/indienova-game-hide.user.js
+[install-7]: https://github.com/Vinfall/UserScripts/raw/main/jd2bean.user.js
+[install-8]: https://github.com/Vinfall/UserScripts/raw/main/show-orig-pic.user.js
+[install-9]: https://github.com/Vinfall/UserScripts/raw/main/redump-highlight.user.js
+[install-10]: https://github.com/Vinfall/UserScripts/raw/main/skip-redirect-inplace.user.js
+[install-11]: https://github.com/Vinfall/UserScripts/raw/main/steam-advanced-outlink.user.js
+[install-12]: https://github.com/Vinfall/UserScripts/raw/main/steam-ea-date.user.js
+[install-13]: https://github.com/Vinfall/UserScripts/raw/main/vndb-list-export.user.js
+[install-14]: https://github.com/Vinfall/UserScripts/raw/main/weibo-mobile-redirect.user.js
