@@ -130,7 +130,7 @@ Early Access (EA) games on Steam have two release dates. Once it's out of EA sta
 
 ### VNDB List Export
 
-Just head to user list/lengths vote page and click `Export as CSV`.
+Just head to user list/lengths vote page, click `Export as CSV` and wait a few seconds for the save file dialog.
 
 In case you don't know yet, you can customize the table in User VN List:
 - select `Multi-select` in the upper right corner and choose labels
