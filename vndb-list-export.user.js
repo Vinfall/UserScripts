@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        VNDB List Export
 // @namespace   https://github.com/Vinfall/UserScripts
-// @version     5.0.1
+// @version     5.0.2
 // @author      Vinfall, alvibo
 // @match       https://vndb.org/u*
 // @match       https://vndb.org/u*/ulist*
@@ -191,12 +191,8 @@ async function fetchAllPagesData(tableSelector) {
 }
 
 function addExportButton(table, buttonSelector, fileNamePrefix) {
-    // Add date to export filename
-    // Sample ISO date: 20240204120335
-    const today = new Date()
-        .toISOString()
-        .replace(/[-:]|T/g, '')
-        .replace(/\..+/, '');
+    // Add date prefix in filename, e.g. 20250325
+    const today = new Date().toISOString().slice(0, 10).replace(/-/g, '');
     const fileName = `${fileNamePrefix + today}.csv`;
 
     // Create export button
