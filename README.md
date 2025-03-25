@@ -21,6 +21,7 @@ Unlisted scripts have no intro and serve for myself only (you can still do whate
 | [Skip Redirect Inplace](#skip-redirect-inplace) | Skip stupid URL redirect in href | [install](https://github.com/Vinfall/UserScripts/raw/main/skip-redirect-inplace.user.js) |
 | [SAO](#steam-advanced-outlink) | Better outlinks on Steam store | [install](https://github.com/Vinfall/UserScripts/raw/main/steam-advanced-outlink.user.js) |
 | [Steam EA Date](#steam-ea-date) | Show Early Access date on Steam card | [install](https://github.com/Vinfall/UserScripts/raw/main/steam-ea-date.user.js) |
+| [VNDB List Export](#vndb-list-export) | Export VNDB user VN/length vote to CSV | [Install](https://github.com/Vinfall/UserScripts/raw/main/vndb-list-export.user.js) |
 | [Weibo Mobile Redirect](#weibo-mobile-redirect) | 新浪微博自动跳转移动版，支持微博、文章、视频 | [安装](https://github.com/Vinfall/UserScripts/raw/main/weibo-mobile-redirect.user.js) |
 
 ## Docs
@@ -129,10 +130,24 @@ Early Access (EA) games on Steam have two release dates. Once it's out of EA sta
 
 ### VNDB List Export
 
-> [!WARNING]
-> DEPRECATED!
-> It's suggested to export data via [VNDB query](https://query.vndb.org/about) instead.
+> [!TIP]
+> If you don't care about localization, it's suggested to export data via [VNDB query](https://query.vndb.org/about) instead.
 > You can find the queries on [my vndb repo](https://github.com/Vinfall/vndb/tree/main/sql).
+
+- User VN List
+    1. Open user list, e.g. `https://vndb.org/u114514/ulist` (replace the UID)
+    2. Select `Multi-select` in the upper right corner & choose labels wisely
+    3. Click the number above the table and change it to max (200 as of writing), then click 👁️ icon on the right and choose visible columns
+    4. Click `Export as CSV`
+    5. Change page, and repeat step 4
+    6. Combine those CSV manually, or use [vndb-merge.py](https://gist.vinfall.com/Vinfall/716e312743f74d958d51ee29783fcdc9)
+    7. (For Excel usage) change file encoding to `UTF-8 BOM`, or dumb Excel won't recognize CJK characters
+- User Length Votes
+    1. Open user lengths vote list, e.g. `https://vndb.org/u114514/lengthvotes` (replace the UID)
+    2. Click `Export as CSV` right under `Length votes` heading (or in the upper right corner, if logged in)
+    3. Change page, and repeat 2
+    4. Combine those CSV manually, or use [vndb-merge.py](https://gist.vinfall.com/Vinfall/716e312743f74d958d51ee29783fcdc9)
+    5. (For Excel usage) change file encoding to `UTF-8 BOM`, or dumb Excel won't recognize CJK characters
 
 ### Weibo Mobile Redirect
 
@@ -145,24 +160,6 @@ Early Access (EA) games on Steam have two release dates. Once it's out of EA sta
 
 开启 JavaScript 的情况下访问 `weibo.com` 会先跳转到 `passport.weibo.com` 再跳转回来，脚本会无限循环。
 测试下来唯一能让脚本正常工作的办法是在 uBO 禁用 `weibo.com` 的 JavaScript，从而禁止微博自带的链接跳转……
-
-### No-Intro
-
-VNDB List Export:
-- User VN List
-  1. Open user list, e.g. `https://vndb.org/u114514/ulist` (replace the UID)
-  2. Select `Multi-select` in the upper right corner & choose labels wisely
-  3. Click the number above the table and change it to max (200 as of writing), then click 👁️ icon on the right and choose visible columns
-  4. Click `Export as CSV`
-  5. Change page, and repeat step 4
-  6. Combine those CSV manually, or use [vndb-merge.py](https://gist.vinfall.com/Vinfall/716e312743f74d958d51ee29783fcdc9)
-  7. (For Excel usage) change file encoding to `UTF-8 BOM`, or dumb Excel won't recognize CJK characters
-- User Length Votes
-  1. Open user lengths vote list, e.g. `https://vndb.org/u114514/lengthvotes` (replace the UID)
-  2. Click `Export as CSV` right under `Length votes` heading (or in the upper right corner, if logged in)
-  3. Change page, and repeat 2
-  4. Combine those CSV manually, or use [vndb-merge.py](https://gist.vinfall.com/Vinfall/716e312743f74d958d51ee29783fcdc9)
-  5. (For Excel usage) change file encoding to `UTF-8 BOM`, or dumb Excel won't recognize CJK characters
 
 ## Notice
 
