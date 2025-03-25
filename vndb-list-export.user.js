@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name        VNDB List Export
 // @namespace   https://github.com/Vinfall/UserScripts
-// @version     4.5.3
-// @author      Vinfall
+// @version     5.0.1
+// @author      Vinfall, alvibo
 // @match       https://vndb.org/u*
 // @match       https://vndb.org/u*/ulist*
 // @match       https://vndb.org/u*/lengthvotes
 // @icon        https://vndb.org/favicon.ico
-// @grant       none
+// @grant       GM_xmlhttpRequest
 // @license     WTFPL
 // @description Export VNDB user VN & length vote list to CSV
 // @description:zh-cn 导出 VNDB 用户游戏列表或时长列表至 CSV
@@ -15,9 +15,9 @@
 
 // Input: table selector
 // Output: table data in CSV format
-function getTable(selector) {
+function getTable(selector, doc = document) {
     // Get table element in user list
-    const userListTable = document.querySelector(selector);
+    const userListTable = doc.querySelector(selector);
 
     // Get table header
     const headers = Array.from(userListTable.querySelectorAll('thead tr')).map((row) => {
@@ -75,7 +75,122 @@ function getTable(selector) {
     return csvContent;
 }
 
-function addExportButton(table, selector, fileNamePrefix) {
+// Fetch page content using GM_xmlhttpRequest with retry functionality
+async function fetchPageContentWithRetry(url, retries = 3, delay = 1000) {
+    for (let i = 0; i < retries; i++) {
+        try {
+            const pageContent = await fetchPageContent(url);
+            return pageContent;
+        } catch (error) {
+            console.error(`Attempt ${i + 1} failed for URL: ${url}. Retrying...`);
+            if (i < retries - 1) {
+                await new Promise((resolve) => setTimeout(resolve, delay)); // Wait before retrying
+            } else {
+                throw error; // Throw error if all retries fail
+            }
+        }
+    }
+}
+
+// Fetch page content using GM_xmlhttpRequest
+function fetchPageContent(url) {
+    return new Promise((resolve, reject) => {
+        GM_xmlhttpRequest({
+            method: 'GET',
+            url: url.startsWith('http') ? url : `https://vndb.org${url}`,
+            headers: {
+                'User-Agent': 'Mozilla/5.0',
+                Accept: 'text/html',
+            },
+            onload: (response) => {
+                resolve(response.responseText);
+            },
+            onerror: (error) => {
+                reject(error);
+            },
+        });
+    });
+}
+
+// Fetch data from all pages with ulist handling
+async function fetchAllPagesData(tableSelector) {
+    let allData = '';
+    let currentPage = 1;
+    let hasNextPage = true;
+    const url = new URL(window.location.href);
+    let baseUrl = url.pathname; // Use 'let' instead of 'const'
+    let params = new URLSearchParams(url.search); // Use 'let' instead of 'const'
+
+    // Remove "p" from params
+    params.delete('p');
+
+    // Check if the initial URL is fake (e.g., contains "vnlist=1")
+    if (params.has('vnlist')) {
+        // Find the button leading to the first page on the CURRENT PAGE
+        const firstPageButton = document.querySelector('.browsetabs a:first-child');
+        if (firstPageButton) {
+            const firstPageUrl = firstPageButton.href;
+            console.log(`Detected fake URL. Redirecting to first page: ${firstPageUrl}`);
+            const pageContent = await fetchPageContentWithRetry(firstPageUrl);
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(pageContent, 'text/html');
+
+            // Get CSV content for the first page
+            const csvContent = getTable(tableSelector, doc);
+            allData += csvContent;
+
+            // Update the base URL and params for subsequent pages
+            const newUrl = new URL(firstPageUrl);
+            baseUrl = newUrl.pathname; // Reassign 'baseUrl'
+            params = new URLSearchParams(newUrl.search); // Reassign 'params'
+
+            // Skip the first page in the pagination loop
+            currentPage = 2; // Start from the second page
+        } else {
+            console.error('Could not find the first page button.');
+            return '';
+        }
+    }
+
+    while (hasNextPage) {
+        // Set "p" to the current page number
+        params.set('p', currentPage);
+        // Reconstruct the URL
+        const pageUrl = `https://vndb.org${baseUrl}${params.toString() ? `?${params.toString()}` : ''}`;
+        console.log(`Fetching data from page ${currentPage}: ${pageUrl}`);
+
+        try {
+            const pageContent = await fetchPageContentWithRetry(pageUrl);
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(pageContent, 'text/html');
+
+            // Get CSV content for the current page
+            const csvContent = getTable(tableSelector, doc);
+
+            // Append only the rows (skip the header for subsequent pages)
+            if (currentPage === 1) {
+                allData += csvContent; // Include header for the first page
+            } else {
+                const rows = csvContent.split('\n').slice(1).join('\n'); // Skip the header
+                allData += `${rows}\n`;
+            }
+
+            // Check if there is a next page
+            const nextPageButton = doc.querySelector('.browsetabs a[rel="next"]');
+            if (nextPageButton) {
+                currentPage++;
+            } else {
+                hasNextPage = false;
+            }
+        } catch (error) {
+            console.error(`Failed to fetch page ${currentPage}:`, error);
+            hasNextPage = false; // Stop fetching if retries fail
+        }
+    }
+    return allData;
+}
+
+function addExportButton(table, buttonSelector, fileNamePrefix) {
     // Add date to export filename
     // Sample ISO date: 20240204120335
     const today = new Date()
@@ -89,9 +204,16 @@ function addExportButton(table, selector, fileNamePrefix) {
     exportButton.textContent = 'Export as CSV';
     exportButton.id = 'exportButton';
     exportButton.style.marginLeft = '2px';
-    exportButton.addEventListener('click', () => {
-        const csvContent = getTable(table);
-        const blob = new Blob([csvContent], {
+    exportButton.addEventListener('click', async (event) => {
+        // Prevent default form submission behavior
+        event.preventDefault();
+        event.stopPropagation();
+
+        const csvContent = await fetchAllPagesData(table);
+
+        // Set UTF-8 BOM header
+        const bom = new Uint8Array([0xef, 0xbb, 0xbf]);
+        const blob = new Blob([bom, csvContent], {
             type: 'text/csv',
         });
         const url = URL.createObjectURL(blob);
@@ -102,8 +224,12 @@ function addExportButton(table, selector, fileNamePrefix) {
     });
 
     // Add button after the selector
-    const browseTab = document.querySelector(selector);
-    browseTab.parentNode.insertBefore(exportButton, browseTab.nextSibling);
+    const browseTab = document.querySelector(buttonSelector);
+    if (browseTab) {
+        browseTab.parentNode.insertBefore(exportButton, browseTab.nextSibling);
+    } else {
+        console.error('Button not found:', buttonSelector);
+    }
 }
 
 function addLengthVotes() {

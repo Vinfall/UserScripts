@@ -130,24 +130,17 @@ Early Access (EA) games on Steam have two release dates. Once it's out of EA sta
 
 ### VNDB List Export
 
-> [!TIP]
-> If you don't care about localization, it's suggested to export data via [VNDB query](https://query.vndb.org/about) instead.
-> You can find the queries on [my vndb repo](https://github.com/Vinfall/vndb/tree/main/sql).
+Just head to user list/lengths vote page and click `Export as CSV`.
 
-- User VN List
-    1. Open user list, e.g. `https://vndb.org/u114514/ulist` (replace the UID)
-    2. Select `Multi-select` in the upper right corner & choose labels wisely
-    3. Click the number above the table and change it to max (200 as of writing), then click 👁️ icon on the right and choose visible columns
-    4. Click `Export as CSV`
-    5. Change page, and repeat step 4
-    6. Combine those CSV manually, or use [vndb-merge.py](https://gist.vinfall.com/Vinfall/716e312743f74d958d51ee29783fcdc9)
-    7. (For Excel usage) change file encoding to `UTF-8 BOM`, or dumb Excel won't recognize CJK characters
-- User Length Votes
-    1. Open user lengths vote list, e.g. `https://vndb.org/u114514/lengthvotes` (replace the UID)
-    2. Click `Export as CSV` right under `Length votes` heading (or in the upper right corner, if logged in)
-    3. Change page, and repeat 2
-    4. Combine those CSV manually, or use [vndb-merge.py](https://gist.vinfall.com/Vinfall/716e312743f74d958d51ee29783fcdc9)
-    5. (For Excel usage) change file encoding to `UTF-8 BOM`, or dumb Excel won't recognize CJK characters
+In case you don't know yet, you can customize the table in User VN List:
+- select `Multi-select` in the upper right corner and choose labels
+- Click 👁️ icon on the right and choose visible columns
+
+> [!NOTE]
+> If you don't care about localization, it's also possible to export data via [VNDB query](https://query.vndb.org/about).
+> Some example queries are provided on [my (deprecated) vndb repo](https://github.com/Vinfall/vndb/tree/main/sql).
+
+PS: Changes regarding are taken from [alvibo's mod](https://github.com/Kamikadashi/VNDB-List-Export) and licensed under WTFPL.
 
 ### Weibo Mobile Redirect
 
