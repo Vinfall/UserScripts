@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        VNDB List Export
 // @namespace   https://github.com/Vinfall/UserScripts
-// @version     4.5.1
+// @version     4.5.3
 // @author      Vinfall
 // @match       https://vndb.org/u*
 // @match       https://vndb.org/u*/ulist*
@@ -31,8 +31,14 @@ function getTable(selector) {
     // Get list
     const userData = Array.from(userListTable.querySelectorAll('tbody tr')).map((row) => {
         return Array.from(row.querySelectorAll('td')).map((td, index) => {
+            const tdClone = td.cloneNode(true);
+            // Remove invisible class
+            const invisibleElement = tdClone.querySelector('.invisible');
+            if (invisibleElement) {
+                invisibleElement.remove();
+            }
             // Delete unwanted string
-            let cellData = td.textContent.trim().replace(/ 👁|▾/g, '');
+            let cellData = tdClone.textContent.trim().replace(/ 👁|▾/g, '');
             // Replace full-width space with normal one
             cellData = cellData.replace(/　/g, ' ');
 
