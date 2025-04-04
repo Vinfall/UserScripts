@@ -76,6 +76,7 @@
 
     function processData(data) {
         const item = data.find((game) => game.platformType === 'Steam' && game.link === appId);
+        // TODO: log appid & name, but only when it has "Visual Novel" or "Dating Sim" tag
         if (!item) {
             console.log('Game not listed on CnGal.');
             return;
