@@ -2,7 +2,7 @@
 // @name              Show Original Picture
 // @name:zh-cn        自动跳转原图
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.15.2
+// @version           0.16.0
 // @author            Vinfall
 // @match             https://*.hdslb.com/bfs/*/*.avif
 // @match             https://*.hdslb.com/bfs/*/*.webp
@@ -10,6 +10,7 @@
 // @match             https://*.xdaimages.com/wordpress/wp-content/uploads/*/*.*?q=*
 // @match             https://*.zhimg.com/v2-*.*
 // @match             https://*/wp-content/uploads/*/*/*.*?w=*&h=*
+// @match             https://alioss.yystv.cn/doc/*/*.*water
 // @match             https://cdnfile.sspai.com/*/*/*/*.*?imageView2/2/*/interlace/*
 // @match             https://comment-img.smzdm.com/*/*/*.jpg
 // @match             https://image.gcores.com/*?x-oss-process=*
@@ -51,6 +52,7 @@
         'comment-img.smzdm.com': (url) => url.replace(/(_b\d+)?\.jpg(\.jpg)?$/, '.jpg'),
         'img.3dmgame.com': (url) => url.replace(/(.*)_([^_]+)_r\..*$/, '$1.$2'), // 114514_jpg_r.webp -> 114514.jpg
         'img.alicdn.com': (url) => url.replace(/_\.webp$/, ''),
+        'yystv.cn': (url) => url.replace(/water/, ''), // .appmsg_mw680water -> .appmsg_mw680, TODO: original resolution?
         'zhimg.com': (url) => url.replace(/_\d+w/, ''),
     };
 
