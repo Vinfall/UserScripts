@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.20.1
+// @version           2.21.0
 // @author            Vinfall
 // @match             https://*.fanbox.cc/
 // @match             https://*.fanbox.cc/plans
@@ -47,6 +47,7 @@
 // @match             https://www.getchu.com/php/attestation.html?aurl=*
 // @match             https://www.hobicolle.com/
 // @match             https://www.johren.games/?backUrl=*
+// @match             https://www.loverslab.com/topic/*
 // @match             https://www.melonbooks.co.jp/detail/detail.php?product_id=*
 // @match             https://www.nijiyome.jp/
 // @match             https://www.nijiyome.jp/*
@@ -106,6 +107,7 @@ function verifyButton() {
         'itch.io': '.buttons > .button',
         'jastusa.com': '.content-gate__footer > button.is-primary.button',
         'johren.games': '.link_enter.mainbtn-primary-lv1',
+        'loverslab.com': '.fields > button',
         'moepedia.net': '.age-button_yes',
         'nijiyome.jp': '.btn-approval.type_01',
         'nintendo.com.hk': 'button#eco-product-confirmation-hide.action-primary',
