@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.22.1
+// @version           2.23.0
 // @author            Vinfall
 // @match             https://*.fanbox.cc/
 // @match             https://*.fanbox.cc/plans
@@ -48,6 +48,7 @@
 // @match             https://www.dmm.co.jp/*/age_check/=/?rurl=*
 // @match             https://www.getchu.com/php/attestation.html?aurl=*
 // @match             https://www.hobicolle.com/
+// @match             https://www.jkforum.net/p/forum.php?*
 // @match             https://www.johren.games/?backUrl=*
 // @match             https://www.loverslab.com/topic/*
 // @match             https://www.melonbooks.co.jp/detail/detail.php?product_id=*
@@ -57,6 +58,10 @@
 // @match             https://www.patreon.com/*
 // @match             https://www.ptt.cc/ask/over18?from=*
 // @match             https://www.will-order.com/age.php?rurl=*
+// @exclude-match     https://*/*username=*
+// @exclude-match     https://*/admin.php?*
+// @exclude-match     https://*/forum.php?*goto*
+// @exclude-match     https://*/forum.php?mod=redirect*
 // @exclude-match     https://download.patch.moe/*
 // @exclude-match     https://fc2ppvdb.com/cookie/*
 // @exclude-match     https://fc2ppvdb.com/forgot-password/
@@ -113,6 +118,7 @@ function verifyButton() {
         'huggingface.co': '[href^="?not-for-all-audiences=true"]', // '.self-start.!mt-6.btn'
         'itch.io': '.buttons > .button',
         'jastusa.com': '.content-gate__footer > button.is-primary.button',
+        'jkforum.net': '#fwin_dialog_submit',
         'johren.games': '.link_enter.mainbtn-primary-lv1',
         'loverslab.com': '.fields > button',
         'moepedia.net': '.age-button_yes',
