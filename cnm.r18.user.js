@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.23.0
+// @version           2.24.0
 // @author            Vinfall
 // @match             https://*.fanbox.cc/
 // @match             https://*.fanbox.cc/plans
@@ -28,6 +28,7 @@
 // @match             https://jastusa.com/zh_Hans/games/*/*
 // @match             https://jastusa.com/zh_Hant/games/*/*
 // @match             https://moepedia.net/
+// @match             https://moe-gameaward.com/
 // @match             https://moepedia.net/*
 // @match             https://moepedia.net/game/*
 // @match             https://patch.moe/
@@ -121,6 +122,7 @@ function verifyButton() {
         'jkforum.net': '#fwin_dialog_submit',
         'johren.games': '.link_enter.mainbtn-primary-lv1',
         'loverslab.com': '.fields > button',
+        'moe-gameaward.com': '.btn_pink',
         'moepedia.net': '.age-button_yes',
         'nijiyome.jp': '.btn-approval.type_01',
         'nintendo.com.hk': 'button#eco-product-confirmation-hide.action-primary',
