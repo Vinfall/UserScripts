@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.24.0
+// @version           2.24.1
 // @author            Vinfall
 // @match             https://*.fanbox.cc/
 // @match             https://*.fanbox.cc/plans
@@ -16,8 +16,6 @@
 // @match             https://bookmate-net.com/ec/*
 // @match             https://booth.pm/*/items/*
 // @match             https://ec.toranoana.jp/tora_r/ec/item/*
-// @match             https://fc2ppvdb.com/
-// @match             https://fc2ppvdb.com/*
 // @match             https://gamebanana.com/mods/*
 // @match             https://gamejolt.com/games/*/*
 // @match             https://gamejolt.com/games/*/*/followers
@@ -64,10 +62,6 @@
 // @exclude-match     https://*/forum.php?*goto*
 // @exclude-match     https://*/forum.php?mod=redirect*
 // @exclude-match     https://download.patch.moe/*
-// @exclude-match     https://fc2ppvdb.com/cookie/*
-// @exclude-match     https://fc2ppvdb.com/forgot-password/
-// @exclude-match     https://fc2ppvdb.com/login/
-// @exclude-match     https://fc2ppvdb.com/register/
 // @exclude-match     https://huggingface.co/blog/*
 // @exclude-match     https://huggingface.co/collections/*
 // @exclude-match     https://huggingface.co/datasets/*
@@ -109,7 +103,6 @@ function verifyButton() {
         'dlsite.com': 'dynamicSelector', // special case
         'dmm.co.jp': '.css-w5doa7.fill.large.turtle-Button.turtle-component > [href]',
         'fanbox.cc': '.dhrsDw.iorEfw.CommonButton__CommonButtonOuter-sc-1s35wwu-0.ButtonBase-sc-1pize7g-0',
-        'fc2ppvdb.com': '[href="https://fc2ppvdb.com/cookie/setage"]',
         'gamebanana.com': '.ShowNsfwContentButton',
         'gamejolt.com': '.link-muted > span', // this mutes until I exit
         // 'gamejolt.com': '.-block.-outline.-primary.button', // this only works for once
