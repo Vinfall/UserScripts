@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Steam Advanced Outlink
 // @namespace    https://github.com/Vinfall/UserScripts
-// @version      3.3.0
+// @version      3.5.0
 // @author       Vinfall
 // @match        https://store.steampowered.com/app/*
 // @icon         https://store.steampowered.com/favicon.ico
@@ -19,6 +19,11 @@
         const warningColor = 'red';
         const conditions = [
             // Outlink replacement
+            {
+                srcIncludes: 'ico_singlePlayer',
+                text: 'PCGW',
+                href: `https://pcgamingwiki.com/api/appid.php?appid=${appId}`,
+            },
             {
                 srcIncludes: 'ico_achievements',
                 text: 'Steam Hunters',
@@ -39,15 +44,19 @@
                 text: 'Workshop',
                 href: `https://steamcommunity.com/workshop/browse/?appid=${appId}&browsesort=toprated&section=readytouseitems`,
             },
+            {
+                srcIncludes: 'ico_familysharing',
+                text: 'IsThereAnyDeal',
+                href: `https://isthereanydeal.com/steam/app/${appId}/`,
+            },
             // Warning on unexpected feature
             {
-                // 'ico_cart' == IAP, 'ico_info` == profile features limited
                 srcIncludes: [
                     'ico_coop',
                     'ico_multiPlayer',
-                    'ico_cart',
+                    'ico_cart', // IAP
                     'ico_vac',
-                    'ico_info',
+                    'ico_info', // profile features limited
                     'ico_learning_about_game',
                 ],
                 color: warningColor,
