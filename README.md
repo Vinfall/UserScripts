@@ -113,13 +113,13 @@ Just a compliment to other existing UserScripts (which would skip link redirect 
 
 ### Steam Advanced Outlink
 
-The game features card on Steam store page comes with outlinks to the respective game feature (obviously), which is useless as SteamDB has MUCH better functionality on this.
+The game features card on Steam store page comes with outlinks to the respective game feature (obviously), which is useless as SteamDB offers MUCH better search function.
 
-Steam Advanced Outlink, aka. SAO, would replace the default list of outlinks with a few goodies that are really useful.
+Steam Advanced Outlink, abbreviated as SAO, would replace some outlinks in the default list with a few goodies that are really useful.
 
-It also serves as a minimal implementation of Augmented Steam for me since it can be used in mobile browsers with UserScript support like [cromite](https://github.com/uazo/cromite).
+It also serves as a minimal implementation of Augmented Steam since it can be used in mobile browsers with UserScript support like [cromite](https://github.com/uazo/cromite).
 
-While directly inspired by and originated from [Steam Cloudsave](https://greasyfork.org/zh-CN/scripts/489218-steam-cloudsave/), the script is a full rewrite so I change the license from MIT to CC0 (Public Domain).
+While directly inspired by and originated from [Steam Cloudsave](https://greasyfork.org/zh-CN/scripts/489218-steam-cloudsave/), the script is fully rewritten so I change the license from MIT to CC0 (Public Domain).
 
 ### Steam EA Date
 
