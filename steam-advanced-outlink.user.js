@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Steam Advanced Outlink
 // @namespace    https://github.com/Vinfall/UserScripts
-// @version      3.2.1
+// @version      3.3.0
 // @author       Vinfall
 // @match        https://store.steampowered.com/app/*
 // @icon         https://store.steampowered.com/favicon.ico
@@ -21,8 +21,8 @@
             // Outlink replacement
             {
                 srcIncludes: 'ico_achievements',
-                text: 'AStats',
-                href: `https://astats.astats.nl/astats/Steam_Game_Info.php?AppID=${appId}`,
+                text: 'Steam Hunters',
+                href: `https://steamhunters.com/apps/${appId}/achievements`,
             },
             {
                 srcIncludes: 'ico_cloud',
