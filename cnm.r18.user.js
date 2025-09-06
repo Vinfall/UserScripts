@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.24.1
+// @version           2.24.2
 // @author            Vinfall
 // @match             https://*.fanbox.cc/
 // @match             https://*.fanbox.cc/plans
@@ -98,7 +98,7 @@ function verifyButton() {
         // new releases
         // '.btn-danger.btn', '#fbi-warning > .modal-dialog > .modal-content > .modal-footer > .btn-primary.btn',
         'bookmate-net.com': '.btn-block.btn-lg.btn-success.btn',
-        'booth.pm': '.js-approve-adult > .adult-check-nav',
+        'booth.pm': '.js-approve-adult > .mx-16.\\!text-semantic-blue',
         'digiket.com': '.btn-lg.btn-info.btn',
         'dlsite.com': 'dynamicSelector', // special case
         'dmm.co.jp': '.css-w5doa7.fill.large.turtle-Button.turtle-component > [href]',
@@ -110,7 +110,7 @@ function verifyButton() {
         // 'gog.com': '.age-gate__button.button--big.button', // not working
         'hobicolle.com': '.close_modal',
         'huggingface.co': '[href^="?not-for-all-audiences=true"]', // '.self-start.!mt-6.btn'
-        'itch.io': '.buttons > .button',
+        // 'itch.io': '.buttons > .button', // not working
         'jastusa.com': '.content-gate__footer > button.is-primary.button',
         'jkforum.net': '#fwin_dialog_submit',
         'johren.games': '.link_enter.mainbtn-primary-lv1',
