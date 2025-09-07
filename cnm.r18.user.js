@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.24.2
+// @version           2.25.0
 // @author            Vinfall
 // @match             https://*.fanbox.cc/
 // @match             https://*.fanbox.cc/plans
@@ -15,6 +15,7 @@
 // @match             https://appendingpulse.jp/dl/*
 // @match             https://bookmate-net.com/ec/*
 // @match             https://booth.pm/*/items/*
+// @match             https://ci-en.dlsite.com/creator/*
 // @match             https://ec.toranoana.jp/tora_r/ec/item/*
 // @match             https://gamebanana.com/mods/*
 // @match             https://gamejolt.com/games/*/*
@@ -61,6 +62,7 @@
 // @exclude-match     https://*/admin.php?*
 // @exclude-match     https://*/forum.php?*goto*
 // @exclude-match     https://*/forum.php?mod=redirect*
+// @exclude-match     https://ci-en.net/*
 // @exclude-match     https://download.patch.moe/*
 // @exclude-match     https://huggingface.co/blog/*
 // @exclude-match     https://huggingface.co/collections/*
@@ -100,7 +102,8 @@ function verifyButton() {
         'bookmate-net.com': '.btn-block.btn-lg.btn-success.btn',
         'booth.pm': '.js-approve-adult > .mx-16.\\!text-semantic-blue',
         'digiket.com': '.btn-lg.btn-info.btn',
-        'dlsite.com': 'dynamicSelector', // special case
+        'ci-en.dlsite.com': '.is-wide.is-info.e-button',
+        'www.dlsite.com': 'dynamicSelector', // special case
         'dmm.co.jp': '.css-w5doa7.fill.large.turtle-Button.turtle-component > [href]',
         'fanbox.cc': '.dhrsDw.iorEfw.CommonButton__CommonButtonOuter-sc-1s35wwu-0.ButtonBase-sc-1pize7g-0',
         'gamebanana.com': '.ShowNsfwContentButton',
