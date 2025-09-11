@@ -107,10 +107,6 @@ You can also create a wget list containing URLs instead.
 
 Just a compliment to other existing UserScripts (which would skip link redirect on demand) you can get anywhere.
 
-#### TODO
-
-- Simplify rules, `selector` & `regex` are mostly identical
-
 ### Steam Advanced Outlink
 
 The game features card on Steam store page comes with outlinks to the respective game feature (obviously), which is useless as SteamDB offers MUCH better search function.
