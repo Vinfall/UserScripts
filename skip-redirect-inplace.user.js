@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Skip Redirect Inplace
 // @namespace     https://github.com/Vinfall/UserScripts
-// @version       1.1.3
+// @version       1.2.0
 // @author        Vinfall
 // @match         https://acg.gamer.com.tw/*
 // @match         https://forum.gamer.com.tw/*
@@ -11,6 +11,7 @@
 // @match         https://m.weibo.cn/status/*
 // @match         https://m.weibo.cn/u/*
 // @match         https://sspai.com/*
+// @match         https://store.steampowered.com/app/*
 // @match         https://www.cnblogs.com/*
 // @match         https://www.gcores.com/*
 // @match         https://www.tiangal.com/*
@@ -46,6 +47,7 @@
         ['a[href*="//ref.gamer.com.tw/redir.php?url="]', /https:\/\/ref\.gamer\.com\.tw\/redir\.php\?url=([^&]+)/, false],
         ['a[href^="https://www.tiangal.com/go.html"]', /https:\/\/www.tiangal.com\/go.html\?url=([^&]+)/, false],
         ['a[href*="/redirect?url="]', /\/redirect\?url=([^&]+)/, true],
+        ['a[href*="https://steamcommunity.com/linkfilter/?u="]', /https:\/\/steamcommunity.com\/linkfilter\/\?u=([^&]+)/, false],
     ];
 
     function convertToStructuredRules(simplifiedRules, attributeShape) {
