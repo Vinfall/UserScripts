@@ -130,11 +130,11 @@
         let newUrl;
 
         // 根据域名匹配字典中的 URL 样式
-        let matched = false;
+        let _matched = false;
         for (const entry of domainStyles) {
             if (entry.domains.some((d) => domain.includes(d))) {
                 newUrl = entry.style(protocol, domain, tid, page);
-                matched = true;
+                _matched = true;
                 break;
             }
         }

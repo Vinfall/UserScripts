@@ -28,7 +28,7 @@ const keywords = [
     'checksums',
 ];
 
-const attributeShape = [
+const _attributeShape = [
     { name: 'repo', type: 'string' },
     { name: 'asset', type: 'string' },
 ];
