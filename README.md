@@ -127,6 +127,7 @@ Early Access (EA) games on Steam have two release dates. Once it's out of EA sta
 ### VNDB List Export
 
 Just head to user list/lengths vote page, click `Export as CSV` and wait a few seconds for the save file dialog.
+There is a parsing error around line 201 which you can easily fix in text editor, so I don't bother to revisit it.
 
 In case you don't know yet, you can customize the table in User VN List:
 - select `Multi-select` in the upper right corner and choose labels
@@ -134,9 +135,9 @@ In case you don't know yet, you can customize the table in User VN List:
 
 > [!NOTE]
 > If you don't care about localization, it's also possible to export data via [VNDB query](https://query.vndb.org/about).
-> Some example queries are provided on [my (deprecated) vndb repo](https://github.com/Vinfall/vndb/tree/main/sql).
+> Some example queries are provided on [my (archived) vndb repo](https://github.com/Vinfall/vndb/tree/main/sql).
 
-PS: Changes regarding are taken from [alvibo's mod](https://github.com/Kamikadashi/VNDB-List-Export) and licensed under WTFPL.
+PS: Changes regarding paging are taken from [alvibo's mod](https://github.com/Kamikadashi/VNDB-List-Export) and licensed under WTFPL.
 
 ### Weibo Mobile Redirect
 
@@ -146,9 +147,6 @@ PS: Changes regarding are taken from [alvibo's mod](https://github.com/Kamikadas
 > ~~Why?~~
 > Why not?
 > 移动端页面没有 PC 端网页*那么多*的干扰元素，加载速度也要快 60%，何乐而不为。
-
-开启 JavaScript 的情况下访问 `weibo.com` 会先跳转到 `passport.weibo.com` 再跳转回来，脚本会无限循环。
-测试下来唯一能让脚本正常工作的办法是在 uBO 禁用 `weibo.com` 的 JavaScript，从而禁止微博自带的链接跳转……
 
 ## Notice
 
