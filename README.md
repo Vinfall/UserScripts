@@ -141,7 +141,7 @@ PS: Changes regarding paging are taken from [alvibo's mod](https://github.com/Ka
 
 ### Weibo Mobile Redirect
 
-自动跳转微博、文章~~和视频~~为移动端页面。
+自动跳转微博、文章为移动端页面。
 
 > [!NOTE]
 > ~~Why?~~
