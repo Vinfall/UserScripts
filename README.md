@@ -5,6 +5,8 @@
 A few userscripts you can install to manager extensions like [Violentmonkey](https://violentmonkey.github.io).
 Unlisted scripts have no intro and serve for myself only (you can still do whatever you want granted they're in Public Domain).
 
+PS: Do NOT clone submodule as it won't work.
+
 ## List
 
 | Name | Function | Install |
@@ -147,11 +149,6 @@ PS: Changes regarding paging are taken from [alvibo's mod](https://github.com/Ka
 > ~~Why?~~
 > Why not?
 > 移动端页面没有 PC 端网页*那么多*的干扰元素，加载速度也要快 60%，何乐而不为。
-
-## Notice
-
-Do NOT clone submodule as it's private and protected with private key.
-~~You don't even have a chance now that it's a git alias and hosted locally though.~~
 
 ## [License](./LICENSE)
 
