@@ -2,13 +2,12 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.25.0
+// @version           2.25.1
 // @author            Vinfall
 // @match             https://*.fanbox.cc/
 // @match             https://*.fanbox.cc/plans
 // @match             https://*.fanbox.cc/plans/*
 // @match             https://*.fanbox.cc/posts/*
-// @match             https://*.itch.io/*
 // @match             https://*.reddit.com/over18?dest=*
 // @match             https://a.sofmap.com/adult_confirm.aspx?url=*
 // @match             https://a.sofmap.com/product_detail.aspx?sku=*
@@ -113,7 +112,6 @@ function verifyButton() {
         // 'gog.com': '.age-gate__button.button--big.button', // not working
         'hobicolle.com': '.close_modal',
         'huggingface.co': '[href^="?not-for-all-audiences=true"]', // '.self-start.!mt-6.btn'
-        // 'itch.io': '.buttons > .button', // not working
         'jastusa.com': '.content-gate__footer > button.is-primary.button',
         'jkforum.net': '#fwin_dialog_submit',
         'johren.games': '.link_enter.mainbtn-primary-lv1',
