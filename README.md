@@ -13,6 +13,7 @@ PS: Do NOT clone submodule as it won't work.
 | ---- | -------- | :-----: |
 | [CnGal2Steam](#cngal-on-steam) | 在 Steam 商店页面显示 CnGal 链接 | [安装][install-1] |
 | [CNM.R18](#cnmr18) | Skip age verification on numerous sites | [install][install-2] |
+| [COK.R18](#cokr18) | Skip age verification on numerous sites, cookie ver. | [install][install-15] |
 | [Discuz-Short-URL](#discuz-short-url) | Show short URL on Discuz forums | [install][install-3] |
 | GitHub Boldless Title | Remove strong style in GitHub repo/gist title | [install][install-4] |
 | [GitHub Release Highlight](#github-release-highlight) | Highlight GitHub release assets containing keywords | [install][install-5] |
@@ -48,7 +49,15 @@ Ideally this *can* work on most sites that requires a NSFW parameter or press a 
 > [!TIP]
 > This also does not have much effect if you seldom/never clean your browser data (which you should NOT do, but that's none of my business), mostly cookies in this case, since you usually only need to verify once and use the website while that cookie lasts.
 
-Alternatively, you can just write a userscript to place/extend confirmed cookies on those websites, if somehow this script breaks in the future. This way is much easier in most cases, but I did not take it on purpose as I don't give a fxxk about cookies and they end up getting deleted once I close the browser, rendering such userscript pointless.
+### COK.R18
+
+Certainly Older than Kid, aka. COK.R18, is a companion script for CNM.R18, which works via cookies instead of the elegant URL parameters.
+
+To avoid conflicts with CNM.R18, many supported sites are disabled by default.
+
+It would also overwrite your existing cookie by default for privacy. If you don't like it, change `cookie_override` to `false` in line 29.
+
+Ironically, this would have the max *once for all* effect if you hardly clean your cookies (which is not recommended though). As this works by placing a verified cookie expired a year later, in the best case, you only have to run it once every year.
 
 ### Discuz Short URL
 
@@ -168,3 +177,4 @@ Licensed under CC0 1.0 Universal or Public Domain, whichever is more permissive,
 [install-12]: https://github.com/Vinfall/UserScripts/raw/main/steam-ea-date.user.js
 [install-13]: https://github.com/Vinfall/UserScripts/raw/main/vndb-list-export.user.js
 [install-14]: https://github.com/Vinfall/UserScripts/raw/main/weibo-mobile-redirect.user.js
+[install-15]: https://github.com/Vinfall/UserScripts/raw/main/cok.r18.user.js
