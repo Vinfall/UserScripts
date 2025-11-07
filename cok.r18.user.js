@@ -2,9 +2,13 @@
 // @name              COK.R18
 // @name:zh-cn        刚满 18 岁 Cookie 版
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.5.0
+// @version           0.8.0
 // @author            Vinfall
 // @match             https://*.itch.io/*
+// @match             https://www.ptt.cc/ask/over18?from=*
+// @match             https://www.ptt.cc/bbs/*/*.html
+// @match             https://store.steampowered.com/agecheck/app/*
+// @match             https://www.gog.com/*
 // @grant             unsafeWindow
 // @grant             GM_getValue
 // @grant             GM_setValue
@@ -21,6 +25,8 @@
 // - add a lot more sites, comment out the ones existed in CNM.R18
 // - set cookie_override via GM_setValue
 // - set cookie in the correct way (is it even possible?)
+// - fix itch
+// - better support for Steam/PTT (auto redirect after setting cookie)
 
 // patch for 'unsafeWindow is not defined'
 const _global = typeof unsafeWindow === 'undefined' ? window : unsafeWindow;
@@ -30,6 +36,21 @@ const config = [
         domains: ['itch.io'],
         name: 'allow_nsfw_games',
         value: '%5b3660070%5d', // 1970-01-01
+    },
+    {
+        domains: ['ptt.cc'],
+        name: 'over18',
+        value: '1',
+    },
+    {
+        domains: ['store.steampowered.com'],
+        name: 'birthtime', // not lastagecheckage or wants_mature_content
+        value: '-3599',
+    },
+    {
+        domains: ['gog.com'],
+        name: 'gog_wantsmaturecontent',
+        value: '18',
     },
 ];
 

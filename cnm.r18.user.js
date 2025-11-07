@@ -55,7 +55,6 @@
 // @match             https://www.nijiyome.jp/*
 // @match             https://www.nintendo.com/jp/*/creators-voice/*
 // @match             https://www.patreon.com/*
-// @match             https://www.ptt.cc/ask/over18?from=*
 // @match             https://www.will-order.com/age.php?rurl=*
 // @exclude-match     https://*/*username=*
 // @exclude-match     https://*/admin.php?*
