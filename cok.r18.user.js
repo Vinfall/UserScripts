@@ -2,13 +2,16 @@
 // @name              COK.R18
 // @name:zh-cn        刚满 18 岁 Cookie 版
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.8.0
+// @version           0.9.0
 // @author            Vinfall
 // @match             https://*.itch.io/*
 // @match             https://www.ptt.cc/ask/over18?from=*
 // @match             https://www.ptt.cc/bbs/*/*.html
 // @match             https://store.steampowered.com/agecheck/app/*
-// @match             https://www.gog.com/*
+// @match             https://www.nintendo.com/us/store/products/*
+// @match             https://www.nintendo.com/*/store/products/*
+// @match             https://www.gog.com/*/game/*
+// @exclude-match     https://www.gog.com/forum/*
 // @grant             unsafeWindow
 // @grant             GM_getValue
 // @grant             GM_setValue
@@ -31,6 +34,9 @@
 // patch for 'unsafeWindow is not defined'
 const _global = typeof unsafeWindow === 'undefined' ? window : unsafeWindow;
 
+const cookie_override = true;
+// const noFlagSites = ['itch.io'];
+
 const config = [
     {
         domains: ['itch.io'],
@@ -52,10 +58,12 @@ const config = [
         name: 'gog_wantsmaturecontent',
         value: '18',
     },
+    {
+        domains: ['nintendo.com'],
+        name: 'nintendo.ageGate.isOldEnough',
+        value: '"true"',
+    },
 ];
-
-const cookie_override = true;
-// const noFlagSites = ['itch.io'];
 
 /**
  * Find config via hostname
