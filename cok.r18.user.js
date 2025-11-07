@@ -24,12 +24,14 @@
 
 // Docs: https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie
 
-// TODO
-// - add a lot more sites, comment out the ones existed in CNM.R18
-// - set cookie_override via GM_setValue
-// - set cookie in the correct way (is it even possible?)
-// - fix itch
-// - better support for Steam/PTT (auto redirect after setting cookie)
+/*
+TODO
+- add a lot more sites, comment out the ones existed in CNM.R18
+- set cookie_override via GM_setValue
+- set cookie in the correct way (is it even possible?)
+- fix itch
+- better support for Steam/PTT (auto redirect after setting cookie)
+*/
 
 // patch for 'unsafeWindow is not defined'
 const _global = typeof unsafeWindow === 'undefined' ? window : unsafeWindow;
