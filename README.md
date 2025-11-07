@@ -42,7 +42,7 @@ PS: Do NOT clone submodule as it won't work.
 
 Confirm age automatically on various sites (mostly doujin/game related, but with most Otome stuff excluded) as I'm *Certainly Not Minor* aka. CNM.R18.
 
-Tested to work on all [VNDB extlinks](https://vndb.org/d3#4) except sites require filling DoB like Steam, Epic Games, GOG & eShop US (and some good guy who do not require age verification).
+Tested to work on all [VNDB extlinks](https://vndb.org/d3#4) except sites require filling DoB (and some good guy who do not require age verification). For those sites, use COK.R18.
 
 Ideally this *can* work on most sites that requires a NSFW parameter or press a button, but I only add websites I'm aware of.
 
@@ -51,11 +51,9 @@ Ideally this *can* work on most sites that requires a NSFW parameter or press a 
 
 ### COK.R18
 
-Certainly Older than Kid, aka. COK.R18, is a companion script for CNM.R18, which works via cookies instead of the elegant URL parameters.
+Certainly Older than Kid, aka. COK.R18, which works via cookies instead of element click/URL parameters, mostly for sites requiring DoB like Steam, Epic Games, GOG & eShop US.
 
-To avoid conflicts with CNM.R18, many supported sites are disabled by default.
-
-It would also overwrite your existing cookie by default for privacy. If you don't like it, change `cookie_override` to `false` in line 29.
+As it stands as a companion script for CNM.R18 (albeit working perfectly w/o the latter), many supported sites are disabled by default to avoid conflicts. It would also overwrite your existing cookie by default for privacy. If you don't like it, change `cookie_override` to `false` in the script.
 
 Ironically, this would have the max *once for all* effect if you hardly clean your cookies (which is not recommended though). As this works by placing a verified cookie expired a year later, in the best case, you only have to run it once every year.
 
