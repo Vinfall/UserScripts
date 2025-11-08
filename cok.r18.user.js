@@ -5,13 +5,22 @@
 // @version           0.9.0
 // @author            Vinfall
 // @match             https://*.itch.io/*
+// @match             https://store.steampowered.com/agecheck/app/*
+// @match             https://www.gog.com/*/game/*
+// @match             https://www.moyu.moe/*
+// @match             https://www.nintendo.com/*/store/products/*
+// @match             https://www.nintendo.com/us/store/products/*
 // @match             https://www.ptt.cc/ask/over18?from=*
 // @match             https://www.ptt.cc/bbs/*/*.html
-// @match             https://store.steampowered.com/agecheck/app/*
-// @match             https://www.nintendo.com/us/store/products/*
-// @match             https://www.nintendo.com/*/store/products/*
-// @match             https://www.gog.com/*/game/*
 // @exclude-match     https://www.gog.com/forum/*
+// @exclude-match     https://www.moyu.moe/*/*/pr
+// @exclude-match     https://www.moyu.moe/about
+// @exclude-match     https://www.moyu.moe/about/*
+// @exclude-match     https://www.moyu.moe/auth/*
+// @exclude-match     https://www.moyu.moe/edit/create
+// @exclude-match     https://www.moyu.moe/friend-link
+// @exclude-match     https://www.moyu.moe/login
+// @exclude-match     https://www.moyu.moe/register
 // @grant             unsafeWindow
 // @grant             GM_getValue
 // @grant             GM_setValue
@@ -41,9 +50,24 @@ const cookie_override = true;
 
 const config = [
     {
+        domains: ['gog.com'],
+        name: 'gog_wantsmaturecontent',
+        value: '18',
+    },
+    {
         domains: ['itch.io'],
         name: 'allow_nsfw_games',
         value: '%5b3660070%5d', // 1970-01-01
+    },
+    // {
+    //     domains: ['moyu.moe'],
+    //     name: 'kun-patch-setting-store|state|data|kunNsfwEnable',
+    //     value: 'all',
+    // }, // infinite loop
+    {
+        domains: ['nintendo.com'],
+        name: 'nintendo.ageGate.isOldEnough',
+        value: '"true"', // this is correct, the value is literal "true"
     },
     {
         domains: ['ptt.cc'],
@@ -54,16 +78,6 @@ const config = [
         domains: ['store.steampowered.com'],
         name: 'birthtime', // not lastagecheckage or wants_mature_content
         value: '-3599',
-    },
-    {
-        domains: ['gog.com'],
-        name: 'gog_wantsmaturecontent',
-        value: '18',
-    },
-    {
-        domains: ['nintendo.com'],
-        name: 'nintendo.ageGate.isOldEnough',
-        value: '"true"',
     },
 ];
 
