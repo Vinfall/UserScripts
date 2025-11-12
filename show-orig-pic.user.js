@@ -2,7 +2,7 @@
 // @name              Show Original Picture
 // @name:zh-cn        自动跳转原图
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.16.0
+// @version           0.16.1
 // @author            Vinfall
 // @match             https://*.hdslb.com/bfs/*/*.avif
 // @match             https://*.hdslb.com/bfs/*/*.webp
@@ -20,6 +20,7 @@
 // @match             https://img.chuapp.com/wp-content/Picture/*/*?imageView*
 // @match             https://ipfs.crossbell.io/ipfs/*?*
 // @match             https://platform.theverge.com/wp-content/uploads/sites/*/*?quality=*
+// @match             https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/*/*/ss_*.600x338.jpg
 // @match             https://www.gravatar.com/avatar/*?s=*
 // @exclude-match     https://cdnfile.sspai.com/*/*/*/*.*?imageView2/2/format/webp
 // @grant             none
@@ -52,6 +53,7 @@
         'comment-img.smzdm.com': (url) => url.replace(/(_b\d+)?\.jpg(\.jpg)?$/, '.jpg'),
         'img.3dmgame.com': (url) => url.replace(/(.*)_([^_]+)_r\..*$/, '$1.$2'), // 114514_jpg_r.webp -> 114514.jpg
         'img.alicdn.com': (url) => url.replace(/_\.webp$/, ''),
+        // 'steamstatic.com': (url) => url.replace(/600x338/, '1920x1080'),
         'yystv.cn': (url) => url.replace(/water/, ''), // .appmsg_mw680water -> .appmsg_mw680, TODO: original resolution?
         'zhimg.com': (url) => url.replace(/_\d+w/, ''),
     };
