@@ -23,6 +23,7 @@ PS: Do NOT clone submodule as it won't work.
 | [Redump Highlight](#redump-highlight) | Highlight platforms in redump download page | [install][install-9] |
 | [Skip Redirect Inplace](#skip-redirect-inplace) | Skip stupid URL redirect in href | [install][install-10] |
 | [SAO](#steam-advanced-outlink) | Better outlinks on Steam store | [install][install-11] |
+| [Steam Small Screenshot](#steam-small-screenshot) | Show smaller screenshot on Steam store | [install][install-16] |
 | [Steam EA Date](#steam-ea-date) | Show Early Access date on Steam card | [install][install-12] |
 | [VNDB List Export](#vndb-list-export) | Export VNDB user VN/length vote to CSV | [Install][install-13] |
 | [Weibo Mobile Redirect](#weibo-mobile-redirect) | 新浪微博自动跳转移动版，支持微博、文章、视频 | [安装][install-14] |
@@ -133,6 +134,15 @@ Early Access (EA) games on Steam have two release dates. Once it's out of EA sta
 > [!NOTE]
 > As EA release date string has no practical selector to choose, it's hardcoded in the script and only works for en, ja, zh-Hans/zh-Hant for now. You can, however, easily add new localized string and have it shown in your language.
 
+### Steam Small Screenshot
+
+Recently Steam introduced wider store page with larger screenshots (i.e. 600x338 -> 1920x1080),
+which basically breaks [No large media elements][ubo] feature for uBlock Origin
+as you either set the threshold to an unreasonably high value or have to click to load almost every image.
+
+Steam Small Screenshot, aka. SSS, restores the original behavior
+and 200KB threshold would suffice in most cases, saving much data when visiting Steam.
+
 ### VNDB List Export
 
 Just head to user list/lengths vote page, click `Export as CSV` and wait a few seconds for the save file dialog.
@@ -176,3 +186,5 @@ Licensed under CC0 1.0 Universal or Public Domain, whichever is more permissive,
 [install-13]: https://github.com/Vinfall/UserScripts/raw/main/vndb-list-export.user.js
 [install-14]: https://github.com/Vinfall/UserScripts/raw/main/weibo-mobile-redirect.user.js
 [install-15]: https://github.com/Vinfall/UserScripts/raw/main/cok.r18.user.js
+[install-16]: https://github.com/Vinfall/UserScripts/raw/main/steam-small-screenshot.user.js
+[ubo]: https://github.com/gorhill/uBlock/wiki/Per-site-switches#no-large-media-elements
