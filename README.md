@@ -71,11 +71,10 @@ Ironically, this would have the max *once for all* effect if you hardly clean yo
 
 > [!WARNING]
 > This is the sanitized public version and would NOT be updated regularly.
->
-> Given that it's released in public domain, feel free to do whatever you want :)
 
 Ever accidentally download a wrong release asset not suited for your platform?
-Can you pick the correct [vscodium](https://github.com/VSCodium/vscodium/releases/latest) package among those enormous 154(!) assets within 10 seconds?
+Can you pick the correct [vscodium](https://github.com/VSCodium/vscodium/releases/latest) package
+among those enormous 154(!) assets within 10 seconds?
 
 If not, then GitHub Release Highlight comes into your rescue!
 
@@ -128,6 +127,9 @@ Early Access (EA) games on Steam have two release dates. Once it's out of EA sta
 > As EA release date string has no practical selector to choose, it's hardcoded in the script and only works for en, ja, zh-Hans/zh-Hant for now. You can, however, easily add new localized string and have it shown in your language.
 
 ### Steam Small Screenshot
+
+> [!NOTE]
+> Broken for now.
 
 Recently Steam introduced wider store page with larger screenshots (i.e. 600x338 -> 1920x1080),
 which basically breaks [No large media elements][ubo] feature for uBlock Origin
