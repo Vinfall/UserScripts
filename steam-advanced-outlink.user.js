@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Steam Advanced Outlink
 // @namespace    https://github.com/Vinfall/UserScripts
-// @version      3.5.0
+// @version      3.5.2
 // @author       Vinfall
 // @match        https://store.steampowered.com/app/*
 // @icon         https://store.steampowered.com/favicon.ico
@@ -14,7 +14,7 @@
 (() => {
     const appId = /app\/(\d+)\//.exec(location.href)?.pop();
     if (appId) {
-        console.log(appId);
+        console.log('%c[SAO]%c', 'color: cyan; font-weight: bold;', '', appId);
 
         const warningColor = 'red';
         const conditions = [
@@ -95,6 +95,6 @@
             communityLink.href = `https://steamcommunity.com/app/${appId}/guides`;
         }
     } else {
-        console.error('Unsupported URL');
+        console.error('%c[SAO]%c Unsupported URL', 'color: cyan; font-weight: bold;', '');
     }
 })();

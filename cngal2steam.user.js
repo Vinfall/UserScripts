@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CnGal on Steam
 // @namespace    https://github.com/Vinfall/UserScripts
-// @version      0.3.4
+// @version      0.3.5
 // @author       Vinfall
 // @match        https://store.steampowered.com/app/*
 // @icon         https://www.cngal.org/favicon.ico
@@ -69,7 +69,12 @@
                 processData(result);
             },
             onerror: (error) => {
-                console.error('Error fetching data from CnGal API:', error);
+                console.error(
+                    '%c[CnGal]%c Error fetching data from CnGal API:',
+                    'color: #ff4891; font-weight: bold;',
+                    '',
+                    error,
+                );
             },
         });
     }
@@ -78,7 +83,7 @@
         const item = data.find((game) => game.platformType === 'Steam' && game.link === appId);
         // TODO: log appid & name, but only when it has "Visual Novel" or "Dating Sim" tag
         if (!item) {
-            console.log('Game not listed on CnGal.');
+            console.log('%c[CnGal]%c Game not listed', 'color: #ff4891; font-weight: bold;', '');
             return;
         }
 

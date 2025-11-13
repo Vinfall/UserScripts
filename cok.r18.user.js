@@ -2,7 +2,7 @@
 // @name              COK.R18
 // @name:zh-cn        刚满 18 岁 Cookie 版
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.9.0
+// @version           0.9.1
 // @author            Vinfall
 // @match             https://*.itch.io/*
 // @match             https://store.steampowered.com/agecheck/app/*
@@ -54,11 +54,11 @@ const config = [
         name: 'gog_wantsmaturecontent',
         value: '18',
     },
-    {
-        domains: ['itch.io'],
-        name: 'allow_nsfw_games',
-        value: '%5b3660070%5d', // 1970-01-01
-    },
+    // {
+    //     domains: ['itch.io'],
+    //     name: 'allow_nsfw_games',
+    //     value: '%5b3660070%5d', // 1970-01-01
+    // },
     // {
     //     domains: ['moyu.moe'],
     //     name: 'kun-patch-setting-store|state|data|kunNsfwEnable',
@@ -118,7 +118,7 @@ function main() {
     const matchingConfig = getMatchingConfig();
 
     if (!matchingConfig) {
-        console.log('Domain not found. Skipping.');
+        console.log('%c[COK.R18]%c Domain not found. Skipping.', 'color: #90060a; font-weight: bold;', '');
         return;
     }
 
@@ -126,24 +126,36 @@ function main() {
     const currentCookieValue = getCookie(name);
     // cookie w/ correct value
     if (currentCookieValue === value) {
-        console.log(`Cookie "${name}" value matched, skipping.`);
+        console.log(
+            `%c[COK.R18]%c Cookie "${name}" value matched, skipping.`,
+            'color: #90060a; font-weight: bold;',
+            '',
+        );
         return;
     }
     // no cookie or wrong value
     if (currentCookieValue !== null) {
         // wrong value
         if (cookie_override) {
-            console.log(`Cookie "${name}" value mismatch, and cookie_override is true, overwriting...`);
+            console.log(
+                `%c[COK.R18]%c Cookie "${name}" value mismatch, and cookie_override is true, overwriting...`,
+                'color: #90060a; font-weight: bold;',
+                '',
+            );
             setCookie(name, value);
             // refresh page after setting cookie
             location.reload();
         } else {
-            console.log(`Cookie "${name}" value mismatch, but cookie_override is false, skipping...`);
+            console.log(
+                `%c[COK.R18]%c Cookie "${name}" value mismatch, but cookie_override is false, skipping...`,
+                'color: #90060a; font-weight: bold;',
+                '',
+            );
             return;
         }
     } else {
         // no cookie
-        console.log(`Cookie "${name}" not found, setting...`);
+        console.log(`%c[COK.R18]%c Cookie "${name}" not found, setting...`, 'color: #90060a; font-weight: bold;', '');
         setCookie(name, value);
         // refresh page after setting cookie
         location.reload();
