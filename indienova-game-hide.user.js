@@ -12,6 +12,12 @@
 // @description indienova「本周 Steam 值得关注的游戏」和「itch 一周游戏汇」隐藏包含特定关键字的游戏
 // ==/UserScript==
 
+/*
+TODO:
+- 支持 `/news-of-overseas-indie-games-and-industry` 页面的 demo 列表 (`p` element instead of `H4`, [example](https://indienova.com/indie-game-news/news-of-overseas-indie-games-and-industry-vol-15/#iah-2))
+- 支持 `/indie-game-news/steam-next-fest-*` 页面的 demo 列表
+*/
+
 (() => {
     // 初始化常量
     // biome-ignore format: do not touch my keywords

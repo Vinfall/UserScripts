@@ -85,15 +85,8 @@ Note: this does NOT work in *all releases* page, you need to head to *a specific
 
 ### Indienova Game Hide
 
-#### 使用说明
-
 关键词列表因人而异，安装并访问一次 indienova 每周游戏界面后，可以在脚本管理器找到该脚本，点击 `Values` 一栏，修改 `keywords` 字典。
 此外，逻辑变量 `ovverrideDefault` 表示是否覆盖脚本自带的关键词列表，值为 `false` 时会与自带列表合并，默认为 `true`（仅使用自定义列表）。
-
-#### 代办
-
-- 支持 `/news-of-overseas-indie-games-and-industry` 页面的 demo 列表 (`p` element instead of `H4`, [example](https://indienova.com/indie-game-news/news-of-overseas-indie-games-and-industry-vol-15/#iah-2))
-- 支持 `/indie-game-news/steam-next-fest-*` 页面的 demo 列表
 
 ### JD to Beancount
 
