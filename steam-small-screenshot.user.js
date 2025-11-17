@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Steam Small Screenshot
 // @namespace    https://github.com/Vinfall/UserScripts
-// @version      0.1.0
+// @version      0.1.1
 // @author       Vinfall
 // @match        https://store.steampowered.com/app/*
 // @icon         https://store.steampowered.com/favicon.ico
@@ -47,7 +47,7 @@
 
         // https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/*/*/ss_*.1920x1080.*
         const steamImageRegex =
-            /(https:\/\/[^/]+\/store_item_assets\/steam\/apps\/\d+\/ss_[a-f0-9]+\.)(\d+x\d+)(\.jpg)(\?.*)?/;
+            /(https:\/\/[^/]+\/store_item_assets\/steam\/apps\/\d+\/[a-fA-F0-9]+\/ss_[a-fA-F0-9]+\.)(\d+x\d+)(\.[a-z]+)(\?.*)?/i;
 
         const match = url.match(steamImageRegex);
         if (match) {

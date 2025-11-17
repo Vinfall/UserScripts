@@ -128,9 +128,6 @@ Early Access (EA) games on Steam have two release dates. Once it's out of EA sta
 
 ### Steam Small Screenshot
 
-> [!NOTE]
-> Broken for now.
-
 Recently Steam introduced wider store page with larger screenshots (i.e. 600x338 -> 1920x1080),
 which basically breaks [No large media elements][ubo] feature for uBlock Origin
 as you either set the threshold to an unreasonably high value or have to click to load almost every image.
