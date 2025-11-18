@@ -2,9 +2,11 @@
 // @name              COK.R18
 // @name:zh-cn        刚满 18 岁 Cookie 版
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.9.1
+// @version           0.10.0
 // @author            Vinfall
 // @match             https://*.itch.io/*
+// @match             https://archive.org/details/*
+// @match             https://archive.org/download/*
 // @match             https://store.steampowered.com/agecheck/app/*
 // @match             https://www.gog.com/*/game/*
 // @match             https://www.moyu.moe/*
@@ -40,6 +42,7 @@ TODO
 - set cookie in the correct way (is it even possible?)
 - fix itch
 - better support for Steam/PTT (auto redirect after setting cookie)
+- simplify dict syntax, c.f. github-release-highlight
 */
 
 // patch for 'unsafeWindow is not defined'
@@ -49,6 +52,11 @@ const cookie_override = true;
 // const noFlagSites = ['itch.io'];
 
 const config = [
+    {
+        domains: ['archive.org'],
+        name: 'hide_flag_porn',
+        value: '1',
+    },
     {
         domains: ['gog.com'],
         name: 'gog_wantsmaturecontent',
