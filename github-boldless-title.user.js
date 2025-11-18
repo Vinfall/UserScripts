@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name              GitHub Boldless Title
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           1.2.0
+// @version           1.2.1
 // @author            Vinfall
 // @match             https://github.com/*
 // @match             https://gist.github.com/*
@@ -19,7 +19,10 @@
 // ==/UserScript==
 
 (() => {
-    function replaceStrongWithAnchor(selector) {
+    function replaceStrongWithAnchor() {
+        const isGist = window.location.href.includes('gist');
+        const selector = isGist ? 'strong[itemprop="name"].css-truncate-target.mr-1' : 'strong.mr-2.flex-self-stretch';
+
         const strongElements = document.querySelectorAll(selector);
         for (const strong of strongElements) {
             const anchor = strong.querySelector('a'); // Select the <a> tag inside <strong>
@@ -37,12 +40,12 @@
 
     // Run after the window has fully loaded
     window.onload = () => {
-        const isGist = window.location.href.includes('gist');
-        const selector = isGist ? 'strong[itemprop="name"].css-truncate-target.mr-1' : 'strong.mr-2.flex-self-stretch';
-        replaceStrongWithAnchor(selector);
+        replaceStrongWithAnchor();
 
         // Observe changes in the page (e.g., for dynamic content)
-        const observer = new MutationObserver(replaceStrongWithAnchor);
+        const observer = new MutationObserver((_mutations) => {
+            replaceStrongWithAnchor();
+        });
         observer.observe(document.body, { childList: true, subtree: true });
     };
 })();
