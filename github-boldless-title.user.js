@@ -5,12 +5,13 @@
 // @author            Vinfall
 // @match             https://github.com/*
 // @match             https://gist.github.com/*
-// @exclude-match     https://github.com/login
-// @exclude-match     https://github.com/sessions/*
-// @exclude-match     https://github.com/signin
 // @exclude-match     https://gist.github.com/auth/*
 // @exclude-match     https://gist.github.com/join*
 // @exclude-match     https://gist.github.com/login
+// @exclude-match     https://github.com/*/*/actions/workflows/*
+// @exclude-match     https://github.com/login
+// @exclude-match     https://github.com/sessions/*
+// @exclude-match     https://github.com/signin
 // @grant             none
 // @run-at            document-end
 // @license           CC0 1.0 Universal (Public Domain)
