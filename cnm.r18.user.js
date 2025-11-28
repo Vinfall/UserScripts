@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.26.0
+// @version           2.27.0
 // @author            Vinfall
 // @match             https://*.fanbox.cc/
 // @match             https://*.fanbox.cc/plans
@@ -57,6 +57,8 @@
 // @match             https://www.nintendo.com/jp/*/creators-voice/*
 // @match             https://www.patreon.com/*
 // @match             https://www.will-order.com/age.php?rurl=*
+// @match             https://www.amazon.co.jp/black-curtain/esrb-teen-black-curtain?*
+// @match             https://www.amazon.co.jp/*/*/black-curtain/esrb-teen-black-curtain?*
 // @exclude-match     https://*/*username=*
 // @exclude-match     https://*/admin.php?*
 // @exclude-match     https://*/forum.php?*goto*
@@ -93,6 +95,7 @@ function verifyButton() {
     const config = {
         'a.sofmap.com': '.blue.button',
         // 'amiami.jp': 'input:nth-of-type(5)', // '.btn_go > form', not working
+        'amazon.co.jp': '#black-curtain-yes-button > .a-button-inner > .a-button-text',
         'animate-onlineshop.jp': 'dynamicSelector', // special case
         'animategames.jp': '.btn-blr18.btn',
         'appendingpulse.jp': '#in', // old releases
