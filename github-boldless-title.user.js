@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name              GitHub Boldless Title
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           1.2.1
+// @version           1.2.2
 // @author            Vinfall
 // @match             https://github.com/*
 // @match             https://gist.github.com/*
@@ -9,6 +9,7 @@
 // @exclude-match     https://gist.github.com/join*
 // @exclude-match     https://gist.github.com/login
 // @exclude-match     https://github.com/*/*/actions/workflows/*
+// @exclude-match     https://github.com/copilot/c/*
 // @exclude-match     https://github.com/login
 // @exclude-match     https://github.com/sessions/*
 // @exclude-match     https://github.com/signin
