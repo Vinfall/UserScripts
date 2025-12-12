@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.27.0
+// @version           2.28.0
 // @author            Vinfall
 // @match             https://*.fanbox.cc/
 // @match             https://*.fanbox.cc/plans
@@ -36,6 +36,7 @@
 // @match             https://store-jp.nintendo.com/item/software/*
 // @match             https://store.hikarifield.co.jp/downloads/*
 // @match             https://store.nintendo.com.hk/*
+// @match             https://store.steampowered.com/agecheck/app/*
 // @match             https://www.amiami.jp/top/detail/detail?gcode=*
 // @match             https://www.amiami.jp/top/detail/detail?scode=*
 // @match             https://www.animate-onlineshop.jp/pd/*
@@ -130,6 +131,7 @@ function verifyButton() {
         'reddit.com': 'button.c-btn-primary.c-btn:nth-of-type(2)',
         'refuge.tokyo': '#but_accept',
         'steamcommunity.com': 'button.btn_medium.btn_blue_steamui > span',
+        'store.steampowered.com': '#view_product_page_btn > span',
         'store-jp.nintendo.com': '#AgeGate_Yes',
         'store.hikarifield.co.jp': '.mt-3.btn-info.btn',
         'toranoana.jp': '#js-en-confirm-adult > .c-modal_content_body > .text-center.c-modal_content_inner > .mt-4.ui-confirm-adult-btn-wrapper > .ui-confirm-adult-btn-primary.c-btn-black.c-btn.js-ui-modal-close.js-btn-primary',
