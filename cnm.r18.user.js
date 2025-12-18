@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.28.0
+// @version           2.29.0
 // @author            Vinfall
 // @match             https://*.fanbox.cc/
 // @match             https://*.fanbox.cc/plans
@@ -57,6 +57,8 @@
 // @match             https://www.nijiyome.jp/*
 // @match             https://www.nintendo.com/jp/*/creators-voice/*
 // @match             https://www.patreon.com/*
+// @match             https://www.pornhub.com/
+// @match             https://www.pornhub.com/*
 // @match             https://www.will-order.com/age.php?rurl=*
 // @match             https://www.amazon.co.jp/black-curtain/esrb-teen-black-curtain?*
 // @match             https://www.amazon.co.jp/*/*/black-curtain/esrb-teen-black-curtain?*
@@ -81,6 +83,13 @@
 // @exclude-match     https://www.melonbooks.co.jp/detail/detail.php?*adult_view=1
 // @exclude-match     https://www.patreon.com/create
 // @exclude-match     https://www.patreon.com/login
+// @exclude-match     https://www.pornhub.com/blog/*
+// @exclude-match     https://www.pornhub.com/content-removal/*
+// @exclude-match     https://www.pornhub.com/information/*
+// @exclude-match     https://www.pornhub.com/insights/*
+// @exclude-match     https://www.pornhub.com/legal/*
+// @exclude-match     https://www.pornhub.com/partners/*
+// @exclude-match     https://www.pornhub.com/support/*
 // @grant             none
 // @run-at            document-start
 // @license           CC0 1.0 Universal (Public Domain)
@@ -127,6 +136,7 @@ function verifyButton() {
         'patch.moe': 'a.css-button-rounded--red:nth-of-type(1)',
         'patreon.com': 'button[data-tag="age-verification-button-yes"]', // FIXME: not working on mobile
         'pcshop-mk.shop-pro.jp': '#validation_select_yes > [href]',
+        'pornhub.com': '.contentMTubes > .greyButton.buttonOver18.js-closeAgeModal.gtm-event-age-verification',
         // 'ptt.cc': 'button.btm-big[name="yes"][value="yes"]', // not working
         'reddit.com': 'button.c-btn-primary.c-btn:nth-of-type(2)',
         'refuge.tokyo': '#but_accept',
