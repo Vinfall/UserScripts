@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        VNDB List Export
 // @namespace   https://github.com/Vinfall/UserScripts
-// @version     5.0.2
+// @version     5.1.0
 // @author      Vinfall, alvibo
 // @match       https://vndb.org/u*
 // @match       https://vndb.org/u*/ulist*
@@ -11,6 +11,7 @@
 // @license     WTFPL
 // @description Export VNDB user VN & length vote list to CSV
 // @description:zh-cn 导出 VNDB 用户游戏列表或时长列表至 CSV
+// @connect     vndb.org
 // ==/UserScript==
 
 // Input: table selector
@@ -99,9 +100,10 @@ function fetchPageContent(url) {
             method: 'GET',
             url: url.startsWith('http') ? url : `https://vndb.org${url}`,
             headers: {
-                'User-Agent': 'Mozilla/5.0',
+                'User-Agent': navigator.userAgent, // use real UA to bypass xbotcheck
                 Accept: 'text/html',
             },
+            anonymous: false, // send cookie to get localized titles
             onload: (response) => {
                 resolve(response.responseText);
             },
@@ -117,46 +119,17 @@ async function fetchAllPagesData(tableSelector) {
     let allData = '';
     let currentPage = 1;
     let hasNextPage = true;
-    const url = new URL(window.location.href);
-    let baseUrl = url.pathname; // Use 'let' instead of 'const'
-    let params = new URLSearchParams(url.search); // Use 'let' instead of 'const'
-
-    // Remove "p" from params
-    params.delete('p');
-
-    // Check if the initial URL is fake (e.g., contains "vnlist=1")
-    if (params.has('vnlist')) {
-        // Find the button leading to the first page on the CURRENT PAGE
-        const firstPageButton = document.querySelector('.browsetabs a:first-child');
-        if (firstPageButton) {
-            const firstPageUrl = firstPageButton.href;
-            console.log(`Detected fake URL. Redirecting to first page: ${firstPageUrl}`);
-            const pageContent = await fetchPageContentWithRetry(firstPageUrl);
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(pageContent, 'text/html');
-
-            // Get CSV content for the first page
-            const csvContent = getTable(tableSelector, doc);
-            allData += csvContent;
-
-            // Update the base URL and params for subsequent pages
-            const newUrl = new URL(firstPageUrl);
-            baseUrl = newUrl.pathname; // Reassign 'baseUrl'
-            params = new URLSearchParams(newUrl.search); // Reassign 'params'
-
-            // Skip the first page in the pagination loop
-            currentPage = 2; // Start from the second page
-        } else {
-            console.error('Could not find the first page button.');
-            return '';
-        }
-    }
-
+    const currentUrl = window.location.href;
     while (hasNextPage) {
-        // Set "p" to the current page number
-        params.set('p', currentPage);
-        // Reconstruct the URL
-        const pageUrl = `https://vndb.org${baseUrl}${params.toString() ? `?${params.toString()}` : ''}`;
+        let pageUrl;
+
+        // keep URL format
+        if (currentUrl.includes('p=')) {
+            pageUrl = currentUrl.replace(/p=\d+/, `p=${currentPage}`);
+        } else {
+            const separator = currentUrl.includes('?') ? '&' : '?';
+            pageUrl = `${currentUrl}${separator}p=${currentPage}`;
+        }
         console.log(`Fetching data from page ${currentPage}: ${pageUrl}`);
 
         try {
@@ -164,18 +137,18 @@ async function fetchAllPagesData(tableSelector) {
             const parser = new DOMParser();
             const doc = parser.parseFromString(pageContent, 'text/html');
 
-            // Get CSV content for the current page
             const csvContent = getTable(tableSelector, doc);
 
-            // Append only the rows (skip the header for subsequent pages)
             if (currentPage === 1) {
-                allData += csvContent; // Include header for the first page
+                allData += csvContent; // include header for p1
+                allData += '\n';
             } else {
-                const rows = csvContent.split('\n').slice(1).join('\n'); // Skip the header
+                // skip the header
+                const rows = csvContent.split('\n').slice(1).join('\n');
+                // if (rows.trim())
                 allData += `${rows}\n`;
             }
-
-            // Check if there is a next page
+            // check next page
             const nextPageButton = doc.querySelector('.browsetabs a[rel="next"]');
             if (nextPageButton) {
                 currentPage++;
@@ -183,10 +156,11 @@ async function fetchAllPagesData(tableSelector) {
                 hasNextPage = false;
             }
         } catch (error) {
-            console.error(`Failed to fetch page ${currentPage}:`, error);
-            hasNextPage = false; // Stop fetching if retries fail
+            console.error(`Failed at page ${currentPage}:`, error);
+            hasNextPage = false; // stop on error
         }
     }
+
     return allData;
 }
 

@@ -137,10 +137,10 @@ and 200KB threshold would suffice in most cases, saving much data when visiting 
 
 ### VNDB List Export
 
-Just head to user list/lengths vote page, click `Export as CSV` and wait a few seconds for the save file dialog.
-There is a parsing error around line 201 which you can easily fix in text editor, so I don't bother to revisit it.
+Just head to user list/lengths vote page, click `Export as CSV` button
+and wait a few seconds for the save file dialog to show up.
 
-In case you don't know yet, you can customize the table in User VN List:
+Before exporting, you can customize the table in User VN List:
 - select `Multi-select` in the upper right corner and choose labels
 - Click 👁️ icon on the right and choose visible columns
 
