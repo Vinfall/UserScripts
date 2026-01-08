@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Skip Redirect Inplace
 // @namespace     https://github.com/Vinfall/UserScripts
-// @version       1.2.0
+// @version       1.2.1
 // @author        Vinfall
 // @match         https://acg.gamer.com.tw/*
 // @match         https://forum.gamer.com.tw/*
@@ -15,15 +15,15 @@
 // @match         https://www.cnblogs.com/*
 // @match         https://www.gcores.com/*
 // @match         https://www.tiangal.com/*
-// @match         https://www.touchgal.us/*
+// @match         https://www.touchgal.top/*
 // @exclude-match https://www.tiangal.com/question*
 // @exclude-match https://www.tiangal.com/sign*
 // @exclude-match https://www.tiangal.com/tougao*
 // @exclude-match https://www.tiangal.com/wp-login.php*
-// @exclude-match https://www.touchgal.us/auth*
-// @exclude-match https://www.touchgal.us/doc*
-// @exclude-match https://www.touchgal.us/login
-// @exclude-match https://www.touchgal.us/register
+// @exclude-match https://www.touchgal.top/auth*
+// @exclude-match https://www.touchgal.top/doc*
+// @exclude-match https://www.touchgal.top/login
+// @exclude-match https://www.touchgal.top/register
 // @run-at        document-end
 // @grant         none
 // @icon          data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⏭️</text></svg>
