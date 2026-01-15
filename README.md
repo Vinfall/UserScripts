@@ -157,7 +157,9 @@ PS: Changes regarding paging are taken from [alvibo's mod](https://github.com/Ka
 > [!NOTE]
 > ~~Why?~~
 > Why not?
-> 移动端页面没有 PC 端网页*那么多*的干扰元素，加载速度也要快 60%，何乐而不为。
+> 移动端页面没有 PC 端网页*那么多*的干扰元素，加载速度也要快 60%，甚至原图分辨率更高，何乐而不为。
+
+如果你使用 [RSSHub 微博源][RSSHub]，可以直接在订阅链接添加参数 `preferMobileLink=1`，无需使用本脚本。
 
 ## [License](./LICENSE)
 
@@ -180,3 +182,4 @@ Licensed under CC0 1.0 Universal or Public Domain, whichever is more permissive,
 [install-15]: https://github.com/Vinfall/UserScripts/raw/main/cok.r18.user.js
 [install-16]: https://github.com/Vinfall/UserScripts/raw/main/steam-small-screenshot.user.js
 [ubo]: https://github.com/gorhill/uBlock/wiki/Per-site-switches#no-large-media-elements
+[RSSHub]: https://docs.rsshub.app/routes/weibo
