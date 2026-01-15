@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.29.0
+// @version           2.29.1
 // @author            Vinfall
 // @match             https://*.fanbox.cc/
 // @match             https://*.fanbox.cc/plans
@@ -25,8 +25,8 @@
 // @match             https://jastusa.com/games/*/*
 // @match             https://jastusa.com/zh_Hans/games/*/*
 // @match             https://jastusa.com/zh_Hant/games/*/*
-// @match             https://moepedia.net/
 // @match             https://moe-gameaward.com/
+// @match             https://moepedia.net/
 // @match             https://moepedia.net/*
 // @match             https://moepedia.net/game/*
 // @match             https://patch.moe/
@@ -37,6 +37,8 @@
 // @match             https://store.hikarifield.co.jp/downloads/*
 // @match             https://store.nintendo.com.hk/*
 // @match             https://store.steampowered.com/agecheck/app/*
+// @match             https://www.amazon.co.jp/*/*/black-curtain/esrb-teen-black-curtain?*
+// @match             https://www.amazon.co.jp/black-curtain/esrb-teen-black-curtain?*
 // @match             https://www.amiami.jp/top/detail/detail?gcode=*
 // @match             https://www.amiami.jp/top/detail/detail?scode=*
 // @match             https://www.animate-onlineshop.jp/pd/*
@@ -49,7 +51,6 @@
 // @match             https://www.dmm.co.jp/*/age_check/=/?rurl=*
 // @match             https://www.getchu.com/php/attestation.html?aurl=*
 // @match             https://www.hobicolle.com/
-// @match             https://www.jkforum.net/p/forum.php?*
 // @match             https://www.johren.games/?backUrl=*
 // @match             https://www.loverslab.com/topic/*
 // @match             https://www.melonbooks.co.jp/detail/detail.php?product_id=*
@@ -60,8 +61,6 @@
 // @match             https://www.pornhub.com/
 // @match             https://www.pornhub.com/*
 // @match             https://www.will-order.com/age.php?rurl=*
-// @match             https://www.amazon.co.jp/black-curtain/esrb-teen-black-curtain?*
-// @match             https://www.amazon.co.jp/*/*/black-curtain/esrb-teen-black-curtain?*
 // @exclude-match     https://*/*username=*
 // @exclude-match     https://*/admin.php?*
 // @exclude-match     https://*/forum.php?*goto*
@@ -126,7 +125,6 @@ function verifyButton() {
         'hobicolle.com': '.close_modal',
         'huggingface.co': '[href^="?not-for-all-audiences=true"]', // '.self-start.!mt-6.btn'
         'jastusa.com': '.content-gate__footer > button.is-primary.button',
-        'jkforum.net': '#fwin_dialog_submit',
         'johren.games': '.link_enter.mainbtn-primary-lv1',
         'loverslab.com': '.fields > button',
         'moe-gameaward.com': '.btn_pink',

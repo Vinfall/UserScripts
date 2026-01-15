@@ -2,11 +2,12 @@
 // @name              COK.R18
 // @name:zh-cn        刚满 18 岁 Cookie 版
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.10.0
+// @version           0.11.0
 // @author            Vinfall
 // @match             https://*.itch.io/*
 // @match             https://archive.org/details/*
 // @match             https://archive.org/download/*
+// @match             https://jkforum.net/p/forum-*.html
 // @match             https://store.steampowered.com/agecheck/app/*
 // @match             https://www.gog.com/*/game/*
 // @match             https://www.moyu.moe/*
@@ -67,6 +68,11 @@ const config = [
     //     name: 'allow_nsfw_games',
     //     value: '%5b3660070%5d', // 1970-01-01
     // },
+    {
+        domains: ['jkforum.net'],
+        name: 'apea',
+        value: '100',
+    },
     // {
     //     domains: ['moyu.moe'],
     //     name: 'kun-patch-setting-store|state|data|kunNsfwEnable',
