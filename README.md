@@ -3,11 +3,12 @@
 ## Intro
 
 A few userscripts you can install to manager extensions like [Violentmonkey](https://violentmonkey.github.io).
-Unlisted scripts have no intro and serve for myself only (you can still do whatever you want granted they're in Public Domain).
 
 PS: Do NOT clone submodule as it won't work.
 
 ## List
+
+Unlisted scripts have no intro and serve for myself only.
 
 | Name | Function | Install |
 | ---- | -------- | :-----: |
@@ -20,11 +21,10 @@ PS: Do NOT clone submodule as it won't work.
 | [Indienova Game Hide](#indienova-game-hide) | indienova 每周游戏隐藏特定游戏类型 | [安装][install-6] |
 | [JD2Bean](#jd-to-beancount) | 根据京东订单生成 Beancount 账单 | [安装][install-7] |
 | Show Original Picture | Open image in original resolution | [install][install-8] |
-| [Redump Highlight](#redump-highlight) | Highlight platforms in redump download page | [install][install-9] |
 | [Skip Redirect Inplace](#skip-redirect-inplace) | Skip stupid URL redirect in href | [install][install-10] |
 | [SAO](#steam-advanced-outlink) | Better outlinks on Steam store | [install][install-11] |
-| [Steam Small Screenshot](#steam-small-screenshot) | Show smaller screenshot on Steam store | [install][install-16] |
 | [Steam EA Date](#steam-ea-date) | Show Early Access date on Steam card | [install][install-12] |
+| [Steam Small Screenshot](#steam-small-screenshot) | Show smaller screenshot on Steam store | [install][install-16] |
 | [VNDB List Export](#vndb-list-export) | Export VNDB user VN/length vote to CSV | [Install][install-13] |
 | [Weibo Mobile Redirect](#weibo-mobile-redirect) | 新浪微博自动跳转移动版，支持微博、文章、视频 | [安装][install-14] |
 
@@ -93,14 +93,6 @@ Note: this does NOT work in *all releases* page, you need to head to *a specific
 > 这是归档的公开版本，**不会**得到更新。
 
 使用前请查看脚本的 Disclaimer 并修改对应 Beancount 账户。
-
-### Redump Highlight
-
-Highlight platforms in redump so you know which to download.
-Also add visible borderlines to the sheet.
-Works best in dark mode.
-
-You can also create a wget list containing URLs instead.
 
 ### Skip Redirect Inplace
 
@@ -173,7 +165,6 @@ Licensed under CC0 1.0 Universal or Public Domain, whichever is more permissive,
 [install-6]: https://github.com/Vinfall/UserScripts/raw/main/indienova-game-hide.user.js
 [install-7]: https://github.com/Vinfall/UserScripts/raw/main/jd2bean.user.js
 [install-8]: https://github.com/Vinfall/UserScripts/raw/main/show-orig-pic.user.js
-[install-9]: https://github.com/Vinfall/UserScripts/raw/main/redump-highlight.user.js
 [install-10]: https://github.com/Vinfall/UserScripts/raw/main/skip-redirect-inplace.user.js
 [install-11]: https://github.com/Vinfall/UserScripts/raw/main/steam-advanced-outlink.user.js
 [install-12]: https://github.com/Vinfall/UserScripts/raw/main/steam-ea-date.user.js
