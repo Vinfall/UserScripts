@@ -133,6 +133,7 @@ Just head to user list/lengths vote page, click `Export as CSV` button
 and wait a few seconds for the save file dialog to show up.
 
 Before exporting, you can customize the table in User VN List:
+
 - select `Multi-select` in the upper right corner and choose labels
 - Click 👁️ icon on the right and choose visible columns
 
