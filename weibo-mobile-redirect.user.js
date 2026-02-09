@@ -32,13 +32,6 @@
         return;
     }
 
-    // TODO: fix redirect to passport.weibo.com when nojs is OFF
-    // function delayedRedirect(url, delay = 500) {
-    //     setTimeout(() => {
-    //         window.location.replace(url);
-    //     }, delay);
-    // }
-
     const cases = [
         // weibo.com/u/*
         {
