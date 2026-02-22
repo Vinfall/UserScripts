@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.29.1
+// @version           2.30.0
 // @author            Vinfall
 // @match             https://*.fanbox.cc/
 // @match             https://*.fanbox.cc/plans
@@ -52,6 +52,8 @@
 // @match             https://www.getchu.com/php/attestation.html?aurl=*
 // @match             https://www.hobicolle.com/
 // @match             https://www.johren.games/?backUrl=*
+// @match             https://www.kaguragames.com/
+// @match             https://www.kaguragames.com/product/*
 // @match             https://www.loverslab.com/topic/*
 // @match             https://www.melonbooks.co.jp/detail/detail.php?product_id=*
 // @match             https://www.nijiyome.jp/
@@ -79,6 +81,8 @@
 // @exclude-match     https://store.nintendo.com.hk/checkout/*
 // @exclude-match     https://www.animate-onlineshop.jp/mypage/*
 // @exclude-match     https://www.fanbox.cc/auth/*
+// @exclude-match     https://www.kaguragames.com/my-account/
+// @exclude-match     https://www.kaguragames.com/my-account/*
 // @exclude-match     https://www.melonbooks.co.jp/detail/detail.php?*adult_view=1
 // @exclude-match     https://www.patreon.com/create
 // @exclude-match     https://www.patreon.com/login
@@ -126,6 +130,7 @@ function verifyButton() {
         'huggingface.co': '[href^="?not-for-all-audiences=true"]', // '.self-start.!mt-6.btn'
         'jastusa.com': '.content-gate__footer > button.is-primary.button',
         'johren.games': '.link_enter.mainbtn-primary-lv1',
+        'kaguragames.com': '.age-gate__submit--yes.age-gate__submit',
         'loverslab.com': '.fields > button',
         'moe-gameaward.com': '.btn_pink',
         'moepedia.net': '.age-button_yes',
