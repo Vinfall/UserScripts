@@ -1,12 +1,10 @@
 # UserScripts
 
-## Intro
-
 A few userscripts you can install with manager extensions like [Violentmonkey](https://violentmonkey.github.io).
 
-## List
-
 Unlisted scripts have no intro and serve for myself only.
+
+## List
 
 | Name | Function | Install |
 | ---- | -------- | :-----: |
@@ -23,7 +21,7 @@ Unlisted scripts have no intro and serve for myself only.
 | [SAO](#steam-advanced-outlink) | Better outlinks on Steam store | [install][install-11] |
 | [Steam EA Date](#steam-ea-date) | Show Early Access date on Steam card | [install][install-12] |
 | [VNDB List Export](#vndb-list-export) | Export VNDB user VN/length vote to CSV | [Install][install-13] |
-| [Weibo Mobile Redirect](#weibo-mobile-redirect) | 新浪微博自动跳转移动版，支持微博、文章、视频 | [安装][install-14] |
+| [Weibo Mobile Redirect](#weibo-mobile-redirect) | 新浪微博自动跳转移动版，支持微博、文章 | [安装][install-14] |
 
 ## Docs
 
@@ -81,8 +79,10 @@ Note: this does NOT work in *all releases* page, you need to head to *a specific
 
 ### Indienova Game Hide
 
-关键词列表因人而异，安装并访问一次 indienova 每周游戏界面后，可以在脚本管理器找到该脚本，点击 `Values` 一栏，修改 `keywords` 字典。
-此外，逻辑变量 `ovverrideDefault` 表示是否覆盖脚本自带的关键词列表，值为 `false` 时会与自带列表合并，默认为 `true`（仅使用自定义列表）。
+关键词列表因人而异，安装并访问一次 indienova 每周游戏界面后，
+可以在脚本管理器找到该脚本，点击 `Values` 一栏，修改 `keywords` 字典。
+此外，逻辑变量 `ovverrideDefault` 表示是否覆盖脚本自带的关键词列表，
+值为 `false` 时会与自带列表合并，默认为 `true`（仅使用自定义列表）。
 
 ### JD to Beancount
 
@@ -94,7 +94,7 @@ Note: this does NOT work in *all releases* page, you need to head to *a specific
 ### Skip Redirect Inplace
 
 > [!NOTE]
-> This is not recommended for usage as it slows down every matched website even if you don't click on any outgoing links.
+> Usage is discouraged as it slows down every matched website even if you don't click on any outgoing links.
 
 Just a compliment to other existing UserScripts (which would skip link redirect on demand) you can get anywhere.
 
@@ -136,15 +136,14 @@ PS: Changes regarding paging are taken from [alvibo's mod](https://github.com/Ka
 自动跳转微博、文章为移动端页面。
 
 > [!NOTE]
-> ~~Why?~~
-> Why not?
+> ~~Why?~~ Why not?
 > 移动端页面没有 PC 端网页*那么多*的干扰元素，加载速度也要快 60%，甚至原图分辨率更高，何乐而不为。
 
 如果你使用 [RSSHub 微博源][RSSHub]，可以直接在订阅链接添加参数 `preferMobileLink=1`，无需使用本脚本。
 
 ## [License](./LICENSE)
 
-Licensed under CC0 1.0 Universal or Public Domain, whichever is more permissive, unless otherwise noted in the script.
+Licensed under CC0 1.0 Universal or Public Domain, whichever is more permissive, to the extent permitted by law, unless otherwise noted.
 
 [install-1]: https://github.com/Vinfall/UserScripts/raw/main/cngal2steam.user.js
 [install-2]: https://github.com/Vinfall/UserScripts/raw/main/cnm.r18.user.js
