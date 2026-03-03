@@ -117,7 +117,7 @@ Early Access (EA) games on Steam have two release dates. Once it's out of EA sta
 
 ### VNDB Char Zodiac
 
-Show zodiac signs of VNDB character.
+Show zodiac signs of VNDB character, inspired by [t950.2080][t950.2080]
 
 > [!NOTE]
 > Solar year varies from time to time.
@@ -170,3 +170,4 @@ Licensed under CC0 1.0 Universal or Public Domain, whichever is more permissive,
 [install-14]: https://github.com/Vinfall/UserScripts/raw/main/weibo-mobile-redirect.user.js
 [install-15]: https://github.com/Vinfall/UserScripts/raw/main/cok.r18.user.js
 [RSSHub]: https://docs.rsshub.app/routes/weibo
+[t950.2080]: https://vndb.org/t950.2080
