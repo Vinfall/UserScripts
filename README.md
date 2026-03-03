@@ -12,7 +12,6 @@ Unlisted scripts have no intro and serve for myself only.
 | [CNM.R18](#cnmr18) | Skip age verification on numerous sites | [install][install-2] |
 | [COK.R18](#cokr18) | Skip age verification on numerous sites, cookie ver. | [install][install-15] |
 | [Discuz-Short-URL](#discuz-short-url) | Show short URL on Discuz forums | [install][install-3] |
-| GitHub Boldless Title | Remove strong style in GitHub repo/gist title | [install][install-4] |
 | [GitHub Release Highlight](#github-release-highlight) | Highlight GitHub release assets containing keywords | [install][install-5] |
 | [Indienova Game Hide](#indienova-game-hide) | indienova 每周游戏隐藏特定游戏类型 | [安装][install-6] |
 | [JD2Bean](#jd-to-beancount) | 根据京东订单生成 Beancount 账单 | [安装][install-7] |
@@ -148,7 +147,6 @@ Licensed under CC0 1.0 Universal or Public Domain, whichever is more permissive,
 [install-1]: https://github.com/Vinfall/UserScripts/raw/main/cngal2steam.user.js
 [install-2]: https://github.com/Vinfall/UserScripts/raw/main/cnm.r18.user.js
 [install-3]: https://github.com/Vinfall/UserScripts/raw/main/discuz-short-url.user.js
-[install-4]: https://github.com/Vinfall/UserScripts/raw/main/github-boldless-title.user.js
 [install-5]: https://github.com/Vinfall/UserScripts/raw/main/github-release-highlight.user.js
 [install-6]: https://github.com/Vinfall/UserScripts/raw/main/indienova-game-hide.user.js
 [install-7]: https://github.com/Vinfall/UserScripts/raw/main/jd2bean.user.js
