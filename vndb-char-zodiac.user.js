@@ -2,9 +2,10 @@
 // @name              VNDB Character Zodiac
 // @name:zh-cn        VNDB 角色星座
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.3.0
+// @version           0.3.3
 // @author            Vinfall
 // @match             https://vndb.org/c*
+// @exclude-match     https://vndb.org/c
 // @exclude-match     https://vndb.org/*/hist
 // @exclude-match     https://vndb.org/c?*
 // @grant             none
@@ -19,7 +20,19 @@
     // List: ♈♉♊♋♌♍♎♏♐♑♒♓⛎
     // Date: https://en.wikipedia.org/wiki/Astrological_sign#Western_astrological_correspondence_chart
     //       https://en.wikipedia.org/wiki/Equinox
-    // Test: c36690
+    // Test:
+    //      ♈ c84396
+    //      ♉ c92335
+    //      ♊ c92327
+    //      ♋ c8737
+    //      ♌ c109413
+    //      ♍ c7921
+    //      ♎ c34573
+    //      ♏ c107031
+    //      ♐ c1269
+    //      ♑ c165091 c36690
+    //      ♒ c5092
+    //      ♓ c61060
     const zodiacs = [
         { name: 'Aries', emoji: '♈', start: [3, 20] },
         { name: 'Taurus', emoji: '♉', start: [4, 21] },
@@ -87,27 +100,10 @@
     // find place to insert
     const headerTd = document.querySelector('table.stripe thead td');
     if (!headerTd) return;
-    const sexIcon = headerTd.querySelector('abbr.icon-char-m, abbr.icon-char-f, abbr.icon-char-b');
-    const bloodTypeSpan = Array.from(headerTd.querySelectorAll('span')).find((s) =>
-        /^\s*[ABO]+\s*$/i.test(s.textContent),
-    );
     const emojiSpan = document.createElement('span');
     emojiSpan.style.marginLeft = '5px';
     emojiSpan.title = `Zodiac Sign: ${zodiacData.name}`;
     emojiSpan.textContent = zodiacData.emoji;
-    if (bloodTypeSpan) {
-        // first blood type
-        bloodTypeSpan.after(emojiSpan);
-    } else if (sexIcon) {
-        // next sex
-        sexIcon.after(emojiSpan);
-    } else {
-        // finally name
-        const lastInline = headerTd.querySelector('small') || headerTd.querySelector('span:last-of-type');
-        if (lastInline) {
-            lastInline.after(emojiSpan);
-        } else {
-            headerTd.appendChild(emojiSpan);
-        }
-    }
+    // append to the end after: name, sex/gender, blood type
+    headerTd.appendChild(emojiSpan);
 })();
