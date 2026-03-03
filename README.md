@@ -19,6 +19,7 @@ Unlisted scripts have no intro and serve for myself only.
 | [Skip Redirect Inplace](#skip-redirect-inplace) | Skip stupid URL redirect in href | [install][install-10] |
 | [SAO](#steam-advanced-outlink) | Better outlinks on Steam store | [install][install-11] |
 | [Steam EA Date](#steam-ea-date) | Show Early Access date on Steam card | [install][install-12] |
+| [VNDB Char Zodiac](#vndb-char-zodiac) | Show zodiac signs of VNDB character | [install][install-4] |
 | [VNDB List Export](#vndb-list-export) | Export VNDB user VN/length vote to CSV | [Install][install-13] |
 | [Weibo Mobile Redirect](#weibo-mobile-redirect) | 新浪微博自动跳转移动版，支持微博、文章 | [安装][install-14] |
 
@@ -114,6 +115,16 @@ Early Access (EA) games on Steam have two release dates. Once it's out of EA sta
 > [!NOTE]
 > As EA release date string has no practical selector to choose, it's hardcoded in the script and only works for en, ja, zh-Hans/zh-Hant for now. You can, however, easily add new localized string and have it shown in your language.
 
+### VNDB Char Zodiac
+
+Show zodiac signs of VNDB character.
+
+> [!NOTE]
+> Solar year varies from time to time.
+> Zodiac signs shown are for reference only,
+> as dates are hardcoded and VNDB does not have birth year data,
+> which makes it technically impossible to be accurate.
+
 ### VNDB List Export
 
 Just head to user list/lengths vote page, click `Export as CSV` button
@@ -147,6 +158,7 @@ Licensed under CC0 1.0 Universal or Public Domain, whichever is more permissive,
 [install-1]: https://github.com/Vinfall/UserScripts/raw/main/cngal2steam.user.js
 [install-2]: https://github.com/Vinfall/UserScripts/raw/main/cnm.r18.user.js
 [install-3]: https://github.com/Vinfall/UserScripts/raw/main/discuz-short-url.user.js
+[install-4]: https://github.com/Vinfall/UserScripts/raw/main/vndb-char-zodiac.user.js
 [install-5]: https://github.com/Vinfall/UserScripts/raw/main/github-release-highlight.user.js
 [install-6]: https://github.com/Vinfall/UserScripts/raw/main/indienova-game-hide.user.js
 [install-7]: https://github.com/Vinfall/UserScripts/raw/main/jd2bean.user.js
