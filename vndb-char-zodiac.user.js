@@ -2,12 +2,11 @@
 // @name              VNDB Character Zodiac
 // @name:zh-cn        VNDB 角色星座
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.3.3
+// @version           0.3.4
 // @author            Vinfall
 // @match             https://vndb.org/c*
 // @exclude-match     https://vndb.org/c
 // @exclude-match     https://vndb.org/*/hist
-// @exclude-match     https://vndb.org/c?*
 // @grant             none
 // @run-at            document-end
 // @license           CC0 1.0 Universal (Public Domain)
