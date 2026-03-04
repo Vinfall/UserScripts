@@ -2,9 +2,10 @@
 // @name              VNDB Character Zodiac
 // @name:zh-cn        VNDB 角色星座
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.3.4
+// @version           0.4.0
 // @author            Vinfall
 // @match             https://vndb.org/c*
+// @match             https://vndb.org/v*/chars#chars
 // @exclude-match     https://vndb.org/c
 // @exclude-match     https://vndb.org/*/hist
 // @grant             none
@@ -20,18 +21,12 @@
     // Date: https://en.wikipedia.org/wiki/Astrological_sign#Western_astrological_correspondence_chart
     //       https://en.wikipedia.org/wiki/Equinox
     // Test:
-    //      ♈ c84396
-    //      ♉ c92335
-    //      ♊ c92327
-    //      ♋ c8737
-    //      ♌ c109413
-    //      ♍ c7921
-    //      ♎ c34573
-    //      ♏ c107031
-    //      ♐ c1269
-    //      ♑ c165091 c36690
-    //      ♒ c5092
-    //      ♓ c61060
+    //       v2341/chars#chars
+    //       ♈ c84396   ♉ c92335    ♊ c92327
+    //       ♋ c8737    ♌ c109413   ♍ c7921
+    //       ♎ c34573   ♏ c107031   ♐ c1269
+    //       ♑ c165091 c36690
+    //       ♒ c5092    ♓ c61060
     const zodiacs = [
         { name: 'Aries', emoji: '♈', start: [3, 20] },
         { name: 'Taurus', emoji: '♉', start: [4, 21] },
@@ -68,41 +63,49 @@
         for (let i = 0; i < zodiacs.length; i++) {
             const current = zodiacs[i];
             const next = zodiacs[i + 1];
-            if (
-                !next ||
-                (month === current.start[0] && day >= current.start[1]) ||
-                (month === next.start[0] && day < next.start[1])
-            ) {
-                return current;
+            if (!next) return current;
+            if (month === current.start[0] && day >= current.start[1]) return current;
+            if (month === next.start[0] && day < next.start[1]) return current;
+        }
+        return zodiacs[9]; // Capricorn as failsafe
+    }
+    function processCharTable(table) {
+        // dedup
+        if (table.querySelector('.js-zodiac')) return;
+        const rows = table.querySelectorAll('tbody tr');
+        let zodiacData = null;
+        // find birthday
+        for (const row of rows) {
+            const key = row.querySelector('.key');
+            if (key && key.textContent.trim() === 'Birthday') {
+                const val = row.querySelector('td:last-child').textContent.trim();
+                // Format: 1 January, January 18
+                const match = val.match(/(\d+)\s+([A-Z][a-z]+)|([A-Z][a-z]+)\s+(\d+)/);
+                if (match) {
+                    const day = parseInt(match[1] || match[4], 10);
+                    const monthStr = match[2] || match[3];
+                    zodiacData = getZodiac(day, monthStr);
+                    break;
+                }
             }
         }
-        return zodiacs[0]; // default to Capricorn
+        if (!zodiacData) return;
+        const headerTd = table.querySelector('thead td');
+        if (!headerTd) return;
+        // insert to header
+        const emojiSpan = document.createElement('span');
+        emojiSpan.className = 'js-zodiac';
+        emojiSpan.style.marginLeft = '5px';
+        emojiSpan.title = `Zodiac Sign: ${zodiacData.name}`;
+        emojiSpan.textContent = zodiacData.emoji;
+        // append after: name, sex/gender, blood type
+        headerTd.appendChild(emojiSpan);
     }
-    // find birthday
-    const rows = document.querySelectorAll('table.stripe tr');
-    let day, monthStr, zodiacData;
-    for (const row of rows) {
-        const key = row.querySelector('.key');
-        if (key && key.textContent.trim() === 'Birthday') {
-            const val = row.querySelector('td:last-child').textContent.trim();
-            // Format: 1 January, January 1
-            const match = val.match(/(\d+)\s+([A-Z][a-z]+)|([A-Z][a-z]+)\s+(\d+)/);
-            if (match) {
-                day = parseInt(match[1] || match[4], 10);
-                monthStr = match[2] || match[3];
-                zodiacData = getZodiac(day, monthStr);
-                break;
-            }
-        }
+    function init() {
+        // find all character tables
+        const charTables = document.querySelectorAll('table.stripe');
+        charTables.forEach(processCharTable);
     }
-    if (!zodiacData) return;
-    // find place to insert
-    const headerTd = document.querySelector('table.stripe thead td');
-    if (!headerTd) return;
-    const emojiSpan = document.createElement('span');
-    emojiSpan.style.marginLeft = '5px';
-    emojiSpan.title = `Zodiac Sign: ${zodiacData.name}`;
-    emojiSpan.textContent = zodiacData.emoji;
-    // append to the end after: name, sex/gender, blood type
-    headerTd.appendChild(emojiSpan);
+    init();
+    // window.addEventListener('load', init);
 })();
