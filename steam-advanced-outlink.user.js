@@ -6,7 +6,7 @@
 // @match        https://store.steampowered.com/app/*
 // @icon         https://store.steampowered.com/favicon.ico
 // @grant        none
-// @license      CC0 1.0 Universal (Public Domain)
+// @license      MIT
 // @description  Better outlinks on Steam store
 // @description:zh-cn Steam 商店页面外链优化
 // ==/UserScript==

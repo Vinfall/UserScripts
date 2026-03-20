@@ -68,14 +68,16 @@ Ironically, this would have the max *once for all* effect if you hardly clean yo
 > This is the sanitized public version and would NOT be updated regularly.
 
 Ever accidentally download a wrong release asset not suited for your platform?
-Can you pick the correct [vscodium](https://github.com/VSCodium/vscodium/releases/latest) package
+Can you pick the correct [vscodium][vscodium] package
 among those enormous 154(!) assets within 10 seconds?
 
-If not, then GitHub Release Highlight comes into your rescue!
+GitHub Release Highlight comes into your rescue!
 
-Simply define a new rule and refresh the page, now the asset would be highlighted.
+Simply define a new rule and refresh the page, voilà, now the asset is highlighted.
 
-Note: this does NOT work in *all releases* page, you need to head to *a specific release tag* for the highlight to work.
+> [!NOTE]
+> NOT working in *all releases* page.
+> You need to head to *a specific release tag* to make highlighting work.
 
 ### Indienova Game Hide
 
@@ -100,13 +102,9 @@ Just a compliment to other existing UserScripts (which would skip link redirect 
 
 ### Steam Advanced Outlink
 
-The game features card on Steam store page comes with outlinks to the respective game feature (obviously), which is useless as SteamDB offers MUCH better search function.
+Inspired by and originated from [Steam Cloudsave][steam-cloudsave], Steam Advanced Outlink, abbreviated as SAO, would replace useless outlinks in game features card with a few goodies that are really useful.
 
-Steam Advanced Outlink, abbreviated as SAO, would replace some outlinks in the default list with a few goodies that are really useful.
-
-It also serves as a minimal implementation of Augmented Steam since it can be used in mobile browsers with UserScript support like [cromite](https://github.com/uazo/cromite).
-
-While directly inspired by and originated from [Steam Cloudsave](https://greasyfork.org/zh-CN/scripts/489218-steam-cloudsave/), the script is fully rewritten so I change the license from MIT to CC0 (Public Domain).
+It also serves as a minimal implementation of Augmented Steam since it can be used in mobile browsers with UserScript support like [cromite][cromite].
 
 ### Steam EA Date
 
@@ -171,3 +169,6 @@ Licensed under CC0 1.0 Universal or Public Domain, whichever is more permissive,
 [install-15]: https://github.com/Vinfall/UserScripts/raw/main/cok.r18.user.js
 [RSSHub]: https://docs.rsshub.app/routes/weibo
 [t950.2080]: https://vndb.org/t950.2080
+[cromite]: https://github.com/uazo/cromite
+[steam-cloudsave]: https://greasyfork.org/zh-CN/scripts/489218-steam-cloudsave/
+[vscodium]: https://github.com/VSCodium/vscodium/releases/latest
