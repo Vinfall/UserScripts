@@ -135,9 +135,11 @@ Before exporting, you can customize the table in User VN List:
 
 > [!NOTE]
 > If you don't care about localization, it's also possible to export data via [VNDB query](https://query.vndb.org/about).
-> Some example queries are provided on [my (archived) vndb repo](https://github.com/Vinfall/vndb/tree/main/sql).
+> Example queries are available in [my (archived) vndb repo](https://github.com/Vinfall/vndb/tree/main/sql).
 
 PS: Changes regarding paging are taken from [alvibo's mod](https://github.com/Kamikadashi/VNDB-List-Export) and licensed under WTFPL.
+
+PPS: Not working well with Firefox due to unknown compatibility issue, it's suggested to use this script with Chromium based browsers.
 
 ### Weibo Mobile Redirect
 
