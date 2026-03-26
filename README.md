@@ -125,21 +125,22 @@ Show zodiac signs of VNDB character, inspired by [t950.2080][t950.2080]
 
 ### VNDB List Export
 
-Just head to user list/lengths vote page, click `Export as CSV` button
-and wait a few seconds for the save file dialog to show up.
-
 Before exporting, you can customize the table in User VN List:
 
-- select `Multi-select` in the upper right corner and choose labels
+- Select `Multi-select` in the upper right corner and choose labels
 - Click 👁️ icon on the right and choose visible columns
+
+Usage:
+
+- Head to user VN list/length votes page, e.g. Yorhel's [VN list][vnlist] and [length votes][lengthvotes]
+- Click `Export as CSV` button
+- Wait a few seconds for the save file dialog to show up
 
 > [!NOTE]
 > If you don't care about localization, it's also possible to export data via [VNDB query](https://query.vndb.org/about).
 > Example queries are available in [my (archived) vndb repo](https://github.com/Vinfall/vndb/tree/main/sql).
 
-PS: Changes regarding paging are taken from [alvibo's mod](https://github.com/Kamikadashi/VNDB-List-Export) and licensed under WTFPL.
-
-PPS: Not working well with Firefox due to unknown compatibility issue, it's suggested to use this script with Chromium based browsers.
+PS: Not working well with Firefox due to unknown compatibility issue, it's suggested to use this script with Chromium based browsers.
 
 ### Weibo Mobile Redirect
 
@@ -174,3 +175,5 @@ Licensed under CC0 1.0 Universal or Public Domain, whichever is more permissive,
 [cromite]: https://github.com/uazo/cromite
 [steam-cloudsave]: https://greasyfork.org/zh-CN/scripts/489218-steam-cloudsave/
 [vscodium]: https://github.com/VSCodium/vscodium/releases/latest
+[vnlist]: https://vndb.org/u2/ulist?vnlist=1
+[lengthvotes]: https://vndb.org/u2/lengthvotes
