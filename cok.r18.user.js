@@ -2,12 +2,15 @@
 // @name              COK.R18
 // @name:zh-cn        刚满 18 岁 Cookie 版
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.11.0
+// @version           0.12.0
 // @author            Vinfall
 // @match             https://*.itch.io/*
 // @match             https://archive.org/details/*
 // @match             https://archive.org/download/*
 // @match             https://jkforum.net/p/forum-*.html
+// @match             https://moepedia.net/
+// @match             https://moepedia.net/*
+// @match             https://moepedia.net/game/*
 // @match             https://store.steampowered.com/agecheck/app/*
 // @match             https://www.gog.com/*/game/*
 // @match             https://www.moyu.moe/*
@@ -73,6 +76,11 @@ const config = [
         name: 'apea',
         value: '100',
     },
+    {
+        domains: ['moepedia.net'],
+        name: 'adult',
+        value: '1',
+    },
     // {
     //     domains: ['moyu.moe'],
     //     name: 'kun-patch-setting-store|state|data|kunNsfwEnable',
@@ -81,7 +89,7 @@ const config = [
     {
         domains: ['nintendo.com'],
         name: 'nintendo.ageGate.isOldEnough',
-        value: '"true"', // this is correct, the value is literal "true"
+        value: '"true"', // this IS correct, the value is literal "true"
     },
     {
         domains: ['ptt.cc'],
