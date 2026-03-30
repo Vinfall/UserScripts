@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        indienova game hide
 // @namespace   https://github.com/Vinfall/UserScripts
-// @version     5.2.16
+// @version     5.2.17
 // @author      Vinfall
 // @match       https://indienova.com/indie-game-news/guide*
 // @match       https://indienova.com/indie-game-news/itch-new-games-*
@@ -14,22 +14,11 @@
 // @description indienova「本周 Steam 值得关注的游戏」和「itch 一周游戏汇」隐藏包含特定关键字的游戏
 // ==/UserScript==
 
-/*
-TODO:
-- 支持 `/news-of-overseas-indie-games-and-industry` 页面的 demo 列表 (`p` element instead of `H4`, [example](https://indienova.com/indie-game-news/news-of-overseas-indie-games-and-industry-vol-15/#iah-2))
-- 支持 `/indie-game-news/steam-next-fest-*` 页面的 demo 列表
-*/
-
 (() => {
     // 初始化常量
     // biome-ignore format: do not touch my keywords
     const defaultKeywords = [
-        "多人在线", "恐怖", "惊悚", "僵尸", "黑暗奇幻", "自走棋", "调酒", "SCP", "种植", "农场模拟",
-        "乙女", "全动态影像", "城市营造", "社交聚会", "洛夫克拉夫特式", "打字", "团队导向", "摔角",
-        "中世纪", "刷宝", "类魂系列", "农场管理", "农业", "步行模拟", "基地建设", "AI 生成内容",
-        "开放世界生存", "迷幻", "大逃杀", "4X", "玩家对战", "战锤 40K", "邪典", "益智问答", "社交推理",
-        "动作类 Rogue", "电脑角色扮演", "蓄意操控困难", "程序生成", "赌博", "集换式卡牌", "放松", "在线合作",
-        "第一人称射击", "骰子"
+        "多人在线", "恐怖", "惊悚", "僵尸", "黑暗奇幻", "自走棋"
         // "类银河战士恶魔城", "自动化"
     ];
     const overrideDefault = true;

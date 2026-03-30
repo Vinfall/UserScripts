@@ -81,6 +81,9 @@ Simply define a new rule and refresh the page, voilà, now the asset is highligh
 
 ### Indienova Game Hide
 
+> [!WARNING]
+> 这是归档的公开版本，**不会**得到更新。
+
 关键词列表因人而异，安装并访问一次 indienova 每周游戏界面后，
 可以在脚本管理器找到该脚本，点击 `Values` 一栏，修改 `keywords` 字典。
 此外，逻辑变量 `ovverrideDefault` 表示是否覆盖脚本自带的关键词列表，
