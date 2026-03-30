@@ -9,6 +9,7 @@ Unlisted scripts have no intro and serve for myself only.
 | Name | Function | Install |
 | ---- | -------- | :-----: |
 | [CnGal2Steam](#cngal-on-steam) | 在 Steam 商店页面显示 CnGal 链接 | [安装][install-1] |
+| [CnGal-Game-Hide](#cngal-game-hide) | CnGal 每周速报隐藏包含特定关键字的消息 | [安装][install-9] |
 | [CNM.R18](#cnmr18) | Skip age verification on numerous sites | [install][install-2] |
 | [COK.R18](#cokr18) | Skip age verification on numerous sites, cookie ver. | [install][install-15] |
 | [Discuz-Short-URL](#discuz-short-url) | Show short URL on Discuz forums | [install][install-3] |
@@ -33,6 +34,13 @@ Unlisted scripts have no intro and serve for myself only.
 因为本脚本默认会缓存数据 5 分钟以减少请求，一般而言 CnGal 链接会在 VNDB 下方。
 
 ~~当然如果一定要 CnGal 显示在 VNDB 上方，也可以修改 VNDB-Steam-Enhancer，检测 `'.dev_row.cngal_id'` 并插入上方即可。~~
+
+### CnGal Game Hide
+
+> [!WARNING]
+> 这是归档的公开版本，**不会**得到更新。
+
+在「CnGal 每周速报」隐藏包含特定关键字的消息，防止信息过载。
 
 ### CNM.R18
 
@@ -167,6 +175,7 @@ Licensed under CC0 1.0 Universal or Public Domain, whichever is more permissive,
 [install-6]: https://github.com/Vinfall/UserScripts/raw/main/indienova-game-hide.user.js
 [install-7]: https://github.com/Vinfall/UserScripts/raw/main/jd2bean.user.js
 [install-8]: https://github.com/Vinfall/UserScripts/raw/main/show-orig-pic.user.js
+[install-9]: https://github.com/Vinfall/UserScripts/raw/main/cngal-game-hide.user.js
 [install-10]: https://github.com/Vinfall/UserScripts/raw/main/skip-redirect-inplace.user.js
 [install-11]: https://github.com/Vinfall/UserScripts/raw/main/steam-advanced-outlink.user.js
 [install-12]: https://github.com/Vinfall/UserScripts/raw/main/steam-ea-date.user.js
