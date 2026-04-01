@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        indienova game hide
 // @namespace   https://github.com/Vinfall/UserScripts
-// @version     5.2.17
+// @version     5.4.3
 // @author      Vinfall
 // @match       https://indienova.com/indie-game-news/guide*
 // @match       https://indienova.com/indie-game-news/itch-new-games-*
@@ -65,7 +65,8 @@
         if (shouldHide) {
             // 创建按钮
             const button = document.createElement('button');
-            button.innerHTML = '显示/隐藏';
+            tag = text.replace('关键字：', '');
+            button.innerHTML = `🚫 已过滤: ${tag}`;
             button.style.display = 'block';
 
             // 创建一个数组来存储将要隐藏的内容
