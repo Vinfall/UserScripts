@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.30.1
+// @version           2.30.2
 // @author            Vinfall
 // @match             https://*.fanbox.cc/
 // @match             https://*.fanbox.cc/plans
@@ -125,6 +125,7 @@ function verifyButton() {
         // 'gog.com': '.age-gate__button.button--big.button', // not working
         'hobicolle.com': '.close_modal',
         'huggingface.co': '[href^="?not-for-all-audiences=true"]', // '.self-start.!mt-6.btn'
+        // 'iwara.tv': 'button mt-4 button--primary button--solid', // not working
         'jastusa.com': '.content-gate__footer > button.is-primary.button',
         'johren.games': '.link_enter.mainbtn-primary-lv1',
         'kaguragames.com': '.age-gate__submit--yes.age-gate__submit',
