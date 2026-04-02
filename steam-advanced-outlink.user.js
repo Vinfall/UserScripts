@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Steam Advanced Outlink
 // @namespace    https://github.com/Vinfall/UserScripts
-// @version      3.5.2
+// @version      3.6.0
 // @author       Vinfall
 // @match        https://store.steampowered.com/app/*
 // @icon         https://store.steampowered.com/favicon.ico
@@ -38,6 +38,11 @@
                 srcIncludes: 'ico_cards',
                 text: 'Steam Card Exchange',
                 href: `https://www.steamcardexchange.net/index.php?gamepage-appid-${appId}/`,
+            },
+            {
+                srcIncludes: 'ico_stats',
+                text: 'SteamDB Charts',
+                href: `https://steamdb.info/app/${appId}/charts/`,
             },
             {
                 srcIncludes: 'ico_workshop',
