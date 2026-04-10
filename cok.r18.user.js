@@ -2,11 +2,14 @@
 // @name              COK.R18
 // @name:zh-cn        刚满 18 岁 Cookie 版
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.12.0
+// @version           0.13.1
 // @author            Vinfall
 // @match             https://*.itch.io/*
 // @match             https://archive.org/details/*
 // @match             https://archive.org/download/*
+// @match             https://jaststore.com/games/*/*
+// @match             https://jaststore.com/zh_Hans/games/*/*
+// @match             https://jaststore.com/zh_Hant/games/*/*
 // @match             https://jkforum.net/p/forum-*.html
 // @match             https://moepedia.net/
 // @match             https://moepedia.net/*
@@ -71,6 +74,11 @@ const config = [
     //     name: 'allow_nsfw_games',
     //     value: '%5b3660070%5d', // 1970-01-01
     // },
+    {
+        domains: ['jaststore.com'],
+        name: 'mature-warning-check',
+        value: '1',
+    },
     {
         domains: ['jkforum.net'],
         name: 'apea',
