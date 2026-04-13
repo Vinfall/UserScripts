@@ -2,10 +2,13 @@
 // @name              Weibo Mobile Redirect
 // @name:zh-cn        新浪微博移动版跳转
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           1.3.1
+// @version           1.4.0
 // @author            Vinfall
+// @match             https://m.weibo.cn/profile/*
 // @match             https://video.weibo.com/show?fid=*
 // @match             https://weibo.com/*/*
+// @match             https://weibo.com/n/*
+// @match             https://weibo.com/profile/*
 // @match             https://weibo.com/ttarticle/p/show?id=*
 // @match             https://weibo.com/u/*
 // @match             https://www.weibo.com/detail/*
@@ -28,11 +31,19 @@
     const currentUrl = window.location.href;
 
     // Defend in depth
-    if (currentUrl.includes('card.weibo.com') || currentUrl.includes('m.weibo.cn')) {
+    if (currentUrl.includes('card.weibo.com')) {
         return;
     }
 
     const cases = [
+        // m.weibo.cn/profile/*
+        {
+            pattern: /^https:\/\/m\.weibo\.cn\/profile\/(\d+)/,
+            handle: (match) => {
+                const userId = match[1];
+                window.location.replace(`https://m.weibo.cn/u/${userId}`);
+            },
+        },
         // weibo.com/u/*
         {
             pattern: /^https:\/\/weibo\.com\/u\/(\d+)/,
