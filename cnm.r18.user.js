@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.30.2
+// @version           2.30.3
 // @author            Vinfall
 // @match             https://*.fanbox.cc/
 // @match             https://*.fanbox.cc/plans
@@ -22,9 +22,6 @@
 // @match             https://huggingface.co/*/*
 // @match             https://huggingface.co/*/*/discussions
 // @match             https://huggingface.co/*/*/tree/*
-// @match             https://jastusa.com/games/*/*
-// @match             https://jastusa.com/zh_Hans/games/*/*
-// @match             https://jastusa.com/zh_Hant/games/*/*
 // @match             https://moe-gameaward.com/
 // @match             https://patch.moe/
 // @match             https://pcshop-mk.shop-pro.jp/?pid=*
@@ -126,7 +123,6 @@ function verifyButton() {
         'hobicolle.com': '.close_modal',
         'huggingface.co': '[href^="?not-for-all-audiences=true"]', // '.self-start.!mt-6.btn'
         // 'iwara.tv': 'button mt-4 button--primary button--solid', // not working
-        'jastusa.com': '.content-gate__footer > button.is-primary.button',
         'johren.games': '.link_enter.mainbtn-primary-lv1',
         'kaguragames.com': '.age-gate__submit--yes.age-gate__submit',
         'loverslab.com': '.fields > button',
