@@ -2,7 +2,7 @@
 // @name              COK.R18
 // @name:zh-cn        刚满 18 岁 Cookie 版
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.13.1
+// @version           0.14.0
 // @author            Vinfall
 // @match             https://*.itch.io/*
 // @match             https://archive.org/details/*
@@ -15,6 +15,8 @@
 // @match             https://moepedia.net/*
 // @match             https://moepedia.net/game/*
 // @match             https://store.steampowered.com/agecheck/app/*
+// @match             https://www.getchu.com/item/*
+// @match             https://www.getchu.com/php/attestation.html?aurl=*
 // @match             https://www.gog.com/*/game/*
 // @match             https://www.moyu.moe/*
 // @match             https://www.nintendo.com/*/store/products/*
@@ -63,6 +65,11 @@ const config = [
         domains: ['archive.org'],
         name: 'hide_flag_porn',
         value: '1',
+    },
+    {
+        domains: ['getchu.com'],
+        name: 'getchu_adalt_flag',
+        value: 'getchu.com',
     },
     {
         domains: ['gog.com'],

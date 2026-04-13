@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.30.3
+// @version           2.30.4
 // @author            Vinfall
 // @match             https://*.fanbox.cc/
 // @match             https://*.fanbox.cc/plans
@@ -43,7 +43,6 @@
 // @match             https://www.dlsite.com/*-touch/*
 // @match             https://www.dlsite.com/*/work/=/product_id/*
 // @match             https://www.dmm.co.jp/*/age_check/=/?rurl=*
-// @match             https://www.getchu.com/php/attestation.html?aurl=*
 // @match             https://www.hobicolle.com/
 // @match             https://www.johren.games/?backUrl=*
 // @match             https://www.kaguragames.com/
@@ -118,7 +117,6 @@ function verifyButton() {
         'gamebanana.com': '.ShowNsfwContentButton',
         'gamejolt.com': '.link-muted > span', // this mutes until I exit
         // 'gamejolt.com': '.-block.-outline.-primary.button', // this only works for once
-        'getchu.com': '[href^="https://www.getchu.com/soft.phtml"]',
         // 'gog.com': '.age-gate__button.button--big.button', // not working
         'hobicolle.com': '.close_modal',
         'huggingface.co': '[href^="?not-for-all-audiences=true"]', // '.self-start.!mt-6.btn'
@@ -224,8 +222,6 @@ function verifyParam() {
     const siteParams = {
         'a.softmap.com': 'aac=on',
         'melonbooks.co.jp': 'adult_view=1',
-        // Getchu not working even w/ url redirect, use verifyButton instead
-        // 'getchu.com': 'gc=gc',
     };
 
     const currentHost = window.location.host;
