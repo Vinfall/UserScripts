@@ -21,6 +21,7 @@ Unlisted scripts have no intro and serve for myself only.
 | [SAO](#steam-advanced-outlink) | Better outlinks on Steam store | [install][install-11] |
 | [Steam EA Date](#steam-ea-date) | Show Early Access date on Steam card | [install][install-12] |
 | [VNDB Char Zodiac](#vndb-char-zodiac) | Show zodiac signs of VNDB character | [install][install-4] |
+| [VNDB Extlink Fix](#vndb-extlink-fix) | Fix broken extlink on VNDB | [install][install-16] |
 | [VNDB List Export](#vndb-list-export) | Export VNDB user VN/length vote to CSV | [Install][install-13] |
 | [Weibo Mobile Redirect](#weibo-mobile-redirect) | 新浪微博自动跳转移动版，支持微博、文章 | [安装][install-14] |
 
@@ -134,6 +135,13 @@ Show zodiac signs of VNDB character, inspired by [t950.2080][t950.2080]
 > as dates are hardcoded and VNDB does not have birth year data,
 > which makes it technically impossible to be accurate.
 
+### VNDB Extlink Fix
+
+Adjust broken external links to the latest URL scheme.
+
+> [!NOTE]
+> You don't have to install this as the respective sites (JAST & Getchu) would redirect the URLs automatically. This is for people who wish to avoid such redirection in the first place.
+
 ### VNDB List Export
 
 Before exporting, you can customize the table in User VN List:
@@ -182,6 +190,7 @@ Licensed under CC0 1.0 Universal or Public Domain, whichever is more permissive,
 [install-13]: https://github.com/Vinfall/UserScripts/raw/main/vndb-list-export.user.js
 [install-14]: https://github.com/Vinfall/UserScripts/raw/main/weibo-mobile-redirect.user.js
 [install-15]: https://github.com/Vinfall/UserScripts/raw/main/cok.r18.user.js
+[install-16]: https://github.com/Vinfall/UserScripts/raw/main/vndb-extlink-fix.user.js
 [RSSHub]: https://docs.rsshub.app/routes/weibo
 [t950.2080]: https://vndb.org/t950.2080
 [cromite]: https://github.com/uazo/cromite
