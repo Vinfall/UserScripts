@@ -2,10 +2,12 @@
 // @name              Show Original Picture
 // @name:zh-cn        自动跳转原图
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.17.0
+// @version           0.18.1
 // @author            Vinfall
 // @match             https://*.hdslb.com/bfs/*/*.avif
 // @match             https://*.hdslb.com/bfs/*/*.webp
+// @match             https://*.max-c.com/pic/*.gif?imageMogr2/*
+// @match             https://*.max-c.com/web/bbs/*/*/*/*/thumb.*
 // @match             https://*.moimg.net/*?x-oss-process=*
 // @match             https://*.xdaimages.com/wordpress/wp-content/uploads/*/*.*?q=*
 // @match             https://*.zhimg.com/v2-*.*
@@ -54,6 +56,9 @@
         'comment-img.smzdm.com': (url) => url.replace(/(_b\d+)?\.jpg(\.jpg)?$/, '.jpg'),
         'img.3dmgame.com': (url) => url.replace(/(.*)_([^_]+)_r\..*$/, '$1.$2'), // 114514_jpg_r.webp -> 114514.jpg
         'img.alicdn.com': (url) => url.replace(/_\.webp$/, ''),
+        // aka. heybox
+        'max-c.com/pic': (url) => url.split('?')[0],
+        'max-c.com/web/bbs': (url) => url.split('?')[0].replace(/\/thumb(\.[^/]+)$/, '$1'),
         // 'steamstatic.com': (url) => url.replace(/600x338/, '1920x1080'), // conflicts w/ Steam-Small-Screenshot
         'static.wikia.nocookie.net': (url) => url.replace(/(\/revision\/latest)\/scale-to-width-down\/[^?/]+/, '$1'),
         'yystv.cn': (url) => url.replace(/water/, ''), // .appmsg_mw680water -> .appmsg_mw680, TODO: original resolution?
