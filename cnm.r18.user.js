@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.30.4
+// @version           2.31.0
 // @author            Vinfall
 // @match             https://*.fanbox.cc/
 // @match             https://*.fanbox.cc/plans
@@ -15,6 +15,8 @@
 // @match             https://bookmate-net.com/ec/*
 // @match             https://booth.pm/*/items/*
 // @match             https://ci-en.dlsite.com/creator/*
+// @match             https://denpasoft.com/product/*
+// @match             https://denpasoft.com/product-category/*
 // @match             https://ec.toranoana.jp/tora_r/ec/item/*
 // @match             https://gamebanana.com/mods/*
 // @match             https://gamejolt.com/games/*/*
@@ -109,6 +111,7 @@ function verifyButton() {
         // '.btn-danger.btn', '#fbi-warning > .modal-dialog > .modal-content > .modal-footer > .btn-primary.btn',
         'bookmate-net.com': '.btn-block.btn-lg.btn-success.btn',
         'booth.pm': '.js-approve-adult > .mx-16.\\!text-semantic-blue',
+        'denpasoft.com': '.yes',
         'digiket.com': '.btn-lg.btn-info.btn',
         'ci-en.dlsite.com': '.is-wide.is-info.e-button',
         'www.dlsite.com': 'dynamicSelector', // special case
