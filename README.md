@@ -10,6 +10,7 @@ Unlisted scripts have no intro and serve for myself only.
 | ---- | -------- | :-----: |
 | [CnGal2Steam](#cngal-on-steam) | 在 Steam 商店页面显示 CnGal 链接 | [安装][install-1] |
 | [CnGal-Game-Hide](#cngal-game-hide) | CnGal 每周速报隐藏包含特定关键字的消息 | [安装][install-9] |
+| CnGal Weekly Linked Toc | CnGal 每周速报添加 ToC 链接 | [安装][install-17] |
 | [CNM.R18](#cnmr18) | Skip age verification on numerous sites | [install][install-2] |
 | [COK.R18](#cokr18) | Skip age verification on numerous sites, cookie ver. | [install][install-15] |
 | [Discuz-Short-URL](#discuz-short-url) | Show short URL on Discuz forums | [install][install-3] |
@@ -42,6 +43,9 @@ Unlisted scripts have no intro and serve for myself only.
 > 这是归档的公开版本，**不会**得到更新。
 
 在「CnGal 每周速报」隐藏包含特定关键字的消息，防止信息过载。
+
+> [!NOTE]
+> CnGal Weekly Linked ToC 与该脚本冲突，消息隐藏后 ToC 点击无法跳转。
 
 ### CNM.R18
 
@@ -191,6 +195,7 @@ Licensed under CC0 1.0 Universal or Public Domain, whichever is more permissive,
 [install-14]: https://github.com/Vinfall/UserScripts/raw/main/weibo-mobile-redirect.user.js
 [install-15]: https://github.com/Vinfall/UserScripts/raw/main/cok.r18.user.js
 [install-16]: https://github.com/Vinfall/UserScripts/raw/main/vndb-extlink-fix.user.js
+[install-17]: https://github.com/Vinfall/UserScripts/raw/main/cngal-weekly-linked-toc.user.js
 [RSSHub]: https://docs.rsshub.app/routes/weibo
 [t950.2080]: https://vndb.org/t950.2080
 [cromite]: https://github.com/uazo/cromite
