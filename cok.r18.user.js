@@ -2,7 +2,7 @@
 // @name              COK.R18
 // @name:zh-cn        刚满 18 岁 Cookie 版
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.14.1
+// @version           0.14.2
 // @author            Vinfall
 // @match             https://*.itch.io/*
 // @match             https://archive.org/details/*
@@ -17,6 +17,7 @@
 // @match             https://moepedia.net/*
 // @match             https://moepedia.net/game/*
 // @match             https://store.steampowered.com/agecheck/app/*
+// @match             https://store.steampowered.com/agecheck/sub/*
 // @match             https://www.getchu.com/item/*
 // @match             https://www.getchu.com/php/attestation.html?aurl=*
 // @match             https://www.gog.com/*/game/*

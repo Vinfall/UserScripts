@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.32.0
+// @version           2.32.1
 // @author            Vinfall
 // @match             https://*.fanbox.cc/
 // @match             https://*.fanbox.cc/plans
@@ -34,6 +34,7 @@
 // @match             https://store.hikarifield.co.jp/downloads/*
 // @match             https://store.nintendo.com.hk/*
 // @match             https://store.steampowered.com/agecheck/app/*
+// @match             https://store.steampowered.com/agecheck/sub/*
 // @match             https://www.amazon.co.jp/*/*/black-curtain/esrb-teen-black-curtain?*
 // @match             https://www.amazon.co.jp/black-curtain/esrb-teen-black-curtain?*
 // @match             https://www.amiami.jp/top/detail/detail?gcode=*
