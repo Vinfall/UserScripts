@@ -19,7 +19,6 @@ Unlisted scripts have no intro and serve for myself only.
 | [JD2Bean](#jd-to-beancount) | 根据京东订单生成 Beancount 账单 | [安装][install-7] |
 | Show Original Picture | Open image in original resolution | [install][install-8] |
 | [Skip Redirect Inplace](#skip-redirect-inplace) | Skip stupid URL redirect in href | [install][install-10] |
-| [SAO](#steam-advanced-outlink) | Better outlinks on Steam store | [install][install-11] |
 | [Steam EA Date](#steam-ea-date) | Show Early Access date on Steam card | [install][install-12] |
 | [VNDB Char Zodiac](#vndb-char-zodiac) | Show zodiac signs of VNDB character | [install][install-4] |
 | [VNDB Extlink Fix](#vndb-extlink-fix) | Fix broken extlink on VNDB | [install][install-16] |
@@ -116,12 +115,6 @@ Simply define a new rule and refresh the page, voilà, now the asset is highligh
 
 Just a compliment to other existing UserScripts (which would skip link redirect on demand) you can get anywhere.
 
-### Steam Advanced Outlink
-
-Inspired by and originated from [Steam Cloudsave][steam-cloudsave], Steam Advanced Outlink, abbreviated as SAO, would replace useless outlinks in game features card with a few goodies that are really useful.
-
-It also serves as a minimal implementation of Augmented Steam since it can be used in mobile browsers with UserScript support like [cromite][cromite].
-
 ### Steam EA Date
 
 Early Access (EA) games on Steam have two release dates. Once it's out of EA status, Steam would only show the later release date in the game card and you have to scroll down to see its initial EA date. This script does that for you.
@@ -189,7 +182,6 @@ Licensed under CC0 1.0 Universal or Public Domain, whichever is more permissive,
 [install-8]: https://github.com/Vinfall/UserScripts/raw/main/show-orig-pic.user.js
 [install-9]: https://github.com/Vinfall/UserScripts/raw/main/cngal-game-hide.user.js
 [install-10]: https://github.com/Vinfall/UserScripts/raw/main/skip-redirect-inplace.user.js
-[install-11]: https://github.com/Vinfall/UserScripts/raw/main/steam-advanced-outlink.user.js
 [install-12]: https://github.com/Vinfall/UserScripts/raw/main/steam-ea-date.user.js
 [install-13]: https://github.com/Vinfall/UserScripts/raw/main/vndb-list-export.user.js
 [install-14]: https://github.com/Vinfall/UserScripts/raw/main/weibo-mobile-redirect.user.js
@@ -198,8 +190,6 @@ Licensed under CC0 1.0 Universal or Public Domain, whichever is more permissive,
 [install-17]: https://github.com/Vinfall/UserScripts/raw/main/cngal-weekly-linked-toc.user.js
 [RSSHub]: https://docs.rsshub.app/routes/weibo
 [t950.2080]: https://vndb.org/t950.2080
-[cromite]: https://github.com/uazo/cromite
-[steam-cloudsave]: https://greasyfork.org/zh-CN/scripts/489218-steam-cloudsave/
 [vscodium]: https://github.com/VSCodium/vscodium/releases/latest
 [vnlist]: https://vndb.org/u2/ulist?vnlist=1
 [lengthvotes]: https://vndb.org/u2/lengthvotes
