@@ -2,7 +2,7 @@
 // @name              COK.R18
 // @name:zh-cn        刚满 18 岁 Cookie 版
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.14.2
+// @version           0.15.0
 // @author            Vinfall
 // @match             https://*.itch.io/*
 // @match             https://archive.org/details/*
@@ -16,6 +16,8 @@
 // @match             https://moepedia.net/
 // @match             https://moepedia.net/*
 // @match             https://moepedia.net/game/*
+// @match             https://ntrdb.com/
+// @match             https://ntrdb.com/*
 // @match             https://store.steampowered.com/agecheck/app/*
 // @match             https://store.steampowered.com/agecheck/sub/*
 // @match             https://www.getchu.com/item/*
@@ -108,6 +110,11 @@ const config = [
         domains: ['nintendo.com'],
         name: 'nintendo.ageGate.isOldEnough',
         value: '"true"', // this IS correct, the value is literal "true"
+    },
+    {
+        domains: ['ntrdb.com'],
+        name: 'ntrdb_age_confirmed',
+        value: '1',
     },
     {
         domains: ['ptt.cc'],
