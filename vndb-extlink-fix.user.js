@@ -2,7 +2,7 @@
 // @name              VNDB Extlink Fix
 // @name:zh-cn        VNDB 外链修复
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.1.0
+// @version           0.1.1
 // @author            Vinfall
 // @match             https://vndb.org/p*
 // @match             https://vndb.org/r
@@ -23,8 +23,7 @@
 // ==/UserScript==
 
 (() => {
-    // only replace links in tc_links table
-    const links = document.querySelectorAll('.tc_links a');
+    const links = document.querySelectorAll('a[href]');
     links.forEach((a) => {
         const url = a.href;
         // 1. JAST
@@ -34,9 +33,7 @@
         // 2. Getchu
         else if (url.includes('www.getchu.com/soft.phtml?id=')) {
             const id = new URL(url).searchParams.get('id');
-            if (id) {
-                a.href = `https://www.getchu.com/item/${id}`;
-            }
+            if (id) a.href = `https://www.getchu.com/item/${id}`;
         }
     });
 })();
