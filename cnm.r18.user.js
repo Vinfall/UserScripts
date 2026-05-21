@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.32.1
+// @version           2.32.2
 // @author            Vinfall
 // @match             https://*.fanbox.cc/
 // @match             https://*.fanbox.cc/plans
@@ -137,7 +137,7 @@ function verifyButton() {
         'patch.moe': 'a.css-button-rounded--red:nth-of-type(1)',
         'patreon.com': 'button[data-tag="age-verification-button-yes"]', // FIXME: not working on mobile
         'pcshop-mk.shop-pro.jp': '#validation_select_yes > [href]',
-        'pornhub.com': '.contentMTubes > .greyButton.buttonOver18.js-closeAgeModal.gtm-event-age-verification',
+        'pornhub.com': '.contentMTubes > .ageDisclaimerButtons > .greyButton.buttonOver18.js-av-cta.js-closeAgeModal.gtm-event-age-verification',
         // 'ptt.cc': 'button.btm-big[name="yes"][value="yes"]', // not working
         'reddit.com': 'button.c-btn-primary.c-btn:nth-of-type(2)',
         'refuge.tokyo': '#but_accept',
