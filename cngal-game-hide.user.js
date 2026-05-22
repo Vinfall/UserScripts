@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name              CnGal Game Hide
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           1.0.22
+// @version           1.0.23
 // @author            Vinfall
 // @match             https://www.cngal.org/articles/index/*
 // @grant             none
@@ -39,8 +39,18 @@
                 }
                 const btn = document.createElement('button');
                 btn.innerHTML = `🚫 已过滤: <b>${titleText}</b>`;
-                btn.style.cssText =
-                    'display:block; width:100%; margin:10px 0; padding:8px; background:#201a1b; border:1px dashed #474747ff; color:#d1c6c6; cursor:pointer; text-align:left; border-radius:4px;';
+                btn.style.cssText = `
+                    display:block;
+                    width:100%;
+                    margin:10px 0;
+                    padding:8px;
+                    border:1px dashed;
+                    border-radius:4px;
+                    background:none;
+                    color:inherit;
+                    text-align:left;
+                    font-size:inherit;
+                `;
                 contentToHide.forEach((el) => {
                     el.style.display = 'none';
                 });
