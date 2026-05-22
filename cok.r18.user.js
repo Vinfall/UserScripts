@@ -2,7 +2,7 @@
 // @name              COK.R18
 // @name:zh-cn        刚满 18 岁 Cookie 版
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.15.0
+// @version           0.16.0
 // @author            Vinfall
 // @match             https://*.itch.io/*
 // @match             https://archive.org/details/*
@@ -20,6 +20,10 @@
 // @match             https://ntrdb.com/*
 // @match             https://store.steampowered.com/agecheck/app/*
 // @match             https://store.steampowered.com/agecheck/sub/*
+// @match             https://www.dlsite.com/*-touch/
+// @match             https://www.dlsite.com/*-touch/*
+// @match             https://www.dlsite.com/*/announce/=/product_id/*
+// @match             https://www.dlsite.com/*/work/=/product_id/*
 // @match             https://www.getchu.com/item/*
 // @match             https://www.getchu.com/php/attestation.html?aurl=*
 // @match             https://www.gog.com/*/game/*
@@ -69,6 +73,11 @@ const config = [
     {
         domains: ['archive.org'],
         name: 'hide_flag_porn',
+        value: '1',
+    },
+    {
+        domains: ['dlsite.com'],
+        name: 'adultchecked',
         value: '1',
     },
     {

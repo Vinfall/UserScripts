@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.32.2
+// @version           2.32.3
 // @author            Vinfall
 // @match             https://*.fanbox.cc/
 // @match             https://*.fanbox.cc/plans
@@ -43,9 +43,6 @@
 // @match             https://www.animate-onlineshop.jp/pn/*
 // @match             https://www.animategames.jp/home/age?redirect=*
 // @match             https://www.digiket.com/work/show/_data/ID=*
-// @match             https://www.dlsite.com/*-touch/
-// @match             https://www.dlsite.com/*-touch/*
-// @match             https://www.dlsite.com/*/work/=/product_id/*
 // @match             https://www.dmm.co.jp/*/age_check/=/?rurl=*
 // @match             https://www.hobicolle.com/
 // @match             https://www.johren.games/?backUrl=*
@@ -116,7 +113,7 @@ function verifyButton() {
         'denpasoft.com': '.yes',
         'digiket.com': '.btn-lg.btn-info.btn',
         'ci-en.dlsite.com': '.is-wide.is-info.e-button',
-        'www.dlsite.com': 'dynamicSelector', // special case
+        // 'www.dlsite.com': 'dynamicSelector', // special case
         'dmm.co.jp': '.css-w5doa7.fill.large.turtle-Button.turtle-component > [href]',
         'ec.nintendo.com': '.o_c-button-size--slim.o_c-button-fill',
         'fanbox.cc': '.dhrsDw.iorEfw.CommonButton__CommonButtonOuter-sc-1s35wwu-0.ButtonBase-sc-1pize7g-0',
@@ -153,27 +150,27 @@ function verifyButton() {
     // These sites require verification every time
     const noFlagSites = [
         'appendingpulse.jp',
-        'touch', // DLsite mobile
+        // 'touch', // DLsite mobile
         'huggingface.co',
     ];
 
     function getSelectorForCurrentSite() {
         const hostname = window.location.hostname;
-        const href = window.location.href;
+        // const href = window.location.href;
         for (const key in config) {
             if (hostname.includes(key)) {
                 // Special handling for DLsite
-                if (key === 'dlsite.com') {
-                    // Mobile
-                    if (href.includes('touch')) {
-                        return 'div.c-modal__button:nth-of-type(1)';
-                    }
-                    // PC
-                    else {
-                        const pathname = window.location.pathname;
-                        return `[href="${pathname}"]`;
-                    }
-                }
+                // if (key === 'dlsite.com') {
+                //     // Mobile
+                //     if (href.includes('touch')) {
+                //         return 'div.c-modal__button:nth-of-type(1)';
+                //     }
+                //     // PC
+                //     else {
+                //         const pathname = window.location.pathname;
+                //         return `[href="${pathname}"]`;
+                //     }
+                // }
                 if (key === 'animate-onlineshop.jp') {
                     const pathname = window.location.pathname;
                     return `[href^="${pathname}"]`;
