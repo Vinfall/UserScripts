@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.32.3
+// @version           2.33.0
 // @author            Vinfall
 // @match             https://*.fanbox.cc/
 // @match             https://*.fanbox.cc/plans
@@ -19,6 +19,7 @@
 // @match             https://denpasoft.com/product-category/*
 // @match             https://ec.toranoana.jp/tora_r/ec/item/*
 // @match             https://ec.nintendo.com/HK/zh/titles/*
+// @match             https://ent.ltn.com.tw/*
 // @match             https://gamebanana.com/mods/*
 // @match             https://gamejolt.com/games/*/*
 // @match             https://gamejolt.com/games/*/*/followers
@@ -116,6 +117,7 @@ function verifyButton() {
         // 'www.dlsite.com': 'dynamicSelector', // special case
         'dmm.co.jp': '.css-w5doa7.fill.large.turtle-Button.turtle-component > [href]',
         'ec.nintendo.com': '.o_c-button-size--slim.o_c-button-fill',
+        'ent.ltn.com.tw': '.sexyes',
         'fanbox.cc': '.dhrsDw.iorEfw.CommonButton__CommonButtonOuter-sc-1s35wwu-0.ButtonBase-sc-1pize7g-0',
         'gamebanana.com': '.ShowNsfwContentButton',
         'gamejolt.com': '.link-muted > span', // this mutes until I exit
