@@ -1,6 +1,6 @@
 # UserScripts
 
-A few userscripts you can install with manager extensions like [Violentmonkey](https://violentmonkey.github.io).
+A few userscripts you can install with manager extensions like [Violentmonkey][Violentmonkey] or [scriptcat][scriptcat].
 
 Unlisted scripts have no intro and serve for myself only.
 
@@ -172,6 +172,8 @@ PS: Not working well with Firefox due to unknown compatibility issue, it's sugge
 
 Licensed under CC0 1.0 Universal or Public Domain, whichever is more permissive, to the extent permitted by law, unless otherwise noted.
 
+[Violentmonkey]: https://violentmonkey.github.io
+[scriptcat]: https://github.com/scriptscat/scriptcat
 [install-1]: https://github.com/Vinfall/UserScripts/raw/main/cngal2steam.user.js
 [install-2]: https://github.com/Vinfall/UserScripts/raw/main/cnm.r18.user.js
 [install-3]: https://github.com/Vinfall/UserScripts/raw/main/discuz-short-url.user.js
