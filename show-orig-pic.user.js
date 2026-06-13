@@ -2,7 +2,7 @@
 // @name              Show Original Picture
 // @name:zh-cn        自动跳转原图
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.18.4
+// @version           0.19.0
 // @author            Vinfall
 // @match             https://*.hdslb.com/bfs/*/*.avif
 // @match             https://*.hdslb.com/bfs/*/*.webp
@@ -22,6 +22,7 @@
 // @match             https://img.chuapp.com/wp-content/Picture/*/*?imageView*
 // @match             https://ipfs.crossbell.io/ipfs/*?*
 // @match             https://platform.theverge.com/wp-content/uploads/sites/*/*?quality=*
+// @match             https://s.pacn.ws/*?v=*
 // @match             https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/*/*/ss_*.600x338.jpg
 // @match             https://www.gravatar.com/avatar/*?s=*
 // @match             https://static.wikia.nocookie.net/*/images/*/*/*.*/revision/latest/scale-to-width-down/*
@@ -45,6 +46,7 @@
         'img.chuapp.com',
         'ipfs.crossbell.io',
         'moimg.net',
+        's.pacn.ws',
         'wp-content/uploads',
     ];
 
