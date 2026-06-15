@@ -2,7 +2,7 @@
 // @name              COK.R18
 // @name:zh-cn        刚满 18 岁 Cookie 版
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.16.1
+// @version           0.16.2
 // @author            Vinfall
 // @match             https://*.itch.io/*
 // @match             https://archive.org/details/*
@@ -130,11 +130,11 @@ const config = [
         name: 'birthtime', // not lastagecheckage or wants_mature_content
         value: '-3599',
     },
-    {
-        domains: ['www.moyu.moe'],
-        name: 'kun-patch-setting-store',
-        value: '%7B%22data%22%3A%7B%22kunNsfwEnable%22%3A%22all%22%2C%22nsfwAckedIds%22%3A%5B%5D%2C%22titleLanguage%22%3A%22zh-cn%22%2C%22showJapaneseSubtitle%22%3Afalse%2C%22showReleaseDate%22%3Afalse%2C%22showNsfwBadge%22%3Atrue%2C%22showGalgamesWithoutResource%22%3Afalse%7D%7D',
-    },
+    // {
+    //     domains: ['www.moyu.moe'],
+    //     name: 'kun-patch-setting-store',
+    //     value: '%7B%22data%22%3A%7B%22kunNsfwEnable%22%3A%22all%22%2C%22nsfwAckedIds%22%3A%5B%5D%2C%22titleLanguage%22%3A%22zh-cn%22%2C%22showJapaneseSubtitle%22%3Afalse%2C%22showReleaseDate%22%3Afalse%2C%22showNsfwBadge%22%3Atrue%2C%22showGalgamesWithoutResource%22%3Afalse%7D%7D',
+    // }, // would overwrite user pref
 ];
 
 /**
