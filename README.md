@@ -98,7 +98,7 @@ Simply define a new rule and refresh the page, voilà, now the asset is highligh
 
 关键词列表因人而异，安装并访问一次 indienova 每周游戏界面后，
 可以在脚本管理器找到该脚本，点击 `Values` 一栏，修改 `keywords` 字典。
-此外，逻辑变量 `ovverrideDefault` 表示是否覆盖脚本自带的关键词列表，
+此外，逻辑变量 `overrideDefault` 表示是否覆盖脚本自带的关键词列表，
 值为 `false` 时会与自带列表合并，默认为 `true`（仅使用自定义列表）。
 
 ### JD to Beancount
