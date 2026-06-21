@@ -1,15 +1,18 @@
 // ==UserScript==
 // @name          Skip Redirect Inplace
 // @namespace     https://github.com/Vinfall/UserScripts
-// @version       1.4.0
+// @version       1.5.0
 // @author        Vinfall
 // @match         https://acg.gamer.com.tw/*
+// @match         https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/*
 // @match         https://forum.gamer.com.tw/*
 // @match         https://gnn.gamer.com.tw/*
+// @match         https://html.duckduckgo.com/*
 // @match         https://m.gamer.com.tw/forum/*
 // @match         https://m.weibo.cn/detail/*
 // @match         https://m.weibo.cn/status/*
 // @match         https://m.weibo.cn/u/*
+// @match         https://noai.duckduckgo.com/*
 // @match         https://sspai.com/*
 // @match         https://store.steampowered.com/app/*
 // @match         https://wikiwiki.jp/*
@@ -53,6 +56,7 @@
         ['a[href*="https://steamcommunity.com/linkfilter/?u="]', /https:\/\/steamcommunity.com\/linkfilter\/\?u=([^&]+)/, false],
         ['a[href*="/go?url="]', /\/go\?url=([^&]+)/, true],
         ['a[href*="/p/cushion?to="]', /[?&]to=([^&]+)/, false],
+        ['a[href*="/l/?uddg="]', /\/l\/\?uddg=([^&]+)/, true],
     ];
 
     function convertToStructuredRules(simplifiedRules, attributeShape) {
