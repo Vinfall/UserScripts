@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.33.0
+// @version           2.33.1
 // @author            Vinfall
 // @match             https://*.fanbox.cc/
 // @match             https://*.fanbox.cc/plans
@@ -15,6 +15,7 @@
 // @match             https://bookmate-net.com/ec/*
 // @match             https://booth.pm/*/items/*
 // @match             https://ci-en.dlsite.com/creator/*
+// @match             https://denpasoft.com/checkout/
 // @match             https://denpasoft.com/product/*
 // @match             https://denpasoft.com/product-category/*
 // @match             https://ec.toranoana.jp/tora_r/ec/item/*
