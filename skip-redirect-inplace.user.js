@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Skip Redirect Inplace
 // @namespace     https://github.com/Vinfall/UserScripts
-// @version       1.5.0
+// @version       1.5.1
 // @author        Vinfall
 // @match         https://acg.gamer.com.tw/*
 // @match         https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/*
@@ -57,6 +57,7 @@
         ['a[href*="/go?url="]', /\/go\?url=([^&]+)/, true],
         ['a[href*="/p/cushion?to="]', /[?&]to=([^&]+)/, false],
         ['a[href*="/l/?uddg="]', /\/l\/\?uddg=([^&]+)/, true],
+        // ['a[href*="link3.shortnest.com/st?"]', /https:\/\/link3\.shortnest\.com\/st\?api=[^&]+&url=([^&]+)/, true], // just disable JavaScript
     ];
 
     function convertToStructuredRules(simplifiedRules, attributeShape) {
