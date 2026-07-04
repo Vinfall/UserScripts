@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.33.1
+// @version           2.34.1
 // @author            Vinfall
 // @match             https://*.fanbox.cc/
 // @match             https://*.fanbox.cc/plans
@@ -21,6 +21,7 @@
 // @match             https://ec.toranoana.jp/tora_r/ec/item/*
 // @match             https://ec.nintendo.com/HK/zh/titles/*
 // @match             https://ent.ltn.com.tw/*
+// @match             https://fc2cmadb.com/*
 // @match             https://gamebanana.com/mods/*
 // @match             https://gamejolt.com/games/*/*
 // @match             https://gamejolt.com/games/*/*/followers
@@ -120,6 +121,8 @@ function verifyButton() {
         'ec.nintendo.com': '.o_c-button-size--slim.o_c-button-fill',
         'ent.ltn.com.tw': '.sexyes',
         'fanbox.cc': '.dhrsDw.iorEfw.CommonButton__CommonButtonOuter-sc-1s35wwu-0.ButtonBase-sc-1pize7g-0',
+        'fc2cmadb': '.m-2.btn-primary.btn',
+        // 'fc2db.net': '.confirm', // blocked by Cloudflare Turnstile
         'gamebanana.com': '.ShowNsfwContentButton',
         'gamejolt.com': '.link-muted > span', // this mutes until I exit
         // 'gamejolt.com': '.-block.-outline.-primary.button', // this only works for once

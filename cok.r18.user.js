@@ -2,11 +2,12 @@
 // @name              COK.R18
 // @name:zh-cn        刚满 18 岁 Cookie 版
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.16.2
+// @version           0.17.1
 // @author            Vinfall
 // @match             https://*.itch.io/*
 // @match             https://archive.org/details/*
 // @match             https://archive.org/download/*
+// @match             https://fc2db.net/*
 // @match             https://jaststore.com/games/*/*
 // @match             https://jaststore.com/zh_Hans/games/*/*
 // @match             https://jaststore.com/zh_Hant/games/*/*
@@ -32,6 +33,7 @@
 // @match             https://www.nintendo.com/us/store/products/*
 // @match             https://www.ptt.cc/ask/over18?from=*
 // @match             https://www.ptt.cc/bbs/*/*.html
+// @exclude-match     https://fc2db.net/auth/*
 // @exclude-match     https://www.gog.com/forum/*
 // @exclude-match     https://www.moyu.moe/*/*/pr
 // @exclude-match     https://www.moyu.moe/about
@@ -78,6 +80,11 @@ const config = [
     {
         domains: ['dlsite.com'],
         name: 'adultchecked',
+        value: '1',
+    },
+    {
+        domains: ['fc2db.net'],
+        name: 'mdb_age_gate_confirmed',
         value: '1',
     },
     {
