@@ -7,18 +7,21 @@
   },
   "files": {
     "ignoreUnknown": true,
-    "includes": ["*.user.js"]
+    "includes": [
+      "*.js",
+      "biome.json"
+    ]
   },
   "formatter": {
     "enabled": true,
-    "useEditorconfig": true,
     "formatWithErrors": false,
     "indentStyle": "space",
     "indentWidth": 4,
     "lineEnding": "lf",
     "lineWidth": 120,
     "attributePosition": "auto",
-    "bracketSpacing": true
+    "bracketSpacing": true,
+    "useEditorconfig": true
   },
   "assist": {
     "actions": {
@@ -30,7 +33,10 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true,
+      "preset": "recommended",
+      "complexity": {
+        "noImportantStyles": "off"
+      },
       "style": {
         "noUselessElse": "off"
       }
@@ -38,7 +44,7 @@
   },
   "javascript": {
     "formatter": {
-      "jsxQuoteStyle": "single",
+      "jsxQuoteStyle": "double",
       "quoteProperties": "asNeeded",
       "trailingCommas": "all",
       "semicolons": "always",
@@ -54,8 +60,9 @@
       "allowComments": true
     },
     "formatter": {
+      "indentWidth": 2,
       "trailingCommas": "none",
-      "indentWidth": 2
+      "expand": "always"
     }
   }
 }
