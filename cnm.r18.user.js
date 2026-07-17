@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.34.1
+// @version           2.34.3
 // @author            Vinfall
 // @match             https://*.fanbox.cc/
 // @match             https://*.fanbox.cc/plans
@@ -118,7 +118,7 @@ function verifyButton() {
         'ci-en.dlsite.com': '.is-wide.is-info.e-button',
         // 'www.dlsite.com': 'dynamicSelector', // special case
         'dmm.co.jp': '.css-w5doa7.fill.large.turtle-Button.turtle-component > [href]',
-        'ec.nintendo.com': '.o_c-button-size--slim.o_c-button-fill',
+        'ec.nintendo.com': 'button > div.bg-brand',
         'ent.ltn.com.tw': '.sexyes',
         'fanbox.cc': '.dhrsDw.iorEfw.CommonButton__CommonButtonOuter-sc-1s35wwu-0.ButtonBase-sc-1pize7g-0',
         'fc2cmadb': '.m-2.btn-primary.btn',
