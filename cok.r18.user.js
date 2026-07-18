@@ -2,9 +2,8 @@
 // @name              COK.R18
 // @name:zh-cn        刚满 18 岁 Cookie 版
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.17.1
+// @version           0.17.2
 // @author            Vinfall
-// @match             https://*.itch.io/*
 // @match             https://archive.org/details/*
 // @match             https://archive.org/download/*
 // @match             https://fc2db.net/*
@@ -57,19 +56,14 @@
 
 /*
 TODO
-- add a lot more sites, comment out the ones existed in CNM.R18
 - set cookie_override via GM_setValue
 - set cookie in the correct way (is it even possible?)
-- fix itch
-- better support for Steam/PTT (auto redirect after setting cookie)
-- simplify dict syntax, c.f. github-release-highlight
 */
 
 // patch for 'unsafeWindow is not defined'
 const _global = typeof unsafeWindow === 'undefined' ? window : unsafeWindow;
 
 const cookie_override = true;
-// const noFlagSites = ['itch.io'];
 
 const config = [
     {
@@ -97,11 +91,6 @@ const config = [
         name: 'gog_wantsmaturecontent',
         value: '18',
     },
-    // {
-    //     domains: ['itch.io'],
-    //     name: 'allow_nsfw_games',
-    //     value: '%5b3660070%5d', // 1970-01-01
-    // },
     {
         domains: ['jaststore.com'],
         name: 'mature-warning-check',
