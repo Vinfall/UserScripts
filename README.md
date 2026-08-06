@@ -2,6 +2,9 @@
 
 A few userscripts you can install with manager extensions like [Violentmonkey][Violentmonkey] or [scriptcat][scriptcat].
 
+Scripts in [tmpl](tmpl) are templates that may not work out of box.
+Customize them to fit your need before use.
+
 Unlisted scripts have no intro and serve for myself only.
 
 ## List
@@ -9,13 +12,13 @@ Unlisted scripts have no intro and serve for myself only.
 | Name | Function | Install |
 | ---- | -------- | :-----: |
 | [CnGal2Steam](#cngal-on-steam) | 在 Steam 商店页面显示 CnGal 链接 | [安装][install-1] |
-| [CnGal-Game-Hide](#cngal-game-hide) | CnGal 每周速报隐藏包含特定关键字的消息 | [安装][install-9] |
+| [CnGal-Game-Hide](#cngal-game-hide) | CnGal 周报隐藏特定关键词 | [安装][install-9] |
 | CnGal Weekly Linked Toc | CnGal 每周速报添加 ToC 链接 | [安装][install-17] |
 | [CNM.R18](#cnmr18) | Skip age verification on numerous sites | [install][install-2] |
 | [COK.R18](#cokr18) | Skip age verification on numerous sites, cookie ver. | [install][install-15] |
 | [Discuz-Short-URL](#discuz-short-url) | Show short URL on Discuz forums | [install][install-3] |
 | [GitHub Release Highlight](#github-release-highlight) | Highlight GitHub release assets containing keywords | [install][install-5] |
-| [Indienova Game Hide](#indienova-game-hide) | indienova 每周游戏隐藏特定游戏类型 | [安装][install-6] |
+| [Indienova Game Hide](#indienova-game-hide) | indienova 隐藏特定游戏类型 | [安装][install-6] |
 | [JD2Bean](#jd-to-beancount) | 根据京东订单生成 Beancount 账单 | [安装][install-7] |
 | Show Original Picture | Open image in original resolution | [install][install-8] |
 | [Skip Redirect Inplace](#skip-redirect-inplace) | Skip stupid URL redirect in href | [install][install-10] |
@@ -38,8 +41,8 @@ Unlisted scripts have no intro and serve for myself only.
 
 ### CnGal Game Hide
 
-> [!WARNING]
-> 这是归档的公开版本，**不会**得到更新。
+> [!TIP]
+> 模板脚本，使用前自行更新 `blockedKeywords`。
 
 在「CnGal 每周速报」隐藏包含特定关键字的消息，防止信息过载。
 
@@ -67,8 +70,8 @@ Ironically, this would have the max *once for all* effect if you hardly clean yo
 
 ### Discuz Short URL
 
-> [!WARNING]
-> This is the sanitized public version and would NOT be updated regularly.
+> [!TIP]
+> Template. Please manually add missing `@match` for your commonly visited forums.
 
 - Only tested on a few Discuz forums
 - Only work in limited URLs/mods
@@ -76,8 +79,8 @@ Ironically, this would have the max *once for all* effect if you hardly clean yo
 
 ### GitHub Release Highlight
 
-> [!WARNING]
-> This is the sanitized public version and would NOT be updated regularly.
+> [!TIP]
+> Template. Adjust `keywords` and `uniqueValues` before use.
 
 Ever accidentally download a wrong release asset not suited for your platform?
 Can you pick the correct [vscodium][vscodium] package
@@ -93,18 +96,15 @@ Simply define a new rule and refresh the page, voilà, now the asset is highligh
 
 ### Indienova Game Hide
 
-> [!WARNING]
-> 这是归档的公开版本，**不会**得到更新。
+> [!TIP]
+> 模板脚本，使用前自行更新 `defaultKeywords`。
 
-关键词列表因人而异，安装并访问一次 indienova 每周游戏界面后，
-可以在脚本管理器找到该脚本，点击 `Values` 一栏，修改 `keywords` 字典。
-此外，逻辑变量 `overrideDefault` 表示是否覆盖脚本自带的关键词列表，
-值为 `false` 时会与自带列表合并，默认为 `true`（仅使用自定义列表）。
+Indienova 隐藏特定游戏类型，防止信息过载。
 
 ### JD to Beancount
 
-> [!WARNING]
-> 这是归档的公开版本，**不会**得到更新。
+> [!TIP]
+> 模板脚本，使用前需修改 `debitAccount` 和 `liabilityAccount`。
 
 使用前请查看脚本的 Disclaimer 并修改对应 Beancount 账户。
 
@@ -176,13 +176,13 @@ Licensed under CC0 1.0 Universal or Public Domain, whichever is more permissive,
 [scriptcat]: https://github.com/scriptscat/scriptcat
 [install-1]: https://github.com/Vinfall/UserScripts/raw/main/cngal2steam.user.js
 [install-2]: https://github.com/Vinfall/UserScripts/raw/main/cnm.r18.user.js
-[install-3]: https://github.com/Vinfall/UserScripts/raw/main/discuz-short-url.user.js
+[install-3]: https://github.com/Vinfall/UserScripts/raw/main/tmpl/discuz-short-url.user.js
 [install-4]: https://github.com/Vinfall/UserScripts/raw/main/vndb-char-zodiac.user.js
-[install-5]: https://github.com/Vinfall/UserScripts/raw/main/github-release-highlight.user.js
-[install-6]: https://github.com/Vinfall/UserScripts/raw/main/indienova-game-hide.user.js
-[install-7]: https://github.com/Vinfall/UserScripts/raw/main/jd2bean.user.js
+[install-5]: https://github.com/Vinfall/UserScripts/raw/main/tmpl/github-release-highlight.user.js
+[install-6]: https://github.com/Vinfall/UserScripts/raw/main/tmpl/indienova-game-hide.user.js
+[install-7]: https://github.com/Vinfall/UserScripts/raw/main/tmpl/jd2bean.user.js
 [install-8]: https://github.com/Vinfall/UserScripts/raw/main/show-orig-pic.user.js
-[install-9]: https://github.com/Vinfall/UserScripts/raw/main/cngal-game-hide.user.js
+[install-9]: https://github.com/Vinfall/UserScripts/raw/main/tmpl/cngal-game-hide.user.js
 [install-10]: https://github.com/Vinfall/UserScripts/raw/main/skip-redirect-inplace.user.js
 [install-12]: https://github.com/Vinfall/UserScripts/raw/main/steam-ea-date.user.js
 [install-13]: https://github.com/Vinfall/UserScripts/raw/main/vndb-list-export.user.js
