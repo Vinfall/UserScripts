@@ -2,7 +2,7 @@
 // @name              COK.R18
 // @name:zh-cn        刚满 18 岁 Cookie 版
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.17.2
+// @version           0.17.3
 // @author            Vinfall
 // @match             https://archive.org/details/*
 // @match             https://archive.org/download/*
@@ -19,6 +19,7 @@
 // @match             https://ntrdb.com/
 // @match             https://ntrdb.com/*
 // @match             https://store.steampowered.com/agecheck/app/*
+// @match             https://store.steampowered.com/agecheck/bundle/*
 // @match             https://store.steampowered.com/agecheck/sub/*
 // @match             https://www.dlsite.com/*-touch/
 // @match             https://www.dlsite.com/*-touch/*
