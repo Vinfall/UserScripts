@@ -71,11 +71,11 @@ Ironically, this would have the max *once for all* effect if you hardly clean yo
 ### Discuz Short URL
 
 > [!TIP]
-> Template. Please manually add missing `@match` for your commonly visited forums.
+> Template. Please manually add missing `@match` for your commonly visited forums
+> and add `@exclude-match` for unsupported forums.
 
 - Only tested on a few Discuz forums
 - Only work in limited URLs/mods
-- NOT recommended to use
 
 ### GitHub Release Highlight
 
@@ -97,7 +97,7 @@ Simply define a new rule and refresh the page, voilà, now the asset is highligh
 ### Indienova Game Hide
 
 > [!TIP]
-> 模板脚本，使用前自行更新 `defaultKeywords`。
+> 模板脚本，使用前自行更新 `keywords`。
 
 Indienova 隐藏特定游戏类型，防止信息过载。
 
