@@ -2,7 +2,7 @@
 
 A few userscripts you can install with manager extensions like [Violentmonkey][Violentmonkey] or [scriptcat][scriptcat].
 
-Scripts in [tmpl](tmpl) are templates that may not work out of box.
+Scripts in [tmpl](tmpl) are templates which may not work out of box.
 Customize them to fit your need before use.
 
 Unlisted scripts have no intro and serve for myself only.
@@ -13,11 +13,11 @@ Unlisted scripts have no intro and serve for myself only.
 | ---- | -------- | :-----: |
 | [CnGal2Steam](#cngal-on-steam) | 在 Steam 商店页面显示 CnGal 链接 | [安装][install-1] |
 | [CnGal-Game-Hide](#cngal-game-hide) | CnGal 周报隐藏特定关键词 | [安装][install-9] |
-| CnGal Weekly Linked Toc | CnGal 每周速报添加 ToC 链接 | [安装][install-17] |
-| [CNM.R18](#cnmr18) | Skip age verification on numerous sites | [install][install-2] |
-| [COK.R18](#cokr18) | Skip age verification on numerous sites, cookie ver. | [install][install-15] |
-| [Discuz-Short-URL](#discuz-short-url) | Show short URL on Discuz forums | [install][install-3] |
-| [GitHub Release Highlight](#github-release-highlight) | Highlight GitHub release assets containing keywords | [install][install-5] |
+| CnGal Weekly Linked Toc | CnGal 周报添加 ToC 链接 | [安装][install-17] |
+| [CNM.R18](#cnmr18) | Skip age check | [install][install-2] |
+| [COK.R18](#cokr18) | Skip age check, cookie ver. | [install][install-15] |
+| [Discuz-Short-URL](#discuz-short-url) | Shorten URL on Discuz forums | [install][install-3] |
+| [GitHub Release Highlight](#github-release-highlight) | Highlight GitHub release assets via keywords | [install][install-5] |
 | [Indienova Game Hide](#indienova-game-hide) | indienova 隐藏特定游戏类型 | [安装][install-6] |
 | [JD2Bean](#jd-to-beancount) | 根据京东订单生成 Beancount 账单 | [安装][install-7] |
 | Show Original Picture | Open image in original resolution | [install][install-8] |
@@ -53,7 +53,7 @@ Unlisted scripts have no intro and serve for myself only.
 
 Confirm age automatically on various sites (mostly doujin/game related, but with most Otome stuff excluded) as I'm *Certainly Not Minor* aka. CNM.R18.
 
-Tested to work on all [VNDB extlinks](https://vndb.org/d3#4) except sites require filling DoB (and some good guy who do not require age verification). For those sites, use COK.R18.
+Tested to work on all [VNDB extlinks][extlink] except sites require DoB (and some good guy who do not require age verification). For those sites, use COK.R18.
 
 Ideally this *can* work on most sites that requires a NSFW parameter or press a button, but I only add websites I'm aware of.
 
@@ -62,7 +62,7 @@ Ideally this *can* work on most sites that requires a NSFW parameter or press a 
 
 ### COK.R18
 
-Certainly Older than Kid, aka. COK.R18, which works via cookies instead of element click/URL parameters, mostly for sites requiring DoB like Steam, Epic Games, GOG & eShop US.
+Certainly Older than Kid, aka. COK.R18, which works via cookies instead of element click/URL parameters, mostly for sites requiring DoB like Steam, Epic Games, GOG & eShop.
 
 As it stands as a companion script for CNM.R18 (albeit working perfectly w/o the latter), many supported sites are disabled by default to avoid conflicts. It would also overwrite your existing cookie by default for privacy. If you don't like it, change `cookie_override` to `false` in the script.
 
@@ -92,7 +92,7 @@ Simply define a new rule and refresh the page, voilà, now the asset is highligh
 
 > [!NOTE]
 > NOT working in *all releases* page.
-> You need to head to *a specific release tag* to make highlighting work.
+> You need to head to *specific release tag* to make highlighting work.
 
 ### Indienova Game Hide
 
@@ -195,3 +195,4 @@ Licensed under CC0 1.0 Universal or Public Domain, whichever is more permissive,
 [vscodium]: https://github.com/VSCodium/vscodium/releases/latest
 [vnlist]: https://vndb.org/u2/ulist?vnlist=1
 [lengthvotes]: https://vndb.org/u2/lengthvotes
+[extlink]: https://vndb.org/d3#4
