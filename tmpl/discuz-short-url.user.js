@@ -2,7 +2,7 @@
 // @name               Discuz Short URL
 // @name:zh-cn         Discuz 短链 URL
 // @namespace          https://github.com/Vinfall/UserScripts
-// @version            1.2.4
+// @version            1.4.3
 // @author             Vinfall
 // @match              *://*/?mod=forumdisplay*
 // @match              *://*/?mod=viewthread*
@@ -31,11 +31,6 @@
 // *://*/forum/search.php?*
 // *://*/forum/viewforum.php?f=*
 // *://*/showforum-*.html
-
-// TODO:
-// - Support more fields (only thread is supported) like forum, space uid (suid)
-// - Enumerate & Test all mod methods
-// - Support page info in extra param
 
 (() => {
     // 检测 Discuz 版本
@@ -141,12 +136,12 @@
         }
 
         // 如果没有匹配到，默认使用 thread-123456-1-1 格式
-        // if (!matched) {
-        //     newUrl = `${protocol}//${domain}/thread-${tid}-${page}-1.html`;
-        // }
+        if (!matched) {
+            newUrl = `${protocol}//${domain}/thread-${tid}-${page}-1.html`;
+        }
 
         // 如果有 pid 参数，加到 newUrl 之后
-        if (newUrl && pid) {
+        if (pid) {
             newUrl += pid;
         }
 
