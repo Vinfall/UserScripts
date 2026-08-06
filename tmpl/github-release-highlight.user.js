@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub Release Highlight
 // @namespace    https://github.com/Vinfall/UserScripts
-// @version      4.2.3
+// @version      4.2.29
 // @author       Vinfall
 // @match        https://github.com/*/*/releases/tag/*
 // @grant        none
@@ -11,18 +11,19 @@
 // @description  Highlight GitHub release assets containing keywords
 // ==/UserScript==
 
-// TODO: Support "https://github.com/*/*/releases"
-// 		 Skip highlightKeywords if handleSpecialMatching matches
-//       Support other git hosting services like gitlab, codeberg etc.
-
 // General highlight keywords
 // biome-ignore format: do not touch my list
 const keywords = [
     // Windows
-    'Windows-Portable-x86_64',
-    'win_x64.zip', 'windows-x86_64.zip', 'Win64.zip',
+    'Windows-Portable-x86_64', 'Portable.x64.zip',
+    'win_x64.zip', 'windows-x86_64.zip', 'Win64.zip', 'win-x64-',
     'msixbundle',
+    'Windows.11.v',
     '.exe',
+    // Linux
+    // 'Linux_x86_64.tar.gz',
+    // 'amd64.deb',
+    // 'x86_64.AppImage',
     // Hash
     'SHA256SUM',
     'checksums',
@@ -35,7 +36,7 @@ const _attributeShape = [
 
 const uniqueValues = [
     // Repo-specific highlight keywords
-    ['Hibbiki/chromium-win64', 'nosync.7z'],
+    ['neelabo/NeeView', '-fd.zip'],
     ['obsidianmd/obsidian-releases', 'arm64.tar.gz'],
 ];
 

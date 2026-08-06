@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name              CnGal Game Hide
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           1.0.23
+// @version           1.0.31
 // @author            Vinfall
 // @match             https://www.cngal.org/articles/index/*
 // @grant             none
@@ -18,7 +18,7 @@
         // rel
         '中国式相亲', '叛逆神魂',
         // promo
-        '众筹', '广播剧', '二游', '周边', '表情包', 'OST', '原创音乐'
+        '众筹', '广播剧', '二游', '周边', '表情包' // '原创音乐', '主题歌', 'OP', 'PV', 'OST'
     ];
 
     function doFilter() {

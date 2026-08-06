@@ -11,6 +11,10 @@
 // @match              *://*/home.php?mod=space&uid=*
 // @match              *://*/space-uid-*.html
 // @match              *://*/suid-*
+// @match              https://bbs.saraba1st.com/2b/?mod=forumdisplay*
+// @match              https://bbs.saraba1st.com/2b/?mod=viewthread*
+// @match              https://bbs.saraba1st.com/2b/forum.php?mod=forumdisplay*
+// @match              https://bbs.saraba1st.com/2b/forum.php?mod=viewthread*
 // @exclude-match      *://*/?*goto*
 // @exclude-match      *://*/?mod=redirect*
 // @exclude-match      *://*/*username=*
@@ -18,6 +22,9 @@
 // @exclude-match      *://*/home.php?*view=me*
 // @exclude-match      *://*/forum.php?*goto*
 // @exclude-match      *://*/forum.php?mod=redirect*
+// @exclude-match      http://bbs.ffsky.com/*
+// @exclude-match      https://bbs.saraba1st.com/2b/home.php?mod=space&uid=*
+// @exclude-match      https://bbs.saraba1st.com/2b/space-uid-*.html
 // @grant              none
 // @run-at             document-start
 // @license            Apache-2.0
@@ -65,6 +72,10 @@
         {
             style: (protocol, domain, tid, page) => `${protocol}//${domain}/thread-${tid}-${page}-1.html`,
             domains: ['bbs.a9vg.com', 'bbs.3dmgame.com', 'game.ali213.net'],
+        },
+        {
+            style: (protocol, domain, tid, page) => `${protocol}//${domain}/2b/thread-${tid}-${page}-1.html`,
+            domains: ['bbs.saraba1st.com'],
         },
     ];
 
