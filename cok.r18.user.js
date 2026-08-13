@@ -2,7 +2,7 @@
 // @name              COK.R18
 // @name:zh-cn        刚满 18 岁 Cookie 版
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.17.3
+// @version           0.18.0
 // @author            Vinfall
 // @match             https://archive.org/details/*
 // @match             https://archive.org/download/*
@@ -28,6 +28,7 @@
 // @match             https://www.getchu.com/item/*
 // @match             https://www.getchu.com/php/attestation.html?aurl=*
 // @match             https://www.gog.com/*/game/*
+// @match             https://www.jvid.com/*
 // @match             https://www.moyu.moe/*
 // @match             https://www.nintendo.com/*/store/products/*
 // @match             https://www.nintendo.com/us/store/products/*
@@ -106,6 +107,11 @@ const config = [
         domains: ['jkforum.net'],
         name: 'apea',
         value: '100',
+    },
+    {
+        domains: ['jvid.com'],
+        name: 'confirmAdult',
+        value: '{%22isConfirm%22:true%2C%22normalDialog18Age%22:%221970/01/01%22}',
     },
     {
         domains: ['moepedia.net'],
