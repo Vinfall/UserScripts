@@ -77,6 +77,11 @@ const config = [
         name: 'adultchecked',
         value: '1',
     },
+    // {
+    //     domains: ['fantia.jp'],
+    //     name: '_f_age_c_1',
+    //     value: '1',
+    // },
     {
         domains: ['fc2db.net'],
         name: 'mdb_age_gate_confirmed',

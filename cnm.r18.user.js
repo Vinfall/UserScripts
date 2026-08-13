@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.34.4
+// @version           2.35.0
 // @author            Vinfall
 // @match             https://*.fanbox.cc/
 // @match             https://*.fanbox.cc/plans
@@ -21,6 +21,7 @@
 // @match             https://ec.toranoana.jp/tora_r/ec/item/*
 // @match             https://ec.nintendo.com/HK/zh/titles/*
 // @match             https://ent.ltn.com.tw/*
+// @match             https://fantia.jp/*
 // @match             https://fc2cmadb.com/*
 // @match             https://gamebanana.com/mods/*
 // @match             https://gamejolt.com/games/*/*
@@ -67,6 +68,8 @@
 // @exclude-match     https://*/forum.php?mod=redirect*
 // @exclude-match     https://ci-en.net/*
 // @exclude-match     https://download.patch.moe/*
+// @exclude-match     https://fantia.jp/account/*
+// @exclude-match     https://fantia.jp/sessions/signin*
 // @exclude-match     https://huggingface.co/blog/*
 // @exclude-match     https://huggingface.co/collections/*
 // @exclude-match     https://huggingface.co/datasets/*
@@ -122,6 +125,7 @@ function verifyButton() {
         'ec.nintendo.com': 'button > div.bg-brand',
         'ent.ltn.com.tw': '.sexyes',
         'fanbox.cc': '.dhrsDw.iorEfw.CommonButton__CommonButtonOuter-sc-1s35wwu-0.ButtonBase-sc-1pize7g-0',
+        'fantia': '.btn-block.btn-very-lg.btn-primary.btn',
         'fc2cmadb': '.m-2.btn-primary.btn',
         // 'fc2db.net': '.confirm', // blocked by Cloudflare Turnstile
         'gamebanana.com': '.ShowNsfwContentButton',
