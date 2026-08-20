@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        indienova game hide
 // @namespace   https://github.com/Vinfall/UserScripts
-// @version     5.5.4
+// @version     5.6.0
 // @author      Vinfall
 // @match       https://indienova.com/indie-game-news/guide*
 // @match       https://indienova.com/indie-game-news/itch-new-games-*
@@ -26,16 +26,47 @@
     // 获取游戏列表的父元素
     const gameList = document.querySelector('.single-post.indienova-single-post.fr-view');
 
-    // 获取所有h4元素
-    const sections = gameList.querySelectorAll('h4');
+    // 获取目标 h4 列表
+    const currentUrl = window.location.href;
+    const allSections = [...gameList.querySelectorAll('h4')];
+    let sections;
+    // wholesome-direct-*
+    if (currentUrl.includes('wholesome-direct-')) {
+        sections = allSections;
+    }
+    // guide*
+    // <h4 id="iah-0">xxx</h4>
+    // <h4 id="iah-xxx">本周其他值得关注的作品</h4>
+    else if (currentUrl.includes('guide')) {
+        const startIndex = allSections.findIndex((section) => section.id === 'iah-0');
+        const endIndex = allSections.findIndex(
+            (section, index) => index > startIndex && section.textContent.trim() === '本周其他值得关注的作品',
+        );
+        // fallback to allSections if not found
+        sections = allSections.slice(startIndex + 1, endIndex === -1 ? allSections.length : endIndex);
+    }
+    // itch-new-games-*
+    // <h4 id="iah-0">xxx</h4>
+    // <h4 id="iah-xxx">下半部分</h4>
+    else if (currentUrl.includes('itch-new-games-')) {
+        const startIndex = allSections.findIndex((section) => section.id === 'iah-0');
+        const endIndex = allSections.findIndex(
+            (section, index) => index > startIndex && section.textContent.trim() === '下半部分',
+        );
+        sections = allSections.slice(startIndex + 1, endIndex === -1 ? allSections.length : endIndex);
+    }
+    // noop
+    else {
+        sections = [];
+    }
 
-    // 定义一个函数来切换显示状态
+    // 切换显示状态
     function toggleDisplay(element) {
         const display = element.style.display;
         element.style.display = display === 'none' ? 'block' : 'none';
     }
 
-    // 遍历游戏列表的各个部分
+    // 遍历 h4
     for (let i = 0; i < sections.length; i++) {
         const section = sections[i];
         let nextElement = section.nextElementSibling;
@@ -50,7 +81,7 @@
         if (shouldHide) {
             // 创建按钮
             const button = document.createElement('button');
-            tag = text.replace('关键字：', '');
+            const tag = text.replace('关键字：', '');
             button.innerHTML = `🚫 已过滤: ${tag}`;
             button.style.display = 'block';
 
@@ -64,7 +95,7 @@
                 nextElement = nextElement.nextElementSibling;
             }
 
-            // 使用立即执行函数(IIFE)为每个按钮创建一个独立的作用域
+            // 使用立即执行函数 (IIFE) 为每个按钮创建独立的作用域
             ((contentToHide) => {
                 button.addEventListener('click', () => {
                     contentToHide.forEach(toggleDisplay);
