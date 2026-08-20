@@ -135,22 +135,18 @@ function verifyButton() {
         'gamebanana.com': '.ShowNsfwContentButton',
         'gamejolt.com': '.link-muted > span', // this mutes until I exit
         // 'gamejolt.com': '.-block.-outline.-primary.button', // this only works for once
-        // 'gog.com': '.age-gate__button.button--big.button', // not working
         'hobicolle.com': '.close_modal',
         'huggingface.co': '[href^="?not-for-all-audiences=true"]', // '.self-start.!mt-6.btn'
-        // 'iwara.tv': 'button mt-4 button--primary button--solid', // not working
         'johren.games': '.link_enter.mainbtn-primary-lv1',
         'kaguragames.com': '.age-gate__submit--yes.age-gate__submit',
         'loverslab.com': '.fields > button',
         'moe-gameaward.com': '.btn_pink',
-        // 'moepedia.net': '.age-button_yes', // not working
         'nijiyome.jp': '.btn-approval.type_01',
         'nintendo.com.hk': 'button#eco-product-confirmation-hide.action-primary',
         'patch.moe': 'a.css-button-rounded--red:nth-of-type(1)',
         'patreon.com': 'button[data-tag="age-verification-button-yes"]', // FIXME: not working on mobile
         'pcshop-mk.shop-pro.jp': '#validation_select_yes > [href]',
         'pornhub.com': '.contentMTubes > .ageDisclaimerButtons > .greyButton.buttonOver18.js-av-cta.js-closeAgeModal.gtm-event-age-verification',
-        // 'ptt.cc': 'button.btm-big[name="yes"][value="yes"]', // not working
         'redgifs.com': '.buttons > button.enterBtn',
         'refuge.tokyo': '#but_accept',
         'steamcommunity.com': 'button.btn_medium.btn_blue_steamui > span',
