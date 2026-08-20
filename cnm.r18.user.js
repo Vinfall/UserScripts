@@ -2,13 +2,12 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.35.0
+// @version           2.37.2
 // @author            Vinfall
 // @match             https://*.fanbox.cc/
 // @match             https://*.fanbox.cc/plans
 // @match             https://*.fanbox.cc/plans/*
 // @match             https://*.fanbox.cc/posts/*
-// @match             https://*.reddit.com/over18?dest=*
 // @match             https://a.sofmap.com/adult_confirm.aspx?url=*
 // @match             https://a.sofmap.com/product_detail.aspx?sku=*
 // @match             https://appendingpulse.jp/dl/*
@@ -20,6 +19,7 @@
 // @match             https://denpasoft.com/product-category/*
 // @match             https://ec.toranoana.jp/tora_r/ec/item/*
 // @match             https://ec.nintendo.com/HK/zh/titles/*
+// @match             https://eddrit.com/over18?dest=*
 // @match             https://ent.ltn.com.tw/*
 // @match             https://fantia.jp/*
 // @match             https://fc2cmadb.com/*
@@ -61,6 +61,7 @@
 // @match             https://www.patreon.com/*
 // @match             https://www.pornhub.com/
 // @match             https://www.pornhub.com/*
+// @match             https://www.redgifs.com/*
 // @match             https://www.will-order.com/age.php?rurl=*
 // @exclude-match     https://*/*username=*
 // @exclude-match     https://*/admin.php?*
@@ -94,6 +95,8 @@
 // @exclude-match     https://www.pornhub.com/legal/*
 // @exclude-match     https://www.pornhub.com/partners/*
 // @exclude-match     https://www.pornhub.com/support/*
+// @exclude-match     https://www.redgifs.com/auth/*
+// @exclude-match     https://www.redgifs.com/create
 // @grant             none
 // @run-at            document-start
 // @license           CC0 1.0 Universal (Public Domain)
@@ -124,6 +127,7 @@ function verifyButton() {
         'dmm.co.jp': '.css-w5doa7.fill.large.turtle-Button.turtle-component > [href]',
         'ec.nintendo.com': 'button > div.bg-brand',
         'ent.ltn.com.tw': '.sexyes',
+        'eddrit.com': 'button.over18-button[type="submit"][name="continue"]',
         'fanbox.cc': '.dhrsDw.iorEfw.CommonButton__CommonButtonOuter-sc-1s35wwu-0.ButtonBase-sc-1pize7g-0',
         'fantia': '.btn-block.btn-very-lg.btn-primary.btn',
         'fc2cmadb': '.m-2.btn-primary.btn',
@@ -147,7 +151,7 @@ function verifyButton() {
         'pcshop-mk.shop-pro.jp': '#validation_select_yes > [href]',
         'pornhub.com': '.contentMTubes > .ageDisclaimerButtons > .greyButton.buttonOver18.js-av-cta.js-closeAgeModal.gtm-event-age-verification',
         // 'ptt.cc': 'button.btm-big[name="yes"][value="yes"]', // not working
-        'reddit.com': 'button.c-btn-primary.c-btn:nth-of-type(2)',
+        'redgifs.com': '.buttons > button.enterBtn',
         'refuge.tokyo': '#but_accept',
         'steamcommunity.com': 'button.btn_medium.btn_blue_steamui > span',
         'store.steampowered.com': '#view_product_page_btn > span',
