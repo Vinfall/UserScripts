@@ -2,7 +2,7 @@
 // @name              COK.R18
 // @name:zh-cn        刚满 18 岁 Cookie 版
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.18.0
+// @version           0.19.0
 // @author            Vinfall
 // @match             https://archive.org/details/*
 // @match             https://archive.org/download/*
@@ -13,6 +13,7 @@
 // @match             https://jkforum.net/p/forum-*
 // @match             https://jkforum.net/p/type-*
 // @match             https://jkforum.net/p/thread-*
+// @match             https://www.mangagamer.com/*
 // @match             https://moepedia.net/
 // @match             https://moepedia.net/*
 // @match             https://moepedia.net/game/*
@@ -36,6 +37,12 @@
 // @match             https://www.ptt.cc/bbs/*/*.html
 // @exclude-match     https://fc2db.net/auth/*
 // @exclude-match     https://www.gog.com/forum/*
+// @exclude-match     https://www.mangagamer.com/account_create.php
+// @exclude-match     https://www.mangagamer.com/account_login.php
+// @exclude-match     https://www.mangagamer.com/game_library.php
+// @exclude-match     https://www.mangagamer.com/mypage_index.php
+// @exclude-match     https://www.mangagamer.com/shoppingcart.php
+// @exclude-match     https://www.mangagamer.com/support.php*
 // @exclude-match     https://www.moyu.moe/*/*/pr
 // @exclude-match     https://www.moyu.moe/about
 // @exclude-match     https://www.moyu.moe/about/*
@@ -112,6 +119,11 @@ const config = [
         domains: ['jvid.com'],
         name: 'confirmAdult',
         value: '{%22isConfirm%22:true%2C%22normalDialog18Age%22:%221970/01/01%22}',
+    },
+    {
+        domains: ['mangagamer.com'],
+        name: 'agechk',
+        value: 'true',
     },
     {
         domains: ['moepedia.net'],
