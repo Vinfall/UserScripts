@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.37.2
+// @version           2.37.3
 // @author            Vinfall
 // @match             https://*.fanbox.cc/
 // @match             https://*.fanbox.cc/plans
@@ -30,7 +30,6 @@
 // @match             https://huggingface.co/*/*/discussions
 // @match             https://huggingface.co/*/*/tree/*
 // @match             https://moe-gameaward.com/
-// @match             https://patch.moe/
 // @match             https://pcshop-mk.shop-pro.jp/?pid=*
 // @match             https://refuge.tokyo/*.html
 // @match             https://steamcommunity.com/app/*
@@ -58,6 +57,7 @@
 // @match             https://www.nijiyome.jp/
 // @match             https://www.nijiyome.jp/*
 // @match             https://www.nintendo.com/jp/*/creators-voice/*
+// @match             https://www.patch.moe/
 // @match             https://www.patreon.com/*
 // @match             https://www.pornhub.com/
 // @match             https://www.pornhub.com/*
@@ -143,7 +143,7 @@ function verifyButton() {
         'moe-gameaward.com': '.btn_pink',
         'nijiyome.jp': '.btn-approval.type_01',
         'nintendo.com.hk': 'button#eco-product-confirmation-hide.action-primary',
-        'patch.moe': 'a.css-button-rounded--red:nth-of-type(1)',
+        'patch.moe': 'a[href="?flag=1"]',
         'patreon.com': 'button[data-tag="age-verification-button-yes"]', // FIXME: not working on mobile
         'pcshop-mk.shop-pro.jp': '#validation_select_yes > [href]',
         'pornhub.com': '.contentMTubes > .ageDisclaimerButtons > .greyButton.buttonOver18.js-av-cta.js-closeAgeModal.gtm-event-age-verification',
