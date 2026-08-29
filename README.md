@@ -104,9 +104,10 @@ Indienova 隐藏特定游戏类型，防止信息过载。
 ### JD to Beancount
 
 > [!TIP]
-> 模板脚本，使用前需修改 `debitAccount` 和 `liabilityAccount`。
+> 模板脚本，使用前需修改 `expenseAccounts` 和 `liabilityAccount`。
 
 使用前请查看脚本的 Disclaimer 并修改对应 Beancount 账户。
+如果使用京东外卖频率高于京东商城，建议修改默认 `expenseAccounts` 为对应账户。
 
 ### Skip Redirect Inplace
 
