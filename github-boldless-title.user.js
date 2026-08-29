@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name              GitHub Boldless Title
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           1.2.4
+// @version           1.2.5
 // @author            Vinfall
 // @match             https://github.com/*
 // @match             https://gist.github.com/*
@@ -41,7 +41,9 @@
 (() => {
     function replaceStrongWithAnchor() {
         const isGist = window.location.href.includes('gist');
-        const selector = isGist ? 'strong[itemprop="name"].css-truncate-target.mr-1' : 'strong.mr-2.flex-self-stretch';
+        const selector = isGist
+            ? 'strong[itemprop="name"].css-truncate-target.mr-1'
+            : 'strong[itemprop="name"].mr-2.flex-self-stretch';
 
         const strongElements = document.querySelectorAll(selector);
         for (const strong of strongElements) {
