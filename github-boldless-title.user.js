@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name              GitHub Boldless Title
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           1.2.5
+// @version           2.0.0
 // @author            Vinfall
 // @match             https://github.com/*
 // @match             https://gist.github.com/*
@@ -39,35 +39,25 @@
 // ==/UserScript==
 
 (() => {
-    function replaceStrongWithAnchor() {
-        const isGist = window.location.href.includes('gist');
-        const selector = isGist
-            ? 'strong[itemprop="name"].css-truncate-target.mr-1'
-            : 'strong[itemprop="name"].mr-2.flex-self-stretch';
-
-        const strongElements = document.querySelectorAll(selector);
-        for (const strong of strongElements) {
-            const anchor = strong.querySelector('a'); // Select the <a> tag inside <strong>
-            if (anchor) {
-                // Create a new <a> element
-                const newAnchor = document.createElement('a');
-                newAnchor.href = anchor.href; // Preserve the href
-                newAnchor.textContent = anchor.textContent; // Preserve the text content
-
-                // Replace the <strong> element with the new <a> element in the DOM
-                strong.parentNode.replaceChild(newAnchor, strong);
-            }
-        }
-    }
-
-    // Run after the window has fully loaded
-    window.onload = () => {
-        replaceStrongWithAnchor();
-
-        // Observe changes in the page (e.g., for dynamic content)
-        const observer = new MutationObserver((_mutations) => {
-            replaceStrongWithAnchor();
+    const selector = 'strong[itemprop="name"]';
+    function removeStrong(root = document) {
+        root.querySelectorAll(selector).forEach((strong) => {
+            strong.replaceWith(...strong.childNodes);
         });
-        observer.observe(document.body, { childList: true, subtree: true });
-    };
+    }
+    function start() {
+        removeStrong();
+        const observer = new MutationObserver(() => {
+            removeStrong();
+        });
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true,
+        });
+    }
+    if (document.body) {
+        start();
+    } else {
+        document.addEventListener('DOMContentLoaded', start, { once: true });
+    }
 })();
