@@ -5,6 +5,8 @@ A few userscripts you can install with manager extensions like [Violentmonkey][V
 Scripts in [tmpl](tmpl) are templates which may not work out of box.
 Customize them to fit your need before use.
 
+Subscribe to [tags feed][tags] to get notified of new scripts/significant updates.
+
 Unlisted scripts have no intro and serve for myself only.
 
 ## List
@@ -197,3 +199,4 @@ Licensed under CC0 1.0 Universal or Public Domain, whichever is more permissive,
 [vnlist]: https://vndb.org/u2/ulist?vnlist=1
 [lengthvotes]: https://vndb.org/u2/lengthvotes
 [extlink]: https://vndb.org/d3#4
+[tags]: https://github.com/Vinfall/UserScripts/tags.atom
