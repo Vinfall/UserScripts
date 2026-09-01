@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name              CnGal 每周速报 ToC 链接
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.2.0
+// @version           0.2.1
 // @author            Vinfall
 // @match             https://www.cngal.org/articles/index/*
 // @grant             none
@@ -16,7 +16,7 @@
         const overviewHeader = document.querySelector('#section');
         if (!overviewHeader) return;
         const ul = overviewHeader.nextElementSibling;
-        if (!ul || ul.tagName !== 'UL') return;
+        if (ul?.tagName !== 'UL') return;
         const contentHeader = document.querySelector('#section-1');
         if (!contentHeader) return;
         // 收集所有正文 <h3>
