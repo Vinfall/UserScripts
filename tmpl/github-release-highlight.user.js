@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub Release Highlight
 // @namespace    https://github.com/Vinfall/UserScripts
-// @version      4.2.29
+// @version      4.2.32
 // @author       Vinfall
 // @match        https://github.com/*/*/releases/tag/*
 // @grant        none
@@ -15,9 +15,10 @@
 // biome-ignore format: do not touch my list
 const keywords = [
     // Windows
-    'Windows-Portable-x86_64', 'Portable.x64.zip',
-    'win_x64.zip', 'windows-x86_64.zip', 'Win64.zip', 'win-x64-',
-    'msixbundle',
+    'win_x64.zip', 'windows-x86_64.zip', 'Win64.zip', 'win-x64-', // common prefix/suffic
+    'Windows-Portable-x86_64', 'Portable.x64.zip', // portable
+    '-x86_64-pc-windows-msvc.zip', //rust
+    'msixbundle', // appx
     'Windows.11.v',
     '.exe',
     // Linux
@@ -85,9 +86,9 @@ function handleSpecialMatching(element) {
 function handleMutation(mutationsList, observer) {
     for (const mutation of mutationsList) {
         if (mutation.type === 'childList') {
-            const ul = document.querySelector('.Box--condensed > ul');
+            const ul = document.querySelector(ulSelector);
             if (ul) {
-                const links = ul.querySelectorAll(`a.${targetClass}`);
+                const links = ul.querySelectorAll(assetSelector);
                 for (const element of links) {
                     handleSpecialMatching(element);
                     highlightKeywords(element);

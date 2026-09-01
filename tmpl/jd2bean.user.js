@@ -2,7 +2,7 @@
 // @name         JD to Beancount
 // @namespace    https://github.com/Vinfall/UserScripts
 // @author       zsx, Ein Verne, Vinfall
-// @version      2.3.1
+// @version      2.3.2
 // @match        https://order.jd.com/*
 // @match        https://details.jd.com/*
 // @description  根据京东订单生成 Beancount 账单，打开京东我的订单页面或订单详情 (https://order.jd.com/center/list.action)，查看浏览器 console
@@ -20,19 +20,20 @@
 
 (() => {
     // Minimal dumb categorizer, c.f. common_expense_account in import.py
+    const assetAccount = 'Assets:Bank:BOC:Renoir';
     const expenseAccounts = {
-        DEFAULT: 'Expenses:Other', // 'Expenses:Food:Take-out'
+        DEFAULT: 'Expenses:Other', // 'Expenses:Food:Takeout'
         // 服饰美容
         '衣|裤|袜|鞋|服装|NIKE|李宁|迪卡侬|优衣库|被[子单罩套]': 'Expenses:Life:Clothing',
-        '[腰书]包|耳塞|眼[罩镜]': 'Expenses:Life:Wearing',
+        '[腰书]包|手套': 'Expenses:Life:Wearing',
+        '鲜花|蛋糕': 'Expenses:Life:Gift',
         // 食物
-        '包子|馒头|[面菜肉]包|杯面|海福盛': 'Expenses:Food:Breakfast',
-        '矿泉水|雪碧|可乐|红茶|怡宝|饮料|奶茶|[鲜牛]奶|饮品|咖啡|cafe|拿铁|蜜雪冰城|[一1]点点':
+        '矿泉水|雪碧|可乐|红茶|怡宝|饮料|奶茶|[鲜牛]奶|饮品|cafe|拿铁':
             'Expenses:Food:Drinks',
         水果: 'Expenses:Food:Fruits',
         // 健康
         '医院|药房': 'Expenses:Health:Hospital',
-        '口罩|化妆|面膜|[洗洁]面奶|[毛纸湿]巾|清洗液': 'Expenses:Health:Medicare',
+        '口罩|化妆|面膜|[洗洁]面奶|[毛纸湿]巾|清洗液|唇膏|眼罩|耳塞': 'Expenses:Health:Medicare',
         // 娱乐
         '图书|书店|商务印书馆|当当|出版': 'Expenses:Fun:Book',
         // 游戏
@@ -40,12 +41,11 @@
         'PLAYSTATION|PS[45N]': 'Expenses:Game:PSN',
         'Xbox|XBOX|XGP': 'Expenses:Game:Microsoft',
         // 数码科技
-        'gopro|大疆|无人机|键盘|鼠标|SD卡|U盘|USB|[相耳]机|手柄|显示器|[显网]卡|硬盘|NAS|内存|路由器|数据线|支架|oppo|huawei|vivo|iqoo|电源|树莓派':
+        '键盘|鼠标|SD卡|U盘|USB|[相耳]机|手柄|显示器|[显网]卡|路由器|数据线|支架|oppo|huawei|vivo|iqoo':
             'Expenses:Tech:Gadget',
         // 杂物
-        '家乐福|超[市商]|便利店|百货|商贸': 'Expenses:Consumable',
+        '超[市商]|便利店|百货|商贸': 'Expenses:Consumable',
     };
-    const liabilityAccount = 'Liabilities:CreditCard:CMB:AmEx';
 
     function chooseExpenseAccount(goodsName) {
         for (const expenseAccount in expenseAccounts) {
@@ -155,7 +155,7 @@
 ${date} * "京东" "${escapeBeancountString(goodsName)}"
   time: "${time}"
   transaction: "${escapeBeancountString(orderNumber)}"
-  ${liabilityAccount}  -${formatMoney(totalPrice)} CNY
+  ${assetAccount}  -${formatMoney(totalPrice)} CNY
   ${expenseAccount}`.trim();
             })
             .filter(Boolean)
