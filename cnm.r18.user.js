@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.37.3
+// @version           2.37.4
 // @author            Vinfall
 // @match             https://*.fanbox.cc/
 // @match             https://*.fanbox.cc/plans
@@ -63,10 +63,10 @@
 // @match             https://www.pornhub.com/*
 // @match             https://www.redgifs.com/*
 // @match             https://www.will-order.com/age.php?rurl=*
-// @exclude-match     https://*/*username=*
-// @exclude-match     https://*/admin.php?*
-// @exclude-match     https://*/forum.php?*goto*
-// @exclude-match     https://*/forum.php?mod=redirect*
+// @exclude           https://*/*username=*
+// @exclude           https://*/admin.php?*
+// @exclude           https://*/forum.php?*goto*
+// @exclude           https://*/forum.php?mod=redirect*
 // @exclude-match     https://ci-en.net/*
 // @exclude-match     https://download.patch.moe/*
 // @exclude-match     https://fantia.jp/account/*
