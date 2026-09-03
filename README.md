@@ -1,21 +1,27 @@
 # UserScripts
 
-A few userscripts you can install with manager extensions like [Violentmonkey][Violentmonkey] or [scriptcat][scriptcat].
+A few userscripts you can install with manager extensions like [Violentmonkey][Violentmonkey].
+
+Subscribe to [tags feed][tags] to get notified of new scripts/significant updates.
+
+## Compatibility
+
+Only tested with Violentmonkey stable/beta on latest Firefox-ESR and Chromium.
+
+[`@exclude-match`][VM] is a Violentmonkey only API, which means excluding may not work on [Tampermonkey][TM], [Greasemonkey][GM] or [ScriptCat][SC], but it does no harm unless you are a paranoid, in which case you should switch to Violentmonkey already.
 
 Scripts in [tmpl](tmpl) are templates which may not work out of box.
 Customize them to fit your need before use.
 
-Subscribe to [tags feed][tags] to get notified of new scripts/significant updates.
+## List
 
 Unlisted scripts have no intro and serve for myself only.
 
-## List
-
 | Name | Function | Install |
 | ---- | -------- | :-----: |
-| [CnGal2Steam](#cngal-on-steam) | 在 Steam 商店页面显示 CnGal 链接 | [安装][install-1] |
+| [CnGal2Steam](#cngal-on-steam) | 在 Steam 显示 CnGal 链接 | [安装][install-1] |
 | [CnGal-Game-Hide](#cngal-game-hide) | CnGal 周报隐藏特定关键词 | [安装][install-9] |
-| CnGal Weekly Linked Toc | CnGal 周报添加 ToC 链接 | [安装][install-17] |
+| CnGal Weekly Linked Toc | CnGal 周报 ToC 链接 | [安装][install-17] |
 | [CNM.R18](#cnmr18) | Skip age check | [install][install-2] |
 | [COK.R18](#cokr18) | Skip age check, cookie ver. | [install][install-15] |
 | [Discuz-Short-URL](#discuz-short-url) | Shorten URL on Discuz forums | [install][install-3] |
@@ -23,7 +29,7 @@ Unlisted scripts have no intro and serve for myself only.
 | [Indienova Game Hide](#indienova-game-hide) | indienova 隐藏特定游戏类型 | [安装][install-6] |
 | [JD2Bean](#jd-to-beancount) | 根据京东订单生成 Beancount 账单 | [安装][install-7] |
 | Show Original Picture | Open image in original resolution | [install][install-8] |
-| [Skip Redirect Inplace](#skip-redirect-inplace) | Skip stupid URL redirect in href | [install][install-10] |
+| [Skip Redirect Inplace](#skip-redirect-inplace) | Skip URL redirect in href | [install][install-10] |
 | [Steam EA Date](#steam-ea-date) | Show Early Access date on Steam card | [install][install-12] |
 | [VNDB Char Zodiac](#vndb-char-zodiac) | Show zodiac signs of VNDB character | [install][install-4] |
 | [VNDB Extlink Fix](#vndb-extlink-fix) | Fix broken extlink on VNDB | [install][install-16] |
@@ -90,7 +96,7 @@ among those enormous 154(!) assets within 10 seconds?
 
 GitHub Release Highlight comes into your rescue!
 
-Simply define a new rule and refresh the page, voilà, now the asset is highlighted.
+Simply define a rule and refresh the page, voilà, now the asset is highlighted.
 
 > [!NOTE]
 > NOT working in *all releases* page.
@@ -175,8 +181,11 @@ PS: Not working well with Firefox due to unknown compatibility issue, it's sugge
 
 Licensed under CC0 1.0 Universal or Public Domain, whichever is more permissive, to the extent permitted by law, unless otherwise noted.
 
-[Violentmonkey]: https://violentmonkey.github.io
-[scriptcat]: https://github.com/scriptscat/scriptcat
+[Violentmonkey]: https://violentmonkey.github.io/get-it/
+[VM]: https://violentmonkey.github.io/api/matching/
+[TM]: https://www.tampermonkey.net/documentation.php?q=include#meta:exclude
+[GM]: https://wiki.greasespot.net/Include_and_exclude_rules
+[SC]: https://github.com/scriptscat/scriptcat/issues/1714
 [install-1]: https://github.com/Vinfall/UserScripts/raw/main/cngal2steam.user.js
 [install-2]: https://github.com/Vinfall/UserScripts/raw/main/cnm.r18.user.js
 [install-3]: https://github.com/Vinfall/UserScripts/raw/main/tmpl/discuz-short-url.user.js
