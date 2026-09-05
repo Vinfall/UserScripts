@@ -1,13 +1,15 @@
 // ==UserScript==
 // @name         JD to Beancount
 // @namespace    https://github.com/Vinfall/UserScripts
+// @version      2.4.4
 // @author       zsx, Ein Verne, Vinfall
-// @version      2.3.2
 // @match        https://order.jd.com/*
 // @match        https://details.jd.com/*
-// @description  根据京东订单生成 Beancount 账单，打开京东我的订单页面或订单详情 (https://order.jd.com/center/list.action)，查看浏览器 console
-// @license      MIT
 // @grant        none
+// @run-at       document-end
+// @license      MIT
+// @icon         data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐶</text></svg>
+// @description  根据京东订单生成 Beancount 账单，打开京东我的订单页面或订单详情 (https://order.jd.com/center/list.action)，查看浏览器 console
 // ==/UserScript==
 
 /*
@@ -36,15 +38,15 @@
         '口罩|化妆|面膜|[洗洁]面奶|[毛纸湿]巾|清洗液|唇膏|眼罩|耳塞': 'Expenses:Health:Medicare',
         // 娱乐
         '图书|书店|商务印书馆|当当|出版': 'Expenses:Fun:Book',
+        // 数码科技
+        '键盘|鼠标|SD卡|U盘|USB|[相耳]机|手柄|显示器|[显网]卡|路由器|数据线huawei|xiaomi|oppo|realme|vivo|iqoo':
+            'Expenses:Tech:Gadget',
         // 游戏
         '卡带|[Ss]witch|SWITCH|任天堂|Nintendo|3DS|NGC|WII|AMIIBO|amiibo': 'Expenses:Game:Nintendo',
         'PLAYSTATION|PS[45N]': 'Expenses:Game:PSN',
         'Xbox|XBOX|XGP': 'Expenses:Game:Microsoft',
-        // 数码科技
-        '键盘|鼠标|SD卡|U盘|USB|[相耳]机|手柄|显示器|[显网]卡|路由器|数据线|支架|oppo|huawei|vivo|iqoo':
-            'Expenses:Tech:Gadget',
         // 杂物
-        '超[市商]|便利店|百货|商贸': 'Expenses:Consumable',
+        // '超[市商]|便利店|百货|商贸': 'Expenses:Consumable',
     };
 
     function chooseExpenseAccount(goodsName) {
@@ -147,8 +149,13 @@
                 // const goodsName = `${firstProductName}${productSuffix}`;
                 // const expenseAccount = chooseExpenseAccount(firstProductName);
 
-                // 列出所有商品名
-                const goodsName = products.map((product) => `${product.name} ×${product.quantity}`).join('，');
+                // 列出所有商品名，仅显示大于 1 的数量
+                const goodsName = products
+                    .map((product) => {
+                        const quantitySuffix = product.quantity > 1 ? ` ×${product.quantity}` : '';
+                        return `${product.name}${quantitySuffix}`;
+                    })
+                    .join('，');
                 const expenseAccount = chooseExpenseAccount(goodsName);
 
                 return `
