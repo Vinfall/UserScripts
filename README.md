@@ -25,7 +25,7 @@ Unlisted scripts have no intro and serve for myself only.
 | [CNM.R18](#cnmr18) | Skip age check | [install][install-2] |
 | [COK.R18](#cokr18) | Skip age check, cookie ver. | [install][install-15] |
 | [Discuz-Short-URL](#discuz-short-url) | Shorten URL on Discuz forums | [install][install-3] |
-| [GitHub Release Highlight](#github-release-highlight) | Highlight GitHub release assets via keywords | [install][install-5] |
+| [Git Release Highlight](#git-release-highlight) | Highlight release assets via keywords | [install][install-5] |
 | [Indienova Game Hide](#indienova-game-hide) | indienova 隐藏特定游戏类型 | [安装][install-6] |
 | [JD2Bean](#jd-to-beancount) | 根据京东订单生成 Beancount 账单 | [安装][install-7] |
 | Show Original Picture | Open image in original resolution | [install][install-8] |
@@ -85,22 +85,20 @@ Ironically, this would have the max *once for all* effect if you hardly clean yo
 - Only tested on a few Discuz forums
 - Only work in limited URLs/mods
 
-### GitHub Release Highlight
+### Git Release Highlight
 
 > [!TIP]
-> Template. Adjust `keywords` and `uniqueValues` before use.
+> Template. Adjust `keywords` and `repos` before use.  
+> `keywords` matching is skipped if `repos` already matches,
+> you need to list all assets in `repos` even if they exist in `keywords`.
 
 Ever accidentally download a wrong release asset not suited for your platform?
 Can you pick the correct [vscodium][vscodium] package
 among those enormous 154(!) assets within 10 seconds?
 
-GitHub Release Highlight comes into your rescue!
+Git Release Highlight comes into your rescue!
 
 Simply define a rule and refresh the page, voilà, now the asset is highlighted.
-
-> [!NOTE]
-> NOT working in *all releases* page.
-> You need to head to *specific release tag* to make highlighting work.
 
 ### Indienova Game Hide
 
