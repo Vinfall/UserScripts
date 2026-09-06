@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub Release Highlight
 // @namespace    https://github.com/Vinfall/UserScripts
-// @version      4.2.32
+// @version      4.2.34
 // @author       Vinfall
 // @match        https://github.com/*/*/releases/tag/*
 // @grant        none
@@ -46,7 +46,7 @@ const services = [
     {
         domain: 'github.com',
         ul: '.Box--condensed > ul',
-        asset: 'a.' + 'Truncate',
+        asset: 'a.' + 'wb-break-all',
     },
 ];
 
