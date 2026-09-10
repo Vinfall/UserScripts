@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name              CnGal Game Hide
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           1.0.35
+// @version           1.0.38
 // @author            Vinfall
 // @match             https://www.cngal.org/articles/index/*
 // @grant             none
@@ -20,19 +20,6 @@
         // promo
         '众筹', '广播剧', '二游', '周边', '表情包' // '原创音乐', '主题歌', 'OP', 'PV', 'OST'
     ];
-
-    // <div class="aspect-ratio">&lt;/div&gt;
-    function fixDivs() {
-        document.querySelectorAll('div.aspect-ratio').forEach((div) => {
-            const fragment = document.createDocumentFragment();
-
-            while (div.firstChild) {
-                fragment.appendChild(div.firstChild);
-            }
-
-            div.replaceWith(fragment);
-        });
-    }
 
     function createFilterButton(titleText) {
         const btn = document.createElement('button');
@@ -56,8 +43,6 @@
     }
 
     function doFilter() {
-        fixDivs();
-
         const allH3 = document.querySelectorAll('h3');
         allH3.forEach((h3) => {
             if (h3.dataset.filtered === 'true') return;
