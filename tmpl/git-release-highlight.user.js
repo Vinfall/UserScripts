@@ -1,12 +1,14 @@
 // ==UserScript==
 // @name         Git Release Highlight
 // @namespace    https://github.com/Vinfall/UserScripts
-// @version      5.1.2
+// @version      5.2.0
 // @author       Vinfall
-// @match        https://github.com/*/*/releases*
-// @match        https://github.com/*/*/releases/tag/*
+// @match        https://code.forgejo.org/*/*/releases*
+// @match        https://code.forgejo.org/*/*/releases/tag/*
 // @match        https://codeberg.org/*/*/releases*
 // @match        https://codeberg.org/*/*/releases/tag/*
+// @match        https://github.com/*/*/releases*
+// @match        https://github.com/*/*/releases/tag/*
 // @grant        none
 // @license      GPL-3.0-only
 // @run-at       document-end
@@ -55,6 +57,10 @@ const services = [
     },
     {
         domain: 'codeberg.org',
+        asset: 'li.attachment > a',
+    },
+    {
+        domain: 'code.forgejo.org',
         asset: 'li.attachment > a',
     },
 ];
