@@ -2,7 +2,7 @@
 // @name              COK.R18
 // @name:zh-cn        刚满 18 岁 Cookie 版
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.19.0
+// @version           0.19.1
 // @author            Vinfall
 // @match             https://archive.org/details/*
 // @match             https://archive.org/download/*
@@ -25,6 +25,7 @@
 // @match             https://www.dlsite.com/*-touch/
 // @match             https://www.dlsite.com/*-touch/*
 // @match             https://www.dlsite.com/*/announce/=/product_id/*
+// @match             https://www.dlsite.com/*/profile/=/maker_id/*
 // @match             https://www.dlsite.com/*/work/=/product_id/*
 // @match             https://www.getchu.com/item/*
 // @match             https://www.getchu.com/php/attestation.html?aurl=*
