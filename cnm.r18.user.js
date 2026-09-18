@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.37.4
+// @version           2.37.5
 // @author            Vinfall
 // @match             https://*.fanbox.cc/
 // @match             https://*.fanbox.cc/plans
@@ -48,6 +48,7 @@
 // @match             https://www.animategames.jp/home/age?redirect=*
 // @match             https://www.digiket.com/work/show/_data/ID=*
 // @match             https://www.dmm.co.jp/*/age_check/=/?rurl=*
+// @match             https://www.dmm.co.jp/age_check/=/?rurl=*
 // @match             https://www.hobicolle.com/
 // @match             https://www.johren.games/?backUrl=*
 // @match             https://www.kaguragames.com/
