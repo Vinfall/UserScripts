@@ -152,6 +152,7 @@ Before exporting, you can customize the table in User VN List:
 
 - Select `Multi-select` in the upper right corner and choose labels
 - Click 👁️ icon on the right and choose visible columns
+- (Optional) Change `results per page` to 200 if you have thousands of VNs
 
 Usage:
 
