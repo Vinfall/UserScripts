@@ -2,12 +2,13 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.37.6
+// @version           2.38.0
 // @author            Vinfall
 // @match             https://*.fanbox.cc/
 // @match             https://*.fanbox.cc/plans
 // @match             https://*.fanbox.cc/plans/*
 // @match             https://*.fanbox.cc/posts/*
+// @match             https://072project.com/r18/*
 // @match             https://a.sofmap.com/adult_confirm.aspx?url=*
 // @match             https://a.sofmap.com/product_detail.aspx?sku=*
 // @match             https://appendingpulse.jp/dl/*
@@ -68,6 +69,9 @@
 // @exclude           https://*/admin.php?*
 // @exclude           https://*/forum.php?*goto*
 // @exclude           https://*/forum.php?mod=redirect*
+// @exclude-match     https://072project.com/r18/*/cart
+// @exclude-match     https://072project.com/r18/*/login
+// @exclude-match     https://072project.com/r18/*/register
 // @exclude-match     https://ci-en.net/*
 // @exclude-match     https://download.patch.moe/*
 // @exclude-match     https://fantia.jp/account/*
@@ -111,6 +115,7 @@ function verifyButton() {
     // Define rules
     // biome-ignore format: do not touch my list
     const config = {
+        '072project.com': '.yes',
         'a.sofmap.com': '.blue.button',
         // 'amiami.jp': 'input:nth-of-type(5)', // '.btn_go > form', not working
         'amazon.co.jp': '#black-curtain-yes-button > .a-button-inner > .a-button-text',
