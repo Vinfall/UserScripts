@@ -8,10 +8,10 @@ Subscribe to [tags feed][tags] to get notified of new scripts/significant update
 
 Only tested with Violentmonkey stable/beta on latest Firefox-ESR and Chromium.
 
-[`@exclude-match`][VM] is a Violentmonkey only API, which means excluding may not work on [Tampermonkey][TM], [Greasemonkey][GM] or [ScriptCat][SC], but it does no harm unless you are a paranoid, in which case you should switch to Violentmonkey already.
+[`@exclude-match`][VM] is a Violentmonkey API, only supported by Violentmonkey and ScriptCat, which means excluding may not work on [Tampermonkey][TM] or [Greasemonkey][GM].
 
-Scripts in [tmpl](tmpl) are templates which may not work out of box.
-Customize them to fit your need before use.
+Scripts in [tmpl](tmpl) are templates.
+They don't work out of box *by definition*. Customize before use.
 
 ## List
 
@@ -184,7 +184,6 @@ Licensed under CC0 1.0 Universal or Public Domain, whichever is more permissive,
 [VM]: https://violentmonkey.github.io/api/matching/
 [TM]: https://www.tampermonkey.net/documentation.php?q=include#meta:exclude
 [GM]: https://wiki.greasespot.net/Include_and_exclude_rules
-[SC]: https://github.com/scriptscat/scriptcat/issues/1714
 [install-1]: https://github.com/Vinfall/UserScripts/raw/main/cngal2steam.user.js
 [install-2]: https://github.com/Vinfall/UserScripts/raw/main/cnm.r18.user.js
 [install-3]: https://github.com/Vinfall/UserScripts/raw/main/tmpl/discuz-short-url.user.js
