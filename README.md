@@ -31,6 +31,7 @@ Unlisted scripts have no intro and serve for myself only.
 | Show Original Picture | Open image in original resolution | [install][install-8] |
 | [Skip Redirect Inplace](#skip-redirect-inplace) | Skip URL redirect in href | [install][install-10] |
 | [Steam EA Date](#steam-ea-date) | Show Early Access date on Steam card | [install][install-12] |
+| sspai sticky toc | 自动固定少数派文章的 ToC | [安装][install-11] |
 | [VNDB Char Zodiac](#vndb-char-zodiac) | Show zodiac signs of VNDB character | [install][install-4] |
 | [VNDB Extlink Fix](#vndb-extlink-fix) | Fix broken extlink on VNDB | [install][install-16] |
 | [VNDB List Export](#vndb-list-export) | Export VNDB user VN/length vote to CSV | [Install][install-13] |
@@ -194,6 +195,7 @@ Licensed under CC0 1.0 Universal or Public Domain, whichever is more permissive,
 [install-8]: https://github.com/Vinfall/UserScripts/raw/main/show-orig-pic.user.js
 [install-9]: https://github.com/Vinfall/UserScripts/raw/main/tmpl/cngal-game-hide.user.js
 [install-10]: https://github.com/Vinfall/UserScripts/raw/main/skip-redirect-inplace.user.js
+[install-11]: https://github.com/Vinfall/UserScripts/raw/main/sspai-sticky-toc.user.js
 [install-12]: https://github.com/Vinfall/UserScripts/raw/main/steam-ea-date.user.js
 [install-13]: https://github.com/Vinfall/UserScripts/raw/main/vndb-list-export.user.js
 [install-14]: https://github.com/Vinfall/UserScripts/raw/main/weibo-mobile-redirect.user.js
