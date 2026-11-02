@@ -2,7 +2,7 @@
 // @name              CNM.R18
 // @name:zh-cn        刚满 18 岁
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           2.38.0
+// @version           2.39.1
 // @author            Vinfall
 // @match             https://*.fanbox.cc/
 // @match             https://*.fanbox.cc/plans
@@ -24,6 +24,7 @@
 // @match             https://ent.ltn.com.tw/*
 // @match             https://fantia.jp/*
 // @match             https://fc2cmadb.com/*
+// @match             https://future-digi.com/index.php?route=*
 // @match             https://gamebanana.com/mods/*
 // @match             https://gamejolt.com/games/*/*
 // @match             https://gamejolt.com/games/*/*/followers
@@ -76,6 +77,9 @@
 // @exclude-match     https://download.patch.moe/*
 // @exclude-match     https://fantia.jp/account/*
 // @exclude-match     https://fantia.jp/sessions/signin*
+// @exclude-match     https://future-digi.com/index.php?route=account/*
+// @exclude-match     https://future-digi.com/index.php?route=checkout/*
+// @exclude-match     https://future-digi.com/index.php?route=information/*
 // @exclude-match     https://huggingface.co/blog/*
 // @exclude-match     https://huggingface.co/collections/*
 // @exclude-match     https://huggingface.co/datasets/*
@@ -138,6 +142,7 @@ function verifyButton() {
         'fantia': '.btn-block.btn-very-lg.btn-primary.btn',
         'fc2cmadb': '.m-2.btn-primary.btn',
         // 'fc2db.net': '.confirm', // blocked by Cloudflare Turnstile
+        'future-digi.com': '#close-ticrf',
         'gamebanana.com': '.ShowNsfwContentButton',
         'gamejolt.com': '.link-muted > span', // this mutes until I exit
         // 'gamejolt.com': '.-block.-outline.-primary.button', // this only works for once
