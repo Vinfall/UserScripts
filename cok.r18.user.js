@@ -2,7 +2,7 @@
 // @name              COK.R18
 // @name:zh-cn        刚满 18 岁 Cookie 版
 // @namespace         https://github.com/Vinfall/UserScripts
-// @version           0.19.1
+// @version           0.20.0
 // @author            Vinfall
 // @match             https://archive.org/details/*
 // @match             https://archive.org/download/*
@@ -19,6 +19,7 @@
 // @match             https://moepedia.net/game/*
 // @match             https://ntrdb.com/
 // @match             https://ntrdb.com/*
+// @match             https://store.epicgames.com/p/*
 // @match             https://store.steampowered.com/agecheck/app/*
 // @match             https://store.steampowered.com/agecheck/bundle/*
 // @match             https://store.steampowered.com/agecheck/sub/*
@@ -37,6 +38,7 @@
 // @match             https://www.ptt.cc/ask/over18?from=*
 // @match             https://www.ptt.cc/bbs/*/*.html
 // @exclude-match     https://fc2db.net/auth/*
+// @exclude-match     https://store.epicgames.com/login*
 // @exclude-match     https://www.gog.com/forum/*
 // @exclude-match     https://www.mangagamer.com/account_create.php
 // @exclude-match     https://www.mangagamer.com/account_login.php
@@ -145,6 +147,11 @@ const config = [
         domains: ['ptt.cc'],
         name: 'over18',
         value: '1',
+    },
+    {
+        domains: ['store.epicgames.com'],
+        name: 'egs_age_gate_dob',
+        value: '1970-01-01',
     },
     {
         domains: ['store.steampowered.com'],
