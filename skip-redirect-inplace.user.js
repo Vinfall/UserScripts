@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Skip Redirect Inplace
 // @namespace     https://github.com/Vinfall/UserScripts
-// @version       1.5.1
+// @version       1.6.0
 // @author        Vinfall
 // @match         https://acg.gamer.com.tw/*
 // @match         https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/*
@@ -14,6 +14,7 @@
 // @match         https://m.weibo.cn/u/*
 // @match         https://noai.duckduckgo.com/*
 // @match         https://sspai.com/*
+// @match         https://steamcommunity.com/games/*
 // @match         https://store.steampowered.com/app/*
 // @match         https://wikiwiki.jp/*
 // @match         https://www.cnblogs.com/*
@@ -50,6 +51,7 @@
         ['a[href*="https://weibo.cn/sinaurl?u="]', /https:\/\/weibo.cn\/sinaurl\?u=([^&]+)/, true],
         ['a[href*="https://hellogithub.com/periodical/statistics/click?target="]', /https:\/\/hellogithub.com\/periodical\/statistics\/click\?target=([^&]+)/, false],
         ['a[href*="https://www.gcores.com/link?target="]', /https:\/\/www\.gcores\.com\/link\?target=([^&]+)/, false],
+        ['a[href*="safelinks.protection.outlook.com/?url="]', /https:\/\/[^/?#]*\.safelinks\.protection\.outlook\.com\/\?url=([^&]+)/, true],
         ['a[href*="//ref.gamer.com.tw/redir.php?url="]', /https:\/\/ref\.gamer\.com\.tw\/redir\.php\?url=([^&]+)/, false],
         ['a[href^="https://www.tiangal.com/go.html"]', /https:\/\/www.tiangal.com\/go.html\?url=([^&]+)/, false],
         ['a[href*="/redirect?url="]', /\/redirect\?url=([^&]+)/, true],
